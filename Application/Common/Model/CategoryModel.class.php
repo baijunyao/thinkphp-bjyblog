@@ -1,7 +1,7 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
-Class CategoryModel extends Model{
+class CategoryModel extends Model{
 	// 自动验证
 	protected $_validate=array(
 		array('cname','require','分类名不能为空'),

@@ -5,7 +5,7 @@ class TagController extends AuthController{
 	// 定义数据表
 	private $db;
 	
-	// 构造函数
+	// 构造函数 实例化TagModel
 	public function __construct(){
 		parent::__construct();
 		$this->db=D('Tag');

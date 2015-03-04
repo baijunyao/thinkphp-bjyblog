@@ -5,10 +5,10 @@ class CategoryController extends AuthController{
 	//定义数据表
 	private $db;
 
-	//定义category表数据
+	//定义category表数
 	private $categoryData;
 
-	//构造函数
+	//构造函数 实例化CategoryModel 并获得整张表的数据
 	public function __construct(){
 		parent::__construct();
 		//初始化时实例化category model
