@@ -38,7 +38,7 @@ class CategoryModel extends Model{
 
 	//传递数据库字段名 获取对应的数据
 	//不传递获取全部数据 
-	public function getData($field='all',$tree=1){
+	public function getAllData($field='all',$tree=1){
 		if($field=='all'){
 			$data=$this->select();
 			if($tree){

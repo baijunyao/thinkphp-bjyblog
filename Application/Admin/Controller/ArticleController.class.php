@@ -19,7 +19,17 @@ class ArticleController extends AuthController{
 
 	// 添加文章
 	public function add(){
-		$this->display();
+		if(IS_POST){
+
+		}else{
+			$allCategory=D('Category')->getAllData();
+			$allTag=D('Tag')->getAllData();
+			// p($allTag);
+			$this->assign('allCategory',$allCategory);
+			$this->assign('allTag',$allTag);
+			$this->display();			
+		}
+
 	}
 }
 

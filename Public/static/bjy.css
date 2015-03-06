@@ -4,7 +4,10 @@
 .bjy-noresize{
   resize:none;
 }
-
+.bjy-ml15-mr5{
+  margin-left: 15px;
+  margin-right: 5px;
+}
 
 .bjy-w10 {
   width: 10px;
