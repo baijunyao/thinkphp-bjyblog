@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>修改分类</title>
-<bootstrap/>
+<bootstrap />
 </head>
 <body>
-<table class="table table-bordered table-hover">
-	<form class="form-gropu" action="{:U('Admin/Category/edit')}" method="post">
+<form class="form-gropu" action="{:U('Admin/Category/edit')}" method="post">
+	<table class="table table-bordered table-hover">
 		<input type="hidden" name="cid" value="{$onedata['cid']}">
 		<tr>
 			<th>分类名</th>
@@ -19,7 +19,7 @@
 				<select class="form-control modal-sm" name="pid">
 					<option value="0">顶级栏目</option>
 					<foreach name="data" key="k" item="v">
-						<option value="{$v['cid']}" <if condition="$onedata['pid'] eq $v['cid']">selected="selected"</if> >{$v['_name']}</option>
+						<option value="{$v['cid']}" <if condition="$onedata['pid'] eq $v['cid']">selected="selected"</if> {$v['_html']}>{$v['_name']}</option>
 					</foreach>
 				</select>
 			</td>
@@ -42,9 +42,8 @@
 			<th></th>
 			<td><input class="btn btn-default" type="submit" value="提交"></td>
 		</tr>
-	</form>
-</table>
-
+	</table>
+</form>
 
 </body>
 </html>

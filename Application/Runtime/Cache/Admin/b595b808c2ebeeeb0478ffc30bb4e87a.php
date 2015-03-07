@@ -9,6 +9,17 @@
 <link rel="stylesheet" type="text/css" href="/thinkbjy/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/thinkbjy/Public/static/bjy.css">
 <script type="text/javascript" src="/thinkbjy/Public/static/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/thinkbjy/Public/static/iCheck-1.0.2/icheck.min.js"></script>
+<link rel="stylesheet" href="/thinkbjy/Public/static/iCheck-1.0.2/skins/all.css">
+<script>
+$(document).ready(function(){
+  $('.icheck').iCheck({
+    checkboxClass: "icheckbox_square-blue",
+    radioClass: "iradio_square-blue",
+    increaseArea: "20%"
+  });
+});
+</script>
 <link rel="stylesheet" type="text/css" href="/thinkbjy/Public/Admin/css/index.css">
 <script type="text/javascript" src="/thinkbjy/Public/Admin/js/index.js"></script>
 </head>

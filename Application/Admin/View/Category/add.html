@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>添加分类</title>
-<bootstrap/>
+<bootstrap />
 </head>
 <body>
-<table class="table table-bordered table-hover">
-	<form action="{:U('Admin/Category/add')}" method="post">
+<form action="{:U('Admin/Category/add')}" method="post">
+	<table class="table table-bordered table-hover">
 		<tr>
 			<th>分类名</th>
 			<td><input class="form-control modal-sm" type="text" name="cname" ></td>
@@ -18,7 +18,7 @@
 				<select class="form-control modal-sm" name="pid">
 					<option value="0">顶级栏目</option>
 					<foreach name="data" key="k" item="v">
-						<option value="{$v['cid']}">{$v['_name']}</option>
+						<option value="{$v['cid']}" <if condition="$cid eq $v['cid']">selected="selected"</if> >{$v['_name']}</option>
 					</foreach>
 				</select>
 			</td>
@@ -43,9 +43,8 @@
 				<input class="btn btn-default" type="submit" value="提交">
 			</td>
 		</tr>
-	</form>
-</table>
-
+	</table>
+</form>
 
 </body>
 </html>

@@ -29,6 +29,7 @@ class CategoryModel extends Model{
 	// 删除数据
 	public function deleteData($cid=null){
 		$cid=is_null($cid) ? I('get.cid') : $cid;
+
 		if($this->where("cid=$cid")->delete()){
 			return true;
 		}else{
@@ -38,7 +39,7 @@ class CategoryModel extends Model{
 
 	//传递数据库字段名 获取对应的数据
 	//不传递获取全部数据 
-	public function getAllData($field='all',$tree=1){
+	public function getAllData($field='all',$tree=true){
 		if($field=='all'){
 			$data=$this->select();
 			if($tree){
@@ -56,6 +57,15 @@ class CategoryModel extends Model{
 	public function getDataByCid($cid){
 		return $this->where("cid=$cid")->find();
 	}
-	
+
+	// 传递cid获得所有子栏目
+	public function getChildData($cid){
+		$data=$this->getAllData('all',false);
+		$child=\Org\Bjy\Data::channelList($data,$cid);
+		foreach ($child as $k => $v) {
+			$childs[]=$v['cid'];
+		}
+		return $childs;
+	}
 
 }
