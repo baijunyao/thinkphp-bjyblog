@@ -6,11 +6,38 @@
 <bootstrap />
 </head>
 <body>
-<table>
-	<tr>
-		<th>标题</th>
-		<td></td>
-	</tr>
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<thead>
+		<tr>
+			<th width="2%">aid</th>
+			<th width="5%">所属栏目</th>
+			<th width="5%">标题</th>
+			<th width="5%">作者</th>
+			<th width="5%">标签</th>
+			<th width="5%">是否显示</th>
+			<th width="5%">是否置顶</th>
+			<th width="5%">点击数</th>
+			<th width="5%">发布时间</th>
+			<th width="5%">操作</th>
+		</tr>
+	</thead>
+	<foreach name="data" item="v">
+		<tr>
+			<td>{$v['aid']}</td>
+			<td>{$v['cname']}</td>
+			<td>{$v['title']}</td>
+			<td>{$v['author']}</td>
+			<td>{$v['tags']}</td>
+			<td>{$v['is_show']}</td>
+			<td>{$v['is_top']}</td>
+			<td>{$v['click']}</td>
+			<td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
+			<td>
+				<a href="{:U('Admin/Article/edit',array('aid'=>$v['aid']))}">修改</a> | 
+				<a href="{:U('Admin/Article/delete',array('aid'=>$v['aid']))}">删除</a>
+			</td>		
+		</tr>
+	</foreach>
 </table>
 </body>
 </html>

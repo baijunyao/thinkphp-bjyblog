@@ -1,0 +1,534 @@
+[ 2015-03-09T00:01:23+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002178s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0041s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0044s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 63 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2015-03-09T00:03:05+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000278s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0046s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0053s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 63 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2015-03-09T00:03:07+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0030s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 63 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2015-03-09T00:03:07+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0031s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0058s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 63 行.
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2015-03-09T00:03:34+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002296s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0042s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0044s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 14  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 15  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0039s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 16  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 17  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 18  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 19  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 20  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 21  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 22  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 24  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 25  [ RunTime:0.0006s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 26  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 27  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 28  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 29  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 30  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: icheck E:\tongbu\wamp\www\Application\Common\Tag\My.class.php 第 32 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018408s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018567s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2015-03-09T00:07:46+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0039s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0031s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 14  [ RunTime:0.0003s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 15  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0034s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 16  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 17  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 18  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 19  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 20  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 21  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 22  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 24  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 25  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 26  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 27  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 28  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 29  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 30  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: icheck E:\tongbu\wamp\www\Application\Common\Tag\My.class.php 第 32 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 49 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
+[ 2015-03-09T00:08:50+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0042s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0033s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 14  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 15  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0039s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 16  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 17  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 18  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 19  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 20  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 21  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 22  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 24  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 25  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 26  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 27  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 28  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 29  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 30  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: icheck E:\tongbu\wamp\www\Application\Common\Tag\My.class.php 第 32 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016841s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002030s ]
+
+[ 2015-03-09T00:09:05+08:00 ] 127.0.0.1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `bjy_article` ORDER BY addtime  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0041s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 13  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0030s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 14  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 15  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0031s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 16  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 17  [ RunTime:0.0007s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 18  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 19  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 20  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 21  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 22  [ RunTime:0.0004s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 23  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 24  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=3 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=4 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 25  [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 26  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 27  [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 28  [ RunTime:0.0005s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 29  [ RunTime:0.0003s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE `aid` = 30  [ RunTime:0.0003s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=6 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `tname` FROM `bjy_tag` WHERE ( tid=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cname` FROM `bjy_category` WHERE ( cid=2 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: icheck E:\tongbu\wamp\www\Application\Common\Tag\My.class.php 第 32 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+NOTIC: [8] Undefined index: tags E:\tongbu\wamp\www\Application\Runtime\Cache\Admin\7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 45 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015936s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+

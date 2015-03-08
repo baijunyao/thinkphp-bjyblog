@@ -1,6 +1,7 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
+
 Class TagModel extends Model{
 	// 添加标签
 	public function addData(){
@@ -56,4 +57,17 @@ Class TagModel extends Model{
 		return $this->where("tid=$tid")->find();
 	}
 
+	/**
+	 * 添加数据
+	 * @param array $tids 文章id
+	 * @return array $tnames 标签名
+	 */
+	public function getTnames($tids){
+		foreach ($tids as $k => $v) {
+			$tnames[]=$this->where("tid=$v")->getField('tname');
+		}
+		return $tnames;
+	}
+
+	
 }

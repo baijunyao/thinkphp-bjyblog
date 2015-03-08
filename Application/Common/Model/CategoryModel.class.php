@@ -1,6 +1,7 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
+
 class CategoryModel extends Model{
 	// 自动验证
 	protected $_validate=array(
@@ -54,8 +55,13 @@ class CategoryModel extends Model{
 	}
 
 	//传递cid获取对应的数据
-	public function getDataByCid($cid){
-		return $this->where("cid=$cid")->find();
+	public function getDataByCid($cid,$field='all'){
+		if($field=='all'){
+			return $this->where("cid=$cid")->find();
+		}else{
+			return $this->where("cid=$cid")->getField($field);
+		}
+		
 	}
 
 	// 传递cid获得所有子栏目

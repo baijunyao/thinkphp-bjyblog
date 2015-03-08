@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Common\Controller\AuthController;
+
 class TagController extends AuthController{
 	// 定义数据表
 	private $db;
