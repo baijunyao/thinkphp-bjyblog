@@ -20,6 +20,10 @@ class ArticleTagModel extends Model{
 		return true;
 	}
 
+	// 传递aid获取tid数组
+	public function getDataByAid($aid){
+		return $this->where("aid=$aid")->getField('tid',true);
+	}
 
 
 

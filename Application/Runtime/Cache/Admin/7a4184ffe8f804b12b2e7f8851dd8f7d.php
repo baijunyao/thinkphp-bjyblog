@@ -42,7 +42,7 @@ $(document).ready(function(){
 			<td><?php echo ($v['cname']); ?></td>
 			<td><?php echo ($v['title']); ?></td>
 			<td><?php echo ($v['author']); ?></td>
-			<td><?php echo ($v['tags']); ?></td>
+			<td><?php echo ($v['tnames']); ?></td>
 			<td><?php echo ($v['is_show']); ?></td>
 			<td><?php echo ($v['is_top']); ?></td>
 			<td><?php echo ($v['click']); ?></td>
@@ -53,5 +53,9 @@ $(document).ready(function(){
 			</td>		
 		</tr><?php endforeach; endif; ?>
 </table>
+<div style="text-align: center;">
+	<?php echo ($page); ?>
+</div>
+
 </body>
 </html>

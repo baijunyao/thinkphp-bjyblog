@@ -51,7 +51,7 @@ class ArticleModel extends Model{
 
 	// 获得全部数据
 	public function getAllData(){
-		$data=$this->order('addtime')->select();
+		$data=$this->where('is_delete=0')->order('addtime')->select();
 		foreach ($data as $k => $v) {
 			$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
 			if(empty($tids)){
@@ -65,7 +65,36 @@ class ArticleModel extends Model{
 		return $data;
 	}
 
+	// 获得分页数据
+	public function getPageData($limit=10){
+		$count=$data=$this->where('is_delete=0')->count();
+		$page=new \Think\Page($count,$limit);
+		$show=$page->show();
+		$list=$this->where('is_delete=0')->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+		// p($list);die;
+		foreach ($list as $k => $v) {
+			$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
+			if(empty($tids)){
+				$list[$k]['tnames']='';
+			}else{
+				$tnames=D('Tag')->getTnames($tids);
+				$list[$k]['tnames']=implode('、', $tnames);
+			}
+			$list[$k]['cname']=D('Category')->getDataByCid($v['cid'],'cname');
+		}
+		$data=array(
+			'page'=>$show,
+			'data'=>$list,
+			);
+		return $data;
+	}
 
+	// 传递aid获取单条全部数据
+	public function getDataByAid($aid){
+		$data=$this->where("aid=$aid")->find();
+		$data['tids']=D('ArticleTag')->getDataByAid($aid);
+		return $data;
+	}
 
 
 }

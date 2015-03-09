@@ -11,14 +11,13 @@ class ArticleController extends AuthController{
 	public function __construct(){
 		parent::__construct();
 		$this->db=D('Article');
-		$this->viewDb=D('ArticleView');
 	}
 
 	//文章列表
 	public function index(){
-		$data=$this->db->getAllData();
-		$this->assign('data',$data);
-		p($data);
+		$data=$this->db->getPageData();
+		$this->assign('data',$data['data']);
+		$this->assign('page',$data['page']);
 		$this->display();
 	}
 
@@ -48,6 +47,13 @@ class ArticleController extends AuthController{
 		if(IS_POST){
 
 		}else{
+			$aid=I('aid');
+			$data=$this->db->getDataByAid($aid);
+			$allCategory=D('Category')->getAllData();
+			$allTag=D('Tag')->getAllData();
+			$this->assign('allCategory',$allCategory);
+			$this->assign('allTag',$allTag);
+			$this->assign('data',$data);
 			$this->display();
 		}
 	}
