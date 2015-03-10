@@ -10,20 +10,32 @@ class ArticleModel extends Model{
 		array('author','require','作者必填'),
 		array('content','require','文章内容必填'),
 		);
+
+	// 自动完成
+	protected $_auto=array(
+		array('click',0),
+		array('addtime','time',1,'function'),
+		array('description','getDescription',3,'callback'),
+		);
+
+	// 获得描述；供自动完成使用
+	protected function getDescription($description){
+		if(!empty($description)){
+			return $description;
+		}else{
+			$data=I('post.content');
+			$des=htmlspecialchars_decode($data);
+			$des=re_substr(strip_tags($des),0,200,false);
+			return $des;
+		}
+	}
+
 	// 添加数据
 	public function addData(){
 		$data=I('post.');
-		$data['addtime']=time();
-		$data['click']=0;
 		if($this->create($data)){
-			$content=$data['content'];
-			$image_path=get_ueditor_image_path($content);//获取文章内容图片
-			if(empty($data['description'])){
-				$des=htmlspecialchars_decode($content);
-				$des=re_substr(strip_tags($des),0,200,false);
-				$data['description']=$des;
-			}
-			if($aid=$this->add($data)){
+			$image_path=get_ueditor_image_path($data['content']);//获取文章内容图片
+			if($aid=$this->add()){
 				if(isset($data['tids'])){
 					D('ArticleTag')->addData($aid,$data['tids']);
 				}
@@ -41,7 +53,23 @@ class ArticleModel extends Model{
 
 	// 修改数据
 	public function editData(){
-
+		$data=I('post.');
+		if($this->create($data)){
+			$aid=$data['aid'];
+			$this->where(array('aid'=>$aid))->save();
+			$image_path=get_ueditor_image_path($data['content']);
+			D('ArticleTag')->deleteData($aid);
+			if(isset($data['tids'])){
+				D('ArticleTag')->addData($aid,$data['tids']);
+			}
+			D('ArticlePic')->deleteData($aid);
+			if(!empty($image_path)){
+				D('ArticlePic')->addData($aid,$image_path);
+			}
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	//删除数据
@@ -93,6 +121,7 @@ class ArticleModel extends Model{
 	public function getDataByAid($aid){
 		$data=$this->where("aid=$aid")->find();
 		$data['tids']=D('ArticleTag')->getDataByAid($aid);
+		$data['content']=htmlspecialchars_decode($data['content']);
 		return $data;
 	}
 

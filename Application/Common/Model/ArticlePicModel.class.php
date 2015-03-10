@@ -20,6 +20,11 @@ class ArticlePicModel extends Model{
 		return true;
 	}
 
+	// 传递aid删除相关全部tid
+	public function deleteData($aid){
+		$this->where("aid=$aid")->delete();
+		return true;
+	}
 
 
 

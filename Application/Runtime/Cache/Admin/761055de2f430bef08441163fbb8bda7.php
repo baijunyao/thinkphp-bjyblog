@@ -28,7 +28,8 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-<form class="form-group" action="<?php echo U('Admin/Article/add');?>" method="post">
+<form class="form-group" action="<?php echo U('Admin/Article/edit',array('aid'=>$_GET['aid']));?>" method="post">
+	<input type="hidden" name="aid" value="<?php echo ($data['aid']); ?>">
 	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
 			<th>所属分类</th>
@@ -54,20 +55,20 @@ $(document).ready(function(){
 			<th>标签</th>
 			<td>
 				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span class="inputword"><?php echo ($v['tname']); ?></span>
-					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>" <?php if(): ?>checked='checked'<?php endif; ?> ><?php endforeach; endif; ?>
+					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>" <?php if(in_array($v['tid'],$data['tids'])): ?>checked='checked'<?php endif; ?> ><?php endforeach; endif; ?>
 			</td>
 		</tr>
 		<tr>
 			<th>描述</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
+				<textarea class="form-control modal-sm bjy-noresize" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"><?php echo ($data['description']); ?></textarea>
 			</td>
 		</tr>
 		<tr>
 			<th>内容</th>
 			<td>
 			    <script id="container" name="content" type="text/plain">
-	
+	<?php echo ($data['content']); ?>
 </script>
 <script type="text/javascript" src="/Public/static/ueditor1_4_3/ueditor.config.js"></script>
 <script type="text/javascript" src="/Public/static/ueditor1_4_3/ueditor.all.js"></script>
@@ -80,33 +81,33 @@ $(document).ready(function(){
 			<th>是否置顶</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_top" value="1">
+				<input class="icheck" type="radio" name="is_top" value="1" <?php if($data['is_top'] == 1): ?>checked="checked"<?php endif; ?> >
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_top" value="0" checked="checked">
+				<input class="icheck" type="radio" name="is_top" value="0" <?php if($data['is_top'] == 0): ?>checked="checked"<?php endif; ?> >
 			</td>
 		</tr>
 		<tr>
 			<th>是否删除</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_delete" value="1">
+				<input class="icheck" type="radio" name="is_delete" value="1" <?php if($data['is_delete'] == 1): ?>checked="checked"<?php endif; ?>>
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_delete" value="0" checked="checked">				
+				<input class="icheck" type="radio" name="is_delete" value="0" <?php if($data['is_delete'] == 0): ?>checked="checked"<?php endif; ?> >				
 			</td>
 		</tr>
 		<tr>
 			<th>是否显示</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				<input class="icheck" type="radio" name="is_show" value="1" <?php if($data['is_show'] == 1): ?>checked="checked"<?php endif; ?> >
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_show" value="0">				
+				<input class="icheck" type="radio" name="is_show" value="0" <?php if($data['is_show'] == 0): ?>checked="checked"<?php endif; ?> >				
 			</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<input class="btn btn-default" type="submit" value="发表">
+				<input class="btn btn-default" type="submit" value="修改">
 			</td>
 		</tr>
 	</table>
