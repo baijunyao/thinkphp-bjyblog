@@ -20,7 +20,7 @@ class ArticleTagModel extends Model{
 		return true;
 	}
 
-	// 传递aid删除对应的tid
+	// 传递aid删除相关数据
 	public function deleteData($aid){
 		$this->where("aid=$aid")->delete();
 		return true;

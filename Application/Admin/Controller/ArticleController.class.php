@@ -1,7 +1,9 @@
 <?php  
 namespace Admin\Controller;
 use Common\Controller\AuthController;
-
+/**
+ * 文章管理
+ */
 class ArticleController extends AuthController{
 	// 定义数据表
 	private $db;
@@ -61,8 +63,15 @@ class ArticleController extends AuthController{
 			$this->display();
 		}
 	}
+	
+	// 删除文章
+	public function delete(){
+		if($this->db->recycleData()){
+			$this->success('放入回收站成功');
+		}else{
+			$this->error('放入回收站失败');
+		}
+	}
+
+
 }
-
-
-
-?>

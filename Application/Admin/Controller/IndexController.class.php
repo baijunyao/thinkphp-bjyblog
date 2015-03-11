@@ -1,7 +1,9 @@
 <?php  
 namespace Admin\Controller;
 use Common\Controller\AuthController;
-
+/**
+ * 后台首页
+ */
 class IndexController extends AuthController{
 	// 后台首页
 	public function index(){

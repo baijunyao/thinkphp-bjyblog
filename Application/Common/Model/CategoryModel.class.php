@@ -30,7 +30,16 @@ class CategoryModel extends Model{
 	// 删除数据
 	public function deleteData($cid=null){
 		$cid=is_null($cid) ? I('get.cid') : $cid;
-
+		$child=$this->getChildData($cid);
+		if(!empty($child)){
+			$this->error='请先删除子分类';
+			return false;
+		}
+		$articleData=D('Article')->getDataByCid($cid);
+		if(!empty($articleData)){
+			$this->error='请先删除此分类下的文章';
+			return false;
+		}
 		if($this->where("cid=$cid")->delete()){
 			return true;
 		}else{

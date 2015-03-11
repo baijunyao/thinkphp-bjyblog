@@ -18,7 +18,7 @@ class ArticleModel extends Model{
 		array('description','getDescription',3,'callback'),
 		);
 
-	// 获得描述；供自动完成使用
+	// 获得描述；供自动完成调用
 	protected function getDescription($description){
 		if(!empty($description)){
 			return $description;
@@ -74,7 +74,28 @@ class ArticleModel extends Model{
 
 	//删除数据
 	public function deleteData(){
+		$aid=I('get.aid',0,'intval');
+		D('ArticlePic')->deleteData($aid);
+		D('ArticleTag')->deleteData($aid);
+		$this->where("aid=$aid")->delete();
+		return true;
+	}
 
+	// 放入回收站
+	public function recycleData(){
+		$aid=I('get.aid',0,'intval');
+		$this->where("aid=$aid")->setField('is_delete',1);
+		return true;
+	}
+	/**
+	 * 添加数据
+	 * @param strind $aid 文章id
+	 * @param strind $field 更改的字段
+	 * @param array $value 更改的内容
+	 */
+	public function changeStatus($aid,$field,$value){
+		$this->where("aid=$aid")->setField($field,$value);
+		return true;
 	}
 
 	// 获得全部数据
@@ -94,7 +115,7 @@ class ArticleModel extends Model{
 	}
 
 	// 获得分页数据
-	public function getPageData($limit=10){
+	public function getPageData($limit=15){
 		$count=$data=$this->where('is_delete=0')->count();
 		$page=new \Think\Page($count,$limit);
 		$show=$page->show();
@@ -125,6 +146,21 @@ class ArticleModel extends Model{
 		return $data;
 	}
 
+	// 传递cid获得此分类下面的文章数据
+	// is_all为true时获取全部数据 false时不获取is_show为0 和is_delete为1的数据
+	public function getDataByCid($cid,$is_all=false){
+		if($is_delete){
+			return $this->select();
+		}else{
+			$where=array(
+				'cid'=>$cid,
+				'is_show'=>1,
+				'is_delete'=>0,
+			);
+			return $this->where($where)->select();
+		}
+		
+	}
 
 }
 

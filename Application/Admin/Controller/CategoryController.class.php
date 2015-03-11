@@ -1,7 +1,9 @@
 <?php  
 namespace Admin\Controller;
 use Common\Controller\AuthController;
-
+/**
+ * 分类管理
+ */
 class CategoryController extends AuthController{
 	//定义数据表
 	private $db;
@@ -73,20 +75,10 @@ class CategoryController extends AuthController{
 
 	// 删除分类
 	public function delete(){
-		$cid=I('cid',0,'intval');
-		$child=$this->db->getChildData($cid);
-		if(!empty($child)){
-			$this->error('请先删除子栏目');
-		}
-
-		// p($cid);
-		// p($data);
-		// p($child);die;
-		
 		if($this->db->deleteData()){
 			$this->success('删除成功');
 		}else{
-			$this->error('删除失败');
+			$this->error($this->db->getError());
 		}
 
 	}
