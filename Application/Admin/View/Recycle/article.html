@@ -24,12 +24,12 @@ table {
 	</thead>
 	<foreach name="data" item="v">
 		<tr>
-			<td>{$data['aid']}</td>
-			<td>{$data['cname']}</td>
-			<td>{$data['author']}</td>
-			<td>{$data['title']}</td>
+			<td>{$v['aid']}</td>
+			<td>{$v['cname']}</td>
+			<td>{$v['author']}</td>
+			<td>{$v['title']}</td>
 			<td>
-				<a href="{{:U('Admin/Article/delete',array('aid'=>$v['aid']))}}">恢复</a>
+				<a href="{:U('Admin/Article/recover',array('aid'=>$v['aid']))}">恢复</a>
 				<a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Article/delete',array('aid'=>$v['aid']))}'">彻底删除</a>
 			</td>
 		</tr>

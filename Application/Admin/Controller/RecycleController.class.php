@@ -14,6 +14,17 @@ class RecycleController extends AuthController{
 	public function index(){
 		$this->display();
 	}
+
+	// 已删文章
+	public function article(){
+		$data=D('Article')->getPageData(1);
+		$this->assign('data',$data['data']);
+		$this->assign('page',$data['page']);
+		// p($data);die;
+		$this->display();
+	}
+
+
 }
 
 

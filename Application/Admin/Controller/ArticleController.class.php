@@ -64,14 +64,34 @@ class ArticleController extends AuthController{
 		}
 	}
 	
-	// 删除文章
-	public function delete(){
+	// 放入回收站
+	public function recycle(){
 		if($this->db->recycleData()){
 			$this->success('放入回收站成功');
 		}else{
 			$this->error('放入回收站失败');
 		}
 	}
+
+	// 恢复删除
+	public function recover(){
+		if($this->db->recoverData()){
+			$this->success('放入回收站成功');
+		}else{
+			$this->error('放入回收站失败');
+		}
+	}
+
+	// 彻底删除
+	public function delete(){
+		if($this->db->deleteData()){
+			$this->success('彻底删除成功');
+		}else{
+			$this->error('彻底删除失败');
+		}
+	}
+
+
 
 
 }
