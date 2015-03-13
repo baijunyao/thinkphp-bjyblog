@@ -55,7 +55,7 @@ table {
 			<td><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></td>
 			<td>
 				<a href="<?php echo U('Admin/Article/edit',array('aid'=>$v['aid']));?>">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Article/delete',array('aid'=>$v['aid']));?>'">删除</a>
+				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Article/recycle',array('aid'=>$v['aid']));?>'">删除</a>
 			</td>		
 		</tr><?php endforeach; endif; ?>
 </table>

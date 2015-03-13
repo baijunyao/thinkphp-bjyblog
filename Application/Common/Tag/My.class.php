@@ -29,7 +29,7 @@ class My extends TagLib {
 	*/
 	//引入jquery、bootstrap css组件、bootstrap js组件
 	public function _bootstrap($tag){
-		$icheck=$tag['icheck'] ? $tag['icheck'] : 'blue';
+		$icheck=isset($tag['icheck']) ? $tag['icheck'] : 'blue';
 		$link=<<<php
 <script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.2/css/bootstrap.min.css">

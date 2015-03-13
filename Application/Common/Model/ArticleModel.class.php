@@ -75,12 +75,13 @@ class ArticleModel extends Model{
 	// 放入回收站
 	public function recycleData(){
 		$aid=I('get.aid',0,'intval');
-		return $this->changeStatus($aid,'is_delete',0);
+		return $this->changeStatus($aid,'is_delete',1);
 	}
 
 	// 恢复删除
 	public function recoverData($aid=0){
 		$aid=I('get.aid','intval');
+		// echo $aid;die;
 		return $this->changeStatus($aid,'is_delete',0);
 	}
 
@@ -129,7 +130,7 @@ class ArticleModel extends Model{
 		$count=$this->where(array('is_delete'=>$status))->count();
 		$page=new \Think\Page($count,$limit);
 		$show=$page->show();
-		$list=$this->where('is_delete=0')->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+		$list=$this->where(array('is_delete'=>$status))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
 		// p($list);die;
 		foreach ($list as $k => $v) {
 			$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);

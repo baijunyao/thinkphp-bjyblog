@@ -20,11 +20,11 @@ class ArticlePicModel extends Model{
 		return true;
 	}
 
-	// 传递aid删除相关全部tid
+	// 传递aid删除相关图片
 	public function deleteData($aid){
 		$paths=$this->where("aid=$aid")->getField('path',true);
 		foreach ($paths as $k => $v) {
-			unlink($v);
+			unlink('.'.$v);
 		}
 		$this->where("aid=$aid")->delete();
 		return true;

@@ -75,10 +75,11 @@ class ArticleController extends AuthController{
 
 	// 恢复删除
 	public function recover(){
+		// p($_GET);die;
 		if($this->db->recoverData()){
-			$this->success('放入回收站成功');
+			$this->success('恢复成功');
 		}else{
-			$this->error('放入回收站失败');
+			$this->error('恢复失败');
 		}
 	}
 
