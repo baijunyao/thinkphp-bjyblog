@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网站信息</title>
+<bootstrap />
+</head>
+<body>
+<form action="{:U('Admin/Config/config')}" method="post">
+	<table class="table table-bordered table-hover">
+		<tr>
+			<th>网站名：</th>
+			<td>
+				<input class="form-control modal-sm" type="text" name="WEB_NAME" >
+			</td>
+		</tr>
+		<tr>
+			<th>关键字</th>
+			<td>
+				<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORD" rows="5" placeholder=""></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th>描述</th>
+			<td>
+				<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORD" rows="5" placeholder=""></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th>网站状态</th>
+			<td>
+				<span class="inputword">开启</span>
+				<input class="icheck" type="radio" name="WEB_STATUS" value="1" checked="checked">
+				<span class="inputword">关闭</span>
+				<input class="icheck" type="radio" name="WEB_STATUS" value="0">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

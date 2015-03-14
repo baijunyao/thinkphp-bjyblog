@@ -2,7 +2,7 @@
 namespace Common\Controller;
 use Think\Controller;
 
-class AuthController extends Controller{
+class AdminBaseController extends Controller{
 	public function __construct(){
 		parent::__construct();
 		if(isset($_SESSION['admin'])){

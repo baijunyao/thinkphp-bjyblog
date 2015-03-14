@@ -1,10 +1,10 @@
 <?php  
 namespace Admin\Controller;
-use Common\Controller\AuthController;
+use Common\Controller\AdminBaseController;
 /**
  * 文章管理
  */
-class ArticleController extends AuthController{
+class ArticleController extends AdminBaseController{
 	// 定义数据表
 	private $db;
 	private $viewDb;

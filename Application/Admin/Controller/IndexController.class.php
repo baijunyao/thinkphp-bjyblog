@@ -1,10 +1,10 @@
 <?php  
 namespace Admin\Controller;
-use Common\Controller\AuthController;
+use Common\Controller\AdminBaseController;
 /**
  * 后台首页
  */
-class IndexController extends AuthController{
+class IndexController extends AdminBaseController{
 	// 后台首页
 	public function index(){
 		$this->display();

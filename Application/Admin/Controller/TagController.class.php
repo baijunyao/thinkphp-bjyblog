@@ -1,10 +1,10 @@
 <?php
 namespace Admin\Controller;
-use Common\Controller\AuthController;
+use Common\Controller\AdminBaseController;
 /**
  * 标签管理
  */
-class TagController extends AuthController{
+class TagController extends AdminBaseController{
 	// 定义数据表
 	private $db;
 	

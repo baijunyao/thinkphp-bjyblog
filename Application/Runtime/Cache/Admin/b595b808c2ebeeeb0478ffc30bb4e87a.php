@@ -167,6 +167,15 @@ $(document).ready(function(){
 	<div class="nl-con">
 		<dl>
 			<dt>
+				<span class="fa fa-th"></span>基本设置
+			</dt>
+			<dd>
+				<a href="<?php echo U('Admin/Config/index');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>网站信息
+			</dd>
+		</dl>
+		<dl>
+			<dt>
 				<span class="fa fa-th"></span>友情链接
 			</dt>
 			<dd>

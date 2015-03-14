@@ -1,10 +1,10 @@
 <?php  
 namespace Admin\Controller;
-use Common\Controller\AuthController;
+use Common\Controller\AdminBaseController;
 /**
  * 分类管理
  */
-class CategoryController extends AuthController{
+class CategoryController extends AdminBaseController{
 	//定义数据表
 	private $db;
 
