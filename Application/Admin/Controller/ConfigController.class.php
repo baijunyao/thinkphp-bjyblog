@@ -17,7 +17,11 @@ class ConfigController extends AdminBaseController{
 	// 网站配置首页
 	public function index(){
 		if(IS_POST){
-			
+			if($this->db->editData()){
+				$this->success('修改成功',U('Admin/Config/index'));
+			}else{
+				$this->error('修改失败');
+			}
 		}else{
 			$data=$this->db->getAllData();
 			$this->assign('data',$data);

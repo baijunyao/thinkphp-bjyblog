@@ -1,0 +1,210 @@
+[ 2015-03-15T23:35:04+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000800s ]
+
+[ 2015-03-15T23:35:04+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+
+[ 2015-03-15T23:39:30+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+
+[ 2015-03-15T23:39:30+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+
+[ 2015-03-15T23:39:32+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+
+[ 2015-03-15T23:39:36+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+
+[ 2015-03-15T23:39:37+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001110s ]
+
+[ 2015-03-15T23:39:38+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+
+[ 2015-03-15T23:39:50+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+
+[ 2015-03-15T23:39:51+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+
+[ 2015-03-15T23:40:24+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000120s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001258s ]
+
+[ 2015-03-15T23:40:26+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+
+[ 2015-03-15T23:40:27+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001169s ]
+
+[ 2015-03-15T23:41:44+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002230s ]
+
+[ 2015-03-15T23:41:57+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+
+[ 2015-03-15T23:42:22+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+
+[ 2015-03-15T23:43:30+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+
+[ 2015-03-15T23:43:40+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+
+[ 2015-03-15T23:44:21+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+
+[ 2015-03-15T23:44:22+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+
+[ 2015-03-15T23:44:50+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+
+[ 2015-03-15T23:44:51+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+
+[ 2015-03-15T23:45:19+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+
+[ 2015-03-15T23:45:20+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+
+[ 2015-03-15T23:47:45+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+
+[ 2015-03-15T23:47:48+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+
+[ 2015-03-15T23:49:11+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+
+[ 2015-03-15T23:49:13+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+
+[ 2015-03-15T23:49:24+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+
+[ 2015-03-15T23:49:25+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000860s ]
+
+[ 2015-03-15T23:49:28+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+
+[ 2015-03-15T23:49:29+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+
+[ 2015-03-15T23:49:49+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+
+[ 2015-03-15T23:49:51+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+
+[ 2015-03-15T23:49:51+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+
+[ 2015-03-15T23:49:53+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+
+[ 2015-03-15T23:49:55+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+
+[ 2015-03-15T23:49:56+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+
+[ 2015-03-15T23:49:58+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+
+[ 2015-03-15T23:49:59+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+
+[ 2015-03-15T23:49:59+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+
+[ 2015-03-15T23:50:00+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+
