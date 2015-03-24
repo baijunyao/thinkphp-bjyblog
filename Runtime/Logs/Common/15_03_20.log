@@ -1,0 +1,12 @@
+[ 2015-03-20T23:19:14+08:00 ] 127.0.0.1 /?s=1&k=0&t=1426864754614.8577
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001025s ]
+ERR: 无法加载模块:1
+
+[ 2015-03-20T23:19:14+08:00 ] 127.0.0.1 /?s=1&k=0&t=1426864754840.941
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+ERR: 无法加载模块:1
+

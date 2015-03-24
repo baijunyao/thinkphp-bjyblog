@@ -1,336 +1,381 @@
+@charset "utf-8";
+/* CSS Document */
 
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
 
+address, cite, dfn, em, var ,i { font-style: normal; } /* 将斜体扶正 */
 
-.bjy-noresize{
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+li{
+  list-style: none;
+}
+
+/* 常用样式 */
+.b-inside{
+  margin: 0 auto;
+  width: 1200px;
+}
+.b-noresize{
   resize:none;
 }
-.bjy-w10 {
+.b-w-10 {
   width: 10px;
 }
-.bjy-w20 {
+.b-w-20 {
   width: 20px;
 }
-.bjy-w30 {
+.b-w-30 {
   width: 30px;
 }
-.bjy-w40 {
+.b-w-40 {
   width: 40px;
 }
-.bjy-w50 {
+.b-w-50 {
   width: 50px;
 }
-.bjy-w60 {
+.b-w-60 {
   width: 60px;
 }
-.bjy-w70 {
+.b-w-70 {
   width: 70px;
 }
-.bjy-w80 {
+.b-w-80 {
   width: 80px;
 }
-.bjy-w90 {
+.b-w-90 {
   width: 90px;
 }
-.bjy-w100 {
+.b-w-100 {
   width: 100px;
 }
-.bjy-w110 {
+.b-w-110 {
   width: 110px;
 }
-.bjy-w120 {
+.b-w-120 {
   width: 120px;
 }
-.bjy-w130 {
+.b-w-130 {
   width: 130px;
 }
-.bjy-w140 {
+.b-w-140 {
   width: 140px;
 }
-.bjy-w150 {
+.b-w-150 {
   width: 150px;
 }
-.bjy-w160 {
+.b-w-160 {
   width: 160px;
 }
-.bjy-w170 {
+.b-w-170 {
   width: 170px;
 }
-.bjy-w180 {
+.b-w-180 {
   width: 180px;
 }
-.bjy-w190 {
+.b-w-190 {
   width: 190px;
 }
-.bjy-w200 {
+.b-w-200 {
   width: 200px;
 }
-.bjy-w210 {
+.b-w-210 {
   width: 210px;
 }
-.bjy-w220 {
+.b-w-220 {
   width: 220px;
 }
-.bjy-w230 {
+.b-w-230 {
   width: 230px;
 }
-.bjy-w240 {
+.b-w-240 {
   width: 240px;
 }
-.bjy-w250 {
+.b-w-250 {
   width: 250px;
 }
-.bjy-w260 {
+.b-w-260 {
   width: 260px;
 }
-.bjy-w270 {
+.b-w-270 {
   width: 270px;
 }
-.bjy-w280 {
+.b-w-280 {
   width: 280px;
 }
-.bjy-w290 {
+.b-w-290 {
   width: 290px;
 }
-.bjy-w300 {
+.b-w-300 {
   width: 300px;
 }
-.bjy-w310 {
+.b-w-310 {
   width: 310px;
 }
-.bjy-w320 {
+.b-w-320 {
   width: 320px;
 }
-.bjy-w330 {
+.b-w-330 {
   width: 330px;
 }
-.bjy-w340 {
+.b-w-340 {
   width: 340px;
 }
-.bjy-w350 {
+.b-w-350 {
   width: 350px;
 }
-.bjy-w360 {
+.b-w-360 {
   width: 360px;
 }
-.bjy-w370 {
+.b-w-370 {
   width: 370;
 }
-.bjy-w380 {
+.b-w-380 {
   width: 380px;
 }
-.bjy-w390 {
+.b-w-390 {
   width: 390px;
 }
-.bjy-w400 {
+.b-w-400 {
   width: 400px;
 }
-.bjy-w410 {
+.b-w-410 {
   width: 410;
 }
-.bjy-w420 {
+.b-w-420 {
   width: 420px;
 }
-.bjy-w430 {
+.b-w-430 {
   width: 430px;
 }
-.bjy-w440 {
+.b-w-440 {
   width: 440px;
 }
-.bjy-w450 {
+.b-w-450 {
   width: 450px;
 }
-.bjy-w460 {
+.b-w-460 {
   width: 460px;
 }
-.bjy-w470 {
+.b-w-470 {
   width: 470px;
 }
-.bjy-w480 {
+.b-w-480 {
   width: 480px;
 }
-.bjy-w490 {
+.b-w-490 {
   width: 490px;
 }
-.bjy-w500 {
+.b-w-500 {
   width: 500px;
 }
-.bjy-w550 {
+.b-w-550 {
   width: 550px;
 }
-.bjy-w600 {
+.b-w-600 {
   width: 600px;
 }
-.bjy-w650 {
+.b-w-650 {
   width: 650px;
 }
-.bjy-w700 {
+.b-w-700 {
   width: 700px;
 }
-.bjy-w750 {
+.b-w-750 {
   width: 750px;
 }
-.bjy-w800 {
+.b-w-800 {
   width: 800px;
 }
-.bjy-w850 {
+.b-w-850 {
   width: 850px;
 }
-.bjy-w900 {
+.b-w-900 {
   width: 900px;
 }
-.bjy-w950 {
+.b-w-950 {
   width: 950px;
 }
-.bjy-w1000 {
+.b-w-1000 {
   width: 1000px;
 }
-.bjy-h10 {
+.b-h-10 {
   height: 10px;
 }
-.bjy-h20 {
+.b-h-20 {
   height: 20px;
 }
-.bjy-h30 {
+.b-h-30 {
   height: 30px;
 }
-.bjy-h40 {
+.b-h-40 {
   height: 40px;
 }
-.bjy-h50 {
+.b-h-50 {
   height: 50px;
 }
-.bjy-h60 {
+.b-h-60 {
   height: 60px;
 }
-.bjy-h70 {
+.b-h-70 {
   height: 70px;
 }
-.bjy-h80 {
+.b-h-80 {
   height: 80px;
 }
-.bjy-h90 {
+.b-h-90 {
   height: 90px;
 }
-.bjy-h100 {
+.b-h-100 {
   height: 100px;
 }
-.bjy-h110 {
+.b-h-110 {
   height: 110px;
 }
-.bjy-h120 {
+.b-h-120 {
   height: 120px;
 }
-.bjy-h130 {
+.b-h-130 {
   height: 130px;
 }
-.bjy-h140 {
+.b-h-140 {
   height: 140px;
 }
-.bjy-h150 {
+.b-h-150 {
   height: 150px;
 }
-.bjy-h160 {
+.b-h-160 {
   height: 160px;
 }
-.bjy-h170 {
+.b-h-170 {
   height: 170px;
 }
-.bjy-h180 {
+.b-h-180 {
   height: 180px;
 }
-.bjy-h190 {
+.b-h-190 {
   height: 190px;
 }
-.bjy-h200 {
+.b-h-200 {
   height: 200px;
 }
-.bjy-h310 {
+.b-h-310 {
   height: 310px;
 }
-.bjy-h320 {
+.b-h-320 {
   height: 320px;
 }
-.bjy-h330 {
+.b-h-330 {
   height: 330px;
 }
-.bjy-h340 {
+.b-h-340 {
   height: 340px;
 }
-.bjy-h350 {
+.b-h-350 {
   height: 350;
 }
-.bjy-h360 {
+.b-h-360 {
   height: 360px;
 }
-.bjy-h370 {
+.b-h-370 {
   height: 370px;
 }
-.bjy-h380 {
+.b-h-380 {
   height: 380px;
 }
-.bjy-h390 {
+.b-h-390 {
   height: 390px;
 }
-.bjy-h400 {
+.b-h-400 {
   height: 400px;
 }
-.bjy-h410 {
+.b-h-410 {
   height: 410px;
 }
-.bjy-h420 {
+.b-h-420 {
   height: 420px;
 }
-.bjy-h430 {
+.b-h-430 {
   height: 430px;
 }
-.bjy-h440 {
+.b-h-440 {
   height: 140px;
 }
-.bjy-h450 {
+.b-h-450 {
   height: 450px;
 }
-.bjy-h460 {
+.b-h-460 {
   height: 460px;
 }
-.bjy-h470 {
+.b-h-470 {
   height: 470px;
 }
-.bjy-h480 {
+.b-h-480 {
   height: 480px;
 }
-.bjy-h490 {
+.b-h-490 {
   height: 490px;
 }
-.bjy-h500 {
+.b-h-500 {
   height: 500px;
 }
-.bjy-h550 {
+.b-h-550 {
   height: 550px;
 }
-.bjy-h600 {
+.b-h-600 {
   height: 600px;
 }
-.bjy-h650 {
+.b-h-650 {
   height: 650px;
 }
-.bjy-h700 {
+.b-h-700 {
   height: 700px;
 }
-.bjy-h750 {
+.b-h-750 {
   height: 750px;
 }
-.bjy-h800 {
+.b-h-800 {
   height: 800px;
 }
-.bjy-h850 {
+.b-h-850 {
   height: 850px;
 }
-.bjy-h900 {
+.b-h-900 {
   height: 900px;
 }
-.bjy-h950 {
+.b-h-950 {
   height: 950px;
 }
-.bjy-h1000 {
+.b-h-1000 {
   height: 1000px;
 }
