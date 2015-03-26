@@ -25,11 +25,21 @@ body {
   float: left;
 }
 #nav .b-inside .category .cname {
-  padding: 0 15px;
+  margin-right: 1px;
   height: 45px;
   line-height: 45px;
   float: left;
+}
+#nav .b-inside .category .cname a {
+  padding: 0 15px;
+  display: block;
+  height: 45px;
   color: #fff;
+  position: relative;
+}
+#nav .b-inside .category .cname a:hover {
+  text-decoration: none;
+  background: #008CBA;
 }
 #nav .b-inside .category .action {
   background: #008CBA;
@@ -137,22 +147,26 @@ body {
   overflow: hidden;
 }
 #content .b-inside .right .tags .title {
-  width: 340px;
+  width: 300px;
   height: 40px;
   line-height: 40px;
 }
 #content .b-inside .right .tags .tags-ul {
-  width: 340px;
+  width: 300px;
 }
 #content .b-inside .right .tags .tags-ul .tname {
   margin-top: 5px;
   margin-right: 5px;
+  float: left;
+}
+#content .b-inside .right .tags .tags-ul .tname a {
+  display: block;
   padding: 0 10px;
   height: 20px;
   line-height: 20px;
-  color: #fff;
   border-radius: 10px;
-  float: left;
+  font-family: SimSun;
+  color: #fff;
 }
 #content .b-inside .right .tags .tags-ul .tstyle-1 {
   background: #43AC6A;

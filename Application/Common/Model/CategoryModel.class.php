@@ -51,7 +51,7 @@ class CategoryModel extends Model{
 	//不传递获取全部数据 
 	public function getAllData($field='all',$tree=true){
 		if($field=='all'){
-			$data=$this->select();
+			$data=$this->order('sort')->select();
 			if($tree){
 				return \Org\Bjy\Data::tree($data,'cname');
 			}else{

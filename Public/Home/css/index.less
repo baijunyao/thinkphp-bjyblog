@@ -22,11 +22,21 @@ body{
 			height: 45px;
 			float: left;
 			.cname{
-				padding: 0 15px;
+				margin-right: 1px;
 				height: 45px;
 				line-height: 45px;
 				float: left;
-				color: #fff;
+				a{
+					padding: 0 15px;
+					display: block;
+					height: 45px;
+					color: #fff;
+					position: relative;
+					&:hover{
+						text-decoration: none;
+						background: #008CBA;
+					}
+				}
 			}
 			.action{
 				background: #008CBA;
@@ -135,21 +145,27 @@ body{
 				box-shadow: 0px 1px 2px 0px #E2E2E2;
 				overflow: hidden;
 				.title{
-					width: 340px;
+					width: 300px;
 					height: 40px;
 					line-height: 40px;
 				}
 				.tags-ul{
-					width: 340px;
+					width: 300px;
 					.tname{
 						margin-top: 5px;
 						margin-right: 5px;
-						padding: 0 10px;
-						height: 20px;
-						line-height: 20px;
-						color: #fff;
-						border-radius: 10px;
 						float: left;
+						a{
+							display: block;
+							
+							
+							padding: 0 10px;
+							height: 20px;
+							line-height: 20px;
+							border-radius: 10px;
+							font-family: SimSun;
+							color: #fff;
+						}
 					}
 					.tstyle-1{
 						background: #43AC6A;
