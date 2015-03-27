@@ -63,7 +63,7 @@ class CategoryModel extends Model{
 		}
 	}
 
-	//传递cid获取对应的数据
+	//传递cid和field获取对应的数据 
 	public function getDataByCid($cid,$field='all'){
 		if($field=='all'){
 			return $this->where("cid=$cid")->find();

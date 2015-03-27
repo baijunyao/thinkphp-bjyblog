@@ -37,7 +37,7 @@ $(document).ready(function(){
 			<li class="cname action">
 				<a href="">首页</a>
 			</li>
-			<?php if(is_array($category)): foreach($category as $key=>$v): ?><li class="cname">
+			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname">
 					<a href=""><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
@@ -52,74 +52,29 @@ $(document).ready(function(){
 		<!-- 左侧列表开始 -->
 		<div class="left">
 			<div class="list">
-				<div class="detail">
-					<h3 class="title">解析当下流行的网站侧边栏导航</h3>
-					<ul class="metadata">
-						<li class="date">发布时间：Saturday, March 14, 2015 3:22:16 PM</li>
-						<li class="category">分类：<a href="">Web</a></li>
-						<li class="tags">标签：<a href="">web趋势</a>, <a href="">设计技巧</a></li>
-					</ul>
-					<div class="article">
-						<div class="pic">
-							<img src="http://www.58img.com/Media/Default/web/20150314150912.jpg" alt="">
-						</div>
-						<div class="word">
-							<p class="description">
-								电子商务网站商品详情页设计分析
-		商品详情页是电子商务网站中最容易与用户产生交集共鸣的页面，详情页的设计极有可能会对用户的购买行为产生直接的影响。因此，商品详情页面的设计会涉及到运营层面，在美观实用的基础上，将要表达的信息尽可能用直观的视角展现出来，再有意识的避免设计与运营之间的冲突。 1.商品展示图不宜过大，鼠标悬停展示细节 商品详情页中的图片展示是用户进入该页面后的第一个视觉点，有设计师可能会因此认为这张图片的尺寸应该尽
-							</p>
-							<div class="readall">
-								<a class="readall-a"  href="">阅读全文</a>
+				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
+						<h3 class="title"><?php echo ($v['title']); ?></h3>
+						<ul class="metadata">
+							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
+							<li class="category">分类：<a href=""><?php echo ($v['cid']['cname']); ?></a>
+							<?php if(!empty($v['tids'])): ?><li class="tags">标签：
+									<?php if(is_array($v['tids'])): foreach($v['tids'] as $key=>$n): ?><a href=""><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
+								</li><?php endif; ?>
+						</ul>
+						<div class="article">
+							<div class="pic">
+								<img src="<?php echo ($v['pic_path']); ?>" alt="">
+							</div>
+							<div class="word">
+								<p class="description">
+									<?php echo ($v['description']); ?>
+								</p>
+								<div class="readall">
+									<a class="readall-a"  href="">阅读全文</a>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<!-- 复制部分开始 -->
-				<div class="detail">
-					<h3 class="title">解析当下流行的网站侧边栏导航</h3>
-					<ul class="metadata">
-						<li class="date">发布时间：Saturday, March 14, 2015 3:22:16 PM</li>
-						<li class="category">分类：<a href="">Web</a></li>
-						<li class="tags">标签：<a href="">web趋势</a>, <a href="">设计技巧</a></li>
-					</ul>
-					<div class="article">
-						<div class="pic">
-							<img src="http://www.58img.com/Media/Default/web/20150314150912.jpg" alt="">
-						</div>
-						<div class="word">
-							<p class="description">
-								电子商务网站商品详情页设计分析
-		商品详情页是电子商务网站中最容易与用户产生交集共鸣的页面，详情页的设计极有可能会对用户的购买行为产生直接的影响。因此，商品详情页面的设计会涉及到运营层面，在美观实用的基础上，将要表达的信息尽可能用直观的视角展现出来，再有意识的避免设计与运营之间的冲突。 1.商品展示图不宜过大，鼠标悬停展示细节 商品详情页中的图片展示是用户进入该页面后的第一个视觉点，有设计师可能会因此认为这张图片的尺寸应该尽
-							</p>
-							<div class="readall">
-								<a class="readall-a"  href="">阅读全文</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="detail">
-					<h3 class="title">解析当下流行的网站侧边栏导航</h3>
-					<ul class="metadata">
-						<li class="date">发布时间：Saturday, March 14, 2015 3:22:16 PM</li>
-						<li class="category">分类：<a href="">Web</a></li>
-						<li class="tags">标签：<a href="">web趋势</a>, <a href="">设计技巧</a></li>
-					</ul>
-					<div class="article">
-						<div class="pic">
-							<img src="http://www.58img.com/Media/Default/web/20150314150912.jpg" alt="">
-						</div>
-						<div class="word">
-							<p class="description">
-								电子商务网站商品详情页设计分析
-		商品详情页是电子商务网站中最容易与用户产生交集共鸣的页面，详情页的设计极有可能会对用户的购买行为产生直接的影响。因此，商品详情页面的设计会涉及到运营层面，在美观实用的基础上，将要表达的信息尽可能用直观的视角展现出来，再有意识的避免设计与运营之间的冲突。 1.商品展示图不宜过大，鼠标悬停展示细节 商品详情页中的图片展示是用户进入该页面后的第一个视觉点，有设计师可能会因此认为这张图片的尺寸应该尽
-							</p>
-							<div class="readall">
-								<a class="readall-a"  href="">阅读全文</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 复制部分结束 -->
+					</div><?php endforeach; endif; ?>
 			</div>
 		</div>
 		<!-- 左侧列表结束 -->

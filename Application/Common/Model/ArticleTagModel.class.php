@@ -26,12 +26,15 @@ class ArticleTagModel extends Model{
 		return true;
 	}
 
-
-	// 传递aid获取tid数组
-	public function getDataByAid($aid){
-		return $this->where("aid=$aid")->getField('tid',true);
+	// 传递aid和true时获取tid数组；传递aid和tname获得键名为aid键值为tname的数组
+	public function getDataByAid($aid,$field='true'){
+		if($field=='tname'){
+			return M('ArticleTag')->field('aid,tname')->join('__TAG__ ON __ARTICLE_TAG__.tid=__TAG__.tid')->where("aid=$aid")->select();
+		}else{
+			return $this->where("aid=$aid")->getField('tid',true);
+		}
+		
 	}
-
 
 
 }

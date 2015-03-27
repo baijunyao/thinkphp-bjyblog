@@ -3,11 +3,15 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-    	$category=D('Category')->getAllData();
+    	$categorys=D('Category')->getAllData();
     	$tags=D('Tag')->getAllData();
-    	$this->assign('category',$category);
+    	$articles=D('Article')->getIndexPageData();
+
+    	$this->assign('categorys',$categorys);
     	$this->assign('tags',$tags);
-    	// p($category);die;
+    	$this->assign('articles',$articles['data']);
+    	$this->assign('page',$articles['page']);
+    	// p($articles);die;
         $this->display();
     }
 }
