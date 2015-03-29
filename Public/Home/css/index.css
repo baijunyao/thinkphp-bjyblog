@@ -20,6 +20,13 @@ body {
   color: #fff;
   float: left;
 }
+#nav .b-inside .logo a {
+  font-size: 30px;
+  font-weight: 800;
+}
+#nav .b-inside .logo a:hover {
+  text-decoration: none;
+}
 #nav .b-inside .category {
   height: 45px;
   float: left;
@@ -55,6 +62,13 @@ body {
   /* 左侧列表结束 */
   /* 右侧内容开始 */
   /* 右侧内容结束 */
+}
+#content .b-inside .tag-title {
+  padding-left: 15px;
+  width: 840px;
+  height: 80px;
+  line-height: 80px;
+  background: #fff;
 }
 #content .b-inside .left {
   margin-right: 20px;
@@ -171,13 +185,28 @@ body {
   font-family: SimSun;
   color: #fff;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-1 {
+#content .b-inside .right .tags .tags-ul .tstyle-0 {
   background: #43AC6A;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-2 {
+#content .b-inside .right .tags .tags-ul .tstyle-1 {
   background: #F08A24;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-3 {
+#content .b-inside .right .tags .tags-ul .tstyle-2 {
   background: #F04124;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-3 {
+  background: #008CBA;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-4 {
+  background: #F08A24;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-5 {
+  background: #43AC6A;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-6 {
+  background: #F04124;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-7 {
+  background: #008CBA;
 }
 /* 主体部分结束 */

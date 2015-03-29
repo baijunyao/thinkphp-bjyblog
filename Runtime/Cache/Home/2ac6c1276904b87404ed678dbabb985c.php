@@ -32,13 +32,13 @@ $(document).ready(function(){
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo">帅白个人博客</div>
+		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
 		<ul class="category">
 			<li class="cname">
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
-					<a href="<?php echo U('Home/Article/index',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
+					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
 
@@ -76,6 +76,7 @@ $(document).ready(function(){
 						</div>
 					</div><?php endforeach; endif; ?>
 			</div>
+			　
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -85,7 +86,7 @@ $(document).ready(function(){
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
 					<?php if(is_array($tags)): foreach($tags as $k=>$v): ?><li class="tname">
-							<a class="tstyle-1" href=""><?php echo ($v['tname']); ?></a>
+							<a class="tstyle-<?php echo ($k); ?>" href=""><?php echo ($v['tname']); ?></a>
 						</li><?php endforeach; endif; ?>
 				</ul>
 			</div>

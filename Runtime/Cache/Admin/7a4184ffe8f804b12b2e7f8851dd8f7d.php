@@ -51,10 +51,12 @@ table {
 	</thead>
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
 			<td><?php echo ($v['aid']); ?></td>
-			<td><?php echo ($v['cname']); ?></td>
+			<td><?php echo ($v['category']['cname']); ?></td>
 			<td><?php echo ($v['title']); ?></td>
 			<td><?php echo ($v['author']); ?></td>
-			<td><?php echo ($v['tnames']); ?></td>
+			<td>
+				<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): echo ($n['tname']); ?>&nbsp;<?php endforeach; endif; ?>
+			</td>
 			<td><?php echo ($v['is_show']); ?></td>
 			<td><?php echo ($v['is_top']); ?></td>
 			<td><?php echo ($v['click']); ?></td>

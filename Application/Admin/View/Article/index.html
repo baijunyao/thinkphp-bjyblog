@@ -30,10 +30,14 @@ table {
 	<foreach name="data" item="v">
 		<tr>
 			<td>{$v['aid']}</td>
-			<td>{$v['cname']}</td>
+			<td>{$v['category']['cname']}</td>
 			<td>{$v['title']}</td>
 			<td>{$v['author']}</td>
-			<td>{$v['tnames']}</td>
+			<td>
+				<foreach name="v['tag']" item="n">
+					{$n['tname']}&nbsp;
+				</foreach>
+			</td>
 			<td>{$v['is_show']}</td>
 			<td>{$v['is_top']}</td>
 			<td>{$v['click']}</td>

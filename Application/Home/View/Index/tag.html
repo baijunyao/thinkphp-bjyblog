@@ -12,7 +12,7 @@
 	<div class="b-inside">
 		<div class="logo"><a href="{:U('Home/Index/index')}">帅白个人博客</a></div>
 		<ul class="category">
-			<li class="cname action">
+			<li class="cname">
 				<a href="{:U('Home/Index/index')}">首页</a>
 			</li>
 			<foreach name="categorys" item="v">
@@ -31,6 +31,7 @@
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
+			<h2 class="tag-title">Contents tagged with {$tname}</h2>
 			<div class="list">
 				<foreach name="articles" item="v">
 					<div class="detail">
@@ -39,12 +40,12 @@
 							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
 							<li class="category">分类：<a href="">{$v['category']['cname']}</a>
 							<if condition="!empty($v['tag'])">
-								<li class="tags ">标签：
+								<li class="tags">标签：
 									<foreach name="v['tag']" item="n">
 										<a href="{:U('Home/Index/tag',array('tid'=>$n['tid']))}">{$n['tname']}</a>
 									</foreach>
-								</li>
-							</if>							
+								</li>								
+							</if>
 						</ul>
 						<div class="article">
 							<div class="pic">
@@ -62,6 +63,7 @@
 					</div>
 				</foreach>
 			</div>
+			　
 		</div>
 		<!-- 左侧列表结束 -->
 

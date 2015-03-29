@@ -10,14 +10,14 @@
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo">帅白个人博客</div>
+		<div class="logo"><a href="{:U('Home/Index/index')}">帅白个人博客</a></div>
 		<ul class="category">
 			<li class="cname">
 				<a href="{:U('Home/Index/index')}">首页</a>
 			</li>
 			<foreach name="categorys" item="v">
 				<li class="cname <if condition="$Think.get.cid eq $v['cid']">action</if>">
-					<a href="{:U('Home/Article/index',array('cid'=>$v['cid']))}">{$v['cname']}</a>
+					<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
 				</li>
 			</foreach>
 		</ul>
@@ -37,11 +37,11 @@
 						<h3 class="title">{$v['title']}</h3>
 						<ul class="metadata">
 							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
-							<li class="category">分类：<a href="">{$v['cid']['cname']}</a>
+							<li class="category">分类：<a href="">{$v['category']['cname']}</a>
 							<if condition="!empty($v['tids'])">
 								<li class="tags">标签：
-									<foreach name="v['tids']" item="n">
-										<a href="">{$n['tname']}</a>
+									<foreach name="v['tag']" item="n">
+										<a href="{:U('Home/Index/tag',array('tid'=>$n['tid']))}">{$n['tname']}</a>
 									</foreach>
 								</li>								
 							</if>
@@ -62,6 +62,7 @@
 					</div>
 				</foreach>
 			</div>
+			　
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -72,7 +73,7 @@
 				<ul class="tags-ul">
 					<foreach name="tags" key="k" item="v">
 						<li class="tname">
-							<a class="tstyle-1" href="">{$v['tname']}</a>
+							<a class="tstyle-{$k}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
 						</li>
 					</foreach>
 				</ul>

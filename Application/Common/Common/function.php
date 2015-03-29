@@ -5,7 +5,7 @@ header("Content-type:text/html;charset=utf-8");
 
 //传递数据以易于阅读的样式格式化后输出
 function p($data){
-	echo "<pre>".print_r($data,true)."</pre>";
+	echo "<hr /><pre>".print_r($data,true)."</pre><hr />";
 }
 
 /**

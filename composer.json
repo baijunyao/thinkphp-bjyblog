@@ -1,14 +1,14 @@
 {
-    "name": "topthink/thinkphp",
-    "description": "the ThinkPHP Framework",
-    "type": "framework",
-    "keywords": ["framework","thinkphp","ORM"],
-    "homepage": "http://thinkphp.cn/",
+    "name": "thinkbjy",
+    "description": "the thinkbjy blog",
+    "type": "blog",
+    "keywords": ["thinkbjy","thinkphp","blog"],
+    "homepage": "http://baijunyao.com",
     "license": "Apache2",
     "authors": [
         {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
+            "name": "baijunyao",
+            "email": "b593026987@qq.com"
         }
     ],
     "require": {

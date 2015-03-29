@@ -34,7 +34,7 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
 		<ul class="category">
-			<li class="cname action">
+			<li class="cname">
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
@@ -57,9 +57,9 @@ $(document).ready(function(){
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 							<li class="category">分类：<a href=""><?php echo ($v['category']['cname']); ?></a>
-							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
+							<?php if(!empty($v['tids'])): ?><li class="tags">标签：
 									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-								</li><?php endif; ?>							
+								</li><?php endif; ?>
 						</ul>
 						<div class="article">
 							<div class="pic">
@@ -76,6 +76,7 @@ $(document).ready(function(){
 						</div>
 					</div><?php endforeach; endif; ?>
 			</div>
+			　
 		</div>
 		<!-- 左侧列表结束 -->
 

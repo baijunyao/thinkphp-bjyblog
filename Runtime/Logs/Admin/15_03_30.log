@@ -1,0 +1,25 @@
+[ 2015-03-30T00:02:59+08:00 ] ::1 /index.php/Admin/Article/edit/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+
+[ 2015-03-30T00:05:31+08:00 ] ::1 /index.php/Admin/Article/edit/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000105s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001136s ]
+
+[ 2015-03-30T00:05:33+08:00 ] ::1 /index.php/Admin/Article/edit/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+
+[ 2015-03-30T00:05:41+08:00 ] ::1 /index.php/Admin/Article/edit/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+
+[ 2015-03-30T00:05:50+08:00 ] ::1 /index.php/Admin/Article/edit/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+

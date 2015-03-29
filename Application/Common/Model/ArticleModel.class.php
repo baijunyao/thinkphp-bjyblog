@@ -109,65 +109,39 @@ class ArticleModel extends Model{
 		}
 	}
 
-	// 获得全部数据
-	public function getAllData(){
-		$data=$this->where('is_delete=0')->order('addtime')->select();
-		foreach ($data as $k => $v) {
-			$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
-			if(empty($tids)){
-				$data[$k]['tnames']='';
-			}else{
-				$tnames=D('Tag')->getTnames($tids);
-				$data[$k]['tnames']=implode('、', $tnames);
-			}
-			$data[$k]['cname']=D('Category')->getDataByCid($v['cid'],'cname');
-		}
-		return $data;
-	}
-
 	/**
-	 * 获得分页数据
+	 * 获得文章分页数据
 	 * @param strind $cid 分类id 'all'为全部分类
-	 * @param strind $application 模块名
+	 * @param strind $tid 标签id 'all'为全部标签
 	 * @param strind $is_delete 状态 1为删除 0为正常
 	 * @param strind $limit 分页条数
-	 * @return array $data 分页 和 分页数据
+	 * @return array $data 分页样式 和 分页数据
 	 */
-	public function getPageData($cid='all',$application='index',$is_delete=0,$limit=15){
-		if($cid=='all'){
-			$count=$this->where(array('is_delete'=>$is_delete))->count();
-		}else{
-			$count=$this->where(array('is_delete'=>$is_delete,'cid'=>$cid))->count();
+	public function getPageData($cid='all',$tid='all',$is_delete=0,$limit=15){
+		if($cid=='all' && $tid=='all'){
+			$where=array(
+				'is_delete'=>0,
+				);
+			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+			$count=count($list);
+		}elseif ($cid=='all' && $tid!='all') {
+			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where(array('at.tid'=>$tid,'a.is_delete'=>$is_delete))->select();
+			$count=count($list);
+		}elseif ($cid!='all' && $tid=='all') {
+			$where=array(
+				'cid'=>$cid,
+				'is_delete'=>0,
+				);
+			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+			$count=count($list);
 		}
-		
 		$page=new \Think\Page($count,$limit);
 		$show=$page->show();
-		
-		if($cid=='all'){
-			$list=$this->where(array('is_delete'=>$is_delete))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
-		}else{
-			$list=$this->where(array('is_delete'=>$is_delete,'cid'=>$cid))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+		foreach ($list as $k => $v) {
+			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'tname');
+			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
+			$list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
 		}
-		
-		if($application=='index'){
-			foreach ($list as $k => $v) {
-				$list[$k]['tids']=D('ArticleTag')->getDataByAid($v['aid'],'tname');
-				$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
-				$list[$k]['cid']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
-			}
-		}else{
-			foreach ($list as $k => $v) {
-				$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
-				if(empty($tids)){
-					$list[$k]['tnames']='';
-				}else{
-					$tnames=D('Tag')->getTnames($tids);
-					$list[$k]['tnames']=implode('、', $tnames);
-				}
-				$list[$k]['cname']=D('Category')->getDataByCid($v['cid'],'cname');
-			}
-		}
-		
 		$data=array(
 			'page'=>$show,
 			'data'=>$list,

@@ -52,9 +52,12 @@ Class TagModel extends Model{
 	}
 
 	// 根据tid获取单条数据
-	public function getDataByTid($tid=null){
-		$tid=is_null($tid) ? I('get.tid',0,'intval') : $tid;
-		return $this->where("tid=$tid")->find();
+	public function getDataByTid($tid,$field='all'){
+		if($field=='all'){
+			return $this->where("tid=$tid")->find();
+		}else{
+			return $this->getFieldByTid($tid,'tname');
+		}
 	}
 
 	/**

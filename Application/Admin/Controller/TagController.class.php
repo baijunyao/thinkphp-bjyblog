@@ -44,7 +44,8 @@ class TagController extends AdminBaseController{
 				$this->error($this->db->getError());
 			}			
 		}else{
-			$data=$this->db->getDataByTid();
+			$tid=I('get.tid',0,'intval');
+			$data=$this->db->getDataByTid($tid);
 			// p($data);
 			$this->assign('data',$data);
 			$this->display();

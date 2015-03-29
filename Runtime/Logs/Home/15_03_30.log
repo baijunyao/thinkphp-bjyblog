@@ -1,0 +1,210 @@
+[ 2015-03-30T00:01:10+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+
+[ 2015-03-30T00:01:15+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000664s ]
+
+[ 2015-03-30T00:01:43+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+
+[ 2015-03-30T00:03:08+08:00 ] ::1 /index.php/Home/Index/tag/tid/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+
+[ 2015-03-30T00:06:16+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001068s ]
+
+[ 2015-03-30T00:07:25+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001150s ]
+
+[ 2015-03-30T00:07:50+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+
+[ 2015-03-30T00:08:59+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001122s ]
+
+[ 2015-03-30T00:10:34+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+
+[ 2015-03-30T00:14:06+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000108s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001443s ]
+
+[ 2015-03-30T00:14:16+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+
+[ 2015-03-30T00:14:32+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001109s ]
+
+[ 2015-03-30T00:16:01+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000849s ]
+
+[ 2015-03-30T00:17:49+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+
+[ 2015-03-30T00:17:53+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+
+[ 2015-03-30T00:17:55+08:00 ] ::1 /index.php/Home/Index/tag/tid/16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+
+[ 2015-03-30T00:17:58+08:00 ] ::1 /index.php/Home/Index/tag/tid/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+
+[ 2015-03-30T00:18:00+08:00 ] ::1 /index.php/Home/Index/tag/tid/12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+
+[ 2015-03-30T00:18:02+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+
+[ 2015-03-30T00:18:03+08:00 ] ::1 /index.php/Home/Index/tag/tid/16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001257s ]
+
+[ 2015-03-30T00:27:44+08:00 ] ::1 /index.php/Home/Index/tag/tid/16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+
+[ 2015-03-30T00:27:50+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+
+[ 2015-03-30T00:28:06+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+
+[ 2015-03-30T00:28:35+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+
+[ 2015-03-30T00:28:47+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+
+[ 2015-03-30T00:29:51+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+
+[ 2015-03-30T00:30:29+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+
+[ 2015-03-30T00:30:32+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+
+[ 2015-03-30T00:30:53+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+
+[ 2015-03-30T00:31:12+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+
+[ 2015-03-30T00:31:23+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+
+[ 2015-03-30T00:32:37+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000660s ]
+
+[ 2015-03-30T00:32:52+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001543s ]
+
+[ 2015-03-30T00:33:19+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+
+[ 2015-03-30T00:33:50+08:00 ] ::1 /index.php/Home/Index/tag/tid/14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+
+[ 2015-03-30T00:33:52+08:00 ] ::1 /index.php/Home/Index/tag/tid/13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000181s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001596s ]
+
+[ 2015-03-30T00:33:53+08:00 ] ::1 /index.php/Home/Index/tag/tid/12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+
+[ 2015-03-30T00:33:54+08:00 ] ::1 /index.php/Home/Index/tag/tid/11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+
+[ 2015-03-30T00:33:56+08:00 ] ::1 /index.php/Home/Index/tag/tid/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+
+[ 2015-03-30T00:33:57+08:00 ] ::1 /index.php/Home/Index/tag/tid/16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+
+[ 2015-03-30T00:33:58+08:00 ] ::1 /index.php/Home/Index/tag/tid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001339s ]
+
+[ 2015-03-30T00:33:59+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+
