@@ -5,7 +5,7 @@ class IndexController extends Controller {
     public function index(){
     	$categorys=D('Category')->getAllData();
     	$tags=D('Tag')->getAllData();
-    	$articles=D('Article')->getIndexPageData();
+    	$articles=D('Article')->getPageData();
 
     	$this->assign('categorys',$categorys);
     	$this->assign('tags',$tags);

@@ -125,42 +125,49 @@ class ArticleModel extends Model{
 		return $data;
 	}
 
-	// 获得分页数据 供后台文章列表使用
-	public function getAdminPageData($status=0,$limit=15){
-		$count=$this->where(array('is_delete'=>$status))->count();
+	/**
+	 * 获得分页数据
+	 * @param strind $cid 分类id 'all'为全部分类
+	 * @param strind $application 模块名
+	 * @param strind $is_delete 状态 1为删除 0为正常
+	 * @param strind $limit 分页条数
+	 * @return array $data 分页 和 分页数据
+	 */
+	public function getPageData($cid='all',$application='index',$is_delete=0,$limit=15){
+		if($cid=='all'){
+			$count=$this->where(array('is_delete'=>$is_delete))->count();
+		}else{
+			$count=$this->where(array('is_delete'=>$is_delete,'cid'=>$cid))->count();
+		}
+		
 		$page=new \Think\Page($count,$limit);
 		$show=$page->show();
-		$list=$this->where(array('is_delete'=>$status))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
-		// p($list);die;
-		foreach ($list as $k => $v) {
-			$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
-			if(empty($tids)){
-				$list[$k]['tnames']='';
-			}else{
-				$tnames=D('Tag')->getTnames($tids);
-				$list[$k]['tnames']=implode('、', $tnames);
+		
+		if($cid=='all'){
+			$list=$this->where(array('is_delete'=>$is_delete))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+		}else{
+			$list=$this->where(array('is_delete'=>$is_delete,'cid'=>$cid))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+		}
+		
+		if($application=='index'){
+			foreach ($list as $k => $v) {
+				$list[$k]['tids']=D('ArticleTag')->getDataByAid($v['aid'],'tname');
+				$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
+				$list[$k]['cid']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
 			}
-			$list[$k]['cname']=D('Category')->getDataByCid($v['cid'],'cname');
+		}else{
+			foreach ($list as $k => $v) {
+				$tids=M('article_tag')->where(array('aid'=>$v['aid']))->getField('tid',true);
+				if(empty($tids)){
+					$list[$k]['tnames']='';
+				}else{
+					$tnames=D('Tag')->getTnames($tids);
+					$list[$k]['tnames']=implode('、', $tnames);
+				}
+				$list[$k]['cname']=D('Category')->getDataByCid($v['cid'],'cname');
+			}
 		}
-		$data=array(
-			'page'=>$show,
-			'data'=>$list,
-			);
-		return $data;
-	}
-
-	// 获得分页数据 供前台首页调用
-	public function getIndexPageData($status=0,$limit=15){
-		$count=$this->where(array('is_delete'=>$status))->count();
-		$page=new \Think\Page($count,$limit);
-		$show=$page->show();
-		$list=$this->where(array('is_delete'=>$status))->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
-		// p($list);die;
-		foreach ($list as $k => $v) {
-			$list[$k]['tids']=D('ArticleTag')->getDataByAid($v['aid'],'tname');
-			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
-			$list[$k]['cid']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
-		}
+		
 		$data=array(
 			'page'=>$show,
 			'data'=>$list,

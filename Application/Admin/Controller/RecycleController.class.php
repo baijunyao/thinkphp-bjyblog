@@ -17,7 +17,7 @@ class RecycleController extends AdminBaseController{
 
 	// 已删文章
 	public function article(){
-		$data=D('Article')->getAdminPageData(1);
+		$data=D('Article')->getPageData('all','admin',1);
 		$this->assign('data',$data['data']);
 		$this->assign('page',$data['page']);
 		// p($data);die;
