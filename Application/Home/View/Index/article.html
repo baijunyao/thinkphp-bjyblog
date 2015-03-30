@@ -12,7 +12,7 @@
 	<div class="b-inside">
 		<div class="logo"><a href="{:U('Home/Index/index')}">帅白个人博客</a></div>
 		<ul class="category">
-			<li class="cname">
+			<li class="cname action">
 				<a href="{:U('Home/Index/index')}">首页</a>
 			</li>
 			<foreach name="categorys" item="v">
@@ -31,39 +31,21 @@
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<h2 class="tag-title">Contents tagged with {$tname}</h2>
-			<div class="list">
-				<foreach name="articles" item="v">
-					<div class="detail">
-						<h3 class="title"><a href="">{$v['title']}</a></h3>
-						<ul class="metadata">
-							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
-							<li class="category">分类：<a href="">{$v['category']['cname']}</a>
-							<if condition="!empty($v['tag'])">
-								<li class="tags">标签：
-									<foreach name="v['tag']" item="n">
-										<a href="{:U('Home/Index/tag',array('tid'=>$n['tid']))}">{$n['tname']}</a>
-									</foreach>
-								</li>								
-							</if>
-						</ul>
-						<div class="article">
-							<div class="pic">
-								<img src="{$v['pic_path']}" alt="">
-							</div>
-							<div class="word">
-								<p class="description">
-									{$v['description']}
-								</p>
-								<div class="readall">
-									<a class="readall-a"  href="">阅读全文</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</foreach>
+			<div class="article">
+				<h1 class="title">详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景</h1>
+				<ul class="metadata">
+					<li class="date">发布时间：{$article['addtime']|date='Y-m-d H:i:s',###}</li>
+					<li class="category">分类：<a href="">{$article['category']['cname']}</a>
+					<if condition="!empty($article['tag'])">
+						<li class="tags ">标签：
+							<foreach name="article['tag']" item="v">
+								<a href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
+							</foreach>
+						</li>
+					</if>							
+				</ul>
+
 			</div>
-			　
 		</div>
 		<!-- 左侧列表结束 -->
 

@@ -34,7 +34,7 @@
 			<div class="list">
 				<foreach name="articles" item="v">
 					<div class="detail">
-						<h3 class="title">{$v['title']}</h3>
+						<h3 class="title"><a href="">{$v['title']}</a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
 							<li class="category">分类：<a href="">{$v['category']['cname']}</a>

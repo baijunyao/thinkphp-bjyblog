@@ -53,7 +53,7 @@ $(document).ready(function(){
 		<div class="left">
 			<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-						<h3 class="title"><?php echo ($v['title']); ?></h3>
+						<h3 class="title"><a href=""><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 							<li class="category">分类：<a href=""><?php echo ($v['category']['cname']); ?></a>

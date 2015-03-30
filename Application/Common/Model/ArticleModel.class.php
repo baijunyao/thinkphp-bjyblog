@@ -153,6 +153,8 @@ class ArticleModel extends Model{
 	public function getDataByAid($aid){
 		$data=$this->where("aid=$aid")->find();
 		$data['tids']=D('ArticleTag')->getDataByAid($aid);
+		$data['tag']=D('ArticleTag')->getDataByAid($data['aid'],'tname');
+		$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname'));
 		$data['content']=htmlspecialchars_decode($data['content']);
 		return $data;
 	}

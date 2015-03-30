@@ -34,7 +34,7 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
 		<ul class="category">
-			<li class="cname">
+			<li class="cname action">
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
@@ -51,33 +51,17 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<h2 class="tag-title">Contents tagged with <?php echo ($tname); ?></h2>
-			<div class="list">
-				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-						<h3 class="title"><?php echo ($v['title']); ?></h3>
-						<ul class="metadata">
-							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-							<li class="category">分类：<a href=""><?php echo ($v['category']['cname']); ?></a>
-							<?php if(!empty($v['tag'])): ?><li class="tags">标签：
-									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-								</li><?php endif; ?>
-						</ul>
-						<div class="article">
-							<div class="pic">
-								<img src="<?php echo ($v['pic_path']); ?>" alt="">
-							</div>
-							<div class="word">
-								<p class="description">
-									<?php echo ($v['description']); ?>
-								</p>
-								<div class="readall">
-									<a class="readall-a"  href="">阅读全文</a>
-								</div>
-							</div>
-						</div>
-					</div><?php endforeach; endif; ?>
+			<div class="article">
+				<h1 class="title">详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景</h1>
+				<ul class="metadata">
+					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['addtime'])); ?></li>
+					<li class="category">分类：<a href=""><?php echo ($article['category']['cname']); ?></a>
+					<?php if(!empty($article['tag'])): ?><li class="tags ">标签：
+							<?php if(is_array($article['tag'])): foreach($article['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
+						</li><?php endif; ?>							
+				</ul>
+
 			</div>
-			　
 		</div>
 		<!-- 左侧列表结束 -->
 

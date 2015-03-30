@@ -208,3 +208,148 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
 
+[ 2015-03-30T22:54:24+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+
+[ 2015-03-30T22:55:58+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+
+[ 2015-03-30T22:56:05+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+
+[ 2015-03-30T23:12:46+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000824s ]
+
+[ 2015-03-30T23:12:48+08:00 ] ::1 /index.php/Home/Index/category/cid/24
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+
+[ 2015-03-30T23:12:49+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+
+[ 2015-03-30T23:34:03+08:00 ] ::1 /index.php/Home/Index/article
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+
+[ 2015-03-30T23:34:30+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+
+[ 2015-03-30T23:35:41+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+
+[ 2015-03-30T23:48:31+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+
+[ 2015-03-30T23:49:21+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+
+[ 2015-03-30T23:49:45+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+
+[ 2015-03-30T23:50:21+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+
+[ 2015-03-30T23:51:26+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+
+[ 2015-03-30T23:53:29+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000109s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001791s ]
+
+[ 2015-03-30T23:53:55+08:00 ] ::1 /index.php/Home/Index/category/cid/24
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+
+[ 2015-03-30T23:54:09+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+
+[ 2015-03-30T23:54:53+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+
+[ 2015-03-30T23:55:52+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+
+[ 2015-03-30T23:56:22+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+
+[ 2015-03-30T23:56:52+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+
+[ 2015-03-30T23:57:12+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+
+[ 2015-03-30T23:57:41+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000801s ]
+
+[ 2015-03-30T23:57:59+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+
+[ 2015-03-30T23:58:06+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+
+[ 2015-03-30T23:58:07+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000814s ]
+
+[ 2015-03-30T23:58:41+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+
+[ 2015-03-30T23:59:19+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+
+[ 2015-03-30T23:59:58+08:00 ] ::1 /index.php/Home/Index/article/aid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+
