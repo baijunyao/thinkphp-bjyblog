@@ -51,18 +51,30 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<div class="article">
-				<h1 class="title"><?php echo ($article['title']); ?></h1>
-				<ul class="metadata">
-					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['addtime'])); ?></li>
-					<li class="category">分类：<a href=""><?php echo ($article['category']['cname']); ?></a>
-					<?php if(!empty($article['tag'])): ?><li class="tags ">标签：
-							<?php if(is_array($article['tag'])): foreach($article['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
-						</li><?php endif; ?>							
-				</ul>
-				<div class="content-word">
-					<?php echo ($article['content']); ?>
-				</div>
+			<div class="list">
+				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
+						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><?php echo ($v['title']); ?></a></h3>
+						<ul class="metadata">
+							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
+							<li class="category">分类：<a href=""><?php echo ($v['category']['cname']); ?></a>
+							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
+									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
+								</li><?php endif; ?>							
+						</ul>
+						<div class="article">
+							<div class="pic">
+								<a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
+							</div>
+							<div class="word">
+								<p class="description">
+									<?php echo ($v['description']); ?>
+								</p>
+								<div class="readall">
+									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>">阅读全文</a>
+								</div>
+							</div>
+						</div>
+					</div><?php endforeach; endif; ?>
 			</div>
 		</div>
 		<!-- 左侧列表结束 -->
@@ -83,5 +95,15 @@ $(document).ready(function(){
 	</div>
 </div>
 <!-- 主体部分结束 -->
+
+<!-- 通用底部文件开始 -->
+<div id="foot">
+	<div class="b-inside">
+		本站使用<a href="">thinkbjy</a>开源博客框架搭建
+		站长Email：b593026987@qq.com
+	</div>
+</div>
+<!-- 通用底部文件结束 -->
+
 </body>
 </html>

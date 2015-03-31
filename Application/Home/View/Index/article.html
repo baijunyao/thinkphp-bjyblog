@@ -32,7 +32,7 @@
 		<!-- 左侧列表开始 -->
 		<div class="left">
 			<div class="article">
-				<h1 class="title">详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景详解HTML头标签元素的意义以及使用场景</h1>
+				<h1 class="title">{$article['title']}</h1>
 				<ul class="metadata">
 					<li class="date">发布时间：{$article['addtime']|date='Y-m-d H:i:s',###}</li>
 					<li class="category">分类：<a href="">{$article['category']['cname']}</a>
@@ -44,7 +44,9 @@
 						</li>
 					</if>							
 				</ul>
-
+				<div class="content-word">
+					{$article['content']}
+				</div>
 			</div>
 		</div>
 		<!-- 左侧列表结束 -->

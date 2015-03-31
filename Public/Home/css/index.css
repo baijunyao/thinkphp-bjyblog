@@ -9,6 +9,7 @@ body {
   width: 100%;
   height: 45px;
   background: #333;
+  overflow: hidden;
 }
 #nav .b-inside {
   height: 45px;
@@ -56,6 +57,7 @@ body {
 #content {
   margin-top: 30px;
   width: 100%;
+  overflow: hidden;
 }
 #content .b-inside {
   /* 左侧列表开始 */
@@ -94,7 +96,7 @@ body {
 }
 #content .b-inside .left .list .detail .article {
   width: 810px;
-  height: 200px;
+  height: 160px;
 }
 #content .b-inside .left .list .detail .article .pic {
   margin-right: 15px;
@@ -158,10 +160,17 @@ body {
 }
 #content .b-inside .left .article .title {
   margin-bottom: 20px;
+  padding: 40px;
   width: 840px;
 }
 #content .b-inside .left .article .metadata {
   margin-top: 20px;
+  width: 840px;
+  padding: 0 40px;
+  border-bottom: 1px 	dotted #999;
+}
+#content .b-inside .left .article .content-word {
+  padding: 40px;
 }
 #content .b-inside .right {
   width: 340px;
@@ -221,3 +230,12 @@ body {
   background: #008CBA;
 }
 /* 主体部分结束 */
+/* 通用底部开始 */
+#foot {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+/* 通用底部结束 */
