@@ -11,7 +11,13 @@ return array(
 //*************************************数据库设置结束**************************************
     'TAGLIB_BUILD_IN'       =>  'cx,Common\Tag\My',//加载自定义标签
 	'LOAD_EXT_CONFIG'       =>  'webconfig',       //加载网站设置文件
-	// 'DEFAULT_THEME'  		=>  'default',         //默认主题
-	// 'TMPL_DETECT_THEME'		=>  true,              // 自动侦测模板主题
-	
+	// 'TMPL_PATH'				=>	'./template/default111/',
+	'TMPL_PARSE_STRING'		=> array(
+	    '__HOME_CSS__'		=> trim(TMPL_PATH,'.').'Home/Public/css',
+	    '__HOME_JS__'		=> trim(TMPL_PATH,'.').'Home/Public/js',
+	    '__HOME_IMAGES__'	=> trim(TMPL_PATH,'.').'Home/Public/images',
+	    '__ADMIN_CSS__'		=> trim(TMPL_PATH,'.').'Admin/Public/css',
+	    '__ADMIN_JS__'		=> trim(TMPL_PATH,'.').'Admin/Public/js',
+	    '__ADMIN_IMAGES__'	=> trim(TMPL_PATH,'.').'Admin/Public/images',
+		),
 );

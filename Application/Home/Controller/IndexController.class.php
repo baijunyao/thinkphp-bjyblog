@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class IndexController extends Controller {
+use Common\Controller\HomeBaseController;
+class IndexController extends HomeBaseController {
     // 定义categorys和tags数据
     private $categorys;
     private $tags;

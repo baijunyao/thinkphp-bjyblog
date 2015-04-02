@@ -23,6 +23,9 @@ define('APP_PATH','./Application/');
 // 定义缓存目录
 define('RUNTIME_PATH','./Runtime/');
 
+// 设置模板文件默认目录
+define("TMPL_PATH","./Template/default/");
+
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
