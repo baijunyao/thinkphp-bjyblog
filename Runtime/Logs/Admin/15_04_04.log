@@ -1,0 +1,202 @@
+[ 2015-04-04T00:01:45+08:00 ] ::1 /index.php/Admin/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000677s ]
+
+[ 2015-04-04T00:01:46+08:00 ] ::1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+
+[ 2015-04-04T00:02:01+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+
+[ 2015-04-04T00:02:04+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001377s ]
+ERR: 不存在的图像文件
+
+[ 2015-04-04T00:05:18+08:00 ] ::1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000857s ]
+
+[ 2015-04-04T00:05:47+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+
+[ 2015-04-04T00:06:46+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+
+[ 2015-04-04T00:06:47+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+
+[ 2015-04-04T00:06:54+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002333s ]
+ERR: 不存在的图像文件
+
+[ 2015-04-04T00:07:10+08:00 ] ::1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000804s ]
+
+[ 2015-04-04T00:07:12+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+
+[ 2015-04-04T00:07:20+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000133s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002239s ]
+
+[ 2015-04-04T00:07:21+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+
+[ 2015-04-04T00:07:21+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+
+[ 2015-04-04T00:07:24+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001250s ]
+
+[ 2015-04-04T00:07:25+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+
+[ 2015-04-04T00:07:48+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+
+[ 2015-04-04T00:07:49+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000916s ]
+
+[ 2015-04-04T00:07:53+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000920s ]
+
+[ 2015-04-04T00:07:54+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+
+[ 2015-04-04T00:11:43+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000759s ]
+
+[ 2015-04-04T00:11:44+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+
+[ 2015-04-04T00:11:44+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000834s ]
+
+[ 2015-04-04T00:11:47+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000073s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001686s ]
+
+[ 2015-04-04T00:11:48+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+
+[ 2015-04-04T00:11:48+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+
+[ 2015-04-04T00:11:53+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+
+[ 2015-04-04T00:11:54+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+
+[ 2015-04-04T00:11:54+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+
+[ 2015-04-04T00:12:11+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+
+[ 2015-04-04T00:12:12+08:00 ] ::1 /index.php/Admin/Article/edit/aid/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+
+[ 2015-04-04T00:21:16+08:00 ] ::1 /index.php/Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+
+[ 2015-04-04T01:02:50+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+
+[ 2015-04-04T01:02:50+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+
+[ 2015-04-04T01:02:51+08:00 ] ::1 /index.php/Admin/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+
+[ 2015-04-04T01:03:30+08:00 ] ::1 /index.php/Admin/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+
+[ 2015-04-04T01:03:31+08:00 ] ::1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+
+[ 2015-04-04T01:03:36+08:00 ] ::1 /index.php/Admin/Article/edit/aid/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+
+[ 2015-04-04T01:03:46+08:00 ] ::1 /index.php/Admin/Article/edit/aid/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+
+[ 2015-04-04T01:03:47+08:00 ] ::1 /index.php/Admin/Article/edit/aid/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+

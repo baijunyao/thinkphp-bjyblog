@@ -40,6 +40,11 @@ class ArticleModel extends Model{
 					D('ArticleTag')->addData($aid,$data['tids']);
 				}
 				if(!empty($image_path)){
+					if(C('WATER_TYPE')!=0){
+						foreach ($image_path as $k => $v) {
+							add_water($v);
+						}
+					}
 					D('ArticlePic')->addData($aid,$image_path);
 				}
 				return true;
@@ -64,6 +69,11 @@ class ArticleModel extends Model{
 			}
 			D('ArticlePic')->deleteData($aid);
 			if(!empty($image_path)){
+				if(C('WATER_TYPE')!=0){
+					foreach ($image_path as $k => $v) {
+						add_water($v);
+					}
+				}
 				D('ArticlePic')->addData($aid,$image_path);
 			}
 			return true;
