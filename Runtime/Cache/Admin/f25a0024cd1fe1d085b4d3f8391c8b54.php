@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>网站信息</title>
+	<title>修改友情链接</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -26,47 +26,47 @@ $(document).ready(function(){
 });
 </script>
 
+<style type="text/css">
+.inputword{
+	margin-left: 40px;
+}
+</style>
 </head>
 <body>
-<form action="<?php echo U('Admin/Config/index');?>" method="post">
-	<table class="table table-bordered table-hover">
+<form class="form-group" action="<?php echo U('Admin/Link/edit');?>" method="post">
+	<input type="hidden" name="lid" value="<?php echo ($data['lid']); ?>">
+	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
-			<th>网站名：</th>
+			<th>链接名</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="WEB_NAME" value="<?php echo ($data['WEB_NAME']); ?>" >
+				<input class="form-control modal-sm" type="text" name="lname" value="<?php echo ($data['lname']); ?>">
 			</td>
 		</tr>
 		<tr>
-			<th>关键字</th>
+			<th>链接地址</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORD" rows="5" placeholder=""><?php echo ($data['WEB_KEYWORD']); ?></textarea>
+				<input class="form-control modal-sm" type="text" name="url" value="<?php echo ($data['url']); ?>">
 			</td>
 		</tr>
 		<tr>
-			<th>描述</th>
+			<th>排序</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_DESCRIPTION" rows="5" placeholder=""><?php echo ($data['WEB_DESCRIPTION']); ?></textarea>
+				<input class="form-control modal-sm" type="text" name="sort" value="<?php echo ($data['sort']); ?>">
 			</td>
 		</tr>
 		<tr>
-			<th>网站状态</th>
+			<th>是否显示</th>
 			<td>
-				<span class="inputword">开启</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="1" <?php if($data['WEB_STATUS'] == 1): ?>checked="checked"<?php endif; ?> >
-				<span class="inputword">关闭</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="0" <?php if($data['WEB_STATUS'] == 0): ?>checked="checked"<?php endif; ?> >
-			</td>
-		</tr>
-		<tr>
-			<th>后台密码</th>
-			<td>
-				<input class="form-control modal-sm" type="password" name="ADMIN_PASSWORD" value="<?php echo ($data['ADMIN_PASSWORD']); ?>" >
+				<span class="inputword">是</span>
+				<input class="icheck" type="radio" name="is_show" value="1" <?php if($data['is_show'] == 1): ?>checked='checked'<?php endif; ?> >
+				<span class="inputword">否</span>
+				<input class="icheck" type="radio" name="is_show" value="0" <?php if($data['is_show'] == 0): ?>checked='checked'<?php endif; ?> >				
 			</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<input class="btn btn-default" type="submit" value="提交">
+				<input class="btn btn-default" type="submit" value="修改">
 			</td>
 		</tr>
 	</table>

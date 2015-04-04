@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>文章列表</title>
+	<title>分类列表</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -26,58 +26,33 @@ $(document).ready(function(){
 });
 </script>
 
-<style type="text/css">
-table {
-    word-break:break-all;
-    word-wrap:break-word;
-}
-</style>
 </head>
 <body>
 <table class="table table-bordered table-striped table-hover table-condensed">
 	<thead>
 		<tr>
-			<th width="3%">aid</th>
-			<th width="9%">所属栏目</th>
-			<th width="20%">标题</th>
-			<th width="8%">作者</th>
-			<th width="20%">标签</th>
-			<th width="7%">是否显示</th>
-			<th width="7%">是否置顶</th>
-			<th width="5%">点击数</th>
-			<th width="13%">发布时间</th>
-			<th width="8%">操作</th>
+			<th width="10%">cid</th>
+			<th width="10%">排序</th>
+			<th width="15%">分类名</th>
+			<th width="25%">关键词</th>
+			<th width="25%">描述</th>
+			<th width="15%">操作</th>			
 		</tr>
 	</thead>
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
-			<td><?php echo ($v['aid']); ?></td>
-			<td><?php echo ($v['category']['cname']); ?></td>
-			<td><?php echo ($v['title']); ?></td>
-			<td><?php echo ($v['author']); ?></td>
+			<td><?php echo ($v['cid']); ?></td>
 			<td>
-				<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): echo ($n['tname']); ?>&nbsp;<?php endforeach; endif; ?>
+				<input class="form-control" type="text" value="<?php echo ($v['sort']); ?>">
 			</td>
+			<td><?php echo ($v['_name']); ?></td>
+			<td><?php echo ($v['keyword']); ?></td>
+			<td><?php echo ($v['description']); ?></td>
 			<td>
-				<?php if($v['is_show'] == 1): ?>✔
-				<?php else: ?>
-					✘<?php endif; ?>
+				<a href="<?php echo U('Admin/Category/add',array('cid'=>$v['cid']));?>">添加子分类</a> | 
+				<a href="<?php echo U('Admin/Category/edit',array('cid'=>$v['cid']));?>">修改</a> | 
+				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Category/delete',array('cid'=>$v['cid']));?>'">删除</a>				
 			</td>
-			<td>
-				<?php if($v['is_top'] == 1): ?>✔
-				<?php else: ?>
-					✘<?php endif; ?>
-			</td>
-			<td><?php echo ($v['click']); ?></td>
-			<td><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></td>
-			<td>
-				<a href="<?php echo U('Admin/Article/edit',array('aid'=>$v['aid']));?>">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Article/recycle',array('aid'=>$v['aid']));?>'">删除</a>
-			</td>		
 		</tr><?php endforeach; endif; ?>
 </table>
-<div style="text-align: center;">
-	<?php echo ($page); ?>
-</div>
-
 </body>
 </html>

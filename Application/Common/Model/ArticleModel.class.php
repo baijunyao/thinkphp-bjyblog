@@ -14,6 +14,7 @@ class ArticleModel extends Model{
 	// 自动完成
 	protected $_auto=array(
 		array('click',0),
+		array('is_delete',0),
 		array('addtime','time',1,'function'),
 		array('description','getDescription',3,'callback'),
 		);
@@ -42,7 +43,7 @@ class ArticleModel extends Model{
 				if(!empty($image_path)){
 					if(C('WATER_TYPE')!=0){
 						foreach ($image_path as $k => $v) {
-							add_water($v);
+							add_water('.'.$v);
 						}
 					}
 					D('ArticlePic')->addData($aid,$image_path);
@@ -71,7 +72,7 @@ class ArticleModel extends Model{
 			if(!empty($image_path)){
 				if(C('WATER_TYPE')!=0){
 					foreach ($image_path as $k => $v) {
-						add_water($v);
+						add_water('.'.$v);
 					}
 				}
 				D('ArticlePic')->addData($aid,$image_path);
@@ -89,8 +90,8 @@ class ArticleModel extends Model{
 	}
 
 	// 恢复删除
-	public function recoverData($aid=0){
-		$aid=I('get.aid','intval');
+	public function recoverData(){
+		$aid=I('get.aid',0,'intval');
 		// echo $aid;die;
 		return $this->changeStatus($aid,'is_delete',0);
 	}

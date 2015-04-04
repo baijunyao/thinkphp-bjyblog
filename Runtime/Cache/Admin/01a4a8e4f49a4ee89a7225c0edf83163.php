@@ -92,15 +92,6 @@ $(document).ready(function(){
 			</td>
 		</tr>
 		<tr>
-			<th>是否删除</th>
-			<td>
-				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_delete" value="1" <?php if($data['is_delete'] == 1): ?>checked="checked"<?php endif; ?>>
-				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_delete" value="0" <?php if($data['is_delete'] == 0): ?>checked="checked"<?php endif; ?> >				
-			</td>
-		</tr>
-		<tr>
 			<th>是否显示</th>
 			<td>
 				<span class="inputword">是</span>

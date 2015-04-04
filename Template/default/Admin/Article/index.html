@@ -38,8 +38,20 @@ table {
 					{$n['tname']}&nbsp;
 				</foreach>
 			</td>
-			<td>{$v['is_show']}</td>
-			<td>{$v['is_top']}</td>
+			<td>
+				<if condition="$v['is_show'] eq 1">
+					✔
+				<else />
+					✘
+				</if>
+			</td>
+			<td>
+				<if condition="$v['is_top'] eq 1">
+					✔
+				<else />
+					✘
+				</if>
+			</td>
 			<td>{$v['click']}</td>
 			<td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
 			<td>

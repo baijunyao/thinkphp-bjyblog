@@ -185,16 +185,12 @@ $(document).ready(function(){
 				<span class="fa fa-th"></span>友情链接
 			</dt>
 			<dd>
-				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
+				<a href="<?php echo U('Admin/Link/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加链接
 			</dd>			
 			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
+				<a href="<?php echo U('Admin/Link/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>链接列表
-			</dd>
-			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已删链接
 			</dd>
 		</dl>
 	</div>

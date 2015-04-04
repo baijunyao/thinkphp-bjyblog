@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>添加文章</title>
+	<title>添加友情链接</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -33,61 +33,24 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-<form class="form-group" action="<?php echo U('Admin/Article/add');?>" method="post">
+<form class="form-group" action="<?php echo U('Admin/Link/add');?>" method="post">
 	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
-			<th>所属分类</th>
+			<th>链接名</th>
 			<td>
-				<select class="form-control modal-sm" name="cid">
-					<?php if(is_array($allCategory)): foreach($allCategory as $key=>$v): ?><option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>
-				</select>
+				<input class="form-control modal-sm" type="text" name="lname">
 			</td>
 		</tr>
 		<tr>
-			<th>标题</th>
+			<th>链接地址</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="title">
+				<input class="form-control modal-sm" type="text" name="url">
 			</td>
 		</tr>
 		<tr>
-			<th>作者</th>
+			<th>排序</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="author">
-			</td>
-		</tr>
-		<tr>
-			<th>标签</th>
-			<td>
-				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span class="inputword"><?php echo ($v['tname']); ?></span>
-					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>"><?php endforeach; endif; ?>
-			</td>
-		</tr>
-		<tr>
-			<th>描述</th>
-			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th>内容</th>
-			<td>
-			    <script id="container" name="content" type="text/plain">
-	
-</script>
-<script type="text/javascript" src="/Public/static/ueditor1_4_3/ueditor.config.js"></script>
-<script type="text/javascript" src="/Public/static/ueditor1_4_3/ueditor.all.js"></script>
-<script type="text/javascript">
-    var ue = UE.getEditor('container');
-</script>
-			</td>
-		</tr>
-		<tr>
-			<th>是否置顶</th>
-			<td>
-				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_top" value="1">
-				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_top" value="0" checked="checked">
+				<input class="form-control modal-sm" type="text" name="sort">
 			</td>
 		</tr>
 		<tr>
@@ -102,7 +65,7 @@ $(document).ready(function(){
 		<tr>
 			<th></th>
 			<td>
-				<input class="btn btn-default" type="submit" value="发表">
+				<input class="btn btn-default" type="submit" value="添加">
 			</td>
 		</tr>
 	</table>
