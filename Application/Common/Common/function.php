@@ -66,6 +66,24 @@ function add_water($path){
     }
 }
 
+// 设置验证码
+function show_verify(){
+    $config=array(
+        'codeSet'=>'1234567890',
+        'fontSize'=>30,
+        'useCurve'=>false,
+        'imageH'=>60,
+        'imageW'=>240,
+        'length'=>4,
+        'fontttf'=>'4.ttf',
+        );
+    $verify=new \Think\Verify($config);
+    return $verify->entry();
+}
 
-
+// 检测验证码
+function check_verify($code){
+    $verify=new \Think\Verify();
+    return $verify->check($code);
+}
 

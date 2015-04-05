@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>登陆后台管理系统</title>
+	<title>添加分类</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -26,18 +26,45 @@ $(document).ready(function(){
 });
 </script>
 
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
-<form class="form-group" action="<?php echo U('Admin/Link/add');?>" method="post">
-	<div id="Login">
-		<input class="form-control modal-sm" type="text">
-		<input class="btn btn-default" type="submit">
-	</div>
+<form action="<?php echo U('Admin/Category/add');?>" method="post">
+	<table class="table table-bordered table-hover">
+		<tr>
+			<th>分类名</th>
+			<td><input class="form-control modal-sm" type="text" name="cname" ></td>
+		</tr>
+		<tr>
+			<th>所属栏目</th>
+			<td>
+				<select class="form-control modal-sm" name="pid">
+					<option value="0">顶级栏目</option>
+					<?php if(is_array($data)): foreach($data as $k=>$v): ?><option value="<?php echo ($v['cid']); ?>" <?php if($cid == $v['cid']): ?>selected="selected"<?php endif; ?> ><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>排序</th>
+			<td><input class="form-control modal-sm" type="text" name="sort" ></td>
+		</tr>
+		<tr>
+			<th>关键词</th>
+			<td><input class="form-control modal-sm" type="text" name="keyword" ></td>
+		</tr>
+		<tr>
+			<th>描述</th>
+			<td>
+				<textarea class="form-control modal-sm bjy-noresize" name="description"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<input class="btn btn-default" type="submit" value="提交">
+			</td>
+		</tr>
+	</table>
 </form>
+
 </body>
 </html>

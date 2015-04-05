@@ -36,12 +36,6 @@ class LinkModel extends Model{
 		return $this->changeStatus($lid,'is_delete',1);
 	}
 
-	// 恢复删除
-	public function recoverData(){
-		$lid=I('get.lid',0,'intval');
-		return $this->changeStatus($lid,'is_delete',0);
-	}
-
 	// 彻底删除
 	public function deleteData(){
 		$lid=I('get.lid',0,'intval');
@@ -49,9 +43,20 @@ class LinkModel extends Model{
 		return true;
 	}
 
-	// 获取全部数据
-	public function getAllData(){
-		return $this->order('sort')->select();
+	// 传递is_delete和is_show获取对应数据
+	public function getDataByState($is_delete=0,$is_show='all'){
+		$show=$is_show=='all' ? '' : $is_show;
+		if($is_show=='all'){
+			$where=array(
+				'is_delete'=>$is_delete,
+				);
+		}else{
+			$where=array(
+				'is_delete'=>$is_delete,
+				'is_show'=>$is_show,
+				);
+		}
+		return $this->where($where)->order('sort')->select();
 	}
 
 	// 传递lid获取单条数据

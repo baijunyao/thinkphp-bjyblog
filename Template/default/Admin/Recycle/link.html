@@ -20,9 +20,7 @@
 	<foreach name="data" item="v">
 		<tr>
 			<td>{$v['lid']}</td>
-			<td>
-				<input class="form-control" type="text" value="{$v['sort']}">
-			</td>
+			<td>{$v['sort']}</td>
 			<td>{$v['lname']}</td>
 			<td>{$v['url']}</td>
 			<th>
@@ -33,8 +31,8 @@
 				</if>
 			</th>
 			<td>
-				<a href="{:U('Admin/Link/edit',array('lid'=>$v['lid']))}">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Link/recycle',array('lid'=>$v['lid']))}'">删除</a>				
+				<a href="{:U('Admin/Recycle/recover',array('model_name'=>'Link','id_name'=>'lid','id_number'=>$v['lid']))}">恢复</a> |  
+				<a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Link/delete',array('lid'=>$v['lid']))}'">彻底删除</a>				
 			</td>
 		</tr>
 	</foreach>

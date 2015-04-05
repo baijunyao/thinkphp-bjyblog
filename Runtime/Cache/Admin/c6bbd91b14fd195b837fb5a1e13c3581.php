@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>已删文章</title>
+	<title>分类列表</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -26,32 +26,32 @@ $(document).ready(function(){
 });
 </script>
 
-<style type="text/css">
-table {
-    word-break:break-all;
-    word-wrap:break-word;
-}
-</style>
 </head>
 <body>
 <table class="table table-bordered table-striped table-hover table-condensed">
 	<thead>
 		<tr>
-			<th width="5%">aid</th>
-			<th width="15%">所属分类</th>
-			<th width="20%">作者</th>
-			<th width="30%">标题</th>
-			<th width="30%">操作</th>
+			<th width="10%">lid</th>
+			<th width="10%">排序</th>
+			<th width="20%">链接名</th>
+			<th width="35%">链接地址</th>
+			<th width="10%">是否显示</th>
+			<th width="15%">操作</th>			
 		</tr>
 	</thead>
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
-			<td><?php echo ($v['aid']); ?></td>
-			<td><?php echo ($v['category']['cname']); ?></td>
-			<td><?php echo ($v['author']); ?></td>
-			<td><?php echo ($v['title']); ?></td>
+			<td><?php echo ($v['lid']); ?></td>
+			<td><?php echo ($v['sort']); ?></td>
+			<td><?php echo ($v['lname']); ?></td>
+			<td><?php echo ($v['url']); ?></td>
+			<th>
+				<?php if($v['is_show'] == 1): ?>✔
+				<?php else: ?>
+					✘<?php endif; ?>
+			</th>
 			<td>
-				<a href="<?php echo U('Admin/Article/recover',array('aid'=>$v['aid']));?>">恢复</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Article/delete',array('aid'=>$v['aid']));?>'">彻底删除</a>
+				<a href="<?php echo U('Admin/Recycle/recover',array('model_name'=>'Link','id_name'=>'lid','id_number'=>$v['lid']));?>">恢复</a> |  
+				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Link/delete',array('lid'=>$v['lid']));?>'">彻底删除</a>				
 			</td>
 		</tr><?php endforeach; endif; ?>
 </table>

@@ -52,7 +52,6 @@ $(document).ready(function(){
 					✘<?php endif; ?>
 			</th>
 			<td>
-				<a href="<?php echo U('Admin/Link/add',array('lid'=>$v['lid']));?>">添加子分类</a> | 
 				<a href="<?php echo U('Admin/Link/edit',array('lid'=>$v['lid']));?>">修改</a> | 
 				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Link/recycle',array('lid'=>$v['lid']));?>'">删除</a>				
 			</td>

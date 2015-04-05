@@ -86,14 +86,7 @@ class ArticleModel extends Model{
 	// 放入回收站
 	public function recycleData(){
 		$aid=I('get.aid',0,'intval');
-		return $this->changeStatus($aid,'is_delete',1);
-	}
-
-	// 恢复删除
-	public function recoverData(){
-		$aid=I('get.aid',0,'intval');
-		// echo $aid;die;
-		return $this->changeStatus($aid,'is_delete',0);
+		return $this->where("aid=$aid")->setField('is_delete',1);
 	}
 
 	// 彻底删除
@@ -102,22 +95,7 @@ class ArticleModel extends Model{
 		D('ArticlePic')->deleteData($aid);
 		D('ArticleTag')->deleteData($aid);
 		$this->where("aid=$aid")->delete();
-		// echo 123;die;
 		return true;
-	}
-
-	/**
-	 * 更改状态
-	 * @param strind $aid 文章id
-	 * @param strind $field 更改的字段
-	 * @param array $value 更改的内容
-	 */
-	public function changeStatus($aid,$field,$value){
-		if($this->where("aid=$aid")->setField($field,$value)){
-			return true;
-		}else{
-			return false;
-		}
 	}
 
 	/**
@@ -131,7 +109,7 @@ class ArticleModel extends Model{
 	public function getPageData($cid='all',$tid='all',$is_delete=0,$limit=15){
 		if($cid=='all' && $tid=='all'){
 			$where=array(
-				'is_delete'=>0,
+				'is_delete'=>$is_delete,
 				);
 			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
 			$count=count($list);
@@ -141,7 +119,7 @@ class ArticleModel extends Model{
 		}elseif ($cid!='all' && $tid=='all') {
 			$where=array(
 				'cid'=>$cid,
-				'is_delete'=>0,
+				'is_delete'=>$is_delete,
 				);
 			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
 			$count=count($list);

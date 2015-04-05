@@ -1,0 +1,15 @@
+[ 2015-04-05T10:23:38+08:00 ] ::1 /index.php/Admin/User/%7BU(%27Admin/User/verify%27)%7D
+ERR: 非法操作:{U('Admin
+
+[ 2015-04-05T10:47:46+08:00 ] ::1 /index.php/Admin/User/verify0.009974511481308346
+ERR: 非法操作:verify0
+
+[ 2015-04-05T13:34:15+08:00 ] ::1 /index.php/Admin/User/verify
+ERR: 非法操作:verify
+
+[ 2015-04-05T13:56:32+08:00 ] ::1 /index.php/Admin/Login/login
+ERR: 模板不存在:./Template/default/Admin/Login/login.html
+
+[ 2015-04-05T17:30:55+08:00 ] ::1 /index.php/Admin/Link/recycle/lid/2
+ERR: Think\Model:changeStatus方法不存在！
+
