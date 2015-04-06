@@ -10,13 +10,15 @@ class LinkModel extends Model{
 		array('sort','require','排序必填'),
 		);
 
-	// 修改数据
+	// 添加数据
 	public function addData(){
 		$data=I('post.');
 		if($this->create($data)){
 			$data['url']='http://'.trim($data['url'],'http://');
 			$lid=$this->add($data);
 			return $lid;
+		}else{
+			return false;
 		}
 	}
 
@@ -27,6 +29,8 @@ class LinkModel extends Model{
 			$data['url']='http://'.trim($data['url'],'http://');
 			$this->where(array('lid'=>$data['lid']))->save($data);
 			return true;
+		}else{
+			return false;
 		}
 	}
 

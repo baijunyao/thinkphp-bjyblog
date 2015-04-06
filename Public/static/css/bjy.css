@@ -35,8 +35,8 @@ button, input, select, textarea {
     font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
 }
 
-/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
-html { overflow-y: scroll; }
+/* 去除li默认圆点 */
+
 li{
   list-style: none;
 }
@@ -53,6 +53,9 @@ table {
 }
 .b-noresize{
   resize:none;
+}
+.b-ta-center{
+  text-align: center;
 }
 .b-w-10 {
   width: 10px;

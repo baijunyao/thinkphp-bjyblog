@@ -179,6 +179,10 @@ $(document).ready(function(){
 				<a href="<?php echo U('Admin/Config/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>网站信息
 			</dd>
+			<dd>
+				<a href="<?php echo U('Admin/Config/change_password');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>修改密码
+			</dd>
 		</dl>
 		<dl>
 			<dt>

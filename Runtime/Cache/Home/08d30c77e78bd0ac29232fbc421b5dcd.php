@@ -34,14 +34,16 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
 		<ul class="category">
-			<li class="cname action">
+			<li class="cname <?php if(!isset($_GET['cid'])): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
-
+		<ul class="user">
+			<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+		</ul>
 	</div>
 </div>
 <!-- 顶部导航结束 -->
@@ -51,7 +53,8 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<div class="list">
+			<!-- 文章列表开始 -->
+						<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
 						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
@@ -76,11 +79,12 @@ $(document).ready(function(){
 						</div>
 					</div><?php endforeach; endif; ?>
 			</div>
+			<!-- 文章列表结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 
 		<!-- 右侧内容开始 -->
-		<div class="right">
+				<div class="right">
 			<div class="tags">
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
@@ -96,16 +100,38 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 通用底部文件开始 -->
+<!-- 底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">
-		本站使用<a href="">thinkbjy</a>开源博客框架搭建
-		站长Email：b593026987@qq.com
+		本站使用自主开发的<a href="">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 	</div>
 </div>
 <!-- 通用底部文件结束 -->
 <!-- 通用底部文件结束 -->
 
+<!-- 登陆框开始 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" data-redirecturi="http://www.baijunyao.com" charset="utf-8"></script>
+        <!-- <img id="qqLoginBtn" src="/Template/default/Home/Public/image/Connect_logo_5.png" alt=""> -->
+        <span id="qqLoginBtn"></span>
+        <script type="text/javascript">
+            QC.Login({
+               btnId:"qqLoginBtn"    //插入按钮的节点id
+            });
+        </script>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 登陆框结束 -->
 </body>
 </html>

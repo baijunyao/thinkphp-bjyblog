@@ -29,6 +29,18 @@ class ConfigController extends AdminBaseController{
 		}
 	}
 
+	// 修改密码
+	public function change_password(){
+		if(IS_POST){
+			if($this->db->changePassword()){
+				$this->success('修改成功');
+			}else{
+				$this->error($this->db->getError());
+			}
+		}else{
+			$this->display();
+		}
+	}
 
 
 }

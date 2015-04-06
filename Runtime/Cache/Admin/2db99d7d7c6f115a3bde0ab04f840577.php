@@ -39,7 +39,9 @@ $(document).ready(function(){
 			<th>所属分类</th>
 			<td>
 				<select class="form-control modal-sm" name="cid">
-					<?php if(is_array($allCategory)): foreach($allCategory as $key=>$v): ?><option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>
+					<foreach name="allCategory" item="v">
+						<option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option>
+					</foreach>
 				</select>
 			</td>
 		</tr>
@@ -58,8 +60,10 @@ $(document).ready(function(){
 		<tr>
 			<th>标签</th>
 			<td>
-				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span class="inputword"><?php echo ($v['tname']); ?></span>
-					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>"><?php endforeach; endif; ?>
+				<foreach name="allTag" item="v">
+					<span class="inputword"><?php echo ($v['tname']); ?></span>
+					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>">
+				</foreach>
 			</td>
 		</tr>
 		<tr>

@@ -73,16 +73,6 @@ class ArticleController extends AdminBaseController{
 		}
 	}
 
-	// 恢复删除
-	public function recover(){
-		// p($_GET);die;
-		if($this->db->recoverData()){
-			$this->success('恢复成功');
-		}else{
-			$this->error('恢复失败');
-		}
-	}
-
 	// 彻底删除
 	public function delete(){
 		if($this->db->deleteData()){

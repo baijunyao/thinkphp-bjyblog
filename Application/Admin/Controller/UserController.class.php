@@ -11,5 +11,4 @@ class UserController extends AdminBaseController{
 		session('admin',null);
 		$this->success('退出成功',U('Admin/User/login'));
 	}
-
 }

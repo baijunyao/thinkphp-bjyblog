@@ -40,6 +40,7 @@ class IndexController extends HomeBaseController {
     public function tag(){
         $tid=I('get.tid',0,'intval');
         $articles=D('Article')->getPageData('all',$tid);
+        $tname=D('Tag')->getFieldByTid($tid,'tname');
 
         $this->assign('categorys',$this->categorys);
         $this->assign('tags',$this->tags);
@@ -58,7 +59,6 @@ class IndexController extends HomeBaseController {
         $this->assign('tags',$this->tags);
         $this->assign('tname',$tname);
         $this->assign('article',$article);
-        // p($article);
         $this->display();
     }
 

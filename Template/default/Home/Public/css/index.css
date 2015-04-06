@@ -52,6 +52,20 @@ body {
 #nav .b-inside .category .action {
   background: #008CBA;
 }
+#nav .b-inside .user {
+  height: 45px;
+  float: right;
+}
+#nav .b-inside .user .login {
+  padding: 0 15px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+}
+#nav .b-inside .user .login:hover {
+  background: #008CBA;
+  cursor: pointer;
+}
 /* 顶部导航结束 */
 /* 主体部分开始 */
 #content {
@@ -170,7 +184,14 @@ body {
   border-bottom: 1px 	dotted #999;
 }
 #content .b-inside .left .article .content-word {
+  margin-bottom: 10px;
   padding: 40px;
+  border-bottom: 1px solid #E2E2E2;
+}
+#content .b-inside .left .comment {
+  padding: 0 40px;
+  width: 840px;
+  background: #fff;
 }
 #content .b-inside .right {
   width: 340px;

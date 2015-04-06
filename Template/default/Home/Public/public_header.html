@@ -1,0 +1,18 @@
+<div id="nav">
+	<div class="b-inside">
+		<div class="logo"><a href="{:U('Home/Index/index')}">帅白个人博客</a></div>
+		<ul class="category">
+			<li class="cname <if condition="!isset($_GET['cid'])">action</if>" >
+				<a href="{:U('Home/Index/index')}">首页</a>
+			</li>
+			<foreach name="categorys" item="v">
+				<li class="cname <if condition="$Think.get.cid eq $v['cid']">action</if>">
+					<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
+				</li>
+			</foreach>
+		</ul>
+		<ul class="user">
+			<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+		</ul>
+	</div>
+</div>

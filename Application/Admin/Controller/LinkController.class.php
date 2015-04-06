@@ -40,7 +40,7 @@ class LinkController extends AdminBaseController{
 			if($this->db->editData()){
 				$this->success('修改成功');
 			}else{
-				$this->error('修改失败');
+				$this->error($this->db->getError());
 			}
 		}else{
 			$lid=I('get.lid');

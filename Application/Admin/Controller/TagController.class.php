@@ -18,7 +18,6 @@ class TagController extends AdminBaseController{
 	public function index(){
 		$data=$this->db->getAllData();
 		$this->assign('data',$data);
-		// p($data);
 		$this->display();
 	}
 

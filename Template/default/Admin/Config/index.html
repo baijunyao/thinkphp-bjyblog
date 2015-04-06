@@ -30,15 +30,9 @@
 			<th>网站状态</th>
 			<td>
 				<span class="inputword">开启</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="1" <if condition="$data['WEB_STATUS'] eq 1"> checked="checked"</if> >
+				<input class="icheck" type="radio" name="WEB_STATUS" value="1" <if condition="$data['WEB_STATUS'] eq 1">checked="checked"</if> >
 				<span class="inputword">关闭</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="0" <if condition="$data['WEB_STATUS'] eq 0"> checked="checked"</if> >
-			</td>
-		</tr>
-		<tr>
-			<th>后台密码</th>
-			<td>
-				<input class="form-control modal-sm" type="password" name="ADMIN_PASSWORD" value="{$data['ADMIN_PASSWORD']}" >
+				<input class="icheck" type="radio" name="WEB_STATUS" value="0" <if condition="$data['WEB_STATUS'] eq 0">checked="checked"</if> >
 			</td>
 		</tr>
 		<tr>

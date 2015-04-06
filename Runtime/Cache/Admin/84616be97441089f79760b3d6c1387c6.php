@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>网站信息</title>
+	<title>登陆后台管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
@@ -26,44 +26,16 @@ $(document).ready(function(){
 });
 </script>
 
+<link rel="stylesheet" href="/Template/default/Admin/Public/css/login.css">
 </head>
 <body>
-<form action="<?php echo U('Admin/Config/index');?>" method="post">
-	<table class="table table-bordered table-hover">
-		<tr>
-			<th>网站名：</th>
-			<td>
-				<input class="form-control modal-sm" type="text" name="WEB_NAME" value="<?php echo ($data['WEB_NAME']); ?>" >
-			</td>
-		</tr>
-		<tr>
-			<th>关键字</th>
-			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORD" rows="5" placeholder=""><?php echo ($data['WEB_KEYWORD']); ?></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th>描述</th>
-			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_DESCRIPTION" rows="5" placeholder=""><?php echo ($data['WEB_DESCRIPTION']); ?></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th>网站状态</th>
-			<td>
-				<span class="inputword">开启</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="1" <?php if($data['WEB_STATUS'] == 1): ?>checked="checked"<?php endif; ?> >
-				<span class="inputword">关闭</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="0" <?php if($data['WEB_STATUS'] == 0): ?>checked="checked"<?php endif; ?> >
-			</td>
-		</tr>
-		<tr>
-			<th></th>
-			<td>
-				<input class="btn btn-default" type="submit" value="提交">
-			</td>
-		</tr>
-	</table>
+<form class="form-group" action="<?php echo U('Admin/Login/login');?>" method="post">
+	<div id="Login">
+		<input class="form-control modal-sm" type="password" placeholder="后台登陆密码" name="ADMIN_PASSWORD">
+		<input class="form-control modal-sm" type="text" placeholder="验证码" name="verify">
+		<img class="verify" src="<?php echo U('Admin/Login/showVerify');?>" title="点击更换"  onclick="this.src+='/'+Math.random();">
+		<input class="btn btn-primary submit" type="submit" value="登陆">
+	</div>
 </form>
 </body>
 </html>

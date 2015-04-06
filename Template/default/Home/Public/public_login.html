@@ -1,0 +1,21 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" data-redirecturi="http://www.baijunyao.com" charset="utf-8"></script>
+        <!-- <img id="qqLoginBtn" src="__HOME_IMAGE__/Connect_logo_5.png" alt=""> -->
+        <span id="qqLoginBtn"></span>
+        <script type="text/javascript">
+            QC.Login({
+               btnId:"qqLoginBtn"    //插入按钮的节点id
+            });
+        </script>
+        
+      </div>
+    </div>
+  </div>
+</div>

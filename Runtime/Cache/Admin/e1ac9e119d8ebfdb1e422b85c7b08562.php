@@ -28,39 +28,30 @@ $(document).ready(function(){
 
 </head>
 <body>
-<form action="<?php echo U('Admin/Config/index');?>" method="post">
+<form action="<?php echo U('Admin/Config/change_password');?>" method="post">
 	<table class="table table-bordered table-hover">
 		<tr>
-			<th>网站名：</th>
+			<th>原密码</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="WEB_NAME" value="<?php echo ($data['WEB_NAME']); ?>" >
+				<input class="form-control modal-sm" type="password" name="old_password">
 			</td>
 		</tr>
 		<tr>
-			<th>关键字</th>
+			<th>新密码</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORD" rows="5" placeholder=""><?php echo ($data['WEB_KEYWORD']); ?></textarea>
+				<input class="form-control modal-sm" type="password" name="ADMIN_PASSWORD">
 			</td>
 		</tr>
 		<tr>
-			<th>描述</th>
+			<th>重复密码</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="WEB_DESCRIPTION" rows="5" placeholder=""><?php echo ($data['WEB_DESCRIPTION']); ?></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th>网站状态</th>
-			<td>
-				<span class="inputword">开启</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="1" <?php if($data['WEB_STATUS'] == 1): ?>checked="checked"<?php endif; ?> >
-				<span class="inputword">关闭</span>
-				<input class="icheck" type="radio" name="WEB_STATUS" value="0" <?php if($data['WEB_STATUS'] == 0): ?>checked="checked"<?php endif; ?> >
+				<input class="form-control modal-sm" type="password" name="re_password">
 			</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<input class="btn btn-default" type="submit" value="提交">
+				<input class="btn btn-default" type="submit" value="修改">
 			</td>
 		</tr>
 	</table>
