@@ -4,11 +4,6 @@
 	<meta charset="UTF-8">
 	<title>添加友情链接</title>
 <bootstrap />
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
 <form class="form-group" action="{:U('Admin/Link/add')}" method="post">
@@ -35,7 +30,8 @@
 			<th>是否显示</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				<input id="test" class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				&emsp;
 				<span class="inputword">否</span>
 				<input class="icheck" type="radio" name="is_show" value="0">				
 			</td>

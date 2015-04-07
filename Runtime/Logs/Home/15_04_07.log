@@ -1,0 +1,189 @@
+[ 2015-04-07T00:06:32+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001833s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.2455s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.1210s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0292s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0451s ]
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 ORDER BY addtime  [ RunTime:0.0645s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0344s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0168s ]
+SQL: SELECT `aid`,`tname` FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0452s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0341s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0092s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 40 行.
+NOTIC: [8] Undefined index: tid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066950s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000949s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2015-04-07T00:06:34+08:00 ] ::1 /index.php/Home/Index/category/cid/26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0052s ]
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 124 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 124 行.
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 124 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 124 行.
+SQL: SELECT * FROM `bjy_article` WHERE `cid` = 26 AND `is_delete` = 0 ORDER BY addtime  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0038s ]
+SQL: SELECT `aid`,`tname` FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0045s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+NOTIC: [8] Undefined index: tid E:\tongbu\wamp\www\Runtime\Cache\Home\8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+
+[ 2015-04-07T00:06:36+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0059s ]
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 ORDER BY addtime  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0035s ]
+SQL: SELECT `aid`,`tname` FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0038s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000383s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 40 行.
+NOTIC: [8] Undefined index: tid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023287s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2015-04-07T23:35:59+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001444s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0513s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0217s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 ORDER BY addtime  [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0031s ]
+SQL: SELECT `aid`,`tname` FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0042s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000443s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 40 行.
+NOTIC: [8] Undefined index: tid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000990s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2015-04-07T23:39:41+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0289s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0048s ]
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Undefined variable: page E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\ArticleModel.class.php 第 114 行.
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 ORDER BY addtime  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0048s ]
+SQL: SELECT `aid`,`tname` FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0057s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 40 行.
+NOTIC: [8] Undefined index: tid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+

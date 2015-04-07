@@ -26,11 +26,6 @@ $(document).ready(function(){
 });
 </script>
 
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
 <form class="form-group" action="<?php echo U('Admin/Article/add');?>" method="post">
@@ -39,9 +34,7 @@ $(document).ready(function(){
 			<th>所属分类</th>
 			<td>
 				<select class="form-control modal-sm" name="cid">
-					<foreach name="allCategory" item="v">
-						<option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option>
-					</foreach>
+					<?php if(is_array($allCategory)): foreach($allCategory as $key=>$v): ?><option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>
 				</select>
 			</td>
 		</tr>
@@ -60,10 +53,9 @@ $(document).ready(function(){
 		<tr>
 			<th>标签</th>
 			<td>
-				<foreach name="allTag" item="v">
-					<span class="inputword"><?php echo ($v['tname']); ?></span>
+				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span class="inputword"><?php echo ($v['tname']); ?></span>
 					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>">
-				</foreach>
+					&emsp;<?php endforeach; endif; ?>
 			</td>
 		</tr>
 		<tr>
@@ -90,6 +82,7 @@ $(document).ready(function(){
 			<td>
 				<span class="inputword">是</span>
 				<input class="icheck" type="radio" name="is_top" value="1">
+				&emsp;
 				<span class="inputword">否</span>
 				<input class="icheck" type="radio" name="is_top" value="0" checked="checked">
 			</td>
@@ -99,6 +92,7 @@ $(document).ready(function(){
 			<td>
 				<span class="inputword">是</span>
 				<input class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				&emsp;
 				<span class="inputword">否</span>
 				<input class="icheck" type="radio" name="is_show" value="0">				
 			</td>

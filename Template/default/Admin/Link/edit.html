@@ -4,11 +4,6 @@
 	<meta charset="UTF-8">
 	<title>修改友情链接</title>
 <bootstrap />
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
 <form class="form-group" action="{:U('Admin/Link/edit')}" method="post">
@@ -37,6 +32,7 @@
 			<td>
 				<span class="inputword">是</span>
 				<input class="icheck" type="radio" name="is_show" value="1" <if condition="$data['is_show'] eq 1">checked='checked'</if> >
+				&emsp;
 				<span class="inputword">否</span>
 				<input class="icheck" type="radio" name="is_show" value="0" <if condition="$data['is_show'] eq 0">checked='checked'</if> >				
 			</td>

@@ -23,14 +23,10 @@ $(document).ready(function(){
     radioClass: "iradio_square-blue",
     increaseArea: "20%"
   });
+  $('.icheck').css('margin-right','100px')
 });
 </script>
 
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
 <form class="form-group" action="<?php echo U('Admin/Link/add');?>" method="post">
@@ -57,7 +53,8 @@ $(document).ready(function(){
 			<th>是否显示</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				<input id="test" class="icheck" type="radio" name="is_show" value="1" checked="checked">
+				&emsp;
 				<span class="inputword">否</span>
 				<input class="icheck" type="radio" name="is_show" value="0">				
 			</td>

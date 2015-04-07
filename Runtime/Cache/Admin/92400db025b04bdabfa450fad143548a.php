@@ -23,6 +23,7 @@ $(document).ready(function(){
     radioClass: "iradio_square-blue",
     increaseArea: "20%"
   });
+  $('.icheck').css('margin-right','100px')
 });
 </script>
 
