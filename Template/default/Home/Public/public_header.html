@@ -11,8 +11,17 @@
 				</li>
 			</foreach>
 		</ul>
-		<ul class="user">
-			<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+		<ul id="login-word" class="user">
+			<if condition="session('user.id')" >
+				<li class="user-info">
+					<span><img src="{$Think.session.user.head_img}"/></span>
+					<span>{$Think.session.user.nickname}</span>
+					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
+				</li>
+			<else />	
+				<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+			</if>
+			
 		</ul>
 	</div>
 </div>

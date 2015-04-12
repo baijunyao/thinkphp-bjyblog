@@ -1,7 +1,9 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 文章model
+*/
 class ArticleModel extends Model{
 	// 自动验证
 	protected $_validate=array(
@@ -127,7 +129,7 @@ class ArticleModel extends Model{
 		$page=new \Think\Page($count,$limit);
 		$show=$page->show();
 		foreach ($list as $k => $v) {
-			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'tname');
+			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
 			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
 			$list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
 		}
@@ -142,7 +144,7 @@ class ArticleModel extends Model{
 	public function getDataByAid($aid){
 		$data=$this->where("aid=$aid")->find();
 		$data['tids']=D('ArticleTag')->getDataByAid($aid);
-		$data['tag']=D('ArticleTag')->getDataByAid($data['aid'],'tname');
+		$data['tag']=D('ArticleTag')->getDataByAid($data['aid'],'all');
 		$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname'));
 		$data['content']=htmlspecialchars_decode($data['content']);
 		return $data;

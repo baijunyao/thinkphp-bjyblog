@@ -1,7 +1,9 @@
 <?php 
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 文章图片关联表model
+*/
 class ArticlePicModel extends Model{
 
 	/**

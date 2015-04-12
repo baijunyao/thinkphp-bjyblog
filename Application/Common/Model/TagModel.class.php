@@ -1,7 +1,9 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 标签model
+*/
 Class TagModel extends Model{
 	// 添加标签
 	public function addData(){

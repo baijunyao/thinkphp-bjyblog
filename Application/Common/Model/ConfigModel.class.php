@@ -1,7 +1,9 @@
 <?php
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 配置项model
+*/
 class ConfigModel extends Model{
 
 	// // 自动验证

@@ -1,7 +1,9 @@
 <?php
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 友情链接model
+*/
 class LinkModel extends Model{
 	// 定义自动验证规则
 	protected $_validate=array(

@@ -4,7 +4,7 @@
 						<h3 class="title"><a href="{:U('Home/Index/article',array('aid'=>$v['aid']))}">{$v['title']}</a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
-							<li class="category">分类：<a href="">{$v['category']['cname']}</a>
+							<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['category']['cname']}</a>
 							<if condition="!empty($v['tag'])">
 								<li class="tags ">标签：
 									<foreach name="v['tag']" item="n">

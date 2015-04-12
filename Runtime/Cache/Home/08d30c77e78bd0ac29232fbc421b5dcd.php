@@ -5,6 +5,7 @@
 	<title>白俊遥的个人博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="/Public/static/js/jquery.cookie.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
@@ -41,8 +42,15 @@ $(document).ready(function(){
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
-		<ul class="user">
-			<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+		<ul id="login-word" class="user">
+			<?php if(session('user.id')): ?><li class="user-info">
+					<span><img src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
+					<span><?php echo ($_SESSION['user']['nickname']); ?></span>
+					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
+				</li>
+			<?php else: ?>	
+				<li class="login" data-toggle="modal" data-target="#myModal">登陆</li><?php endif; ?>
+			
 		</ul>
 	</div>
 </div>
@@ -55,12 +63,14 @@ $(document).ready(function(){
 		<div class="left">
 			<!-- 文章列表开始 -->
 						<div class="list">
+			<?php echo p($articles) ?>
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
 						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-							<li class="category">分类：<a href=""><?php echo ($v['category']['cname']); ?></a>
+							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['category']['cname']); ?></a>
 							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
+
 									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
 								</li><?php endif; ?>							
 						</ul>
@@ -115,23 +125,20 @@ $(document).ready(function(){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
       </div>
       <div class="modal-body">
-        <a href="javascript:;" onclick='toLogin()'><img id="qqLoginBtn" src="/Template/default/Home/Public/image/Connect_logo_5.png" alt=""></a>
-        <script>
-           function toLogin(){
-             //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
-             //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
-             var A=window.open("https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101206152&redirect_uri=http%3a%2f%2fwww.baijunyao.com&state=123123","TencentLogin","width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1");
-           } 
-        </script>
-        
+        <span id="qqLoginBtn"></span>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" data-redirecturi="http://www.baijunyao.com/Api/Connect2.1/qc_callback.html" charset="utf-8"></script>
+<script type="text/javascript">
+  userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
+</script>
+<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
 <!-- 登陆框结束 -->
 </body>
 </html>

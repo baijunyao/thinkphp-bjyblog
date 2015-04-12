@@ -1,7 +1,9 @@
 <?php  
 namespace Common\Model;
 use Think\Model;
-
+/**
+* 分类model
+*/
 class CategoryModel extends Model{
 	// 自动验证
 	protected $_validate=array(

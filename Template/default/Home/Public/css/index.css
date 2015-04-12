@@ -66,6 +66,25 @@ body {
   background: #008CBA;
   cursor: pointer;
 }
+#nav .b-inside .user .user-info {
+  height: 45px;
+  line-height: 45px;
+}
+#nav .b-inside .user .user-info span {
+  margin-left: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+#nav .b-inside .user .user-info span img {
+  width: 30px;
+  height: 30px;
+}
+#nav .b-inside .user .user-info span a {
+  color: #fff;
+}
+#nav .b-inside .user .user-info span a:hover {
+  color: #008CBA;
+}
 /* 顶部导航结束 */
 /* 主体部分开始 */
 #content {

@@ -6,7 +6,7 @@ class IndexController extends HomeBaseController {
     private $categorys;
     private $tags;
 
-    // 初始化获得categorys和tags数据
+    // 构造函数 实例化Category、Tag
     public function __construct(){
         parent::__construct();
         $this->categorys=D('Category')->getAllData();
