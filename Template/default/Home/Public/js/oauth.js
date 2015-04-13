@@ -6,10 +6,10 @@ function setLoginPost(postData){
 // qq登陆
 var QQOopts={
 	btnId:'qqLoginBtn',
-	size:'B_S',
+	size:'B_M',
 }
 function cbLoginFun(oInfo, oOpts){
-	if($.cookie('user_is_login')!=1){
+	if(isLogin==''){
 		$('#myModal').modal('hide');
 		var headImg=oInfo.figureurl_2;
 		var nickname=oInfo.nickname;
@@ -28,7 +28,7 @@ function cbLoginFun(oInfo, oOpts){
 				head_img:headImg,
 			}
 			setLoginPost(postData);
-			$.cookie('user_is_login', '1', { expires: 7, path: '/' });
+			isLogin=1;
 		})
 	}
 
@@ -37,6 +37,6 @@ function cbLogoutFun(){
 	var str='<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>';
 	$('#login-word').html(str);
 	$.post(userUrl+'logout');
-	$.cookie('user_is_login', '0', { expires: 7, path: '/' });
+	isLogin=0;
 }
 QC.Login(QQOopts,cbLoginFun,cbLogoutFun);

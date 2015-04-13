@@ -1,6 +1,6 @@
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo"><a href="{:U('Home/Index/index')}">帅白个人博客</a></div>
+		<div class="logo"><a href="{:U('Home/Index/index')}">白俊遥博客</a></div>
 		<ul class="category">
 			<li class="cname <if condition="!isset($_GET['cid'])">action</if>" >
 				<a href="{:U('Home/Index/index')}">首页</a>
@@ -14,8 +14,8 @@
 		<ul id="login-word" class="user">
 			<if condition="session('user.id')" >
 				<li class="user-info">
-					<span><img src="{$Think.session.user.head_img}"/></span>
-					<span>{$Think.session.user.nickname}</span>
+					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
+					<span><?php echo session('user.nickname') ;?></span>
 					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
 				</li>
 			<else />	

@@ -13,5 +13,10 @@ return array(
 	    '__ADMIN_JS__'		=> 	trim(TMPL_PATH,'.').'Admin/Public/js',
 	    '__ADMIN_IMAGE__'	=> 	trim(TMPL_PATH,'.').'Admin/Public/image',
 	),
+	'SESSION_AUTO_START'    =>  false, 
+	'SESSION_OPTIONS'       =>  array(
+		'name'				=>	'BJYSESSION',
+		// 'domain'			=>	'baijunyao.com',
+	),
 
 );

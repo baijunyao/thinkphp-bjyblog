@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>白俊遥的个人博客</title>
+	<title>白俊遥博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script type="text/javascript" src="/Public/static/js/jquery.cookie.js"></script>
@@ -33,7 +33,7 @@ $(document).ready(function(){
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
+		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
 			<li class="cname <?php if(!isset($_GET['cid'])): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
@@ -44,8 +44,8 @@ $(document).ready(function(){
 		</ul>
 		<ul id="login-word" class="user">
 			<?php if(session('user.id')): ?><li class="user-info">
-					<span><img src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
-					<span><?php echo ($_SESSION['user']['nickname']); ?></span>
+					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
+					<span><?php echo session('user.nickname') ;?></span>
 					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
 				</li>
 			<?php else: ?>	
@@ -63,14 +63,12 @@ $(document).ready(function(){
 		<div class="left">
 			<!-- 文章列表开始 -->
 						<div class="list">
-			<?php echo p($articles) ?>
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
 						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['category']['cname']); ?></a>
 							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
-
 									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
 								</li><?php endif; ?>							
 						</ul>
@@ -134,9 +132,10 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" data-redirecturi="http://www.baijunyao.com/Api/Connect2.1/qc_callback.html" charset="utf-8"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" charset="utf-8"></script>
 <script type="text/javascript">
   userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
+  isLogin='<?php echo session('user.id') ;?>';
 </script>
 <script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
 <!-- 登陆框结束 -->
