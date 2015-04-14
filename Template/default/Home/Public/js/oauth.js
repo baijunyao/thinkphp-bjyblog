@@ -10,7 +10,7 @@ var QQOopts={
 }
 function cbLoginFun(oInfo, oOpts){
 	if(isLogin==''){
-		$('#myModal').modal('hide');
+		$('#modal-login').modal('hide');
 		var headImg=oInfo.figureurl_2;
 		var nickname=oInfo.nickname;
 		var headImgStr='<span><img src=""/></span>';
@@ -34,7 +34,7 @@ function cbLoginFun(oInfo, oOpts){
 
 }
 function cbLogoutFun(){
-	var str='<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>';
+	var str='<li class="login" data-toggle="modal" data-target="#modal-login">登陆</li>';
 	$('#login-word').html(str);
 	$.post(userUrl+'logout');
 	isLogin=0;

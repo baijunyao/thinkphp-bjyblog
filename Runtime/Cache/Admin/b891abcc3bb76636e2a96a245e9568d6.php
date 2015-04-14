@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>添加标签</title>
+	<title>登陆后台管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script type="text/javascript" src="/Public/static/js/jquery.cookie.js"></script>
@@ -27,23 +27,16 @@ $(document).ready(function(){
 });
 </script>
 
+<link rel="stylesheet" href="/Template/default/Admin/Public/css/login.css">
 </head>
 <body>
-<form action="<?php echo U('Admin/Tag/add');?>" method="post">
-	<table class="table table-bordered table-striped table-hover table-condensed">
-		<tr>
-			<th>标签名</th>
-			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="tnames" rows="5" placeholder="可以批量添加标签，每行一个。"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<th></th>
-			<td>
-				<input class="btn btn-default" type="submit" value="添加">
-			</td>
-		</tr>
-	</table>
+<form class="form-group" action="<?php echo U('Admin/Login/login');?>" method="post">
+	<div id="Login">
+		<input class="form-control modal-sm" type="password" placeholder="后台登陆密码" name="ADMIN_PASSWORD">
+		<input class="form-control modal-sm" type="text" placeholder="验证码" name="verify">
+		<img class="verify" src="<?php echo U('Admin/Login/showVerify');?>" title="点击更换"  onclick="this.src+='/'+Math.random();">
+		<input class="btn btn-primary submit" type="submit" value="登陆">
+	</div>
 </form>
 </body>
 </html>

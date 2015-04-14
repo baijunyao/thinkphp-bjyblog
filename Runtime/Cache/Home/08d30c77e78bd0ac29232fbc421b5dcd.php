@@ -28,6 +28,7 @@ $(document).ready(function(){
 </script>
 
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 </head>
 <body>
 <!-- 顶部导航开始 -->
@@ -49,7 +50,7 @@ $(document).ready(function(){
 					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
 				</li>
 			<?php else: ?>	
-				<li class="login" data-toggle="modal" data-target="#myModal">登陆</li><?php endif; ?>
+				<li class="login" data-toggle="modal" data-target="#modal-login">登陆</li><?php endif; ?>
 			
 		</ul>
 	</div>
@@ -119,7 +120,7 @@ $(document).ready(function(){
 <!-- 通用底部文件结束 -->
 
 <!-- 登陆框开始 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

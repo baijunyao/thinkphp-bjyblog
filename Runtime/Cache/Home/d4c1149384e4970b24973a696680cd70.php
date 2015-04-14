@@ -5,6 +5,7 @@
 	<title>白俊遥的个人博客</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="/Public/static/js/jquery.cookie.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
@@ -30,9 +31,10 @@ $(document).ready(function(){
 </head>
 <body>
 <!-- 顶部导航开始 -->
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">帅白个人博客</a></div>
+		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
 			<li class="cname <?php if(!isset($_GET['cid'])): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
@@ -41,8 +43,15 @@ $(document).ready(function(){
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
-		<ul class="user">
-			<li class="login" data-toggle="modal" data-target="#myModal">登陆</li>
+		<ul id="login-word" class="user">
+			<?php if(session('user.id')): ?><li class="user-info">
+					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
+					<span><?php echo session('user.nickname') ;?></span>
+					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
+				</li>
+			<?php else: ?>	
+				<li class="login" data-toggle="modal" data-target="#modal-login">登陆</li><?php endif; ?>
+			
 		</ul>
 	</div>
 </div>
@@ -117,5 +126,26 @@ $(document).ready(function(){
 <!-- 通用底部文件结束 -->
 <!-- 通用底部文件结束 -->
 
+<!-- 登陆框开始 -->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
+      </div>
+      <div class="modal-body">
+        <span id="qqLoginBtn"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" charset="utf-8"></script>
+<script type="text/javascript">
+  userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
+  isLogin='<?php echo session('user.id') ;?>';
+</script>
+<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
+<!-- 登陆框结束 -->
 </body>
 </html>

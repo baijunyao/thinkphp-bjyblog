@@ -1,0 +1,132 @@
+[ 2015-04-15T00:09:21+08:00 ] ::1 /index.php/Home/User/oauth_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.1161s ]
+SQL: SELECT * FROM `bjy_oauth_user` WHERE `openid` = 'F16ABCFCE42A66BA9049DA0D95593D19' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `bjy_oauth_user` (`type`,`openid`,`access_token`,`nickname`,`head_img`,`create_time`,`last_login_time`,`last_login_ip`,`login_times`,`status`) VALUES ('1','F16ABCFCE42A66BA9049DA0D95593D19','7375B4E959446A07CF8DC08F757C3778','云淡风晴','http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100','1429027761','1429027761','0.0.0.0','1','1') [ RunTime:0.3760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003017s ]
+
+[ 2015-04-15T00:10:44+08:00 ] ::1 /index.php/Home/Index/article/aid/8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_article` WHERE ( aid=8 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0030s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: tname E:\tongbu\wamp\www\Application\Home\Controller\IndexController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2015-04-15T00:10:45+08:00 ] ::1 /index.php/Home/Index/article/aid/8?callback=queryUserInfoFn&_=1429027844811
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000100s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002697s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `bjy_article` WHERE ( aid=8 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0069s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=8 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0005s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: tname E:\tongbu\wamp\www\Application\Home\Controller\IndexController.class.php 第 60 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000540s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033082s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001067s ]
+
+[ 2015-04-15T00:10:47+08:00 ] ::1 /index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000735s ]
+
+[ 2015-04-15T00:10:51+08:00 ] ::1 /index.php/Home/User/oauth_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `bjy_oauth_user` WHERE `openid` = 'F16ABCFCE42A66BA9049DA0D95593D19' LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `bjy_oauth_user` SET `type`='1',`openid`='F16ABCFCE42A66BA9049DA0D95593D19',`access_token`='7375B4E959446A07CF8DC08F757C3778',`nickname`='云淡风晴',`head_img`='http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100',`last_login_time`='1429027851',`last_login_ip`='0.0.0.0',`login_times`=login_times+1 WHERE `openid` = 'F16ABCFCE42A66BA9049DA0D95593D19' [ RunTime:0.2166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2015-04-15T00:10:53+08:00 ] ::1 /index.php/Home/User/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001219s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2015-04-15T00:11:00+08:00 ] ::1 /index.php/Home/User/oauth_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002954s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `bjy_oauth_user` WHERE `openid` = 'F16ABCFCE42A66BA9049DA0D95593D19' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `bjy_oauth_user` SET `type`='1',`openid`='F16ABCFCE42A66BA9049DA0D95593D19',`access_token`='7375B4E959446A07CF8DC08F757C3778',`nickname`='云淡风晴',`head_img`='http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100',`last_login_time`='1429027860',`last_login_ip`='0.0.0.0',`login_times`=login_times+1 WHERE `openid` = 'F16ABCFCE42A66BA9049DA0D95593D19' [ RunTime:0.0471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000842s ]
+
