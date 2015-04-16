@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2015-04-06 00:10:58
+Date: 2015-04-15 00:15:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -106,7 +106,7 @@ INSERT INTO `bjy_config` VALUES ('1', 'WEB_NAME', 'thinkbjy');
 INSERT INTO `bjy_config` VALUES ('2', 'WEB_KEYWORD', 'thinkbjy,thinkphp,blog');
 INSERT INTO `bjy_config` VALUES ('3', 'WEB_DESCRIPTION', 'thinkbjy官网');
 INSERT INTO `bjy_config` VALUES ('4', 'WEB_STATUS', '1');
-INSERT INTO `bjy_config` VALUES ('5', 'ADMIN_PASSWORD', 'd41d8cd98f00b204e9800998ecf8427e');
+INSERT INTO `bjy_config` VALUES ('5', 'ADMIN_PASSWORD', '21232f297a57a5a743894a0e4a801fc3');
 
 -- ----------------------------
 -- Table structure for `bjy_link`
@@ -128,6 +128,31 @@ CREATE TABLE `bjy_link` (
 INSERT INTO `bjy_link` VALUES ('2', '测试友情链接', 'http://www.baijunyao.com', '1', '1', '0');
 
 -- ----------------------------
+-- Table structure for `bjy_oauth_user`
+-- ----------------------------
+DROP TABLE IF EXISTS `bjy_oauth_user`;
+CREATE TABLE `bjy_oauth_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `uid` int(10) unsigned DEFAULT '0' COMMENT '关联的本站用户id',
+  `type` tinyint(3) unsigned DEFAULT '1' COMMENT '类型 1：QQ  2：新浪微博',
+  `nickname` varchar(30) DEFAULT '' COMMENT '第三方昵称',
+  `head_img` varchar(255) DEFAULT '' COMMENT '头像',
+  `openid` varchar(40) DEFAULT '' COMMENT '第三方用户id',
+  `access_token` varchar(60) DEFAULT '' COMMENT 'access_token token',
+  `create_time` int(10) unsigned DEFAULT '0' COMMENT '绑定时间',
+  `last_login_time` int(10) unsigned DEFAULT '0' COMMENT '最后登录时间',
+  `last_login_ip` varchar(16) DEFAULT '' COMMENT '最后登录ip',
+  `login_times` int(6) unsigned DEFAULT '0' COMMENT '登录次数',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bjy_oauth_user
+-- ----------------------------
+INSERT INTO `bjy_oauth_user` VALUES ('1', '0', '1', '云淡风晴', 'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100', 'F16ABCFCE42A66BA9049DA0D95593D19', '7375B4E959446A07CF8DC08F757C3778', '1429027761', '1429027860', '0.0.0.0', '3', '1');
+
+-- ----------------------------
 -- Table structure for `bjy_tag`
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_tag`;
@@ -135,9 +160,10 @@ CREATE TABLE `bjy_tag` (
   `tid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '标签主键',
   `tname` varchar(10) NOT NULL DEFAULT '' COMMENT '标签名',
   PRIMARY KEY (`tid`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_tag
 -- ----------------------------
 INSERT INTO `bjy_tag` VALUES ('18', '测试标签');
+INSERT INTO `bjy_tag` VALUES ('19', 'test');

@@ -29,7 +29,9 @@ function cbLoginFun(oInfo, oOpts){
 			}
 			setLoginPost(postData);
 			isLogin=1;
+
 		})
+	location.replace(location) 
 	}
 
 }
@@ -38,5 +40,9 @@ function cbLogoutFun(){
 	$('#login-word').html(str);
 	$.post(userUrl+'logout');
 	isLogin=0;
+	var img = new Image(); 
+		img.src='http://changyan.sohu.com/api/2/logout?client_id=cyrI0sOYy&callback=C66A5BAD9ED000011E5A1F685821111F';
+	setTimeout(function(){location.reload(true)},100);
 }
+
 QC.Login(QQOopts,cbLoginFun,cbLogoutFun);
