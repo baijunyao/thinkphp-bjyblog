@@ -42,7 +42,7 @@ function cbLogoutFun(){
 	isLogin=0;
 	var img = new Image(); 
 		img.src='http://changyan.sohu.com/api/2/logout?client_id=cyrI0sOYy&callback=C66A5BAD9ED000011E5A1F685821111F';
-	setTimeout(function(){location.reload(true)},100);
+	setTimeout(function(){location.reload(true)},1000);
 }
 
 QC.Login(QQOopts,cbLoginFun,cbLogoutFun);

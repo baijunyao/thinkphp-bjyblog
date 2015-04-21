@@ -27,7 +27,7 @@ class CommentController extends HomeBaseController {
 			'is_login'=>0,
 				);
 		}
-		echo 'aaa('.json_encode($data).')';
+		echo 'queryUserInfoFn('.json_encode($data).')';
 	}
 
 	// 评论登陆

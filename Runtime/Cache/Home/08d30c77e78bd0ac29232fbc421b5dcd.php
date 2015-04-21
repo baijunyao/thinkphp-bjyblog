@@ -85,9 +85,10 @@ $(document).ready(function(){
 								</div>
 							</div>
 						</div>
-					</div><?php endforeach; endif; ?>
+					</div>
+			　　<?php endforeach; endif; ?>
 			</div>
-			<!-- 文章列表结束 -->
+		　　<!-- 文章列表结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 

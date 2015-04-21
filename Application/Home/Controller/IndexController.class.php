@@ -16,11 +16,13 @@ class IndexController extends HomeBaseController {
     // 显示首页
     public function index(){
     	$articles=D('Article')->getPageData();
-
-    	$this->assign('categorys',$this->categorys);
-    	$this->assign('tags',$this->tags);
-    	$this->assign('articles',$articles['data']);
-    	$this->assign('page',$articles['page']);
+        $assign=array(
+            'category'=>$this->categorys,
+            'tags'=>$this->tags,
+            'articles'=>$articles['data'],
+            'page'=>$articles['page'],
+            );
+    	$this->assign($array);
         $this->display();
     }
 
@@ -28,11 +30,13 @@ class IndexController extends HomeBaseController {
     public function category(){
         $cid=I('get.cid',0,'intval');
         $articles=D('Article')->getPageData($cid);
-
-        $this->assign('categorys',$this->categorys);
-        $this->assign('tags',$this->tags);
-        $this->assign('articles',$articles['data']);
-        $this->assign('page',$articles['page']);
+        $assign=array(
+            'categorys'=>$this->categorys,
+            'tags'=>$this->tags,
+            'articles'=>$articles['data'],
+            'page'=>$articles['page'],
+            );
+        $this->assign($array);
         $this->display();
     }
 
@@ -41,12 +45,14 @@ class IndexController extends HomeBaseController {
         $tid=I('get.tid',0,'intval');
         $articles=D('Article')->getPageData('all',$tid);
         $tname=D('Tag')->getFieldByTid($tid,'tname');
-
-        $this->assign('categorys',$this->categorys);
-        $this->assign('tags',$this->tags);
-        $this->assign('tname',$tname);
-        $this->assign('articles',$articles['data']);
-        $this->assign('page',$articles['page']);
+        $assign=array(
+            'categorys'=>$this->categorys,
+            'tags'=>$this->tags,
+            'articles'=>$articles['data'],
+            'page'=>$articles['page'],
+            'tname'=>$tname,
+            );
+        $this->assign($array);
         $this->display();
     }
 
@@ -54,11 +60,13 @@ class IndexController extends HomeBaseController {
     public function article(){
         $aid=I('get.aid',0,'intval');
         $article=D('Article')->getDataByAid($aid);
-
-        $this->assign('categorys',$this->categorys);
-        $this->assign('tags',$this->tags);
-        $this->assign('tname',$tname);
-        $this->assign('article',$article);
+        $assign=array(
+            'categorys'=>$this->categorys,
+            'tags'=>$this->tags,
+            'article'=>$article,
+            'tname'=>$tname,
+            );
+        $this->assign($array);
         $this->display();
     }
 
