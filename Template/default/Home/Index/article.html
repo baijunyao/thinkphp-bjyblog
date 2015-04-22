@@ -20,7 +20,7 @@
 				<h1 class="title">{$article['title']}</h1>
 				<ul class="metadata">
 					<li class="date">发布时间：{$article['addtime']|date='Y-m-d H:i:s',###}</li>
-					<li class="category">分类：<a href="">{$article['category']['cname']}</a>
+					<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$article['category']['cname']}</a>
 					<if condition="!empty($article['tag'])">
 						<li class="tags ">标签：
 							<foreach name="article['tag']" item="v">

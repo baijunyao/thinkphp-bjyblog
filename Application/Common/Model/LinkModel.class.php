@@ -50,18 +50,11 @@ class LinkModel extends Model{
 	}
 
 	// 传递is_delete和is_show获取对应数据
-	public function getDataByState($is_delete=0,$is_show='all'){
-		$show=$is_show=='all' ? '' : $is_show;
-		if($is_show=='all'){
-			$where=array(
-				'is_delete'=>$is_delete,
-				);
-		}else{
-			$where=array(
-				'is_delete'=>$is_delete,
-				'is_show'=>$is_show,
-				);
-		}
+	public function getDataByState($is_delete=0,$is_show=1){
+		$where=array(
+			'is_delete'=>$is_delete,
+			'is_show'=>$is_show,
+			);
 		return $this->where($where)->order('sort')->select();
 	}
 

@@ -19,10 +19,12 @@ class IndexController extends HomeBaseController {
         $assign=array(
             'category'=>$this->categorys,
             'tags'=>$this->tags,
+            'links'=>D('Link')->getDataByState(0,1),
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
-    	$this->assign($array);
+        // p(D('Link')->getDataByState(0,1));
+    	$this->assign($assign);
         $this->display();
     }
 
@@ -36,7 +38,7 @@ class IndexController extends HomeBaseController {
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
-        $this->assign($array);
+        $this->assign($assign);
         $this->display();
     }
 
@@ -52,7 +54,7 @@ class IndexController extends HomeBaseController {
             'page'=>$articles['page'],
             'tname'=>$tname,
             );
-        $this->assign($array);
+        $this->assign($assign);
         $this->display();
     }
 
@@ -66,7 +68,7 @@ class IndexController extends HomeBaseController {
             'article'=>$article,
             'tname'=>$tname,
             );
-        $this->assign($array);
+        $this->assign($assign);
         $this->display();
     }
 

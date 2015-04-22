@@ -4,10 +4,17 @@
 				<ul class="tags-ul">
 					<foreach name="tags" key="k" item="v">
 						<li class="tname">
-							<a class="tstyle-{$k}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
+							<a class="tstyle-{$k}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
 						</li>
 					</foreach>
 				</ul>
 			</div>
-
+			<div class="link">
+				<h4 class="title">友情链接</h4>
+				<p class="link-p">
+					<foreach name="links" key="k" item="v">
+						<a class="link-a" href="{$v[url]}" target="_blank">{$v['lname']}</a>
+					</foreach>
+				</p>
+			</div>
 		</div>

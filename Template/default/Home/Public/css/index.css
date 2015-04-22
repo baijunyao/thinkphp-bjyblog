@@ -111,6 +111,7 @@ body {
   float: left;
 }
 #content .b-inside .left .list {
+  padding: 5px 0;
   width: 840px;
 }
 #content .b-inside .left .list .title {
@@ -216,27 +217,39 @@ body {
   width: 340px;
   float: left;
 }
-#content .b-inside .right .tags {
+#content .b-inside .right .tags,
+#content .b-inside .right .link {
+  margin-bottom: 20px;
   padding: 20px;
   width: 340px;
   background: #fff;
   box-shadow: 0px 1px 2px 0px #E2E2E2;
   overflow: hidden;
 }
-#content .b-inside .right .tags .title {
+#content .b-inside .right .tags .title,
+#content .b-inside .right .link .title {
   width: 300px;
   height: 40px;
   line-height: 40px;
 }
-#content .b-inside .right .tags .tags-ul {
+#content .b-inside .right .tags .tags-ul,
+#content .b-inside .right .link .tags-ul,
+#content .b-inside .right .tags .link-p,
+#content .b-inside .right .link .link-p {
   width: 300px;
 }
-#content .b-inside .right .tags .tags-ul .tname {
+#content .b-inside .right .tags .tags-ul .tname,
+#content .b-inside .right .link .tags-ul .tname,
+#content .b-inside .right .tags .link-p .tname,
+#content .b-inside .right .link .link-p .tname {
   margin-top: 5px;
   margin-right: 5px;
   float: left;
 }
-#content .b-inside .right .tags .tags-ul .tname a {
+#content .b-inside .right .tags .tags-ul .tname a,
+#content .b-inside .right .link .tags-ul .tname a,
+#content .b-inside .right .tags .link-p .tname a,
+#content .b-inside .right .link .link-p .tname a {
   display: block;
   padding: 0 10px;
   height: 20px;
@@ -245,28 +258,58 @@ body {
   font-family: SimSun;
   color: #fff;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-0 {
+#content .b-inside .right .tags .tags-ul .link-a,
+#content .b-inside .right .link .tags-ul .link-a,
+#content .b-inside .right .tags .link-p .link-a,
+#content .b-inside .right .link .link-p .link-a {
+  margin-right: 5px;
+}
+#content .b-inside .right .tags .tags-ul .tstyle-0,
+#content .b-inside .right .link .tags-ul .tstyle-0,
+#content .b-inside .right .tags .link-p .tstyle-0,
+#content .b-inside .right .link .link-p .tstyle-0 {
   background: #43AC6A;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-1 {
+#content .b-inside .right .tags .tags-ul .tstyle-1,
+#content .b-inside .right .link .tags-ul .tstyle-1,
+#content .b-inside .right .tags .link-p .tstyle-1,
+#content .b-inside .right .link .link-p .tstyle-1 {
   background: #F08A24;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-2 {
+#content .b-inside .right .tags .tags-ul .tstyle-2,
+#content .b-inside .right .link .tags-ul .tstyle-2,
+#content .b-inside .right .tags .link-p .tstyle-2,
+#content .b-inside .right .link .link-p .tstyle-2 {
   background: #F04124;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-3 {
+#content .b-inside .right .tags .tags-ul .tstyle-3,
+#content .b-inside .right .link .tags-ul .tstyle-3,
+#content .b-inside .right .tags .link-p .tstyle-3,
+#content .b-inside .right .link .link-p .tstyle-3 {
   background: #008CBA;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-4 {
+#content .b-inside .right .tags .tags-ul .tstyle-4,
+#content .b-inside .right .link .tags-ul .tstyle-4,
+#content .b-inside .right .tags .link-p .tstyle-4,
+#content .b-inside .right .link .link-p .tstyle-4 {
   background: #F08A24;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-5 {
+#content .b-inside .right .tags .tags-ul .tstyle-5,
+#content .b-inside .right .link .tags-ul .tstyle-5,
+#content .b-inside .right .tags .link-p .tstyle-5,
+#content .b-inside .right .link .link-p .tstyle-5 {
   background: #43AC6A;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-6 {
+#content .b-inside .right .tags .tags-ul .tstyle-6,
+#content .b-inside .right .link .tags-ul .tstyle-6,
+#content .b-inside .right .tags .link-p .tstyle-6,
+#content .b-inside .right .link .link-p .tstyle-6 {
   background: #F04124;
 }
-#content .b-inside .right .tags .tags-ul .tstyle-7 {
+#content .b-inside .right .tags .tags-ul .tstyle-7,
+#content .b-inside .right .link .tags-ul .tstyle-7,
+#content .b-inside .right .tags .link-p .tstyle-7,
+#content .b-inside .right .link .link-p .tstyle-7 {
   background: #008CBA;
 }
 /* 主体部分结束 */

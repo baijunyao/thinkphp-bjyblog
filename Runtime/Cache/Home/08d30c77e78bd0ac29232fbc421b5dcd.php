@@ -64,31 +64,30 @@ $(document).ready(function(){
 			<!-- 文章列表开始 -->
 						<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><?php echo ($v['title']); ?></a></h3>
+						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['category']['cname']); ?></a>
+							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
 							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
-									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
+									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
 								</li><?php endif; ?>							
 						</ul>
 						<div class="article">
 							<div class="pic">
-								<a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
+								<a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
 							</div>
 							<div class="word">
 								<p class="description">
 									<?php echo ($v['description']); ?>
 								</p>
 								<div class="readall">
-									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>">阅读全文</a>
+									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
 								</div>
 							</div>
 						</div>
-					</div>
-			　　<?php endforeach; endif; ?>
+					</div><?php endforeach; endif; ?>
 			</div>
-		　　<!-- 文章列表结束 -->
+			<!-- 文章列表结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -98,11 +97,16 @@ $(document).ready(function(){
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
 					<?php if(is_array($tags)): foreach($tags as $k=>$v): ?><li class="tname">
-							<a class="tstyle-<?php echo ($k); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a>
+							<a class="tstyle-<?php echo ($k); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
 						</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
-
+			<div class="link">
+				<h4 class="title">友情链接</h4>
+				<p class="link-p">
+					<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+				</p>
+			</div>
 		</div>
 		<!-- 右侧内容结束 -->
 	</div>
