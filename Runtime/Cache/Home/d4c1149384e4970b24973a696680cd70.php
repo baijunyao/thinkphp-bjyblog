@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>白俊遥的个人博客</title>
+	<title>白俊遥博客</title>
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
-<script type="text/javascript" src="/Public/static/js/jquery.cookie.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
@@ -65,7 +64,7 @@ $(document).ready(function(){
 				<h1 class="title"><?php echo ($article['title']); ?></h1>
 				<ul class="metadata">
 					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['addtime'])); ?></li>
-					<li class="category">分类：<a href=""><?php echo ($article['category']['cname']); ?></a>
+					<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['category']['cname']); ?></a>
 					<?php if(!empty($article['tag'])): ?><li class="tags ">标签：
 							<?php if(is_array($article['tag'])): foreach($article['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
 						</li><?php endif; ?>							
@@ -104,11 +103,16 @@ $(document).ready(function(){
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
 					<?php if(is_array($tags)): foreach($tags as $k=>$v): ?><li class="tname">
-							<a class="tstyle-<?php echo ($k); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a>
+							<a class="tstyle-<?php echo ($k); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
 						</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
-
+			<div class="link">
+				<h4 class="title">友情链接</h4>
+				<p class="link-p">
+					<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+				</p>
+			</div>
 		</div>
 		<!-- 右侧内容结束 -->
 	</div>

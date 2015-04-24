@@ -113,17 +113,17 @@ class ArticleModel extends Model{
 			$where=array(
 				'is_delete'=>$is_delete,
 				);
-			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
 			$count=count($list);
 		}elseif ($cid=='all' && $tid!='all') {
-			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where(array('at.tid'=>$tid,'a.is_delete'=>$is_delete))->select();
+			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where(array('at.tid'=>$tid,'a.is_delete'=>$is_delete))->order('a.addtime desc')->select();
 			$count=count($list);
 		}elseif ($cid!='all' && $tid=='all') {
 			$where=array(
 				'cid'=>$cid,
 				'is_delete'=>$is_delete,
 				);
-			$list=$this->where($where)->order('addtime')->limit($page->firstRow.','.$page->listRows)->select();
+			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
 			$count=count($list);
 		}
 		$page=new \Think\Page($count,$limit);
@@ -154,14 +154,14 @@ class ArticleModel extends Model{
 	// is_all为true时获取全部数据 false时不获取is_show为0 和is_delete为1的数据
 	public function getDataByCid($cid,$is_all=false){
 		if($is_delete){
-			return $this->select();
+			return $this->order('addtime desc')->elect();
 		}else{
 			$where=array(
 				'cid'=>$cid,
 				'is_show'=>1,
 				'is_delete'=>0,
 			);
-			return $this->where($where)->select();
+			return $this->where($where)->order('addtime desc')->select();
 		}
 		
 	}

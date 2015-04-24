@@ -11,15 +11,18 @@ class IndexController extends HomeBaseController {
         parent::__construct();
         $this->categorys=D('Category')->getAllData();
         $this->tags=D('Tag')->getAllData();
+        $assign=array(
+            'tags'=>$this->tags,
+            'links'=>D('Link')->getDataByState(0,1),
+            );
+        $this->assign($assign);
     }
 
     // 显示首页
     public function index(){
     	$articles=D('Article')->getPageData();
         $assign=array(
-            'category'=>$this->categorys,
-            'tags'=>$this->tags,
-            'links'=>D('Link')->getDataByState(0,1),
+            'categorys'=>$this->categorys,
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
@@ -34,7 +37,6 @@ class IndexController extends HomeBaseController {
         $articles=D('Article')->getPageData($cid);
         $assign=array(
             'categorys'=>$this->categorys,
-            'tags'=>$this->tags,
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
@@ -49,7 +51,6 @@ class IndexController extends HomeBaseController {
         $tname=D('Tag')->getFieldByTid($tid,'tname');
         $assign=array(
             'categorys'=>$this->categorys,
-            'tags'=>$this->tags,
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             'tname'=>$tname,
@@ -64,7 +65,6 @@ class IndexController extends HomeBaseController {
         $article=D('Article')->getDataByAid($aid);
         $assign=array(
             'categorys'=>$this->categorys,
-            'tags'=>$this->tags,
             'article'=>$article,
             'tname'=>$tname,
             );

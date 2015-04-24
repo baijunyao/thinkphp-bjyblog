@@ -107,11 +107,12 @@ body {
 }
 #content .b-inside .left {
   margin-right: 20px;
+  padding: 5px 0;
   width: 840px;
   float: left;
+  overflow: hidden;
 }
 #content .b-inside .left .list {
-  padding: 5px 0;
   width: 840px;
 }
 #content .b-inside .left .list .title {
@@ -215,6 +216,7 @@ body {
 }
 #content .b-inside .right {
   width: 340px;
+  padding: 5px 0;
   float: left;
 }
 #content .b-inside .right .tags,
