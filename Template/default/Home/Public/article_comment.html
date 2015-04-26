@@ -1,9 +1,8 @@
-				<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
 				<div id="SOHUCS" sid="{$Think.get.aid}"></div>
 				<script>
 				  (function(){
-				    var appid = 'cyrI0sOYy',
-				    conf = 'prod_db0d542248694818e192f9d9d0d7a2c1';
+				    var appid = '{$Think.config.CHANGYAN_APPID}',
+				    conf = '{$Think.config.CHANGYAN_CONF}';
 				    var doc = document,
 				    s = doc.createElement('script'),
 				    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
@@ -14,4 +13,4 @@
 				    window.SCS_NO_IFRAME = true;
 				  })()
 				</script>
-				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrI0sOYy"></script>
+				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid={$Think.config.CHANGYAN_APPID}"></script>

@@ -145,7 +145,7 @@ class ArticleModel extends Model{
 		$data=$this->where("aid=$aid")->find();
 		$data['tids']=D('ArticleTag')->getDataByAid($aid);
 		$data['tag']=D('ArticleTag')->getDataByAid($data['aid'],'all');
-		$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname'));
+		$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
 		$data['content']=htmlspecialchars_decode($data['content']);
 		return $data;
 	}

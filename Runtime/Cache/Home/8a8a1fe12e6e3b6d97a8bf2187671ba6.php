@@ -1,8 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
+<!-- head头部分开始 -->
+<!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
-	<title>白俊遥博客</title>
+	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($category['description']); ?>" />
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
@@ -26,18 +30,20 @@ $(document).ready(function(){
 </script>
 
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 </head>
+<!-- head头部分结束 -->
+<!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
-<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <div id="nav">
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
-			<li class="cname <?php if(!isset($_GET['cid'])): ?>action<?php endif; ?>" >
+			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid']))): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
-			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
+			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>

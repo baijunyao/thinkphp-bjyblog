@@ -11,36 +11,41 @@ th, td { /* table elements 表格元素 */
     padding: 0;
 }
 
-address, cite, dfn, em, var ,i { font-style: normal; } /* 将斜体扶正 */
+/* 将斜体扶正 */
+em, i { 
+  font-style: normal; 
+}
 
 /* 重置列表元素 */
-ul, ol { list-style: none; }
-
-/* 重置文本格式元素 */
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
-    border-bottom: 1px dotted;
-    cursor: help;
+ul, ol ,li{ 
+  list-style: none; 
 }
 
-q:before, q:after { content: ''; }
+/* 重置a标签属性 */
+a { 
+  text-decoration: none; 
+}
 
-/* 重置表单元素 */
-legend { color: #000; } /* for ie6 */
-fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
-/* 注：optgroup 无法扶正 */
+a:hover { 
+  text-decoration: underline; 
+}
+
+a:focus {
+  outline:none; 
+  -moz-outline:none;
+}
+
+/* 让链接里的 img 无边框 */
+img { 
+  border: none; 
+} 
+
+/* 使得表单元素在 ie 下能继承字体大小 */
 button, input, select, textarea {
-    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    font-size: 100%; 
 }
 
-/* 去除li默认圆点 */
-
-li{
-  list-style: none;
-}
-/*表格自动换行*/
+/*表格内容自动换行*/
 table {
     word-break:break-all;
     word-wrap:break-word;

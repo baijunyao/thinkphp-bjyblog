@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>白俊遥博客</title>
-<bootstrap />
-<link rel="stylesheet" href="__HOME_CSS__/index.css">
-</head>
+<!-- head头部分开始 -->
+<include file="./Template/default/Home/Public/public_head.html" title="{$article['title']}-"  keywords="{$article['category']['keywords']}" description="{$article['description']}" />
+<!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
-<include file="./Template/default/Home/Public/public_header.html" />
+<include file="./Template/default/Home/Public/public_nav.html" />
 <!-- 顶部导航结束 -->
 
 <!-- 主体部分开始 -->
@@ -31,6 +28,11 @@
 				</ul>
 				<div class="content-word">
 					{$article['content']}
+					<if condition="$article['category']['cid'] neq 30">
+						<p class="copyright">
+							本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com
+						</p>
+					</if>
 				</div>
 			</div>
 			<div class="comment">

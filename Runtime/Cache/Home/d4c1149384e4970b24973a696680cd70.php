@@ -1,8 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
+<!-- head头部分开始 -->
+<!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
-	<title>白俊遥博客</title>
+	<title><?php echo ($article['title']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($article['category']['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($article['description']); ?>" />
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
@@ -26,18 +30,20 @@ $(document).ready(function(){
 </script>
 
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 </head>
+<!-- head头部分结束 -->
+<!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
-<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <div id="nav">
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
-			<li class="cname <?php if(!isset($_GET['cid'])): ?>action<?php endif; ?>" >
+			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid']))): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
-			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if($_GET['cid']== $v['cid']): ?>action<?php endif; ?>">
+			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
@@ -71,16 +77,18 @@ $(document).ready(function(){
 				</ul>
 				<div class="content-word">
 					<?php echo ($article['content']); ?>
+					<?php if($article['category']['cid'] != 30): ?><p class="copyright">
+							本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com
+						</p><?php endif; ?>
 				</div>
 			</div>
 			<div class="comment">
 				<!-- 畅言评论系统开始 -->
-								<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
-				<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
+								<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
 				<script>
 				  (function(){
-				    var appid = 'cyrI0sOYy',
-				    conf = 'prod_db0d542248694818e192f9d9d0d7a2c1';
+				    var appid = '<?php echo (C("CHANGYAN_APPID")); ?>',
+				    conf = '<?php echo (C("CHANGYAN_CONF")); ?>';
 				    var doc = document,
 				    s = doc.createElement('script'),
 				    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
@@ -91,7 +99,7 @@ $(document).ready(function(){
 				    window.SCS_NO_IFRAME = true;
 				  })()
 				</script>
-				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrI0sOYy"></script>
+				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=<?php echo (C("CHANGYAN_APPID")); ?>"></script>
 				<!-- 畅言评论系统结束 -->
 			</div>
 		</div>
@@ -143,7 +151,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" charset="utf-8"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="<?php echo (C("QQ_APPID")); ?>" charset="utf-8"></script>
 <script type="text/javascript">
   userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
   isLogin='<?php echo session('user.id') ;?>';

@@ -1,3 +1,7 @@
+// 第三方登陆
+function showlogin(){
+	$('#modal-login').modal('show');
+}
 
 var loginStatus=0;
 function setLoginPost(postData){

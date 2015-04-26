@@ -12,15 +12,26 @@ function p($data){
  * 删除指定的标签和内容
  * @param array $tags 需要删除的标签数组
  * @param string $str 数据源
+ * @param string $content 是否删除标签内的内容 0保留内容 1不保留内容
  * @return string
  */
-function strip_html_tags($tags,$str){
-    foreach ($tags as $tag) {
-        $p[]="/(<(?:\/".$tag."|".$tag.")[^>]*>)/i";
+function strip_html_tags($tags,$str,$content=0){
+    if($content){
+        $html=array();
+        foreach ($tags as $tag) {
+            $html[]='/(<'.$tag.'.*?>[\s|\S]*?<\/'.$tag.'>)/';
+        }
+        $data=preg_replace($html,'',$str);
+    }else{
+        $html=array();
+        foreach ($tags as $tag) {
+            $html[]="/(<(?:\/".$tag."|".$tag.")[^>]*>)/i";
+        }
+        $data=preg_replace($html, '', $str);
     }
-    $return_str=preg_replace($p, "", $str);
-    return $return_str;
+    return $data;
 }
+
 //传递ueditor生成的内容获取其中图片的路径
 function get_ueditor_image_path($str){
     $preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|gif|png|bmp]*/i';

@@ -153,11 +153,11 @@ $(document).ready(function(){
 				<span class="fa fa-caret-right"></span>已删文章
 			</dd>			
 			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
+				<a href="" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删评论
 			</dd>
 			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
+				<a href="" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删留言
 			</dd>
 			<dd>

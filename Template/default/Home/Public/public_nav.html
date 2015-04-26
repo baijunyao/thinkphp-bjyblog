@@ -1,13 +1,12 @@
-<script type="text/javascript" src="__HOME_JS__/index.js"></script>
 <div id="nav">
 	<div class="b-inside">
 		<div class="logo"><a href="{:U('Home/Index/index')}">白俊遥博客</a></div>
 		<ul class="category">
-			<li class="cname <if condition="!isset($_GET['cid'])">action</if>" >
+			<li class="cname <if condition="(!isset($_GET['cid'])) and (!isset($article['category']['cid']))">action</if>" >
 				<a href="{:U('Home/Index/index')}">首页</a>
 			</li>
 			<foreach name="categorys" item="v">
-				<li class="cname <if condition="$Think.get.cid eq $v['cid']">action</if>">
+				<li class="cname <if condition="($Think.get.cid eq $v['cid']) or ($article['category']['cid'] eq $v['cid'])">action</if>">
 					<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
 				</li>
 			</foreach>

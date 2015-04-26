@@ -2,17 +2,13 @@
 namespace Home\Controller;
 use Common\Controller\HomeBaseController;
 class IndexController extends HomeBaseController {
-    // 定义categorys和tags数据
-    private $categorys;
-    private $tags;
 
     // 构造函数 实例化Category、Tag
     public function __construct(){
         parent::__construct();
-        $this->categorys=D('Category')->getAllData();
-        $this->tags=D('Tag')->getAllData();
         $assign=array(
-            'tags'=>$this->tags,
+            'categorys'=>D('Category')->getAllData(),
+            'tags'=>D('Tag')->getAllData(),
             'links'=>D('Link')->getDataByState(0,1),
             );
         $this->assign($assign);
@@ -22,7 +18,6 @@ class IndexController extends HomeBaseController {
     public function index(){
     	$articles=D('Article')->getPageData();
         $assign=array(
-            'categorys'=>$this->categorys,
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
@@ -36,7 +31,7 @@ class IndexController extends HomeBaseController {
         $cid=I('get.cid',0,'intval');
         $articles=D('Article')->getPageData($cid);
         $assign=array(
-            'categorys'=>$this->categorys,
+            'category'=>D('Category')->getDataByCid($cid),
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
@@ -50,7 +45,6 @@ class IndexController extends HomeBaseController {
         $articles=D('Article')->getPageData('all',$tid);
         $tname=D('Tag')->getFieldByTid($tid,'tname');
         $assign=array(
-            'categorys'=>$this->categorys,
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             'tname'=>$tname,
@@ -63,12 +57,7 @@ class IndexController extends HomeBaseController {
     public function article(){
         $aid=I('get.aid',0,'intval');
         $article=D('Article')->getDataByAid($aid);
-        $assign=array(
-            'categorys'=>$this->categorys,
-            'article'=>$article,
-            'tname'=>$tname,
-            );
-        $this->assign($assign);
+        $this->assign('article',$article);
         $this->display();
     }
 
