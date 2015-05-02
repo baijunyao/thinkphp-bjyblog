@@ -103,6 +103,12 @@ $(document).ready(function(){
 					<textarea class="form-control modal-sm bjy-noresize" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>
 				</td>
 			</tr>
+			<tr>
+				<th>第三方统计代码</th>
+				<td>
+					<textarea class="form-control modal-sm bjy-noresize" name="WEB_STATISTICS" rows="5" placeholder=""><?php echo ($data['WEB_STATISTICS']); ?></textarea>
+				</td>
+			</tr>
 		</table>
    </div>
    <div class="tab-pane fade" id="water">

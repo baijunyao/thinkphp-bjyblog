@@ -11,11 +11,10 @@ class AdminBaseController extends Controller{
 			session('[start]');
 			session('session_status',1);
 		}
-		if(!isset($_SESSION['admin'])){
+		if(session('admin')!='is_login'){
 			redirect(U('Admin/Login/login'));
 		}
 	}
-
 
 
 	

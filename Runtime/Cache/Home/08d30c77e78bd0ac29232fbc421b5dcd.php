@@ -31,6 +31,7 @@ $(document).ready(function(){
 
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 <script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
+<?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
 <!-- head头部分结束 -->
@@ -142,7 +143,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101206152" charset="utf-8"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="<?php echo (C("QQ_APPID")); ?>" charset="utf-8"></script>
 <script type="text/javascript">
   userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
   isLogin='<?php echo session('user.id') ;?>';

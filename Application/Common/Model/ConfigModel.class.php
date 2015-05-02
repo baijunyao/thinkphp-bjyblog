@@ -20,6 +20,7 @@ class ConfigModel extends Model{
 		// p($data);die;
 		foreach ($data as $k => $v) {
 			$this->where(array('name'=>$k))->setField('value',$v);
+			$data[$k]=htmlspecialchars_decode($v);
 		}
 		$str=<<<php
 <?php
@@ -34,6 +35,7 @@ return array(
 	'WEB_NAME'				=>	'{$data['WEB_NAME']}',		 	   //网站名：
 	'WEB_KEYWORDS'			=>	'{$data['WEB_KEYWORDS']}',	       //网站关键字
 	'WEB_DESCRIPTION'		=>	'{$data['WEB_DESCRIPTION']}',	   //网站描述
+	'WEB_STATISTICS'			=>	'{$data['WEB_STATISTICS']}',   //第三方统计代码
 	'COPYRIGHT_WORD'		=>	'{$data['COPYRIGHT_WORD']}',	   //文章保留版权提示
 
 //*************************************水印设置****************************************

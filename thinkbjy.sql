@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2015-04-15 00:15:26
+Date: 2015-04-27 22:51:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,7 +76,7 @@ DROP TABLE IF EXISTS `bjy_category`;
 CREATE TABLE `bjy_category` (
   `cid` tinyint(2) unsigned NOT NULL AUTO_INCREMENT COMMENT '分类主键id',
   `cname` varchar(15) NOT NULL DEFAULT '' COMMENT '分类名称',
-  `keyword` varchar(255) DEFAULT '' COMMENT '关键词',
+  `keywords` varchar(255) DEFAULT '' COMMENT '关键词',
   `description` varchar(255) DEFAULT '' COMMENT '描述',
   `sort` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   `pid` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '父级栏目id',
@@ -97,16 +97,33 @@ CREATE TABLE `bjy_config` (
   `name` varchar(20) NOT NULL DEFAULT '' COMMENT '配置项键名',
   `value` varchar(300) DEFAULT '' COMMENT '配置项键值 1表示开启 0 关闭',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_config
 -- ----------------------------
-INSERT INTO `bjy_config` VALUES ('1', 'WEB_NAME', 'thinkbjy');
-INSERT INTO `bjy_config` VALUES ('2', 'WEB_KEYWORD', 'thinkbjy,thinkphp,blog');
-INSERT INTO `bjy_config` VALUES ('3', 'WEB_DESCRIPTION', 'thinkbjy官网');
+INSERT INTO `bjy_config` VALUES ('1', 'WEB_NAME', '白俊遥博客');
+INSERT INTO `bjy_config` VALUES ('2', 'WEB_KEYWORDS', '白俊遥,帅白,技术博客,个人博客,thinkbjy');
+INSERT INTO `bjy_config` VALUES ('3', 'WEB_DESCRIPTION', '白俊遥的个人技术博客,thinkbjy官方网站');
 INSERT INTO `bjy_config` VALUES ('4', 'WEB_STATUS', '1');
 INSERT INTO `bjy_config` VALUES ('5', 'ADMIN_PASSWORD', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `bjy_config` VALUES ('6', 'WATER_TYPE', '1');
+INSERT INTO `bjy_config` VALUES ('7', 'TEXT_WATER_WORD', 'baijunyao.com');
+INSERT INTO `bjy_config` VALUES ('8', 'TEXT_WATER_TTF_PTH', './Public/static/font/ariali.ttf');
+INSERT INTO `bjy_config` VALUES ('9', 'TEXT_WATER_FONT_SIZE', '15');
+INSERT INTO `bjy_config` VALUES ('10', 'TEXT_WATER_COLOR', '#008CBA');
+INSERT INTO `bjy_config` VALUES ('11', 'TEXT_WATER_ANGLE', '0');
+INSERT INTO `bjy_config` VALUES ('12', 'TEXT_WATER_LOCATE', '9');
+INSERT INTO `bjy_config` VALUES ('13', 'IMAGE_WATER_PIC_PTAH', './Upload/image/logo/logo.png');
+INSERT INTO `bjy_config` VALUES ('14', 'IMAGE_WATER_LOCATE', '9');
+INSERT INTO `bjy_config` VALUES ('15', 'IMAGE_WATER_ALPHA', '80');
+INSERT INTO `bjy_config` VALUES ('16', 'WEB_CLOSE_WORD', '网站升级中，请稍后访问。');
+INSERT INTO `bjy_config` VALUES ('17', 'WEB_ICP_NUMBER', '豫ICP备14009546号-3');
+INSERT INTO `bjy_config` VALUES ('18', 'ADMIN_EMAIL', 'admin@baijunyao.com');
+INSERT INTO `bjy_config` VALUES ('19', 'COPYRIGHT_WORD', '本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com');
+INSERT INTO `bjy_config` VALUES ('20', 'QQ_APPID', '101206152');
+INSERT INTO `bjy_config` VALUES ('21', 'CHANGYAN_APPID', 'cyrI0sOYy');
+INSERT INTO `bjy_config` VALUES ('22', 'CHANGYAN_CONF', 'prod_db0d542248694818e192f9d9d0d7a2c1');
 
 -- ----------------------------
 -- Table structure for `bjy_link`
@@ -150,7 +167,7 @@ CREATE TABLE `bjy_oauth_user` (
 -- ----------------------------
 -- Records of bjy_oauth_user
 -- ----------------------------
-INSERT INTO `bjy_oauth_user` VALUES ('1', '0', '1', '云淡风晴', 'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100', 'F16ABCFCE42A66BA9049DA0D95593D19', '7375B4E959446A07CF8DC08F757C3778', '1429027761', '1429027860', '0.0.0.0', '3', '1');
+INSERT INTO `bjy_oauth_user` VALUES ('1', '0', '1', '云淡风晴', 'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100', 'F16ABCFCE42A66BA9049DA0D95593D19', '7375B4E959446A07CF8DC08F757C3778', '1429027761', '1430062585', '0.0.0.0', '6', '1');
 
 -- ----------------------------
 -- Table structure for `bjy_tag`

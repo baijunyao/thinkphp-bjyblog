@@ -10,6 +10,15 @@ return array(
 	'WEB_NAME'				=>	'白俊遥博客',		 	   //网站名：
 	'WEB_KEYWORDS'			=>	'白俊遥,帅白,技术博客,个人博客,thinkbjy',	       //网站关键字
 	'WEB_DESCRIPTION'		=>	'白俊遥的个人技术博客,thinkbjy官方网站',	   //网站描述
+	'WEB_STATISTICS'			=>	'<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c3338ec467285d953aba86d9bd01cd93";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>',   //第三方统计代码
 	'COPYRIGHT_WORD'		=>	'本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com',	   //文章保留版权提示
 
 //*************************************水印设置****************************************

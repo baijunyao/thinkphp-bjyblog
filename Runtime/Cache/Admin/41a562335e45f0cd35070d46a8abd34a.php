@@ -58,9 +58,12 @@ $(document).ready(function(){
 		</li>
 	</ul>
 	<ul class="nt-msg list-unstyled">
-		<li></li>
-		<li></li>
-		<li></li>
+		<li class="nt-go-index">
+			<a href="<?php echo U('Home/Index/index');?>" target="_blank">前台首页</a>
+		</li>
+		<li>
+			<a href="<?php echo U('Admin/Login/logout');?>">退出</a>
+		</li>
 	</ul>
 </div>
 <!-- 顶部导航菜单结束 -->

@@ -46,9 +46,18 @@ html {
   background: #62A8D1;
 }
 #nav-top .nt-msg {
-  width: 400px;
+  width: 100px;
   height: 60px;
   float: right;
+}
+#nav-top .nt-msg li {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#nav-top .nt-msg li a {
+  color: #333;
 }
 #nav-left {
   width: 14%;

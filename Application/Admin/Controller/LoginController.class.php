@@ -12,7 +12,7 @@ class LoginController extends PublicBaseController{
 			if(check_verify($data['verify'])){
 				$password=M('config')->getFieldByName('ADMIN_PASSWORD','value');
 				if(md5($data['ADMIN_PASSWORD'])==$password){
-					session('admin','admin');
+					session('admin','is_login');
 					// p($_SESSION);die;
 					$this->success('登陆成功',U('Admin/Index/index'));
 				}else{
@@ -25,6 +25,12 @@ class LoginController extends PublicBaseController{
 		}else{
 			$this->display();
 		}
+	}
+
+	// 退出登录
+	public function logout(){
+		session('admin',null);
+		$this->success('退出成功',U('Admin/Login/login'));
 	}
 
 	// 生成验证码
