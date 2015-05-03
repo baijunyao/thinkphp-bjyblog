@@ -29,6 +29,11 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
+<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 <script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <?php echo (C("WEB_STATISTICS")); ?>

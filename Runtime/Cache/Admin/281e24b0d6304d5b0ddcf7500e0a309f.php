@@ -238,6 +238,12 @@ $(document).ready(function(){
 					<input class="form-control modal-sm" type="text" name="CHANGYAN_CONF" value="<?php echo ($data['CHANGYAN_CONF']); ?>" >
 				</td>
 			</tr>
+			<tr>
+				<th>畅言评论回推地址：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="CHANGEYAN_RETURN_COMMENT" value="<?php echo ($data['CHANGEYAN_RETURN_COMMENT']); ?>" >
+				</td>
+			</tr>
 		</table>
    </div>
 </div>

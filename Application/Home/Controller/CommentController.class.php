@@ -2,6 +2,15 @@
 namespace Home\Controller;
 use Common\Controller\HomeBaseController;
 class CommentController extends HomeBaseController {
+	// 定义数据表
+	private $db;
+
+	// 构造函数 实例化CommentModel
+	public function __construct(){
+		parent::__construct();
+		$this->db=D('Comment');
+	}
+
 
 	// 畅言获取信息接口
 	public function user_info(){
@@ -58,6 +67,22 @@ class CommentController extends HomeBaseController {
         return $signature;
     }
 
-
+   	// 接收畅言评论接口
+    public function add_comment(){
+    	$verify=I('get.verify');
+    	$data=I('post.data');
+    	$config_verify=cut_str(C('CHANGEYAN_RETURN_COMMENT'),'/',-1);
+    	if($verify==$config_verify){
+    		
+    		// $this->db->addData();
+    		$data=$this->db->getAllData();
+    		// $data=json_decode($data[0]['content'],true);
+    		p($data[0]['content']);
+    		$comment=htmlspecialchars_decode($data[0]['content']);
+    		p($comment);
+    		p(json_decode(trim($comment,chr(239).chr(187).chr(191)),ture));
+    		// p($data);
+    	}
+    }
 
 }

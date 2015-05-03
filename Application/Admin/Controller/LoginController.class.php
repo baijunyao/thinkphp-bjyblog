@@ -13,13 +13,15 @@ class LoginController extends PublicBaseController{
 				$password=M('config')->getFieldByName('ADMIN_PASSWORD','value');
 				if(md5($data['ADMIN_PASSWORD'])==$password){
 					session('admin','is_login');
+					session('ADMIN_PASSWORD',null);
 					// p($_SESSION);die;
 					$this->success('登陆成功',U('Admin/Index/index'));
 				}else{
-					$this->error('密码输入错误');
+					$this->success('密码输入错误',U('Admin/Login/login'));
 				}
 			}else{
-				$this->error('验证码输入错误');
+				session('ADMIN_PASSWORD',$data['ADMIN_PASSWORD']);
+				$this->success('验证码输入错误',U('Admin/Login/login'));
 			}
 			
 		}else{

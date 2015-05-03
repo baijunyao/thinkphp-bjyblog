@@ -29,8 +29,14 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
+<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 <script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
+<?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
 <!-- head头部分结束 -->
@@ -78,7 +84,7 @@ $(document).ready(function(){
 				<div class="content-word">
 					<?php echo ($article['content']); ?>
 					<?php if($article['category']['cid'] != 30): ?><p class="copyright">
-							本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com
+							<?php echo (C("COPYRIGHT_WORD")); ?>
 						</p><?php endif; ?>
 				</div>
 			</div>
