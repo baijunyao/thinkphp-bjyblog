@@ -9,8 +9,9 @@ class CommentModel extends Model{
 	// 添加数据
 	public function addData(){
 		$data=I('post.data');
-		$comment['cmtid']=$data['comments']['0']['cmtid'];
-		$comment['content']=$data['comments']['0']['content'];
+		$array_data=json_decode($data,true);
+		$comment['cmtid']=$array_data['comments']['0']['cmtid'];
+		$comment['content']=$array_data['comments']['0']['content'];
 		$this->add($comment);
 	}
 

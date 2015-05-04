@@ -16,7 +16,7 @@ class IndexController extends HomeBaseController {
 
     // 显示首页
     public function index(){
-    	$articles=D('Article')->getPageData();
+    	$articles=D('Article')->getPageData('all','all',1);
         $assign=array(
             'articles'=>$articles['data'],
             'page'=>$articles['page'],

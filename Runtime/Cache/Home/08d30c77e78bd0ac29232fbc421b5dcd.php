@@ -128,7 +128,7 @@ $(document).ready(function(){
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">
-		本站使用自主开发的<a href="">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
+		本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 	</div>
 </div>
 <!-- 通用底部文件结束 -->
