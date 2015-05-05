@@ -5,9 +5,8 @@ header("Content-type:text/html;charset=utf-8");
 
 //传递数据以易于阅读的样式格式化后输出
 function p($data){
-	echo "<hr /><pre>".print_r($data,true)."</pre><hr />";
+    echo '<pre style="display: block;padding: 9.5px;margin: 0px 0px 10px;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
 }
-
 /**
  * 删除指定的标签和内容
  * @param array $tags 需要删除的标签数组
@@ -78,16 +77,18 @@ function add_water($path){
 }
 
 // 设置验证码
-function show_verify(){
-    $config=array(
-        'codeSet'=>'1234567890',
-        'fontSize'=>30,
-        'useCurve'=>false,
-        'imageH'=>60,
-        'imageW'=>240,
-        'length'=>4,
-        'fontttf'=>'4.ttf',
-        );
+function show_verify($config=''){
+    if($config==''){
+        $config=array(
+            'codeSet'=>'1234567890',
+            'fontSize'=>30,
+            'useCurve'=>false,
+            'imageH'=>60,
+            'imageW'=>240,
+            'length'=>4,
+            'fontttf'=>'4.ttf',
+            );        
+    }
     $verify=new \Think\Verify($config);
     return $verify->entry();
 }

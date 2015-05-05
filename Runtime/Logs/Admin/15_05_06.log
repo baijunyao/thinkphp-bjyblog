@@ -1,0 +1,77 @@
+[ 2015-05-06T00:00:17+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_comment` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: Page E:\tongbu\wamp\www\Application\Common\Model\CommentModel.class.php 第 23 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\CommentModel.class.php 第 23 行.
+NOTIC: [8] Undefined variable: Page E:\tongbu\wamp\www\Application\Common\Model\CommentModel.class.php 第 23 行.
+NOTIC: [8] Trying to get property of non-object E:\tongbu\wamp\www\Application\Common\Model\CommentModel.class.php 第 23 行.
+SQL: SELECT * FROM `bjy_comment` ORDER BY cmtid desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000840s ]
+
+[ 2015-05-06T00:00:42+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' E:\tongbu\wamp\www\Application\Common\Common\function.php 第 8 行.
+
+[ 2015-05-06T00:01:30+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001154s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' E:\tongbu\wamp\www\Application\Common\Common\function.php 第 8 行.
+
+[ 2015-05-06T00:01:31+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0039s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' E:\tongbu\wamp\www\Application\Common\Common\function.php 第 8 行.
+
+[ 2015-05-06T00:01:32+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0041s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' E:\tongbu\wamp\www\Application\Common\Common\function.php 第 8 行.
+
+[ 2015-05-06T00:09:25+08:00 ] ::1 /index.php/Admin/Comment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0704s ]
+NOTIC: [8] Use of undefined constant ture - assumed 'ture' E:\tongbu\wamp\www\Application\Common\Common\function.php 第 8 行.
+

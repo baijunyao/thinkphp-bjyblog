@@ -119,14 +119,10 @@ $(document).ready(function(){
 		<dl>
 			<dt>
 				<span class="fa fa-comment-o"></span>评论管理
-			</dt>
+			</dt>		
 			<dd>
-				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>待审评论
-			</dd>			
-			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已审评论
+				<a href="<?php echo U('Admin/Comment/index');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>评论列表
 			</dd>
 		</dl>
 		<dl>

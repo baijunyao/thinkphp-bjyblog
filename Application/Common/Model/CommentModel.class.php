@@ -9,15 +9,19 @@ class CommentModel extends Model{
 	// 添加数据
 	public function addData(){
 		$data=I('post.data');
-		$array_data=json_decode($data,true);
+		$array_data=json_decode($_POST['data'],true);
 		$comment['cmtid']=$array_data['comments']['0']['cmtid'];
-		$comment['content']=$array_data['comments']['0']['content'];
+		$comment['content']=$data;
 		$this->add($comment);
 	}
 
 	// 获取全部数据
-	public function getAllData(){
-		return $this->select();
+	public function getPageData(){
+		$count=$this->count();
+		$page=new \Think\Page($count,15);
+		$data['page']=$page->show();
+		$data['list']=$this->order('cmtid desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		return $data;
 	}
 
 

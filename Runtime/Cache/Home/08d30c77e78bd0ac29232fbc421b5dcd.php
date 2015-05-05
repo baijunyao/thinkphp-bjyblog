@@ -35,7 +35,6 @@ $(document).ready(function(){
 	SyntaxHighlighter.all();
 </script>
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
-<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->

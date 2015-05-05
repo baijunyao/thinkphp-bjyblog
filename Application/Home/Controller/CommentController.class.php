@@ -70,21 +70,11 @@ class CommentController extends HomeBaseController {
    	// 接收畅言评论接口
     public function add_comment(){
     	$verify=I('get.verify');
-    	$data=I('post.data');
+    	$data=$_POST['data'];
     	$config_verify=cut_str(C('CHANGEYAN_RETURN_COMMENT'),'/',-1);
     	if($verify==$config_verify){
-    		$array_data=json_decode($data,true);
+    		$this->db->addData();
     		
-    		// $this->db->addData();
-    		// $data=$this->db->getAllData();
-    		// $data=json_decode($data[0]['content'],true);
-    		p($data[0]['content']);
-    		
-    		$comment=htmlspecialchars_decode($data[0]['content']);
-    		p(json_decode($comment,true));die;
-    		p($comment);
-    		p(json_decode(trim($comment,chr(239).chr(187).chr(191)),ture));
-    		// p($data);
     	}
     }
 
