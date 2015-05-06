@@ -26,10 +26,6 @@ $(document).ready(function(){
 </script>
 
 <style type="text/css">
-table {
-    word-break:break-all;
-    word-wrap:break-word;
-}
 </style>
 </head>
 <body>

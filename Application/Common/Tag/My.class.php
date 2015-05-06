@@ -10,7 +10,7 @@ class My extends TagLib {
 		'bjycss'=>array('attr'=>'','close'=>0),
 		'bootstrap'=>array('attr'=>'icheck','close'=>0),
 		'ueditor'=> array('attr'=>'name,content','close'=>0),
-
+		'recommend'=>array('attr'=>'limit','level'=>1)
 		);
 
 	//引入jquery
@@ -76,6 +76,33 @@ php;
 php;
 		return $link;
 	}
+
+	/**
+	 * 添加数据
+	 * @param strind $aid 文章id
+	 * @param array $tids 图片路径
+	 */
+	 public function _recommend($tag,$content){
+	 	if(empty($tag['cid'])){
+	 		$where="is_show=1 and is_delete=0";
+	 	}else{
+	 		$where='is_show=1 and is_delete=0 and cid='.$tag['cid'];
+	 	}
+	 	$limit=$tag['limit'];
+	 	// p($recommend);
+	 	$php=<<<php
+<?php	 	
+			\$recommend=M('Article')->field('aid,title')->where("$where")->limit($limit)->select();
+			foreach (\$recommend as \$k => \$field) {
+				\$url=U('Home/Index/article',array('aid'=>\$field['aid']));
+?>
+php;
+		$php.=$content;
+		$php.='<?php } ?>';//foreach的回扩;
+		return $php;
+	 }
+
+
 
 
 }

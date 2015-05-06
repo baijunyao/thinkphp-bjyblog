@@ -9,6 +9,14 @@
 					</foreach>
 				</ul>
 			</div>
+			<div class="recommend">
+				<h4 class="title">置顶推荐</h4>
+				<p class="recommend-p">
+					<recommend cid="" limit="10">
+						<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank">{$k+1} {$field['title']}</a>
+					</recommend>
+				</p>
+			</div>
 			<div class="link">
 				<h4 class="title">友情链接</h4>
 				<p class="link-p">

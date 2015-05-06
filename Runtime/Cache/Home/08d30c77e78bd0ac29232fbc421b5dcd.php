@@ -111,6 +111,12 @@ $(document).ready(function(){
 						</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
+			<div class="recommend">
+				<h4 class="title">置顶推荐</h4>
+				<p class="recommend-p">
+					<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?> <?php echo ($field['title']); ?></a><?php } ?>
+				</p>
+			</div>
 			<div class="link">
 				<h4 class="title">友情链接</h4>
 				<p class="link-p">
