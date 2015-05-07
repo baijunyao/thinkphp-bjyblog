@@ -2,9 +2,12 @@
 			<div class="tags">
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
+					<php>$tag_i=0</php>
 					<foreach name="tags" key="k" item="v">
+						<php>$tag_i++</php>
+						<php>$tag_i=$tag_i==5?1:$tag_i</php>
 						<li class="tname">
-							<a class="tstyle-{$k}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
+							<a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
 						</li>
 					</foreach>
 				</ul>
@@ -13,7 +16,7 @@
 				<h4 class="title">置顶推荐</h4>
 				<p class="recommend-p">
 					<recommend cid="" limit="10">
-						<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank">{$k+1} {$field['title']}</a>
+						<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank">{$k+1}：{$field['title']}</a>
 					</recommend>
 				</p>
 			</div>

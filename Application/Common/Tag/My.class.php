@@ -77,16 +77,12 @@ php;
 		return $link;
 	}
 
-	/**
-	 * 添加数据
-	 * @param strind $aid 文章id
-	 * @param array $tids 图片路径
-	 */
-	 public function _recommend($tag,$content){
+	// 置顶推荐文章标签 cid为空时则抓取全部分类下的推荐文章
+	public function _recommend($tag,$content){
 	 	if(empty($tag['cid'])){
-	 		$where="is_show=1 and is_delete=0";
+	 		$where="is_show=1 and is_delete=0 and is_top=1";
 	 	}else{
-	 		$where='is_show=1 and is_delete=0 and cid='.$tag['cid'];
+	 		$where='is_show=1 and is_delete=0 and is_top=1 and cid='.$tag['cid'];
 	 	}
 	 	$limit=$tag['limit'];
 	 	// p($recommend);
@@ -101,7 +97,6 @@ php;
 		$php.='<?php } ?>';//foreach的回扩;
 		return $php;
 	 }
-
 
 
 

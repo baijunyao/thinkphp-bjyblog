@@ -35,6 +35,7 @@ $(document).ready(function(){
 	SyntaxHighlighter.all();
 </script>
 <link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 <?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
@@ -106,15 +107,18 @@ $(document).ready(function(){
 			<div class="tags">
 				<h4 class="title">热门标签</h4>
 				<ul class="tags-ul">
-					<?php if(is_array($tags)): foreach($tags as $k=>$v): ?><li class="tname">
-							<a class="tstyle-<?php echo ($k); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
+					<?php $tag_i=0 ?>
+					<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
+						<?php $tag_i=$tag_i==5?1:$tag_i ?>
+						<li class="tname">
+							<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
 						</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 			<div class="recommend">
 				<h4 class="title">置顶推荐</h4>
 				<p class="recommend-p">
-					<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?> <?php echo ($field['title']); ?></a><?php } ?>
+					<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
 				</p>
 			</div>
 			<div class="link">
