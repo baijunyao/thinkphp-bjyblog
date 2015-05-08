@@ -109,6 +109,7 @@ class ArticleModel extends Model{
 	 * @return array $data 分页样式 和 分页数据
 	 */
 	public function getPageData($cid='all',$tid='all',$is_show='all',$is_delete=0,$limit=15){
+		
 		if($cid=='all' && $tid=='all'){
 			if($is_show=='all'){
 				$where=array(
@@ -120,8 +121,12 @@ class ArticleModel extends Model{
 					'is_show'=>$is_show
 					);					
 			}
+			$count=$this->where($where)->count();
+			$page=new \Think\Page($count,$limit);
+			$page->setConfig('header','个会员');
+			$page->setConfig('prev','上一页');
+			$page->setConfig('next','下一页');
 			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
-			$count=count($list);
 		}elseif ($cid=='all' && $tid!='all') {
 			if($is_show=='all'){
 				$where=array(
@@ -135,8 +140,9 @@ class ArticleModel extends Model{
 					'a.is_show'=>$is_show
 					);					
 			}
+			$count=$this->where($where)->count();
+			$page=new \Think\Page($count,$limit);
 			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->order('a.addtime desc')->select();
-			$count=count($list);
 		}elseif ($cid!='all' && $tid=='all') {
 			if($is_show=='all'){
 				$where=array(
@@ -150,11 +156,11 @@ class ArticleModel extends Model{
 					'is_show'=>$is_show
 					);					
 			}
-
+			$count=$this->where($where)->count();
+			$page=new \Think\Page($count,$limit);
 			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
-			$count=count($list);
 		}
-		$page=new \Think\Page($count,$limit);
+		
 		$show=$page->show();
 		foreach ($list as $k => $v) {
 			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');

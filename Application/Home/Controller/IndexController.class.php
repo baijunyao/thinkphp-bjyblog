@@ -16,11 +16,12 @@ class IndexController extends HomeBaseController {
 
     // 显示首页
     public function index(){
-    	$articles=D('Article')->getPageData('all','all',1);
+    	$articles=D('Article')->getPageData('all','all',1,0,1);
         $assign=array(
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
             );
+        // p($assign);die;
         // p(D('Link')->getDataByState(0,1));
     	$this->assign($assign);
         $this->display();

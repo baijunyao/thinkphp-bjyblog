@@ -228,6 +228,34 @@ body {
   width: 840px;
   background: #fff;
 }
+#content .b-inside .left .page {
+  width: 840px;
+}
+#content .b-inside .left .page div {
+  padding: 30px 15px;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px #E2E2E2;
+  text-align: center;
+  overflow: hidden;
+}
+#content .b-inside .left .page div .prev,
+#content .b-inside .left .page div .current,
+#content .b-inside .left .page div .num,
+#content .b-inside .left .page div .current,
+#content .b-inside .left .page div .next {
+  padding: 8px 16px;
+  margin: 0px 5px;
+  display: inline-block;
+  color: #008CBA;
+  border: 1px solid #F2F2F2;
+  border-radius: 5px;
+}
+#content .b-inside .left .page div .current {
+  background-color: #008CBA;
+  color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #008CBA;
+}
 #content .b-inside .right {
   width: 340px;
   padding: 5px 0;
