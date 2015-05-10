@@ -4,9 +4,9 @@
 <!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
-	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
+	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($category['description']); ?>" />
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
@@ -133,7 +133,7 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 底部文件开始 -->
+<!-- 通用底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">

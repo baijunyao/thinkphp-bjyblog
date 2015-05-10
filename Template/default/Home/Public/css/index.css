@@ -230,19 +230,19 @@ body {
 }
 #content .b-inside .left .page {
   width: 840px;
-}
-#content .b-inside .left .page div {
   padding: 30px 15px;
   background: #FFF;
   box-shadow: 0px 1px 2px 0px #E2E2E2;
   text-align: center;
   overflow: hidden;
 }
-#content .b-inside .left .page div .prev,
-#content .b-inside .left .page div .current,
-#content .b-inside .left .page div .num,
-#content .b-inside .left .page div .current,
-#content .b-inside .left .page div .next {
+#content .b-inside .left .page .first,
+#content .b-inside .left .page .prev,
+#content .b-inside .left .page .current,
+#content .b-inside .left .page .num,
+#content .b-inside .left .page .current,
+#content .b-inside .left .page .next,
+#content .b-inside .left .page .end {
   padding: 8px 16px;
   margin: 0px 5px;
   display: inline-block;
@@ -250,11 +250,23 @@ body {
   border: 1px solid #F2F2F2;
   border-radius: 5px;
 }
-#content .b-inside .left .page div .current {
+#content .b-inside .left .page .first:hover,
+#content .b-inside .left .page .prev:hover,
+#content .b-inside .left .page .current:hover,
+#content .b-inside .left .page .num:hover,
+#content .b-inside .left .page .current:hover,
+#content .b-inside .left .page .next:hover,
+#content .b-inside .left .page .end:hover {
+  text-decoration: none;
+}
+#content .b-inside .left .page .current {
   background-color: #008CBA;
   color: #FFF;
   border-radius: 5px;
   border: 1px solid #008CBA;
+}
+#content .b-inside .left .page .current:hover {
+  text-decoration: none;
 }
 #content .b-inside .right {
   width: 340px;

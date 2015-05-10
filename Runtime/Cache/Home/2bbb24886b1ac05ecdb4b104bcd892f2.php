@@ -4,7 +4,7 @@
 <!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo (C("WEB_NAME")); ?></title>
+	<title><?php echo ($tname); ?>-<?php echo (C("WEB_NAME")); ?></title>
 	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
 	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -66,11 +66,13 @@ $(document).ready(function(){
 </div>
 <!-- 顶部导航结束 -->
 
+
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
+			<h2 class="tag-title">Contents tagged with <?php echo ($tname); ?></h2>
 			<!-- 文章列表开始 -->
 						<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
@@ -133,7 +135,7 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 底部文件开始 -->
+<!-- 通用底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">

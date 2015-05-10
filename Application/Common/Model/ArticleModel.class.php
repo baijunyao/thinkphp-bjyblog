@@ -108,8 +108,7 @@ class ArticleModel extends Model{
 	 * @param strind $limit 分页条数
 	 * @return array $data 分页样式 和 分页数据
 	 */
-	public function getPageData($cid='all',$tid='all',$is_show='all',$is_delete=0,$limit=15){
-		
+	public function getPageData($cid='all',$tid='all',$is_show='1',$is_delete=0,$limit=10){
 		if($cid=='all' && $tid=='all'){
 			if($is_show=='all'){
 				$where=array(
@@ -122,10 +121,7 @@ class ArticleModel extends Model{
 					);					
 			}
 			$count=$this->where($where)->count();
-			$page=new \Think\Page($count,$limit);
-			$page->setConfig('header','个会员');
-			$page->setConfig('prev','上一页');
-			$page->setConfig('next','下一页');
+			$page=new \Org\Bjy\Page($count,$limit);
 			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
 		}elseif ($cid=='all' && $tid!='all') {
 			if($is_show=='all'){
@@ -140,8 +136,8 @@ class ArticleModel extends Model{
 					'a.is_show'=>$is_show
 					);					
 			}
-			$count=$this->where($where)->count();
-			$page=new \Think\Page($count,$limit);
+			$count=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->count();
+			$page=new \Org\Bjy\Page($count,$limit);
 			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->order('a.addtime desc')->select();
 		}elseif ($cid!='all' && $tid=='all') {
 			if($is_show=='all'){
@@ -157,10 +153,9 @@ class ArticleModel extends Model{
 					);					
 			}
 			$count=$this->where($where)->count();
-			$page=new \Think\Page($count,$limit);
+			$page=new \Org\Bjy\Page($count,$limit);
 			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
 		}
-		
 		$show=$page->show();
 		foreach ($list as $k => $v) {
 			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
@@ -199,6 +194,7 @@ class ArticleModel extends Model{
 		}
 		
 	}
+
 
 }
 

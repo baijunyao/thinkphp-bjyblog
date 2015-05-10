@@ -36,7 +36,7 @@ $(document).ready(function(){
 	<input type="hidden" name="aid" value="<?php echo ($data['aid']); ?>">
 	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
-			<th>所属分类</th>
+			<th width="80px;">所属分类</th>
 			<td>
 				<select class="form-control modal-sm" name="cid">
 					<?php if(is_array($allCategory)): foreach($allCategory as $key=>$v): ?><option value="<?php echo ($v['cid']); ?>" <?php if($v['cid'] == $data['cid']): ?>selected='selected'<?php endif; ?> ><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>

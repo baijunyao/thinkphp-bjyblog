@@ -9,12 +9,12 @@
 // |-----------------------------------------------------------------------------------
 // |   License: http://www.apache.org/licenses/LICENSE-2.0
 // '-----------------------------------------------------------------------------------
-namespace Org\Bjy;
 /**
  * 数据处理类
  * @package     tools_class
  * @author      后盾向军 <houdunwangxj@gmail.com>
  */
+namespace Org\Bjy;
 final class Data
 {
     /**
