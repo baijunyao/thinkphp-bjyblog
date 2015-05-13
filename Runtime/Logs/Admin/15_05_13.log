@@ -1,0 +1,378 @@
+[ 2015-05-13T21:41:36+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+
+[ 2015-05-13T21:41:36+08:00 ] ::1 /index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051816s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051951s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000836s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000947s ]
+
+[ 2015-05-13T21:41:36+08:00 ] ::1 /index.php/Admin/Login/showVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001103s ]
+
+[ 2015-05-13T21:41:42+08:00 ] ::1 /index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0477s ]
+SQL: SELECT `value` FROM `bjy_config` WHERE `name` = 'ADMIN_PASSWORD' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000784s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000896s ]
+
+[ 2015-05-13T21:41:43+08:00 ] ::1 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001097s ]
+
+[ 2015-05-13T21:41:43+08:00 ] ::1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007619s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2015-05-13T21:41:44+08:00 ] ::1 /index.php/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=11 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0026s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=11 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0028s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=10 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=10 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=27 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=9 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=9 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022484s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2015-05-13T21:42:00+08:00 ] ::1 /index.php/Admin/Article/edit/aid/11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `bjy_article` WHERE ( aid=11 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0023s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=11 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=11 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0027s ]
+SQL: SELECT `cid`,`cid`,`cname`,`keywords` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, null given E:\tongbu\wamp\www\Runtime\Cache\Admin\01a4a8e4f49a4ee89a7225c0edf83163.php 第 62 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given E:\tongbu\wamp\www\Runtime\Cache\Admin\01a4a8e4f49a4ee89a7225c0edf83163.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025352s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2015-05-13T21:42:05+08:00 ] ::1 /index.php/Admin/Article/edit/aid/11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0028s ]
+SQL: UPDATE `bjy_article` SET `aid`='11',`cid`='26',`title`='一个简洁、美观、靠谱的分页类',`author`='白俊遥',`description`='废话不多说先上图预览下；即本博客的分页；这个分页类是在thinkphp框架内置的分页类的基础上修改而来；原分页类的一些设计，在实际运用中感觉不是很合理；1：只有一页内容时不显示分页；2：原分页类在当前页是第一页和最后一页的时候，不显示第一页和最后一页的按钮；3：分页数比较少时不显示首页和末页按钮；4：包裹分页内容的父级div没有class；针对以上问题逐一进行了修改成如下；1：如果没有数据不显示分',`is_top`='0',`is_show`='1',`content`='&lt;p&gt;	&lt;/p&gt;&lt;p&gt;废话不多说先上图预览下；即本博客的分页；&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;这个分页类是在thinkphp框架内置的分页类的基础上修改而来；&lt;/p&gt;&lt;p&gt;原分页类的一些设计，在实际运用中感觉不是很合理；&lt;/p&gt;&lt;p&gt;1：只有一页内容时不显示分页；&lt;br/&gt;&lt;/p&gt;&lt;p&gt;2：原分页类在当前页是第一页和最后一页的时候，不显示第一页和最后一页的按钮；&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;3：分页数比较少时不显示首页和末页按钮；&lt;/p&gt;&lt;p&gt;4：包裹分页内容的父级div没有class；&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;针对以上问题逐一进行了修改成如下；&lt;br/&gt;&lt;/p&gt;&lt;p&gt;1：如果没有数据不显示分页，如果有一页及以上内容即显示分页；&lt;/p&gt;&lt;p&gt;2：默认就显示第一页和最后一页按钮，但是在当前页是第一页和最后一页的时候按钮点击无效果；&lt;/p&gt;&lt;p&gt;3：默认就显示首页和末页按钮；&lt;/p&gt;&lt;p&gt;4：为包裹分页内容的父级div添加名为page的class；&lt;/p&gt;&lt;p&gt;5：显示总共查出的内容条数；&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;示例环境：thinkphp3.2.3；&lt;/p&gt;&lt;p&gt;分页类目录：/Thinkphp/Library/Org/Bjy/Page.class.php&lt;br/&gt;&lt;/p&gt;&lt;p&gt;分页类代码如下：&lt;/p&gt;&lt;pre class=&quot;brush:php;toolbar:false&quot;&gt;&amp;lt;?php
+//&amp;nbsp;+----------------------------------------------------------------------
+//&amp;nbsp;|&amp;nbsp;ThinkPHP&amp;nbsp;[&amp;nbsp;WE&amp;nbsp;CAN&amp;nbsp;DO&amp;nbsp;IT&amp;nbsp;JUST&amp;nbsp;THINK&amp;nbsp;IT&amp;nbsp;]
+//&amp;nbsp;+----------------------------------------------------------------------
+//&amp;nbsp;|&amp;nbsp;Copyright&amp;nbsp;(c)&amp;nbsp;2006-2014&amp;nbsp;http://thinkphp.cn&amp;nbsp;All&amp;nbsp;rights&amp;nbsp;reserved.
+//&amp;nbsp;+----------------------------------------------------------------------
+//&amp;nbsp;|&amp;nbsp;Licensed&amp;nbsp;(&amp;nbsp;http://www.apache.org/licenses/LICENSE-2.0&amp;nbsp;)
+//&amp;nbsp;+----------------------------------------------------------------------
+//&amp;nbsp;|&amp;nbsp;Author:&amp;nbsp;麦当苗儿&amp;nbsp;&amp;lt;zuojiazi@vip.qq.com&amp;gt;&amp;nbsp;&amp;lt;http://www.zjzit.cn&amp;gt;
+//&amp;nbsp;+----------------------------------------------------------------------
+/*&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;*&amp;nbsp;PHP分页类
+&amp;nbsp;*&amp;nbsp;修改者：白俊遥
+&amp;nbsp;*&amp;nbsp;日&amp;nbsp;&amp;nbsp;期：2015.5.10
+&amp;nbsp;*&amp;nbsp;邮箱：admin@baijunyao.com
+&amp;nbsp;*&amp;nbsp;博客：http://www.baijunyao.com&amp;nbsp;
+&amp;nbsp;*/&amp;nbsp;&amp;nbsp;
+namespace&amp;nbsp;Org\\Bjy;//根据自己的项目设置命名空间；
+
+class&amp;nbsp;Page{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$firstRow;&amp;nbsp;//&amp;nbsp;起始行数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$listRows;&amp;nbsp;//&amp;nbsp;列表每页显示行数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$parameter;&amp;nbsp;//&amp;nbsp;分页跳转时要带的参数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$totalRows;&amp;nbsp;//&amp;nbsp;总行数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$totalPages;&amp;nbsp;//&amp;nbsp;分页总页面数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$rollPage&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;11;//&amp;nbsp;分页栏每页显示的页数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;$lastSuffix&amp;nbsp;=&amp;nbsp;true;&amp;nbsp;//&amp;nbsp;最后一页是否显示总页数
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;private&amp;nbsp;$p&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;&amp;#39;p&amp;#39;;&amp;nbsp;//分页参数名
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;private&amp;nbsp;$url&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;&amp;#39;&amp;#39;;&amp;nbsp;//当前链接URL
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;private&amp;nbsp;$nowPage&amp;nbsp;=&amp;nbsp;1;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;分页显示定制
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;private&amp;nbsp;$config&amp;nbsp;&amp;nbsp;=&amp;nbsp;array(
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;header&amp;#39;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;&amp;lt;span&amp;nbsp;class=&amp;quot;rows&amp;quot;&amp;gt;共&amp;nbsp;%TOTAL_ROW%&amp;nbsp;条记录&amp;lt;/span&amp;gt;&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;first&amp;#39;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;首页&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;prev&amp;#39;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;上一页&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;next&amp;#39;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;下一页&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;last&amp;#39;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;末页&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;#39;theme&amp;#39;&amp;nbsp;&amp;nbsp;=&amp;gt;&amp;nbsp;&amp;#39;%FIRST%&amp;nbsp;%UP_PAGE%&amp;nbsp;%LINK_PAGE%&amp;nbsp;%DOWN_PAGE%&amp;nbsp;%END%&amp;nbsp;%HEADER%&amp;#39;,
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;);
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/**
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;架构函数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;array&amp;nbsp;$totalRows&amp;nbsp;&amp;nbsp;总的记录数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;array&amp;nbsp;$listRows&amp;nbsp;&amp;nbsp;每页显示记录数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;array&amp;nbsp;$parameter&amp;nbsp;&amp;nbsp;分页跳转的参数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;function&amp;nbsp;__construct($totalRows,&amp;nbsp;$listRows=20,&amp;nbsp;$parameter&amp;nbsp;=&amp;nbsp;array())&amp;nbsp;{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;C(&amp;#39;VAR_PAGE&amp;#39;)&amp;nbsp;&amp;amp;&amp;amp;&amp;nbsp;$this-&amp;gt;p&amp;nbsp;=&amp;nbsp;C(&amp;#39;VAR_PAGE&amp;#39;);&amp;nbsp;//设置分页参数名称
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*&amp;nbsp;基础设置&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;totalRows&amp;nbsp;&amp;nbsp;=&amp;nbsp;$totalRows;&amp;nbsp;//设置总记录数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;listRows&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;$listRows;&amp;nbsp;&amp;nbsp;//设置每页显示行数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;parameter&amp;nbsp;&amp;nbsp;=&amp;nbsp;empty($parameter)&amp;nbsp;?&amp;nbsp;$_GET&amp;nbsp;:&amp;nbsp;$parameter;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;empty($_GET[$this-&amp;gt;p])&amp;nbsp;?&amp;nbsp;1&amp;nbsp;:&amp;nbsp;intval($_GET[$this-&amp;gt;p]);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;$this-&amp;gt;nowPage&amp;gt;0&amp;nbsp;?&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;:&amp;nbsp;1;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;firstRow&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;$this-&amp;gt;listRows&amp;nbsp;*&amp;nbsp;($this-&amp;gt;nowPage&amp;nbsp;-&amp;nbsp;1);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/**
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;定制分页链接设置
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;string&amp;nbsp;$name&amp;nbsp;&amp;nbsp;设置名称
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;string&amp;nbsp;$value&amp;nbsp;设置值
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;function&amp;nbsp;setConfig($name,$value)&amp;nbsp;{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if(isset($this-&amp;gt;config[$name]))&amp;nbsp;{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;config[$name]&amp;nbsp;=&amp;nbsp;$value;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/**
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;生成链接URL
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@param&amp;nbsp;&amp;nbsp;integer&amp;nbsp;$page&amp;nbsp;页码
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@return&amp;nbsp;string
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;private&amp;nbsp;function&amp;nbsp;url($page){
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return&amp;nbsp;str_replace(urlencode(&amp;#39;[PAGE]&amp;#39;),&amp;nbsp;$page,&amp;nbsp;$this-&amp;gt;url);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/**
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;组装分页链接
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*&amp;nbsp;@return&amp;nbsp;string
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;public&amp;nbsp;function&amp;nbsp;show()&amp;nbsp;{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if(0&amp;nbsp;==&amp;nbsp;$this-&amp;gt;totalRows)&amp;nbsp;return&amp;nbsp;&amp;#39;&amp;#39;;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*&amp;nbsp;生成URL&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;parameter[$this-&amp;gt;p]&amp;nbsp;=&amp;nbsp;&amp;#39;[PAGE]&amp;#39;;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;url&amp;nbsp;=&amp;nbsp;U(ACTION_NAME,&amp;nbsp;$this-&amp;gt;parameter);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*&amp;nbsp;计算分页信息&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;totalPages&amp;nbsp;=&amp;nbsp;ceil($this-&amp;gt;totalRows&amp;nbsp;/&amp;nbsp;$this-&amp;gt;listRows);&amp;nbsp;//总页数
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if(!empty($this-&amp;gt;totalPages)&amp;nbsp;&amp;amp;&amp;amp;&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;&amp;gt;&amp;nbsp;$this-&amp;gt;totalPages)&amp;nbsp;{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;=&amp;nbsp;$this-&amp;gt;totalPages;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;/*&amp;nbsp;计算分页零时变量&amp;nbsp;*/
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$now_cool_page&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;=&amp;nbsp;$this-&amp;gt;rollPage/2;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$now_cool_page_ceil&amp;nbsp;=&amp;nbsp;ceil($now_cool_page);
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//上一页
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$up_row&amp;nbsp;&amp;nbsp;=&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;-&amp;nbsp;1;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$up_page&amp;nbsp;=&amp;nbsp;$up_row&amp;nbsp;&amp;gt;&amp;nbsp;0&amp;nbsp;?&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;prev&amp;quot;&amp;nbsp;href=&amp;quot;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;url($up_row)&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;prev&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;&amp;nbsp;:&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;prev&amp;quot;&amp;nbsp;href=&amp;quot;javascript:;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;prev&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//下一页
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$down_row&amp;nbsp;&amp;nbsp;=&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;+&amp;nbsp;1;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$down_page&amp;nbsp;=&amp;nbsp;($down_row&amp;nbsp;&amp;lt;=&amp;nbsp;$this-&amp;gt;totalPages)&amp;nbsp;?&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;next&amp;quot;&amp;nbsp;href=&amp;quot;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;url($down_row)&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;next&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;&amp;nbsp;:&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;next&amp;quot;&amp;nbsp;href=&amp;quot;javascript:;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;next&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//第一页
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$the_first&amp;nbsp;=&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;first&amp;quot;&amp;nbsp;href=&amp;quot;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;url(1)&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;first&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//最后一页
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$the_end&amp;nbsp;=&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;end&amp;quot;&amp;nbsp;href=&amp;quot;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;url($this-&amp;gt;totalPages)&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;config[&amp;#39;last&amp;#39;]&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//数字连接
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$link_page&amp;nbsp;=&amp;nbsp;&amp;quot;&amp;quot;;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;for($i&amp;nbsp;=&amp;nbsp;1;&amp;nbsp;$i&amp;nbsp;&amp;lt;=&amp;nbsp;$this-&amp;gt;rollPage;&amp;nbsp;$i++){
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if(($this-&amp;gt;nowPage&amp;nbsp;-&amp;nbsp;$now_cool_page)&amp;nbsp;&amp;lt;=&amp;nbsp;0&amp;nbsp;){
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;echo&amp;nbsp;$i;die;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$page&amp;nbsp;=&amp;nbsp;$i;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}elseif(($this-&amp;gt;nowPage&amp;nbsp;+&amp;nbsp;$now_cool_page&amp;nbsp;-&amp;nbsp;1)&amp;nbsp;&amp;gt;=&amp;nbsp;$this-&amp;gt;totalPages){
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$page&amp;nbsp;=&amp;nbsp;$this-&amp;gt;totalPages&amp;nbsp;-&amp;nbsp;$this-&amp;gt;rollPage&amp;nbsp;+&amp;nbsp;$i;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}else{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$page&amp;nbsp;=&amp;nbsp;$this-&amp;gt;nowPage&amp;nbsp;-&amp;nbsp;$now_cool_page_ceil&amp;nbsp;+&amp;nbsp;$i;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;echo&amp;nbsp;$this-&amp;gt;nowPage;die;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if($page&amp;nbsp;&amp;gt;&amp;nbsp;0&amp;nbsp;&amp;amp;&amp;amp;&amp;nbsp;$page&amp;nbsp;!=&amp;nbsp;$this-&amp;gt;nowPage){
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;if($page&amp;nbsp;&amp;lt;=&amp;nbsp;$this-&amp;gt;totalPages){
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$link_page&amp;nbsp;.=&amp;nbsp;&amp;#39;&amp;lt;a&amp;nbsp;class=&amp;quot;num&amp;quot;&amp;nbsp;href=&amp;quot;&amp;#39;&amp;nbsp;.&amp;nbsp;$this-&amp;gt;url($page)&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$page&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/a&amp;gt;&amp;#39;;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}else{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;break;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}else{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$link_page&amp;nbsp;.=&amp;nbsp;&amp;#39;&amp;lt;span&amp;nbsp;class=&amp;quot;current&amp;quot;&amp;gt;&amp;#39;&amp;nbsp;.&amp;nbsp;$page&amp;nbsp;.&amp;nbsp;&amp;#39;&amp;lt;/span&amp;gt;&amp;#39;;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;//替换分页内容
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$page_str&amp;nbsp;=&amp;nbsp;str_replace(
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array(&amp;#39;%HEADER%&amp;#39;,&amp;nbsp;&amp;#39;%NOW_PAGE%&amp;#39;,&amp;nbsp;&amp;#39;%UP_PAGE%&amp;#39;,&amp;nbsp;&amp;#39;%DOWN_PAGE%&amp;#39;,&amp;nbsp;&amp;#39;%FIRST%&amp;#39;,&amp;nbsp;&amp;#39;%LINK_PAGE%&amp;#39;,&amp;nbsp;&amp;#39;%END%&amp;#39;,&amp;nbsp;&amp;#39;%TOTAL_ROW%&amp;#39;,&amp;nbsp;&amp;#39;%TOTAL_PAGE%&amp;#39;),
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;array($this-&amp;gt;config[&amp;#39;header&amp;#39;],&amp;nbsp;$this-&amp;gt;nowPage,&amp;nbsp;$up_page,&amp;nbsp;$down_page,&amp;nbsp;$the_first,&amp;nbsp;$link_page,&amp;nbsp;$the_end,&amp;nbsp;$this-&amp;gt;totalRows,&amp;nbsp;$this-&amp;gt;totalPages),
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$this-&amp;gt;config[&amp;#39;theme&amp;#39;]);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return&amp;nbsp;&amp;#39;&amp;lt;div&amp;nbsp;class=&amp;quot;page&amp;quot;&amp;gt;&amp;#39;.$page_str.&amp;#39;&amp;lt;/div&amp;gt;&amp;#39;;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;}
+}&lt;/pre&gt;&lt;p&gt;分页类调用：&lt;/p&gt;&lt;pre class=&quot;brush:php;toolbar:false&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$count=$this-&amp;gt;where($where)-&amp;gt;count();
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$page=new&amp;nbsp;\\Org\\Bjy\\Page($count,$limit);
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$list=$this-&amp;gt;where($where)-&amp;gt;order(&amp;#39;addtime&amp;nbsp;desc&amp;#39;)-&amp;gt;limit($page-&amp;gt;firstRow.&amp;#39;,&amp;#39;.$page-&amp;gt;listRows)-&amp;gt;select();
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;$show=$page-&amp;gt;show();&lt;/pre&gt;&lt;p&gt;分页类的使用方法和原thinkphp相同；具体参考：&lt;br/&gt;&lt;/p&gt;' WHERE `aid` = 11 [ RunTime:0.1318s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0065s ]
+SQL: DELETE FROM `bjy_article_tag` WHERE ( aid=11 ) [ RunTime:0.0003s ]
+SQL: INSERT INTO `bjy_article_tag` (`aid`,`tid`) VALUES ('11','18') [ RunTime:0.0568s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0063s ]
+SQL: DELETE FROM `bjy_article_pic` WHERE ( aid=11 ) [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000333s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000754s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018054s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001017s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001166s ]
+
+[ 2015-05-13T21:42:06+08:00 ] ::1 /index.php/Admin/Article/edit/aid/11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `bjy_article` WHERE ( aid=11 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0035s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=11 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=11 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0030s ]
+SQL: SELECT `cid`,`cid`,`cname`,`keywords` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000371s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017767s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001157s ]
+

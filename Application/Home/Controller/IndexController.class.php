@@ -54,8 +54,22 @@ class IndexController extends HomeBaseController {
 
     // 显示文章内容页
     public function article(){
+        $cid=I('get.cid',0,'intval');
+        $tid=I('get.tid',0,'intval');
         $aid=I('get.aid',0,'intval');
-        $article=D('Article')->getDataByAid($aid);
+        switch(true){
+            case $cid==0 && $tid==0:
+                $map=array();
+                break;
+            case $cid!=0:
+                $map=array('cid'=>$cid);
+                break;
+            case $tid!=0:
+                $map=array('tid'=>$tid);
+                break;
+        }
+        $article=D('Article')->getDataByAid($aid,$map);
+        // p($article);die;
         $this->assign('article',$article);
         $this->display();
     }

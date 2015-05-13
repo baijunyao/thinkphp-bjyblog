@@ -4,9 +4,9 @@
 <!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
-	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
+	<title><?php echo ($article['current']['title']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($article['current']['category']['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($article['current']['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -73,34 +73,56 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<!-- 文章列表开始 -->
-						<div class="list">
-				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
-						<ul class="metadata">
-							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：
-									<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-								</li><?php endif; ?>							
-						</ul>
-						<div class="article">
-							<div class="pic">
-								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
-							</div>
-							<div class="word">
-								<p class="description">
-									<?php echo ($v['description']); ?>
-								</p>
-								<div class="readall">
-									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
-								</div>
-							</div>
-						</div>
-					</div><?php endforeach; endif; ?>
-				<?php echo ($page); ?>
+			<div class="article">
+				<h1 class="title"><?php echo ($article['current']['title']); ?></h1>
+				<ul class="metadata">
+					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['current']['addtime'])); ?></li>
+					<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
+					<?php if(!empty($article['current']['tag'])): ?><li class="tags ">标签：
+							<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
+						</li><?php endif; ?>							
+				</ul>
+				<div class="content-word">
+					<?php echo ($article['current']['content']); ?>
+					<?php if($article['current']['category']['cid'] != 30): ?><p class="copyright">
+							<?php echo (C("COPYRIGHT_WORD")); ?>
+						</p><?php endif; ?>
+					<ul class="prev-next">
+						<li class="prev">
+							上一篇：
+							<?php if(empty($article['prev'])): ?><span>没有了</span>
+							<?php else: ?>
+								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']));?>"><?php echo ($article['prev']['title']); ?></a><?php endif; ?>
+						</li>
+						<li class="next">
+							下一篇：
+							<?php if(empty($article['next'])): ?><span>没有了</span>
+							<?php else: ?>
+								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['next']['aid']));?>"><?php echo ($article['next']['title']); ?></a><?php endif; ?>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<!-- 文章列表结束 -->
+			<div class="comment">
+				<!-- 畅言评论系统开始 -->
+								<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
+				<script>
+				  (function(){
+				    var appid = '<?php echo (C("CHANGYAN_APPID")); ?>',
+				    conf = '<?php echo (C("CHANGYAN_CONF")); ?>';
+				    var doc = document,
+				    s = doc.createElement('script'),
+				    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+				    s.type = 'text/javascript';
+				    s.charset = 'utf-8';
+				    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+				    h.insertBefore(s,h.firstChild);
+				    window.SCS_NO_IFRAME = true;
+				  })()
+				</script>
+				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=<?php echo (C("CHANGYAN_APPID")); ?>"></script>
+				<!-- 畅言评论系统结束 -->
+			</div>
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -135,7 +157,7 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 底部文件开始 -->
+<!-- 通用底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">

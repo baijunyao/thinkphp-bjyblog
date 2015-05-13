@@ -169,13 +169,41 @@ class ArticleModel extends Model{
 		return $data;
 	}
 
-	// 传递aid获取单条全部数据
-	public function getDataByAid($aid){
-		$data=$this->where("aid=$aid")->find();
-		$data['tids']=D('ArticleTag')->getDataByAid($aid);
-		$data['tag']=D('ArticleTag')->getDataByAid($data['aid'],'all');
-		$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
-		$data['content']=htmlspecialchars_decode($data['content']);
+	// 传递aid获取单条全部数据 $map 主要为前台页面上下页使用
+	public function getDataByAid($aid,$map=''){
+		if($map==''){
+			$data=$this->where("aid=$aid")->find();
+			$data['tids']=D('ArticleTag')->getDataByAid($aid);
+			$data['tag']=D('ArticleTag')->getDataByAid($aid,'all');
+			$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
+			$data['content']=htmlspecialchars_decode($data['content']);
+		}else{
+			if(isset($map['tid'])){
+				$prev_map['at.tid']=$map['tid'];
+				$prev_map[]=array('a.is_show'=>1);
+				$prev_map[]=array('a.is_delete'=>0);	
+				$next_map=$prev_map;
+				$prev_map['a.aid']=array('gt',$aid);
+				$next_map['a.aid']=array('lt',$aid);
+				$data['prev']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($prev_map)->limit(1)->find();
+				$data['next']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($next_map)->order('a.aid desc')->limit(1)->find();
+			}else{
+				$prev_map=$map;
+				$prev_map[]=array('is_show'=>1);
+				$prev_map[]=array('is_delete'=>0);	
+				$next_map=$prev_map;
+				$prev_map['aid']=array('gt',$aid);
+				$next_map['aid']=array('lt',$aid);
+				$data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
+				
+				$data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
+			}
+			$data['current']=$this->where(array('aid'=>$aid))->find();
+				$data['current']['tids']=D('ArticleTag')->getDataByAid($aid);
+				$data['current']['tag']=D('ArticleTag')->getDataByAid($aid,'all');
+				$data['current']['category']=current(D('Category')->getDataByCid($data['current']['cid'],'cid,cid,cname,keywords'));
+				$data['current']['content']=htmlspecialchars_decode($data['current']['content']);
+		}
 		return $data;
 	}
 

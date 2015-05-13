@@ -7,7 +7,9 @@
 	<title><?php echo ($tname); ?>-<?php echo (C("WEB_NAME")); ?></title>
 	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
 	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
-<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta name="author" content="baijunyao,admin@baijunyao.com">
+	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
@@ -29,13 +31,13 @@ $(document).ready(function(){
 });
 </script>
 
-<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
-<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
-<script type="text/javascript">
-	SyntaxHighlighter.all();
-</script>
-<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
-<?php echo (C("WEB_STATISTICS")); ?>
+	<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
+	<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+	<?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
 <!-- head头部分结束 -->
@@ -76,7 +78,7 @@ $(document).ready(function(){
 			<!-- 文章列表开始 -->
 						<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
+						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
@@ -86,14 +88,14 @@ $(document).ready(function(){
 						</ul>
 						<div class="article">
 							<div class="pic">
-								<a href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
+								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
 							</div>
 							<div class="word">
 								<p class="description">
 									<?php echo ($v['description']); ?>
 								</p>
 								<div class="readall">
-									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
+									<a class="readall-a"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
 								</div>
 							</div>
 						</div>

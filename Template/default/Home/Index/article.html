@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- head头部分开始 -->
-<include file="./Template/default/Home/Public/public_head.html" title="{$article['title']}-"  keywords="{$article['category']['keywords']}" description="{$article['description']}" />
+<include file="./Template/default/Home/Public/public_head.html" title="{$article['current']['title']}-"  keywords="{$article['current']['category']['keywords']}" description="{$article['current']['description']}" />
 <!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
@@ -14,25 +14,43 @@
 		<!-- 左侧列表开始 -->
 		<div class="left">
 			<div class="article">
-				<h1 class="title">{$article['title']}</h1>
+				<h1 class="title">{$article['current']['title']}</h1>
 				<ul class="metadata">
-					<li class="date">发布时间：{$article['addtime']|date='Y-m-d H:i:s',###}</li>
-					<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$article['category']['cname']}</a>
-					<if condition="!empty($article['tag'])">
+					<li class="date">发布时间：{$article['current']['addtime']|date='Y-m-d H:i:s',###}</li>
+					<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$article['current']['category']['cname']}</a>
+					<if condition="!empty($article['current']['tag'])">
 						<li class="tags ">标签：
-							<foreach name="article['tag']" item="v">
+							<foreach name="article['current']['tag']" item="v">
 								<a href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
 							</foreach>
 						</li>
 					</if>							
 				</ul>
 				<div class="content-word">
-					{$article['content']}
-					<if condition="$article['category']['cid'] neq 30">
+					{$article['current']['content']}
+					<if condition="$article['current']['category']['cid'] neq 30">
 						<p class="copyright">
 							{$Think.config.COPYRIGHT_WORD}
 						</p>
 					</if>
+					<ul class="prev-next">
+						<li class="prev">
+							上一篇：
+							<empty name="article['prev']">
+								<span>没有了</span>
+							<else />
+								<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']))}">{$article['prev']['title']}</a>
+							</empty>
+						</li>
+						<li class="next">
+							下一篇：
+							<empty name="article['next']">
+								<span>没有了</span>
+							<else />
+								<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['next']['aid']))}">{$article['next']['title']}</a>
+							</empty>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="comment">

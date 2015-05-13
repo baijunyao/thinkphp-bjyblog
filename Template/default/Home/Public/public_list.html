@@ -1,7 +1,7 @@
 			<div class="list">
 				<foreach name="articles" item="v">
 					<div class="detail">
-						<h3 class="title"><a href="{:U('Home/Index/article',array('aid'=>$v['aid']))}" target="_blank">{$v['title']}</a></h3>
+						<h3 class="title"><a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']))}" target="_blank">{$v['title']}</a></h3>
 						<ul class="metadata">
 							<li class="date">发布时间：{$v['addtime']|date='Y-m-d H:i:s',###}</li>
 							<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}" target="_blank">{$v['category']['cname']}</a>
@@ -15,14 +15,14 @@
 						</ul>
 						<div class="article">
 							<div class="pic">
-								<a href="{:U('Home/Index/article',array('aid'=>$v['aid']))}" target="_blank"><img src="{$v['pic_path']}" alt=""></a>
+								<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']))}" target="_blank"><img src="{$v['pic_path']}" alt=""></a>
 							</div>
 							<div class="word">
 								<p class="description">
 									{$v['description']}
 								</p>
 								<div class="readall">
-									<a class="readall-a"  href="{:U('Home/Index/article',array('aid'=>$v['aid']))}" target="_blank">阅读全文</a>
+									<a class="readall-a"  href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$v['aid']))}" target="_blank">阅读全文</a>
 								</div>
 							</div>
 						</div>
