@@ -195,7 +195,6 @@ class ArticleModel extends Model{
 				$prev_map['aid']=array('gt',$aid);
 				$next_map['aid']=array('lt',$aid);
 				$data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
-				
 				$data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
 			}
 			$data['current']=$this->where(array('aid'=>$aid))->find();
@@ -204,6 +203,22 @@ class ArticleModel extends Model{
 				$data['current']['category']=current(D('Category')->getDataByCid($data['current']['cid'],'cid,cid,cname,keywords'));
 				$data['current']['content']=htmlspecialchars_decode($data['current']['content']);
 		}
+		return $data;
+	}
+
+	// 传递搜索词获取数据
+	public function getDataByTitle($search_word){
+		$map=array(
+			'title'=>array('like',"%$search_word%")
+			);
+		$count=$this->where($map)->count();
+		$page=new \Org\Bjy\Page($count,10);
+		$list=$this->where($map)->order('addtime desc')->limit($page->firstRow.','.$page->lastRows)->select();
+		$show=$page->show();
+		$data=array(
+			'page'=>$show,
+			'data'=>$list
+			);
 		return $data;
 	}
 

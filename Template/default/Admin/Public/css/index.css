@@ -3,6 +3,7 @@
 html {
   overflow-y: hidden;
 }
+/* 顶部导航条开始 */
 #nav-top {
   width: 100%;
   height: 60px;
@@ -59,6 +60,8 @@ html {
 #nav-top .nt-msg li a {
   color: #333;
 }
+/* 顶部导航条结束 */
+/* 左侧导航开始 */
 #nav-left {
   width: 14%;
   height: 600px;
@@ -103,9 +106,20 @@ html {
   top: 0;
   left: 0;
 }
+#nav-left .nl-con dl dd .nl-checked {
+  width: 5px;
+  height: 40px;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  background: #438EB9;
+  display: none;
+}
 #nav-left .nl-show {
   display: block;
 }
+/* 左侧导航结束 */
+/* 右侧内容区域开始 */
 #content {
   width: 85.9%;
   height: 590px;
@@ -113,3 +127,4 @@ html {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+/* 右侧区域导航结束 */

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- head头部分开始 -->
-<include file="./Template/default/Home/Public/public_head.html" title="{$tname}-"  keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
+<include file="./Template/default/Home/Public/public_head.html" title="{$title}-"  keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
 <!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
@@ -14,7 +14,7 @@
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<h2 class="tag-title">Contents tagged with {$tname}</h2>
+			<h2 class="tag-title">{$title_word}</h2>
 			<!-- 文章列表开始 -->
 			<include file="./Template/default/Home/Public/public_list.html" />
 			<!-- 文章列表结束 -->

@@ -145,6 +145,12 @@ $(document).ready(function(){
 					<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
 				</p>
 			</div>
+			<div class="search">
+				<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
+					<input class="search-text" type="text" name="search_word">
+					<input class="search-submit" type="submit" value="全站搜索">
+				</form>
+			</div>
 			<div class="link">
 				<h4 class="title">友情链接</h4>
 				<p class="link-p">

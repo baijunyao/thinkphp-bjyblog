@@ -46,7 +46,8 @@ class IndexController extends HomeBaseController {
         $assign=array(
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
-            'tname'=>$tname,
+            'title'=>$tname,
+            'title_word'=>'拥有<span class="highlight">'.$tname.'</span>标签的文章',
             );
         $this->assign($assign);
         $this->display();
@@ -57,8 +58,10 @@ class IndexController extends HomeBaseController {
         $cid=I('get.cid',0,'intval');
         $tid=I('get.tid',0,'intval');
         $aid=I('get.aid',0,'intval');
+        $search_word=I('get.search_word',0);
         switch(true){
-            case $cid==0 && $tid==0:
+            // case $cid==0 && $tid==0 && $search_word==0:
+            case $cid==0 && $tid==0 && $search_word===0:
                 $map=array();
                 break;
             case $cid!=0:
@@ -67,13 +70,28 @@ class IndexController extends HomeBaseController {
             case $tid!=0:
                 $map=array('tid'=>$tid);
                 break;
+            case $search_word!==0:
+                $map=array('title'=>array('like',"%$search_word%"));
+                break;
         }
         $article=D('Article')->getDataByAid($aid,$map);
-        // p($article);die;
         $this->assign('article',$article);
         $this->display();
     }
 
+    // 站内搜索
+    public function search(){
+        $search_word=I('get.search_word');
+        $articles=D('Article')->getDataByTitle($search_word);
+        $assign=array(
+            'articles'=>$articles['data'],
+            'page'=>$articles['page'],
+            'title'=>$search_word,
+            'title_word'=>'搜索到的与<span class="highlight">'.$search_word.'</span>相关的文章',
+            );
+        $this->assign($assign);
+        $this->display('tag');
+    }
 
 
 }

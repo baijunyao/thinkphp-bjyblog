@@ -79,10 +79,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加文章
+				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>文章列表
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 		<dl>
@@ -92,10 +94,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Tag/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加标签
+				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="<?php echo U('Admin/Tag/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>标签列表
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 		<dl>
@@ -105,10 +109,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Category/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加分类
+				<div class="nl-checked"></div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Category/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>分类列表
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 	</div>	
@@ -123,6 +129,7 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Comment/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>评论列表
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 		<dl>
@@ -132,10 +139,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>待审留言
+				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已审留言
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 	</div>
@@ -150,18 +159,22 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/article');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删文章
+				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删评论
+				<div class="nl-checked"></div>
 			</dd>
 			<dd>
 				<a href="" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删留言
+				<div class="nl-checked"></div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/link');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删链接
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 	</div>
@@ -176,10 +189,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Config/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>网站信息
+				<div class="nl-checked"></div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Config/change_password');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>修改密码
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 		<dl>
@@ -189,10 +204,12 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Link/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加链接
+				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="<?php echo U('Admin/Link/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>链接列表
+				<div class="nl-checked"></div>
 			</dd>
 		</dl>
 	</div>
