@@ -39,7 +39,7 @@ class LinkModel extends Model{
 	// 放入回收站
 	public function recycleData(){
 		$lid=I('get.lid',0,'intval');
-		return $this->changeStatus($lid,'is_delete',1);
+		return $this->where(array('lid'=>$lid))->setField('is_delete',1);
 	}
 
 	// 彻底删除

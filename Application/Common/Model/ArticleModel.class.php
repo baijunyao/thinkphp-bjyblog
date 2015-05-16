@@ -188,6 +188,7 @@ class ArticleModel extends Model{
 				$data['prev']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($prev_map)->limit(1)->find();
 				$data['next']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($next_map)->order('a.aid desc')->limit(1)->find();
 			}else{
+				// p($map);die;
 				$prev_map=$map;
 				$prev_map[]=array('is_show'=>1);
 				$prev_map[]=array('is_delete'=>0);	

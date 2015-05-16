@@ -61,7 +61,8 @@ class IndexController extends HomeBaseController {
         $search_word=I('get.search_word',0);
         switch(true){
             // case $cid==0 && $tid==0 && $search_word==0:
-            case $cid==0 && $tid==0 && $search_word===0:
+            case $cid==0 && $tid==0 && $search_word==(string)0:
+            // echo 222;die;
                 $map=array();
                 break;
             case $cid!=0:
