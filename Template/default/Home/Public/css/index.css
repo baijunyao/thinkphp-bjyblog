@@ -29,6 +29,7 @@ body {
 }
 #nav .b-inside .logo a:hover {
   text-decoration: none;
+  color: #337AB7;
 }
 #nav .b-inside .category {
   width: 800px;
@@ -50,6 +51,7 @@ body {
 }
 #nav .b-inside .category .cname a:hover {
   text-decoration: none;
+  transition: ALL 0.5s ease;
   background: #008CBA;
 }
 #nav .b-inside .category .action {
@@ -69,6 +71,7 @@ body {
   float: right;
 }
 #nav .b-inside .user .login:hover {
+  transition: ALL 0.5s ease;
   background: #008CBA;
   cursor: pointer;
 }
@@ -185,20 +188,12 @@ body {
   height: 30px;
 }
 #content .b-inside .left .metadata li {
+  margin-right: 10px;
   height: 30px;
   line-height: 30px;
   float: left;
 }
-#content .b-inside .left .metadata .date {
-  padding-right: 10px;
-}
-#content .b-inside .left .metadata .category {
-  padding: 0 10px;
-}
-#content .b-inside .left .metadata .tags {
-  padding: 0 10px;
-}
-#content .b-inside .left .metadata .tags a {
+#content .b-inside .left .metadata li .tags a {
   margin-right: 10px;
 }
 #content .b-inside .left .article {
@@ -206,12 +201,12 @@ body {
   background: #fff;
 }
 #content .b-inside .left .article .title {
-  margin-bottom: 20px;
-  padding: 40px;
+  padding: 20px 40px;
   width: 840px;
+  text-align: center;
 }
 #content .b-inside .left .article .metadata {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 840px;
   padding: 0 40px;
   border-bottom: 1px 	dotted #999;
@@ -297,7 +292,7 @@ body {
 #content .b-inside .right .search,
 #content .b-inside .right .link {
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   width: 340px;
   background: #fff;
   box-shadow: 0px 1px 2px 0px #E2E2E2;
@@ -455,6 +450,9 @@ body {
   border: none;
   float: left;
 }
+#content .b-inside .right .search {
+  padding-top: 20px;
+}
 #content .b-inside .right .recommend .recommend-p .recommend-a {
   margin: 5px 0;
   display: block;
@@ -490,6 +488,5 @@ body {
   color: red;
   font-size: 50px;
   line-height: 50px;
-  font-family: 微软雅黑;
 }
 /* 网站关闭页面结束 */

@@ -25,6 +25,7 @@ body{
 				font-weight: 800;
 				&:hover{
 					text-decoration: none;
+					color: #337AB7;
 				}
 			}
 		}
@@ -45,6 +46,7 @@ body{
 					position: relative;
 					&:hover{
 						text-decoration: none;
+						transition:ALL 0.5s ease;
 						background: #008CBA;
 					}
 				}
@@ -65,6 +67,7 @@ body{
 				color: #fff;
 				float: right;
 				&:hover{
+					transition:ALL 0.5s ease;
 					background: #008CBA;
 					cursor: pointer;
 				}
@@ -134,7 +137,6 @@ body{
 					height: 270px;
 					background: #fff;
 					box-shadow: 0px 1px 2px 0px #E2E2E2;
-
 					.article{
 						width: 810px;
 						height: 160px;
@@ -181,36 +183,28 @@ body{
 				width: 810px;
 				height: 30px;
 				li{
+					margin-right: 10px;
 					height: 30px;
 					line-height: 30px;
 					float: left;
+					.tags{
+						a{
+							margin-right: 10px;
+						}
+					}					
 				}
-				.date{
-					padding-right: 10px;
 
-				}
-				.category{
-					padding: 0 10px;
-				}
-				.tags{
-					padding: 0 10px;
-					a{
-						margin-right: 10px;
-					}
-				}
 			}
 			.article{
 				width: 840px;
 				background: #fff;
 				.title{
-					margin-bottom: 20px;
-
-					padding: 40px;
+					padding: 20px 40px;
 					width: 840px;
-					// height: 100px;
+					text-align: center;
 				}
 				.metadata{
-					margin-top: 20px;
+					margin-top: 10px;
 					width: 840px;
 					padding: 0 40px;
 					border-bottom: 1px 	dotted #999;
@@ -282,7 +276,7 @@ body{
 			float: left;
 			.tags,.recommend,.search,.link{
 				margin-bottom: 20px;
-				padding: 20px;
+				padding: 0 20px 20px 20px;
 				width: 340px;
 				background: #fff;
 				box-shadow: 0px 1px 2px 0px #E2E2E2;
@@ -343,7 +337,9 @@ body{
 					float: left;
 				}
 			}
-
+			.search{
+				padding-top: 20px;
+			}
 			.recommend{
 				.recommend-p{
 					.recommend-a{
@@ -372,24 +368,23 @@ body{
 /* 网站关闭页面开始 */
 #close{
 	width: 100%;
-}
-#close .content{
-	margin: 0 auto;
-	width: 1024px;
-	height: 400px;
-	position: relative;
-}
-#close .content .font{
-	width: 1024px;
-	height: 50px;
-	position: absolute;
-	top: 300px;
-	left: 0px;
-	text-align: center;
-	color: red;
-	font-size: 50px;
-	line-height: 50px;
-	font-family: 微软雅黑;
+	.content{
+		margin: 0 auto;
+		width: 1024px;
+		height: 400px;
+		position: relative;
+		.font{
+			width: 1024px;
+			height: 50px;
+			position: absolute;
+			top: 300px;
+			left: 0px;
+			text-align: center;
+			color: red;
+			font-size: 50px;
+			line-height: 50px;
+		}
+	}
 }
 
 /* 网站关闭页面结束 */

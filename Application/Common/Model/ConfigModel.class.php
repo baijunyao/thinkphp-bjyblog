@@ -25,6 +25,7 @@ class ConfigModel extends Model{
 		$str=<<<php
 <?php
 return array(
+//此配置项为自动生成；如需改动请在后台网站设置
 //*************************************网站设置****************************************
 	'WEB_STATUS'				=>	'{$data['WEB_STATUS']}',	       //网站状态1:开启 0:关闭
 	'WEB_CLOSE_WORD'			=>	'{$data['WEB_CLOSE_WORD']}',	   //网站关闭时提示文字
@@ -35,6 +36,7 @@ return array(
 	'WEB_NAME'					=>	'{$data['WEB_NAME']}',		 	   //网站名：
 	'WEB_KEYWORDS'				=>	'{$data['WEB_KEYWORDS']}',	       //网站关键字
 	'WEB_DESCRIPTION'			=>	'{$data['WEB_DESCRIPTION']}',	   //网站描述
+	'AUTHOR'					=>	'{$data['AUTHOR']}',	   		   //默认作者
 	'WEB_STATISTICS'			=>	'{$data['WEB_STATISTICS']}',   	   //第三方统计代码
 	'COPYRIGHT_WORD'			=>	'{$data['COPYRIGHT_WORD']}',	   //文章保留版权提示
 
@@ -50,7 +52,7 @@ return array(
 	'IMAGE_WATER_LOCATE'		=>	'{$data['IMAGE_WATER_LOCATE']}',   //图片水印 水印位置 1：上左 2：上中 3：上右 4：中左 5：中中 6：中右 7：下左 8：下中 9：下右
 	'IMAGE_WATER_ALPHA'			=>	'{$data['IMAGE_WATER_ALPHA']}',    //图片水印 水印透明度：0-100 
 
-//*************************************水印设置****************************************
+//*************************************第三方api****************************************
 	'QQ_APPID'					=>	'{$data['QQ_APPID']}',				// QQ登陆APPID
 	'CHANGYAN_APPID'			=>	'{$data['CHANGYAN_APPID']}',		// 畅言评论APPID
 	'CHANGYAN_CONF'				=>	'{$data['CHANGYAN_CONF']}',			//畅言评论设置

@@ -82,6 +82,15 @@ $(document).ready(function(){
 			</td>
 		</tr>
 		<tr>
+			<th>是否原创</th>
+			<td>
+				<span class="inputword">是</span>
+				<input class="icheck" type="radio" name="is_original" value="1" <?php if($data['is_original'] == 1): ?>checked="checked"<?php endif; ?> >
+				<span class="inputword">否</span>
+				<input class="icheck" type="radio" name="is_original" value="0" <?php if($data['is_original'] == 0): ?>checked="checked"<?php endif; ?> >
+			</td>
+		</tr>
+		<tr>
 			<th>是否置顶</th>
 			<td>
 				<span class="inputword">是</span>

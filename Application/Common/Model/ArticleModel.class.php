@@ -188,7 +188,6 @@ class ArticleModel extends Model{
 				$data['prev']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($prev_map)->limit(1)->find();
 				$data['next']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($next_map)->order('a.aid desc')->limit(1)->find();
 			}else{
-				// p($map);die;
 				$prev_map=$map;
 				$prev_map[]=array('is_show'=>1);
 				$prev_map[]=array('is_delete'=>0);	
@@ -205,6 +204,12 @@ class ArticleModel extends Model{
 				$data['current']['content']=htmlspecialchars_decode($data['current']['content']);
 		}
 		return $data;
+	}
+
+	// 传递文章adi 点击数+1
+	public function add_click($aid){
+		$this->where(array('aid'=>$aid))->setInc('click',1);
+		return true;
 	}
 
 	// 传递搜索词获取数据

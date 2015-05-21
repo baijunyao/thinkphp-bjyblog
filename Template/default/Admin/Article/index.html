@@ -15,9 +15,10 @@
 			<th width="9%">所属栏目</th>
 			<th width="20%">标题</th>
 			<th width="8%">作者</th>
-			<th width="20%">标签</th>
-			<th width="7%">是否显示</th>
-			<th width="7%">是否置顶</th>
+			<th width="22%">标签</th>
+			<th width="4%">原创</th>
+			<th width="4%">显示</th>
+			<th width="4%">置顶</th>
 			<th width="5%">点击数</th>
 			<th width="13%">发布时间</th>
 			<th width="8%">操作</th>
@@ -27,12 +28,19 @@
 		<tr>
 			<td>{$v['aid']}</td>
 			<td>{$v['category']['cname']}</td>
-			<td>{$v['title']}</td>
+			<td><a href="{:U('Home/Index/article',array('cid'=>0,'tid'=>0,'search_word'=>0,'aid'=>$v['aid']))}" target="_blank">{$v['title']}</a></td>
 			<td>{$v['author']}</td>
 			<td>
 				<foreach name="v['tag']" item="n">
 					{$n['tname']}&nbsp;
 				</foreach>
+			</td>
+			<td>
+				<if condition="$v['is_original'] eq 1">
+					✔
+				<else />
+					✘
+				</if>
 			</td>
 			<td>
 				<if condition="$v['is_show'] eq 1">

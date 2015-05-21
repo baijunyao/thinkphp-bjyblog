@@ -173,7 +173,7 @@ $(document).ready(function(){
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/link');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已删链接
+				<span class="fa fa-caret-right"></span>已删友链
 				<div class="nl-checked"></div>
 			</dd>
 		</dl>
@@ -203,12 +203,12 @@ $(document).ready(function(){
 			</dt>
 			<dd>
 				<a href="<?php echo U('Admin/Link/add');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>添加链接
+				<span class="fa fa-caret-right"></span>添加友链
 				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
 				<a href="<?php echo U('Admin/Link/index');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>链接列表
+				<span class="fa fa-caret-right"></span>友链列表
 				<div class="nl-checked"></div>
 			</dd>
 		</dl>
@@ -219,7 +219,7 @@ $(document).ready(function(){
 
 <!-- 右侧内容开始 -->
 <div id="content">
-	<iframe src="<?php echo U('Admin/Index/welcome');?>" frameborder="0" width="100%" height="100%" name="right_content" scrolling="auto" frameborder="0" scrolling="no"></iframe>
+	<iframe id="content-iframe" src="<?php echo U('Admin/Index/welcome');?>" frameborder="0" width="100%" height="100%" name="right_content" scrolling="auto" frameborder="0" scrolling="no"></iframe>
 </div>
 <!-- 右侧内容结束 -->
 

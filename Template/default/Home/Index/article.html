@@ -16,6 +16,7 @@
 			<div class="article">
 				<h1 class="title">{$article['current']['title']}</h1>
 				<ul class="metadata">
+					<li class="date">作者：{$article['current']['author']}</li>
 					<li class="date">发布时间：{$article['current']['addtime']|date='Y-m-d H:i:s',###}</li>
 					<li class="category">分类：<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$article['current']['category']['cname']}</a>
 					<if condition="!empty($article['current']['tag'])">
@@ -28,11 +29,11 @@
 				</ul>
 				<div class="content-word">
 					{$article['current']['content']}
-					<if condition="$article['current']['category']['cid'] neq 30">
+					<eq name="article['current']['is_original']" value="1">
 						<p class="copyright">
 							{$Think.config.COPYRIGHT_WORD}
 						</p>
-					</if>
+					</eq>
 					<ul class="prev-next">
 						<li class="prev">
 							上一篇：

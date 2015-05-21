@@ -46,7 +46,7 @@ $(document).ready(function(){
 		<tr>
 			<th>作者</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="author">
+				<input class="form-control modal-sm" type="text" name="author" value="<?php echo (C("AUTHOR")); ?>">
 			</td>
 		</tr>
 		<tr>
@@ -74,6 +74,16 @@ $(document).ready(function(){
 <script type="text/javascript">
     var ue = UE.getEditor('container');
 </script>
+			</td>
+		</tr>
+		<tr>
+			<th>是否原创</th>
+			<td>
+				<span class="inputword">是</span>
+				<input class="icheck" type="radio" name="is_original" value="1" checked="checked">
+				&emsp;
+				<span class="inputword">否</span>
+				<input class="icheck" type="radio" name="is_original" value="0">
 			</td>
 		</tr>
 		<tr>

@@ -36,9 +36,10 @@ $(document).ready(function(){
 			<th width="9%">所属栏目</th>
 			<th width="20%">标题</th>
 			<th width="8%">作者</th>
-			<th width="20%">标签</th>
-			<th width="7%">是否显示</th>
-			<th width="7%">是否置顶</th>
+			<th width="22%">标签</th>
+			<th width="4%">原创</th>
+			<th width="4%">显示</th>
+			<th width="4%">置顶</th>
 			<th width="5%">点击数</th>
 			<th width="13%">发布时间</th>
 			<th width="8%">操作</th>
@@ -47,10 +48,15 @@ $(document).ready(function(){
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
 			<td><?php echo ($v['aid']); ?></td>
 			<td><?php echo ($v['category']['cname']); ?></td>
-			<td><?php echo ($v['title']); ?></td>
+			<td><a href="<?php echo U('Home/Index/article',array('cid'=>0,'tid'=>0,'search_word'=>0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></td>
 			<td><?php echo ($v['author']); ?></td>
 			<td>
 				<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): echo ($n['tname']); ?>&nbsp;<?php endforeach; endif; ?>
+			</td>
+			<td>
+				<?php if($v['is_original'] == 1): ?>✔
+				<?php else: ?>
+					✘<?php endif; ?>
 			</td>
 			<td>
 				<?php if($v['is_show'] == 1): ?>✔

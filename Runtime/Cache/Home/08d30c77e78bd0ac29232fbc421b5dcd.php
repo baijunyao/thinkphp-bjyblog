@@ -53,6 +53,9 @@ $(document).ready(function(){
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
+			<li class="cname">
+				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
+			</li>
 		</ul>
 		<ul id="login-word" class="user">
 			<?php if(session('user.id')): ?><li class="user-info">
@@ -78,6 +81,7 @@ $(document).ready(function(){
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
 						<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
 						<ul class="metadata">
+							<li class="date">作者：<?php echo ($v['author']); ?></li>
 							<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 							<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
 							<?php if(!empty($v['tag'])): ?><li class="tags ">标签：

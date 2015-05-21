@@ -98,6 +98,12 @@ $(document).ready(function(){
 				</td>
 			</tr>
 			<tr>
+				<th>默认作者：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="AUTHOR" value="<?php echo ($data['AUTHOR']); ?>" >
+				</td>
+			</tr>
+			<tr>
 				<th>文章保留版权提示</th>
 				<td>
 					<textarea class="form-control modal-sm bjy-noresize" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>

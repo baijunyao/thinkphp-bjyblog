@@ -53,6 +53,9 @@ $(document).ready(function(){
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
+			<li class="cname">
+				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
+			</li>
 		</ul>
 		<ul id="login-word" class="user">
 			<?php if(session('user.id')): ?><li class="user-info">
@@ -75,6 +78,7 @@ $(document).ready(function(){
 		<!-- 左侧列表开始 -->
 		<div class="left">
 			<h2 class="tag-title"><?php echo ($title_word); ?></h2>
+			<div class="b-h-10"></div>
 			<!-- 文章列表开始 -->
 						<div class="list">
 				<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
