@@ -12,7 +12,6 @@ class OauthUserModel extends Model{
 		array('head_img','require','头像必填'),
 		array('openid','require','openid必填'),
 		array('access_token','require','access_token必填'),
-		array('test','require','test'),
 		);
 
 	// 自动完成
@@ -31,22 +30,22 @@ class OauthUserModel extends Model{
 	}
 
 	// 添加数据
-	public function addData(){
-		if($this->create()){
-			$id=$this->add();
+	public function addData($data){
+		if($create=$this->create($data)){
+			$id=$this->add($create);
 			return $id;
 		}
 	}
 
 	// 修改数据
-	public function editData(){
-		$openid=I('post.openid');
-		if($data=$this->create()){
-			$data['login_times']=array('exp','login_times+1');
-			unset($data['status']);
-			unset($data['create_time']);
-			$id=$this->where(array('openid'=>$openid))->save($data);
-			return $id;
+	public function editData($data){
+		$openid=$data['openid'];
+		if($create=$this->create($data)){
+			$create['login_times']=array('exp','login_times+1');
+			unset($create['status']);
+			unset($create['create_time']);
+			$this->where(array('openid'=>$openid))->save($create);
+			return $this->getFieldByOpenid($openid,'id');
 		}
 	}
 

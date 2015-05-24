@@ -12,15 +12,6 @@ return array(
 	'WEB_KEYWORDS'				=>	'白俊遥,帅白,技术博客,个人博客,thinkbjy',	       //网站关键字
 	'WEB_DESCRIPTION'			=>	'白俊遥的个人技术博客,thinkbjy官方网站',	   //网站描述
 	'AUTHOR'					=>	'白俊遥',	   		   //默认作者
-	'WEB_STATISTICS'			=>	'<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?c3338ec467285d953aba86d9bd01cd93";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>',   	   //第三方统计代码
 	'COPYRIGHT_WORD'			=>	'本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com',	   //文章保留版权提示
 
 //*************************************水印设置****************************************
@@ -35,9 +26,43 @@ var _hmt = _hmt || [];
 	'IMAGE_WATER_LOCATE'		=>	'9',   //图片水印 水印位置 1：上左 2：上中 3：上右 4：中左 5：中中 6：中右 7：下左 8：下中 9：下右
 	'IMAGE_WATER_ALPHA'			=>	'80',    //图片水印 水印透明度：0-100 
 
-//*************************************第三方api****************************************
-	'QQ_APPID'					=>	'101206152',				// QQ登陆APPID
-	'CHANGYAN_APPID'			=>	'cyrKRbJ5N',		// 畅言评论APPID
-	'CHANGYAN_CONF'				=>	'prod_c654661caf5ab6da98742d040413815b',			//畅言评论设置
-	'CHANGEYAN_RETURN_COMMENT'	=>	'http://www.baijunyao.com/index.php/Home/Comment/add_comment/verify/22', //畅言评论回推地址
+//*************************************第三方登录****************************************
+	'QQ_APP_ID'					=>	'101206152',				   // QQ登陆APP D
+	'QQ_APP_KEY'				=>	'c0ed6af194e84bbea42e59063167cafb',			   // QQ登陆APP KEY
+	'SINA_API_KEY'				=>  '728720000',		   	   // 新浪登陆API KEY
+	'SINA_SECRET'				=>  '370bb6915fdf6dcaa7c275fa19e83e36',		   	   // 新浪登陆SECRET
+	'DOUBAN_API_KEY'			=>  '0a5a219f1bc3fd891f0e64dd534bf89b',		   // 豆瓣登陆API KEY
+	'DOUBAN_SECRET'				=>  '9616c718c543dae4',		   	   // 豆瓣登陆SECRET
+	'RENREN_API_KEY'			=>  '94c8e22495a742daa8fa3410a7cbca7f',		   // 人人登陆API KEY
+	'RENREN_SECRET'				=>  'b3ed9b0cbaf44e27913b3939a2d480f8',		   	   // 人人登陆SECRET
+	'KAIXIN_API_KEY'			=>  '78794155389720bfbf884d30118983bd',		   // 开心网登陆API KEY
+	'KAIXIN_SECRET'				=>  '092b1345cf4cb5ace1a3b45fe471f739',		   	   // 开心网登陆SECRET
+	'GITHUB_CLIENT_ID'			=>  '4a223bdded390d52bfda',		   // github登陆API KEY
+	'GITHUB_CLIENT_SECRET'		=>  'ee7f7aefc1da63a6b063ddecca535a44924d4795',	   // github登陆SECRET
+	'SOHU_API_KEY'				=>  '7f471bab335d4d9fbbda5a7d3da50c83',		   	   // 搜狐网登陆API KEY
+	'SOHU_SECRET'				=>  'b7c7a319b5a923cdb34b2a5bdae9651b',		   	   // 搜狐网登陆SECRET
+
+//***********************************其他第三方接口****************************************	
+	'CHANGYAN_COMMENT'			=>	'
+<script charset="utf-8" type="text/javascript" src="http://assets.changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyrKRbJ5N",
+        conf: "prod_c654661caf5ab6da98742d040413815b"
+    });
+</script>        ',	       // 畅言评论设置
+	'CHANGEYAN_RETURN_COMMENT'	=>	'http://www.baijunyao.com/index.php/Home/Comment/add_comment/verify/22', // 畅言评论回推地址
+	'WEB_STATISTICS'			=>	'<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c3338ec467285d953aba86d9bd01cd93";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>',   	   	   // 第三方统计代码
+	'BAIDU_SITE_URL'			=>	'http://data.zz.baidu.com/urls?site=www.baijunyao.com&token=H8mPepv2SWw0xtsW',   	  	   // 百度推送site提交链接
+
+
+
 );

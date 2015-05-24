@@ -42,7 +42,10 @@ $(document).ready(function(){
   		<a href="#water" data-toggle="tab">文章水印</a>
    </li>
    <li>
-  		<a href="#oauth" data-toggle="tab">第三方接口</a>
+  		<a href="#oauth" data-toggle="tab">第三方登录</a>
+   </li>
+   <li>
+  		<a href="#other" data-toggle="tab">其他第三方接口</a>
    </li>
 </ul>
 <div class="tab-content">
@@ -60,7 +63,7 @@ $(document).ready(function(){
 			<tr>
 				<th>网站关闭时提示文字</th>
 				<td>
-					<textarea class="form-control modal-sm bjy-noresize" name="WEB_CLOSE_WORD" rows="5" placeholder=""><?php echo ($data['WEB_CLOSE_WORD']); ?></textarea>
+					<textarea class="form-control modal-sm" name="WEB_CLOSE_WORD" rows="5" placeholder=""><?php echo ($data['WEB_CLOSE_WORD']); ?></textarea>
 				</td>
 			</tr>			
 			<tr>
@@ -88,13 +91,13 @@ $(document).ready(function(){
 			<tr>
 				<th>网站关键字</th>
 				<td>
-					<textarea class="form-control modal-sm bjy-noresize" name="WEB_KEYWORDS" rows="5" placeholder=""><?php echo ($data['WEB_KEYWORDS']); ?></textarea>
+					<textarea class="form-control modal-sm" name="WEB_KEYWORDS" rows="5" placeholder=""><?php echo ($data['WEB_KEYWORDS']); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<th>网站描述</th>
 				<td>
-					<textarea class="form-control modal-sm bjy-noresize" name="WEB_DESCRIPTION" rows="5" placeholder=""><?php echo ($data['WEB_DESCRIPTION']); ?></textarea>
+					<textarea class="form-control modal-sm" name="WEB_DESCRIPTION" rows="5" placeholder=""><?php echo ($data['WEB_DESCRIPTION']); ?></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -106,13 +109,7 @@ $(document).ready(function(){
 			<tr>
 				<th>文章保留版权提示</th>
 				<td>
-					<textarea class="form-control modal-sm bjy-noresize" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>
-				</td>
-			</tr>
-			<tr>
-				<th>第三方统计代码</th>
-				<td>
-					<textarea class="form-control modal-sm bjy-noresize" name="WEB_STATISTICS" rows="5" placeholder=""><?php echo ($data['WEB_STATISTICS']); ?></textarea>
+					<textarea class="form-control modal-sm" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>
 				</td>
 			</tr>
 		</table>
@@ -227,27 +224,115 @@ $(document).ready(function(){
    <div class="tab-pane fade" id="oauth">
     	<table class="table table-bordered table-hover">
 			<tr>
-				<th>QQ登陆APPID：</th>
+				<th>QQ登陆APP ID：</th>
 				<td>
-					<input class="form-control modal-sm" type="text" name="QQ_APPID" value="<?php echo ($data['QQ_APPID']); ?>" >
+					<input class="form-control modal-sm" type="text" name="QQ_APP_ID" value="<?php echo ($data['QQ_APP_ID']); ?>" >
 				</td>
 			</tr>
 			<tr>
-				<th>畅言评论APPID：</th>
+				<th>QQ登陆APP KEY：</th>
 				<td>
-					<input class="form-control modal-sm" type="text" name="CHANGYAN_APPID" value="<?php echo ($data['CHANGYAN_APPID']); ?>" >
+					<input class="form-control modal-sm" type="text" name="QQ_APP_KEY" value="<?php echo ($data['QQ_APP_KEY']); ?>" >
 				</td>
 			</tr>
 			<tr>
-				<th>畅言评论设置：</th>
+				<th>新浪微博登陆API KEY：</th>
 				<td>
-					<input class="form-control modal-sm" type="text" name="CHANGYAN_CONF" value="<?php echo ($data['CHANGYAN_CONF']); ?>" >
+					<input class="form-control modal-sm" type="text" name="SINA_API_KEY" value="<?php echo ($data['SINA_API_KEY']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>新浪微博登陆SECRET：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="SINA_SECRET" value="<?php echo ($data['SINA_SECRET']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>豆瓣登陆API KEY：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="DOUBAN_API_KEY" value="<?php echo ($data['DOUBAN_API_KEY']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>豆瓣登陆SECRET：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="DOUBAN_SECRET" value="<?php echo ($data['DOUBAN_SECRET']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>人人登陆API KEY：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="RENREN_API_KEY" value="<?php echo ($data['RENREN_API_KEY']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>人人登陆SECRET：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="RENREN_SECRET" value="<?php echo ($data['RENREN_SECRET']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>开心网登陆API KEY：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="KAIXIN_API_KEY" value="<?php echo ($data['KAIXIN_API_KEY']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>开心网登陆SECRET：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="KAIXIN_SECRET" value="<?php echo ($data['KAIXIN_SECRET']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>github Client ID：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="GITHUB_CLIENT_ID" value="<?php echo ($data['GITHUB_CLIENT_ID']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>github Client Secret：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="GITHUB_CLIENT_SECRET" value="<?php echo ($data['GITHUB_CLIENT_SECRET']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>搜狐登录API KEY：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="SOHU_API_KEY" value="<?php echo ($data['SOHU_API_KEY']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>搜狐登录SECRET：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="SOHU_SECRET" value="<?php echo ($data['SOHU_SECRET']); ?>" >
+				</td>
+			</tr>
+		</table>
+   </div>
+   <div class="tab-pane fade" id="other">
+    	<table class="table table-bordered table-hover">
+			<tr>
+				<th>畅言评论代码：</th>
+				<td>
+					<textarea class="form-control modal-sm" name="CHANGYAN_COMMENT" rows="5" placeholder=""><?php echo ($data['CHANGYAN_COMMENT']); ?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<th>畅言评论回推地址：</th>
 				<td>
 					<input class="form-control modal-sm" type="text" name="CHANGEYAN_RETURN_COMMENT" value="<?php echo ($data['CHANGEYAN_RETURN_COMMENT']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>百度推送site提交链接：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="BAIDU_SITE_URL" value="<?php echo ($data['BAIDU_SITE_URL']); ?>" >
+				</td>
+			</tr>
+			<tr>
+				<th>第三方统计代码</th>
+				<td>
+					<textarea class="form-control modal-sm" name="WEB_STATISTICS" rows="5" placeholder=""><?php echo ($data['WEB_STATISTICS']); ?></textarea>
 				</td>
 			</tr>
 		</table>

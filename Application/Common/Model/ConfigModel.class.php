@@ -22,6 +22,9 @@ class ConfigModel extends Model{
 			$this->where(array('name'=>$k))->setField('value',$v);
 			$data[$k]=htmlspecialchars_decode($v);
 		}
+		$data['WEB_STATISTICS']=str_replace( "'",'"',$data['WEB_STATISTICS']);
+		$data['CHANGYAN_COMMENT']=str_replace( "'",'"',$data['CHANGYAN_COMMENT']);
+		$data['CHANGYAN_COMMENT']=str_replace( '<div id="SOHUCS"></div>','',$data['CHANGYAN_COMMENT']);
 		$str=<<<php
 <?php
 return array(
@@ -37,7 +40,6 @@ return array(
 	'WEB_KEYWORDS'				=>	'{$data['WEB_KEYWORDS']}',	       //网站关键字
 	'WEB_DESCRIPTION'			=>	'{$data['WEB_DESCRIPTION']}',	   //网站描述
 	'AUTHOR'					=>	'{$data['AUTHOR']}',	   		   //默认作者
-	'WEB_STATISTICS'			=>	'{$data['WEB_STATISTICS']}',   	   //第三方统计代码
 	'COPYRIGHT_WORD'			=>	'{$data['COPYRIGHT_WORD']}',	   //文章保留版权提示
 
 //*************************************水印设置****************************************
@@ -52,11 +54,30 @@ return array(
 	'IMAGE_WATER_LOCATE'		=>	'{$data['IMAGE_WATER_LOCATE']}',   //图片水印 水印位置 1：上左 2：上中 3：上右 4：中左 5：中中 6：中右 7：下左 8：下中 9：下右
 	'IMAGE_WATER_ALPHA'			=>	'{$data['IMAGE_WATER_ALPHA']}',    //图片水印 水印透明度：0-100 
 
-//*************************************第三方api****************************************
-	'QQ_APPID'					=>	'{$data['QQ_APPID']}',				// QQ登陆APPID
-	'CHANGYAN_APPID'			=>	'{$data['CHANGYAN_APPID']}',		// 畅言评论APPID
-	'CHANGYAN_CONF'				=>	'{$data['CHANGYAN_CONF']}',			//畅言评论设置
-	'CHANGEYAN_RETURN_COMMENT'	=>	'{$data['CHANGEYAN_RETURN_COMMENT']}', //畅言评论回推地址
+//*************************************第三方登录****************************************
+	'QQ_APP_ID'					=>	'{$data['QQ_APP_ID']}',				   // QQ登陆APP D
+	'QQ_APP_KEY'				=>	'{$data['QQ_APP_KEY']}',			   // QQ登陆APP KEY
+	'SINA_API_KEY'				=>  '{$data['SINA_API_KEY']}',		   	   // 新浪登陆API KEY
+	'SINA_SECRET'				=>  '{$data['SINA_SECRET']}',		   	   // 新浪登陆SECRET
+	'DOUBAN_API_KEY'			=>  '{$data['DOUBAN_API_KEY']}',		   // 豆瓣登陆API KEY
+	'DOUBAN_SECRET'				=>  '{$data['DOUBAN_SECRET']}',		   	   // 豆瓣登陆SECRET
+	'RENREN_API_KEY'			=>  '{$data['RENREN_API_KEY']}',		   // 人人登陆API KEY
+	'RENREN_SECRET'				=>  '{$data['RENREN_SECRET']}',		   	   // 人人登陆SECRET
+	'KAIXIN_API_KEY'			=>  '{$data['KAIXIN_API_KEY']}',		   // 开心网登陆API KEY
+	'KAIXIN_SECRET'				=>  '{$data['KAIXIN_SECRET']}',		   	   // 开心网登陆SECRET
+	'GITHUB_CLIENT_ID'			=>  '{$data['GITHUB_CLIENT_ID']}',		   // github登陆API KEY
+	'GITHUB_CLIENT_SECRET'		=>  '{$data['GITHUB_CLIENT_SECRET']}',	   // github登陆SECRET
+	'SOHU_API_KEY'				=>  '{$data['SOHU_API_KEY']}',		   	   // 搜狐网登陆API KEY
+	'SOHU_SECRET'				=>  '{$data['SOHU_SECRET']}',		   	   // 搜狐网登陆SECRET
+
+//***********************************其他第三方接口****************************************	
+	'CHANGYAN_COMMENT'			=>	'{$data['CHANGYAN_COMMENT']}',	       // 畅言评论设置
+	'CHANGEYAN_RETURN_COMMENT'	=>	'{$data['CHANGEYAN_RETURN_COMMENT']}', // 畅言评论回推地址
+	'WEB_STATISTICS'			=>	'{$data['WEB_STATISTICS']}',   	   	   // 第三方统计代码
+	'BAIDU_SITE_URL'			=>	'{$data['BAIDU_SITE_URL']}',   	  	   // 百度推送site提交链接
+
+
+
 );
 php;
 		file_put_contents('./Application/Common/Conf/webconfig.php', $str);

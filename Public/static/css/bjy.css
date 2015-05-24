@@ -52,13 +52,15 @@ table {
     word-wrap:break-word;
 }
 
+/*禁止textarea拖动*/
+textarea{
+  resize:none;
+}
+
 /* 常用样式 */
 .b-inside{
   margin: 0 auto;
   width: 1200px;
-}
-.b-noresize{
-  resize:none;
 }
 .b-ta-center{
   text-align: center;

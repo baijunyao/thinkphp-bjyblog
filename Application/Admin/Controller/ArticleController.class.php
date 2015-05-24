@@ -26,7 +26,11 @@ class ArticleController extends AdminBaseController{
 	// 添加文章
 	public function add(){
 		if(IS_POST){
-			if($this->db->addData()){
+			if($aid=$this->db->addData()){
+				$baidu_site_url=C('BAIDU_SITE_URL');
+				if(!empty($baidu_site_url)){
+					$this->baidu_site($aid);
+				}
 				$this->success('文章添加成功',U('Admin/Article/index'));
 			}else{
 				$this->error($this->db->getError());
@@ -43,6 +47,31 @@ class ArticleController extends AdminBaseController{
 		}
 
 	}
+
+	// 向同步百度推送
+	public function baidu_site($aid){
+		$url=U('Home/Index/Article',array('cid'=>0,'tid'=>0,'search_word'=>0,'aid'=>$aid),'',true);
+		$urls = array($url);
+		$api = C('BAIDU_SITE_URL');
+		$ch = curl_init();
+		$options =  array(
+		    CURLOPT_URL => $api,
+		    CURLOPT_POST => true,
+		    CURLOPT_RETURNTRANSFER => true,
+		    CURLOPT_POSTFIELDS => implode("\n", $urls),
+		    CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
+		);
+		curl_setopt_array($ch, $options);
+		$result = curl_exec($ch);
+		$msg=json_decode($result,true);
+		if($msg['code']==500){
+			curl_setopt_array($ch, $options);
+		}
+		curl_exec($ch);
+		curl_close($ch);
+	}
+
+
 
 	// 修改文章
 	public function edit(){

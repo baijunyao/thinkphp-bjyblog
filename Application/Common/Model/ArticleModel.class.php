@@ -50,7 +50,7 @@ class ArticleModel extends Model{
 					}
 					D('ArticlePic')->addData($aid,$image_path);
 				}
-				return true;
+				return $aid;
 			}else{
 				return false;
 			}

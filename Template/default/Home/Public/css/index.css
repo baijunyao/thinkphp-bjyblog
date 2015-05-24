@@ -193,7 +193,11 @@ body {
   line-height: 30px;
   float: left;
 }
-#content .b-inside .left .metadata li .tags a {
+#content .b-inside .left .metadata li span {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+#content .b-inside .left .metadata .tags a {
   margin-right: 10px;
 }
 #content .b-inside .left .article {
@@ -468,6 +472,21 @@ body {
   overflow: hidden;
 }
 /* 通用底部结束 */
+/* 登录模态框开始 */
+#modal-login .modal-body {
+  overflow: hidden;
+}
+#modal-login .modal-body .login-img {
+  margin: 10px 14px 10px 5px;
+  width: 170px;
+  height: 32px;
+  float: left;
+}
+#modal-login .modal-body .login-img a img {
+  width: 170px;
+  height: 32px;
+}
+/* 登录模态框结束 */
 /* 网站关闭页面开始 */
 #close {
   width: 100%;

@@ -60,7 +60,7 @@ $(document).ready(function(){
 		<tr>
 			<th>描述</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
+				<textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"></textarea>
 			</td>
 		</tr>
 		<tr>

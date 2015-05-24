@@ -1,3 +1,4 @@
+<!-- 登录模态框开始 -->
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -5,15 +6,29 @@
        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
       </div>
-      <div class="modal-body">
-        <span id="qqLoginBtn"></span>
-      </div>
+      <ul class="modal-body">
+        <!-- <span id="qqLoginBtn"></span> -->
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>'qq'))}"><img src="__HOME_IMAGE__/qq-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>'sina'))}"><img src="__HOME_IMAGE__/sina-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>'douban'))}"><img src="__HOME_IMAGE__/douban-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>'renren'))}"><img src="__HOME_IMAGE__/renren-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>'kaixin'))}"><img src="__HOME_IMAGE__/kaixin-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="{:U('Home/User/oauth_login',array('type'=>''))}"><img src="__HOME_IMAGE__/-login.png" alt=""></a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </div>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="{$Think.config.QQ_APPID}" charset="utf-8"></script>
-<script type="text/javascript">
-  userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
-  isLogin='<?php echo session('user.id') ;?>';
-</script>
-<script type="text/javascript" src="__HOME_JS__/oauth.js"></script>
+<!-- 登录模态框结束 -->

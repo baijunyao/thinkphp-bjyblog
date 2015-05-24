@@ -1,0 +1,9 @@
+[ 2015-05-23T23:40:21+08:00 ] 127.0.0.1 /index.php/Api/Index/oauth?code=8018AFC3436F4E9EB3C31A3F55F2869E&state=shuaibai
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
+ERR: 无法加载控制器:Index
+

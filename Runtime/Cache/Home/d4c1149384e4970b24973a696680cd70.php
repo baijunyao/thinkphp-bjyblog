@@ -35,13 +35,17 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
 	<script type="text/javascript">
 		SyntaxHighlighter.all();
+		saveLoginUrl="<?php echo U('Home/User/save_login_url','','',true);?>";
+		logoutUrl="<?php echo U('Home/User/logout','','',true);?>";
 	</script>
+	<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
 <!-- head头部分结束 -->
 <body>
+<!-- 顶部导航开始 -->
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
@@ -61,14 +65,15 @@ $(document).ready(function(){
 			<?php if(session('user.id')): ?><li class="user-info">
 					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
 					<span><?php echo session('user.nickname') ;?></span>
-					<span><a href="javascript:QC.Login.signOut();">退出</a></span>
+					<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
 				</li>
 			<?php else: ?>	
-				<li class="login" data-toggle="modal" data-target="#modal-login">登陆</li><?php endif; ?>
+				<li class="login" onclick="showlogin()">登陆</li><?php endif; ?>
 			
 		</ul>
 	</div>
 </div>
+<!-- 顶部导航结束 -->
 <!-- 顶部导航结束 -->
 
 <!-- 主体部分开始 -->
@@ -109,59 +114,47 @@ $(document).ready(function(){
 			</div>
 			<div class="comment">
 				<!-- 畅言评论系统开始 -->
-								<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
-				<script>
-				  (function(){
-				    var appid = '<?php echo (C("CHANGYAN_APPID")); ?>',
-				    conf = '<?php echo (C("CHANGYAN_CONF")); ?>';
-				    var doc = document,
-				    s = doc.createElement('script'),
-				    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-				    s.type = 'text/javascript';
-				    s.charset = 'utf-8';
-				    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-				    h.insertBefore(s,h.firstChild);
-				    window.SCS_NO_IFRAME = true;
-				  })()
-				</script>
-				<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=<?php echo (C("CHANGYAN_APPID")); ?>"></script>
+				<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
+				<?php echo (C("CHANGYAN_COMMENT")); ?>
 				<!-- 畅言评论系统结束 -->
 			</div>
 		</div>
 		<!-- 左侧列表结束 -->
 
 		<!-- 右侧内容开始 -->
-				<div class="right">
-			<div class="tags">
-				<h4 class="title">热门标签</h4>
-				<ul class="tags-ul">
-					<?php $tag_i=0 ?>
-					<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
-						<?php $tag_i=$tag_i==5?1:$tag_i ?>
-						<li class="tname">
-							<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
-						</li><?php endforeach; endif; ?>
-				</ul>
-			</div>
-			<div class="recommend">
-				<h4 class="title">置顶推荐</h4>
-				<p class="recommend-p">
-					<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
-				</p>
-			</div>
-			<div class="search">
-				<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
-					<input class="search-text" type="text" name="search_word">
-					<input class="search-submit" type="submit" value="全站搜索">
-				</form>
-			</div>
-			<div class="link">
-				<h4 class="title">友情链接</h4>
-				<p class="link-p">
-					<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
-				</p>
-			</div>
-		</div>
+		<!-- 通用右部区域开始 -->
+<div class="right">
+	<div class="tags">
+		<h4 class="title">热门标签</h4>
+		<ul class="tags-ul">
+			<?php $tag_i=0 ?>
+			<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
+				<?php $tag_i=$tag_i==5?1:$tag_i ?>
+				<li class="tname">
+					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
+				</li><?php endforeach; endif; ?>
+		</ul>
+	</div>
+	<div class="recommend">
+		<h4 class="title">置顶推荐</h4>
+		<p class="recommend-p">
+			<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
+		</p>
+	</div>
+	<div class="search">
+		<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
+			<input class="search-text" type="text" name="search_word">
+			<input class="search-submit" type="submit" value="全站搜索">
+		</form>
+	</div>
+	<div class="link">
+		<h4 class="title">友情链接</h4>
+		<p class="link-p">
+			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+		</p>
+	</div>
+</div>
+<!-- 通用右部区域结束 -->
 		<!-- 右侧内容结束 -->
 	</div>
 </div>
@@ -178,6 +171,7 @@ $(document).ready(function(){
 <!-- 通用底部文件结束 -->
 
 <!-- 登陆框开始 -->
+<!-- 登录模态框开始 -->
 <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -185,18 +179,32 @@ $(document).ready(function(){
        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
       </div>
-      <div class="modal-body">
-        <span id="qqLoginBtn"></span>
-      </div>
+      <ul class="modal-body">
+        <!-- <span id="qqLoginBtn"></span> -->
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default/Home/Public/image/sina-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default/Home/Public/image/douban-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default/Home/Public/image/renren-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
+        </li>
+        <li class="login-img">
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="/Template/default/Home/Public/image/-login.png" alt=""></a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </div>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="<?php echo (C("QQ_APPID")); ?>" charset="utf-8"></script>
-<script type="text/javascript">
-  userUrl='<?php echo trim(U('Home/User/index','','',true),'index') ;?>';
-  isLogin='<?php echo session('user.id') ;?>';
-</script>
-<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
+<!-- 登录模态框结束 -->
 <!-- 登陆框结束 -->
 </body>
 </html>

@@ -1,0 +1,48 @@
+[ 2015-05-25T00:01:53+08:00 ] 127.0.0.1 /index.php/Api/Index/oauth/type/renren?code=mZA3URTD9409ssUxeoCDRWNqSahIo0Rh
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `bjy_oauth_user` WHERE `openid` = 364815723 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `bjy_oauth_user` SET `uid`='0',`type`='4',`nickname`='白俊遥',`head_img`='http://hdn.xnimg.cn/photos/hdn421/20150524/1905/original_08qL_53d90003d0b71986.jpg',`openid`='364815723',`access_token`='476556|6.b2f41fdeaaababebfd37186710908235.2592000.1435078800-364815723',`last_login_time`='1432483313',`last_login_ip`='127.0.0.1',`login_times`=login_times+1 WHERE `openid` = 364815723 [ RunTime:0.1055s ]
+SQL: SELECT `id` FROM `bjy_oauth_user` WHERE `openid` = 364815723 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001237s ]
+
+[ 2015-05-25T00:02:58+08:00 ] 127.0.0.1 /index.php/Api/Index/oauth/type/renren?code=cktK17pGFSt34j40VlzNqrsVXni7T8MI
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+SQL: SHOW COLUMNS FROM `bjy_oauth_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `bjy_oauth_user` WHERE `openid` = 364815723 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `bjy_oauth_user` SET `uid`='0',`type`='4',`nickname`='白俊遥',`head_img`='http://hdn.xnimg.cn/photos/hdn421/20150524/1905/original_08qL_53d90003d0b71986.jpg',`openid`='364815723',`access_token`='476556|6.b2f41fdeaaababebfd37186710908235.2592000.1435078800-364815723',`last_login_time`='1432483378',`last_login_ip`='127.0.0.1',`login_times`=login_times+1 WHERE `openid` = 364815723 [ RunTime:0.1068s ]
+SQL: SELECT `id` FROM `bjy_oauth_user` WHERE `openid` = 364815723 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000980s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001102s ]
+

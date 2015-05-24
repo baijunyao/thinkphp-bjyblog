@@ -1,37 +1,39 @@
-		<div class="right">
-			<div class="tags">
-				<h4 class="title">热门标签</h4>
-				<ul class="tags-ul">
-					<php>$tag_i=0</php>
-					<foreach name="tags" key="k" item="v">
-						<php>$tag_i++</php>
-						<php>$tag_i=$tag_i==5?1:$tag_i</php>
-						<li class="tname">
-							<a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
-						</li>
-					</foreach>
-				</ul>
-			</div>
-			<div class="recommend">
-				<h4 class="title">置顶推荐</h4>
-				<p class="recommend-p">
-					<recommend cid="" limit="10">
-						<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank">{$k+1}：{$field['title']}</a>
-					</recommend>
-				</p>
-			</div>
-			<div class="search">
-				<form class="form-inline"  role="form" action="{:U('Home/Index/search')}" method="get">
-					<input class="search-text" type="text" name="search_word">
-					<input class="search-submit" type="submit" value="全站搜索">
-				</form>
-			</div>
-			<div class="link">
-				<h4 class="title">友情链接</h4>
-				<p class="link-p">
-					<foreach name="links" key="k" item="v">
-						<a class="link-a" href="{$v[url]}" target="_blank">{$v['lname']}</a>
-					</foreach>
-				</p>
-			</div>
-		</div>
+<!-- 通用右部区域开始 -->
+<div class="right">
+	<div class="tags">
+		<h4 class="title">热门标签</h4>
+		<ul class="tags-ul">
+			<php>$tag_i=0</php>
+			<foreach name="tags" key="k" item="v">
+				<php>$tag_i++</php>
+				<php>$tag_i=$tag_i==5?1:$tag_i</php>
+				<li class="tname">
+					<a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
+				</li>
+			</foreach>
+		</ul>
+	</div>
+	<div class="recommend">
+		<h4 class="title">置顶推荐</h4>
+		<p class="recommend-p">
+			<recommend cid="" limit="10">
+				<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank">{$k+1}：{$field['title']}</a>
+			</recommend>
+		</p>
+	</div>
+	<div class="search">
+		<form class="form-inline"  role="form" action="{:U('Home/Index/search')}" method="get">
+			<input class="search-text" type="text" name="search_word">
+			<input class="search-submit" type="submit" value="全站搜索">
+		</form>
+	</div>
+	<div class="link">
+		<h4 class="title">友情链接</h4>
+		<p class="link-p">
+			<foreach name="links" key="k" item="v">
+				<a class="link-a" href="{$v[url]}" target="_blank">{$v['lname']}</a>
+			</foreach>
+		</p>
+	</div>
+</div>
+<!-- 通用右部区域结束 -->

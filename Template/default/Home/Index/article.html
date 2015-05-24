@@ -56,7 +56,8 @@
 			</div>
 			<div class="comment">
 				<!-- 畅言评论系统开始 -->
-				<include file="./Template/default/Home/Public/article_comment.html" />
+				<div id="SOHUCS" sid="{$Think.get.aid}"></div>
+				{$Think.config.CHANGYAN_COMMENT}
 				<!-- 畅言评论系统结束 -->
 			</div>
 		</div>
