@@ -30,7 +30,7 @@ $(document).ready(function(){
 <form class="form-group" action="<?php echo U('Admin/Article/add');?>" method="post">
 	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
-			<th>所属分类</th>
+			<th width="80px">所属分类</th>
 			<td>
 				<select class="form-control modal-sm" name="cid">
 					<?php if(is_array($allCategory)): foreach($allCategory as $key=>$v): ?><option value="<?php echo ($v['cid']); ?>"><?php echo ($v['_name']); ?></option><?php endforeach; endif; ?>

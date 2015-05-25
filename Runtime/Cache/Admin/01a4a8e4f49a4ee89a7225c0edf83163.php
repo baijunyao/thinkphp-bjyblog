@@ -25,11 +25,6 @@ $(document).ready(function(){
 });
 </script>
 
-<style type="text/css">
-.inputword{
-	margin-left: 40px;
-}
-</style>
 </head>
 <body>
 <form class="form-group" action="<?php echo U('Admin/Article/edit',array('aid'=>$_GET['aid']));?>" method="post">
@@ -58,14 +53,14 @@ $(document).ready(function(){
 		<tr>
 			<th>标签</th>
 			<td>
-				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span class="inputword"><?php echo ($v['tname']); ?></span>
+				<?php if(is_array($allTag)): foreach($allTag as $key=>$v): ?><span><?php echo ($v['tname']); ?></span>
 					<input class="icheck" type="checkbox" name="tids[]" value="<?php echo ($v['tid']); ?>" <?php if(in_array($v['tid'],$data['tids'])): ?>checked='checked'<?php endif; ?> ><?php endforeach; endif; ?>
 			</td>
 		</tr>
 		<tr>
 			<th>描述</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"><?php echo ($data['description']); ?></textarea>
+				<textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"><?php echo ($data['description']); ?></textarea>
 			</td>
 		</tr>
 		<tr>
