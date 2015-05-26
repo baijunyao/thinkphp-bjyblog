@@ -36,13 +36,21 @@ class ArticleModel extends Model{
 	// 添加数据
 	public function addData(){
 		$data=I('post.');
+		// 修改图片默认的title和alt
+		$image_title_alt_word=C('IMAGE_TITLE_ALT_WORD');
+		if(!empty($image_title_alt_word)){
+			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',htmlspecialchars_decode($data['content']));
+			$data['content']=htmlspecialchars(preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']));
+		}
 		if($this->create($data)){
-			$image_path=get_ueditor_image_path($data['content']);//获取文章内容图片
+			//获取文章内容图片
+			$image_path=get_ueditor_image_path($data['content']);
 			if($aid=$this->add()){
 				if(isset($data['tids'])){
 					D('ArticleTag')->addData($aid,$data['tids']);
 				}
 				if(!empty($image_path)){
+					// 添加水印
 					if(C('WATER_TYPE')!=0){
 						foreach ($image_path as $k => $v) {
 							add_water('.'.$v);
@@ -62,6 +70,12 @@ class ArticleModel extends Model{
 	// 修改数据
 	public function editData(){
 		$data=I('post.');
+		// 修改图片默认的title和alt
+		$image_title_alt_word=C('IMAGE_TITLE_ALT_WORD');
+		if(!empty($image_title_alt_word)){
+			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',htmlspecialchars_decode($data['content']));
+			$data['content']=htmlspecialchars(preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']));
+		}
 		if($this->create($data)){
 			$aid=$data['aid'];
 			$this->where(array('aid'=>$aid))->save();

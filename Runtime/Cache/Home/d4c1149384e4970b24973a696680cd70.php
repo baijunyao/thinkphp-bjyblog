@@ -1,7 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <!-- head头部分开始 -->
-<!-- head头部分开始 -->
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo ($article['current']['title']); ?>-<?php echo (C("WEB_NAME")); ?></title>
@@ -42,7 +41,6 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 </head>
-<!-- head头部分结束 -->
 <!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
@@ -197,7 +195,7 @@ $(document).ready(function(){
             <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
         </li>
         <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="/Template/default/Home/Public/image/-login.png" alt=""></a>
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
         </li>
       </ul>
 

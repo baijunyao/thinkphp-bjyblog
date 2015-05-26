@@ -934,3 +934,107 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
 
+[ 2015-05-25T22:50:18+08:00 ] ::1 /index.php/Home/Index/article/cid/0/tid/0/search_word/0/aid/15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000845s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0054s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` > 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` < 15 ORDER BY aid desc LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `bjy_article` WHERE `aid` = 15 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0052s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=15 )  [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname`,`keywords` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0005s ]
+SQL: UPDATE `bjy_article` SET `click`=click+1 WHERE `aid` = 15 [ RunTime:0.0481s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+NOTIC: [8] Undefined index: category E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 57 行.
+NOTIC: [8] Undefined index: category E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 57 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0042s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035611s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2015-05-25T22:57:16+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=15 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0036s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=15 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=14 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=14 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=27 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=13 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=13 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=27 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=12 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=12 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=11 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=11 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=10 )  [ RunTime:0.0002s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=10 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=27 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=9 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=9 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=8 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=8 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=26 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 57 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 57 行.
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 57 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 57 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0037s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 147 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039305s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+

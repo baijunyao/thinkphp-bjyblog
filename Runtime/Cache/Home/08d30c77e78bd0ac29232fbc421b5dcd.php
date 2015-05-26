@@ -31,10 +31,7 @@ $(document).ready(function(){
 });
 </script>
 
-	<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
-	<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
 	<script type="text/javascript">
-		SyntaxHighlighter.all();
 		saveLoginUrl="<?php echo U('Home/User/save_login_url','','',true);?>";
 		logoutUrl="<?php echo U('Home/User/logout','','',true);?>";
 	</script>
@@ -191,7 +188,7 @@ $(document).ready(function(){
             <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
         </li>
         <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="/Template/default/Home/Public/image/-login.png" alt=""></a>
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
         </li>
       </ul>
 

@@ -112,6 +112,12 @@ $(document).ready(function(){
 					<textarea class="form-control modal-sm" name="COPYRIGHT_WORD" rows="5" placeholder=""><?php echo ($data['COPYRIGHT_WORD']); ?></textarea>
 				</td>
 			</tr>
+			<tr>
+				<th>文章图片title和alt内容：</th>
+				<td>
+					<input class="form-control modal-sm" type="text" name="IMAGE_TITLE_ALT_WORD" value="<?php echo ($data['IMAGE_TITLE_ALT_WORD']); ?>" >
+				</td>
+			</tr>
 		</table>
    </div>
    <div class="tab-pane fade" id="water">

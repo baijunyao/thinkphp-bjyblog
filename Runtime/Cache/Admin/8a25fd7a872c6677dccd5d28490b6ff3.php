@@ -53,7 +53,7 @@ $(document).ready(function(){
 		<tr>
 			<th>描述</th>
 			<td>
-				<textarea class="form-control modal-sm bjy-noresize" name="description"></textarea>
+				<textarea class="form-control modal-sm" name="description"></textarea>
 			</td>
 		</tr>
 		<tr>

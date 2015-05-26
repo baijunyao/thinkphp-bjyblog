@@ -41,6 +41,7 @@ return array(
 	'WEB_DESCRIPTION'			=>	'{$data['WEB_DESCRIPTION']}',	   //网站描述
 	'AUTHOR'					=>	'{$data['AUTHOR']}',	   		   //默认作者
 	'COPYRIGHT_WORD'			=>	'{$data['COPYRIGHT_WORD']}',	   //文章保留版权提示
+	'IMAGE_TITLE_ALT_WORD'		=>	'{$data['IMAGE_TITLE_ALT_WORD']}', //图片默认title和alt
 
 //*************************************水印设置****************************************
 	'WATER_TYPE'            	=>	'{$data['WATER_TYPE']}',           //水印类型 0:不使用水印 1:文字水印 2:图片水印 3:文字和图片水印同时使用
