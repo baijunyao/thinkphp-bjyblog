@@ -93,5 +93,12 @@ class IndexController extends HomeBaseController {
         $this->display('tag');
     }
 
+    // 随言
+    public function chat(){
+        $this->assign('data',D('Chat')->getDataByState(0,1));
+        $this->display();
+    }
+
+
 
 }

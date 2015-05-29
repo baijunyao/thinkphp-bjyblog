@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2015-05-26 22:19:53
+Date: 2015-05-30 00:40:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `bjy_article` (
 -- ----------------------------
 -- Records of bjy_article
 -- ----------------------------
-INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;br/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '0', '1', '0', '1432649909', '28');
+INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;br/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '0', '1', '1', '1432649909', '28');
 
 -- ----------------------------
 -- Table structure for `bjy_article_pic`
@@ -49,7 +49,7 @@ CREATE TABLE `bjy_article_pic` (
   `path` varchar(100) NOT NULL DEFAULT '' COMMENT '图片路径',
   `aid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '所属文章id',
   PRIMARY KEY (`ap_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_article_pic
@@ -89,6 +89,24 @@ CREATE TABLE `bjy_category` (
 INSERT INTO `bjy_category` VALUES ('28', '测试分类', '测试分类关键词', '测试分类描述', '1', '0');
 
 -- ----------------------------
+-- Table structure for `bjy_chat`
+-- ----------------------------
+DROP TABLE IF EXISTS `bjy_chat`;
+CREATE TABLE `bjy_chat` (
+  `chid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '碎言id',
+  `date` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发表时间',
+  `content` text NOT NULL COMMENT '内容',
+  `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否显示',
+  `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
+  PRIMARY KEY (`chid`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bjy_chat
+-- ----------------------------
+INSERT INTO `bjy_chat` VALUES ('2', '1432827004', '测试随言碎语', '1', '0');
+
+-- ----------------------------
 -- Table structure for `bjy_comment`
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_comment`;
@@ -96,7 +114,7 @@ CREATE TABLE `bjy_comment` (
   `cmtid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论id',
   `content` text NOT NULL COMMENT '内容',
   PRIMARY KEY (`cmtid`)
-) ENGINE=InnoDB AUTO_INCREMENT=671548596 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_comment
@@ -195,7 +213,7 @@ CREATE TABLE `bjy_oauth_user` (
   `login_times` int(6) unsigned DEFAULT '0' COMMENT '登录次数',
   `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_oauth_user

@@ -286,6 +286,118 @@ body {
 #content .b-inside .left .page .current:hover {
   text-decoration: none;
 }
+#content .b-inside .left .chat {
+  padding: 25px 15px;
+  width: 840px;
+  background: #fff;
+  overflow: hidden;
+}
+#content .b-inside .left .chat .chat-one {
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  width: 390px;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  position: relative;
+}
+#content .b-inside .left .chat .chat-one .chat-title {
+  width: 370px;
+  height: 30px;
+  line-height: 30px;
+  color: #ccc;
+}
+#content .b-inside .left .chat .chat-one .chat-content {
+  width: 370px;
+  line-height: 21px;
+  text-align: right;
+}
+#content .b-inside .left .chat .chat-left {
+  width: 400px;
+  float: left;
+}
+#content .b-inside .left .chat .chat-left .chat-one {
+  margin-right: 10px;
+}
+#content .b-inside .left .chat .chat-left .chat-one .chat-title {
+  text-align: left;
+}
+#content .b-inside .left .chat .chat-left .chat-one .chat-content {
+  text-align: left;
+}
+#content .b-inside .left .chat .chat-left .chat-one .arrows-right1 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent #E2E2E2;
+  position: absolute;
+  left: 389px;
+}
+#content .b-inside .left .chat .chat-left .chat-one .arrows-right1 .arrows-round {
+  width: 10px;
+  height: 10px;
+  background: #008CBA;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: -4px;
+}
+#content .b-inside .left .chat .chat-left .chat-one .arrows-right2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  left: 387px;
+}
+#content .b-inside .left .chat .chat-middle {
+  width: 10px;
+  background: red;
+  border-radius: 4px;
+  float: left;
+}
+#content .b-inside .left .chat .chat-right {
+  padding-top: 70px;
+  width: 400px;
+  float: left;
+}
+#content .b-inside .left .chat .chat-right .chat-one {
+  margin-left: 10px;
+}
+#content .b-inside .left .chat .chat-right .chat-one .chat-title {
+  text-align: right;
+}
+#content .b-inside .left .chat .chat-right .chat-one .chat-content {
+  text-align: left;
+}
+#content .b-inside .left .chat .chat-right .chat-one .arrows-right1 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent #E2E2E2 transparent transparent;
+  position: absolute;
+  left: -20px;
+}
+#content .b-inside .left .chat .chat-right .chat-one .arrows-right1 .arrows-round {
+  width: 10px;
+  height: 10px;
+  background: #008CBA;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: -6px;
+}
+#content .b-inside .left .chat .chat-right .chat-one .arrows-right2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent #fff transparent transparent;
+  position: absolute;
+  left: -19px;
+}
 #content .b-inside .right {
   width: 340px;
   padding: 5px 0;

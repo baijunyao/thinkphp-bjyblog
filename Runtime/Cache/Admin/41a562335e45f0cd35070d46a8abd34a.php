@@ -44,7 +44,7 @@ $(document).ready(function(){
 		<li class="ntn-li">
 			<span class="fa fa-comments nt-ico"></span>
 			<br>
-			留言评论
+			碎言评论
 		</li>
 		<li class="ntn-li">
 			<span class="fa fa-trash nt-ico"></span>
@@ -134,16 +134,16 @@ $(document).ready(function(){
 		</dl>
 		<dl>
 			<dt>
-				<span class="fa fa-list-alt"></span>留言管理
+				<span class="fa fa-list-alt"></span>随言碎语
 			</dt>
 			<dd>
-				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>待审留言
+				<a href="<?php echo U('Admin/Chat/add');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>添加碎言
 				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
-				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已审留言
+				<a href="<?php echo U('Admin/Chat/index');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>碎言列表
 				<div class="nl-checked"></div>
 			</dd>
 		</dl>
@@ -162,13 +162,8 @@ $(document).ready(function(){
 				<div class="nl-checked"></div>
 			</dd>			
 			<dd>
-				<a href="" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已删评论
-				<div class="nl-checked"></div>
-			</dd>
-			<dd>
-				<a href="" target="right_content"></a>
-				<span class="fa fa-caret-right"></span>已删留言
+				<a href="<?php echo U('Admin/Recycle/chat');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>已删随言
 				<div class="nl-checked"></div>
 			</dd>
 			<dd>

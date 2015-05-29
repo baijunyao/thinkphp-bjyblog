@@ -1,12 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <!-- head头部分开始 -->
-<!-- head头部分开始 -->
 <head>
+<!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
-	<meta name="description" content="<?php echo ($category['description']); ?>" />
+	<title>随言碎语<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
+	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -38,22 +38,27 @@ $(document).ready(function(){
 	<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
+<!-- head头部分结束 -->
+<script type="text/javascript" src="/Template/default/Home/Public/js/chat.js"></script>
 </head>
 <!-- head头部分结束 -->
-<!-- head头部分结束 -->
 <body>
+
 <!-- 顶部导航开始 -->
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
-			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid']))): ?>action<?php endif; ?>" >
+			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid'])) and (cut_str(__INFO__,'/',-1) != 'chat')): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
+			<li class="cname <?php if(cut_str(__INFO__,'/',-1) == 'chat'): ?>action<?php endif; ?> ">
+				<a href="<?php echo U('Home/Index/chat');?>">随言碎语</a>
+			</li>
 			<li class="cname">
 				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
 			</li>
@@ -76,41 +81,33 @@ $(document).ready(function(){
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
-		<!-- 左侧列表开始 -->
+		<!-- 随言碎语开始 -->
 		<div class="left">
-			<!-- 文章列表开始 -->
-			<!-- 左侧列表开始 -->
-<div class="list">
-	<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-			<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
-			<ul class="metadata">
-				<li class="date"><span class="fa fa-user"></span><?php echo ($v['author']); ?></li>
-				<li class="date"><span class="fa fa-clock-o"></span><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-				<li class="category"><span class="fa fa-list-alt"></span><a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-				<?php if(!empty($v['tag'])): ?><li class="tags "><span class="fa fa-tags"></span>
-						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li><?php endif; ?>							
-			</ul>
-			<div class="article">
-				<div class="pic">
-					<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
+			<div class="chat">
+				<div class="chat-left">
+					<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "0"): ?><ul class="chat-one ">
+								<li class="chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+								<li class="chat-content"><?php echo ($v['content']); ?></li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 				</div>
-				<div class="word">
-					<p class="description">
-						<?php echo ($v['description']); ?>
-					</p>
-					<div class="readall">
-						<a class="readall-a"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
-					</div>
+				<div class="chat-middle"></div>
+				<div class="chat-right">
+					<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "1"): ?><ul class="chat-one ">
+								<li class="chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+								<li class="chat-content"><?php echo ($v['content']); ?></li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
-		</div><?php endforeach; endif; ?>
-	<?php echo ($page); ?>
-</div>
-<!-- 左侧列表结束 -->
-			<!-- 文章列表结束 -->
 		</div>
-		<!-- 左侧列表结束 -->
+		<!-- 随言碎语结束 -->
 
 		<!-- 右侧内容开始 -->
 		<!-- 通用右部区域开始 -->
@@ -151,7 +148,7 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 通用底部文件开始 -->
+<!-- 底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">
@@ -188,7 +185,7 @@ $(document).ready(function(){
             <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
         </li>
         <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="/Template/default/Home/Public/image/-login.png" alt=""></a>
+            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
         </li>
       </ul>
 

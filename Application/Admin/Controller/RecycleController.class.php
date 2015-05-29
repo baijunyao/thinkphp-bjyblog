@@ -32,6 +32,14 @@ class RecycleController extends AdminBaseController{
 		$this->display();
 	}
 
+	// 已删随言碎语
+	public function chat(){
+		$data=D('Chat')->getDataByState(1);
+		$this->assign('data',$data);
+		// p($data);die;
+		$this->display();
+	}
+
 	// 根据$_GET数组恢复删除
 	public function recover(){
 		$data=I('get.');

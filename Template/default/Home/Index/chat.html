@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head头部分开始 -->
+<head>
+<include file="./Template/default/Home/Public/public_head.html" title="随言碎语" keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
+<script type="text/javascript" src="__HOME_JS__/chat.js"></script>
+</head>
+<!-- head头部分结束 -->
+<body>
+
+<!-- 顶部导航开始 -->
+<include file="./Template/default/Home/Public/public_nav.html" />
+<!-- 顶部导航结束 -->
+
+<!-- 主体部分开始 -->
+<div id="content">
+	<div class="b-inside">
+		<!-- 随言碎语开始 -->
+		<div class="left">
+			<div class="chat">
+				<div class="chat-left">
+					<volist name="data" id="v" mod="2">
+						<eq name="mod" value="0">
+							<ul class="chat-one ">
+								<li class="chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
+								<li class="chat-content">{$v['content']}</li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul>
+						</eq>
+					</volist>
+				</div>
+				<div class="chat-middle"></div>
+				<div class="chat-right">
+					<volist name="data" id="v" mod="2">
+						<eq name="mod" value="1">
+							<ul class="chat-one ">
+								<li class="chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
+								<li class="chat-content">{$v['content']}</li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul>
+						</eq>
+					</volist>
+				</div>
+			</div>
+		</div>
+		<!-- 随言碎语结束 -->
+
+		<!-- 右侧内容开始 -->
+		<include file="./Template/default/Home/Public/public_right.html" />
+		<!-- 右侧内容结束 -->
+	</div>
+</div>
+<!-- 主体部分结束 -->
+
+<!-- 底部文件开始 -->
+<include file="./Template/default/Home/Public/public_foot.html" />
+<!-- 通用底部文件结束 -->
+
+<!-- 登陆框开始 -->
+<include file="./Template/default/Home/Public/public_login.html" />
+<!-- 登陆框结束 -->
+</body>
+</html>

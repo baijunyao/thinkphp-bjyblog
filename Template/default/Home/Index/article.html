@@ -2,13 +2,7 @@
 <html lang="en">
 <!-- head头部分开始 -->
 <head>
-	<meta charset="UTF-8">
-	<title>{$article['current']['title']}-{$Think.config.WEB_NAME}</title>
-	<meta name="keywords" content="{$article['current']['category']['keywords']}" />
-	<meta name="description" content="{$article['current']['description']}" />
-	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<meta name="author" content="baijunyao,admin@baijunyao.com">
-	<bootstrap />
+	<include file="./Template/default/Home/Public/public_head.html" title="{$article['current']['title']}-"  keywords="{$article['current']['category']['keywords']}" description="{$article['current']['description']}" />
 	<script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
 	<script type="text/javascript">

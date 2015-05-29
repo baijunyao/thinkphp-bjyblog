@@ -1,8 +1,8 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <!-- head头部分开始 -->
-<!-- head头部分开始 -->
 <head>
+<!-- head头部分开始 -->
 	<meta charset="UTF-8">
 	<title><?php echo (C("WEB_NAME")); ?></title>
 	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
@@ -38,8 +38,8 @@ $(document).ready(function(){
 	<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
+<!-- head头部分结束 -->	
 </head>
-<!-- head头部分结束 -->
 <!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
@@ -48,12 +48,15 @@ $(document).ready(function(){
 	<div class="b-inside">
 		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
 		<ul class="category">
-			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid']))): ?>action<?php endif; ?>" >
+			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid'])) and (cut_str(__INFO__,'/',-1) != 'chat')): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
 			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
+			<li class="cname <?php if(cut_str(__INFO__,'/',-1) == 'chat'): ?>action<?php endif; ?> ">
+				<a href="<?php echo U('Home/Index/chat');?>">随言碎语</a>
+			</li>
 			<li class="cname">
 				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
 			</li>
