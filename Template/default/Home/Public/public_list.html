@@ -5,7 +5,7 @@
 			<h3 class="title"><a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']))}" target="_blank">{$v['title']}</a></h3>
 			<ul class="metadata">
 				<li class="date"><span class="fa fa-user"></span>{$v['author']}</li>
-				<li class="date"><span class="fa fa-clock-o"></span>{$v['addtime']|date='Y-m-d H:i:s',###}</li>
+				<li class="date"><span class="fa fa-calendar"></span>{$v['addtime']|date='Y-m-d H:i:s',###}</li>
 				<li class="category"><span class="fa fa-list-alt"></span><a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}" target="_blank">{$v['category']['cname']}</a>
 				<if condition="!empty($v['tag'])">
 					<li class="tags "><span class="fa fa-tags"></span>
@@ -16,9 +16,13 @@
 				</if>							
 			</ul>
 			<div class="article">
-				<div class="pic">
-					<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']))}" target="_blank"><img src="{$v['pic_path']}" alt=""></a>
-				</div>
+				<figure class="pic style1">
+					<img src="{$v['pic_path']}" alt="白俊遥博客" title="白俊遥博客">
+					<figcaption>
+						<p>{$v['title']}</p>
+						<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']))}" target="_blank"></a>
+					</figcaption>
+				</figure>
 				<div class="word">
 					<p class="description">
 						{$v['description']}

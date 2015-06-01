@@ -14,6 +14,7 @@ body{
 	.b-inside{
 		height: 45px;
 		overflow: hidden;
+		/* logo部分开始 */
 		.logo{
 			width: 200px;
 			height: 45px;
@@ -29,6 +30,9 @@ body{
 				}
 			}
 		}
+		/* logo部分结束 */
+
+		/* 栏目分类开始 */
 		.category{
 			width: 800px;
 			height: 45px;
@@ -55,6 +59,9 @@ body{
 				background: #008CBA;
 			}
 		}
+		/* 栏目分类结束 */
+
+		/* 用户登录开始 */
 		.user{
 			width: 200px;
 			height: 45px;
@@ -93,6 +100,7 @@ body{
 				}
 			}
 		}
+		/* 用户登录结束 */
 	}
 }
 /* 顶部导航结束 */
@@ -140,6 +148,7 @@ body{
 					.article{
 						width: 810px;
 						height: 160px;
+						/* 图片动态效果开始 */
 						.pic{
 							margin-right: 15px;
 							padding: 3px;
@@ -148,11 +157,31 @@ body{
 							border: 1px solid #ccc;
 							border-radius: 4px;
 							float: left;
+							position: relative;
+							overflow: hidden;
 							img{
 								width: 260px;
 								height: 150px;
 							}
+							a{
+								display: block;
+								width: 260px;
+								height: 150px;
+								position: absolute;
+								left: 0;
+								top: 0;
+							}
 						}
+						.style1{
+							img{
+								transition: opacity 0.35s, transform 0.35s;
+							}
+						}
+						.style1:hover img{
+							opacity: 0.7;
+							transform: scale(1.2);
+						}
+						/* 图片动态效果结束 */
 						.word{
 							width: 525px;
 							height: 160px;
@@ -243,6 +272,7 @@ body{
 				width: 840px;
 				background: #fff;
 			}
+			/* 分页开始 */
 			.page{
 				width: 840px;
 				padding: 30px 15px;
@@ -271,6 +301,9 @@ body{
 					}
 				}
 			}
+			/* 分页结束 */
+
+			/* 随言碎语开始 */
 			.chat{
 				padding: 25px 15px;
 				width: 840px;
@@ -317,7 +350,7 @@ body{
 							.arrows-round{
 								width: 10px;
 								height: 10px;
-								background: #008CBA;
+								background: #F08A24;
 								border-radius: 50%;
 								position: absolute;
 								left: 0px;
@@ -337,7 +370,7 @@ body{
 				}
 				.chat-middle{
 					width: 10px;
-					background: red;
+					background: #008CBA;
 					border-radius: 4px;
 					float: left;
 				}
@@ -364,7 +397,7 @@ body{
 							.arrows-round{
 								width: 10px;
 								height: 10px;
-								background: #008CBA;
+								background: #F08A24;
 								border-radius: 50%;
 								position: absolute;
 								left: -10px;
@@ -383,6 +416,7 @@ body{
 					}
 				}
 			}
+			/* 随言碎语结束 */
 		}
 		/* 左侧列表结束 */
 		/* 右侧内容开始 */

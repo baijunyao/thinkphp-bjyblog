@@ -4,9 +4,9 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
-	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
+	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($category['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -95,13 +95,9 @@ $(document).ready(function(){
 					</li><?php endif; ?>							
 			</ul>
 			<div class="article">
-				<figure class="pic style1">
-					<img src="<?php echo ($v['pic_path']); ?>" alt="白俊遥博客" title="白俊遥博客">
-					<figcaption>
-						<p><?php echo ($v['title']); ?></p>
-						<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
-					</figcaption>
-				</figure>
+				<div class="pic">
+					<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><img src="<?php echo ($v['pic_path']); ?>" alt=""></a>
+				</div>
 				<div class="word">
 					<p class="description">
 						<?php echo ($v['description']); ?>
@@ -158,7 +154,7 @@ $(document).ready(function(){
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 底部文件开始 -->
+<!-- 通用底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">

@@ -15,6 +15,12 @@ body {
 #nav .b-inside {
   height: 45px;
   overflow: hidden;
+  /* logo部分开始 */
+  /* logo部分结束 */
+  /* 栏目分类开始 */
+  /* 栏目分类结束 */
+  /* 用户登录开始 */
+  /* 用户登录结束 */
 }
 #nav .b-inside .logo {
   width: 200px;
@@ -126,6 +132,10 @@ body {
   width: 840px;
   float: left;
   overflow: hidden;
+  /* 分页开始 */
+  /* 分页结束 */
+  /* 随言碎语开始 */
+  /* 随言碎语结束 */
 }
 #content .b-inside .left .list {
   width: 840px;
@@ -147,6 +157,8 @@ body {
 #content .b-inside .left .list .detail .article {
   width: 810px;
   height: 160px;
+  /* 图片动态效果开始 */
+  /* 图片动态效果结束 */
 }
 #content .b-inside .left .list .detail .article .pic {
   margin-right: 15px;
@@ -156,10 +168,27 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   float: left;
+  position: relative;
+  overflow: hidden;
 }
 #content .b-inside .left .list .detail .article .pic img {
   width: 260px;
   height: 150px;
+}
+#content .b-inside .left .list .detail .article .pic a {
+  display: block;
+  width: 260px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#content .b-inside .left .list .detail .article .style1 img {
+  transition: opacity 0.35s, transform 0.35s;
+}
+#content .b-inside .left .list .detail .article .style1:hover img {
+  opacity: 0.7;
+  transform: scale(1.2);
 }
 #content .b-inside .left .list .detail .article .word {
   width: 525px;
@@ -336,7 +365,7 @@ body {
 #content .b-inside .left .chat .chat-left .chat-one .arrows-right1 .arrows-round {
   width: 10px;
   height: 10px;
-  background: #008CBA;
+  background: #F08A24;
   border-radius: 50%;
   position: absolute;
   left: 0px;
@@ -353,7 +382,7 @@ body {
 }
 #content .b-inside .left .chat .chat-middle {
   width: 10px;
-  background: red;
+  background: #008CBA;
   border-radius: 4px;
   float: left;
 }
@@ -383,7 +412,7 @@ body {
 #content .b-inside .left .chat .chat-right .chat-one .arrows-right1 .arrows-round {
   width: 10px;
   height: 10px;
-  background: #008CBA;
+  background: #F08A24;
   border-radius: 50%;
   position: absolute;
   left: -10px;
