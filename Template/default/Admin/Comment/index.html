@@ -23,7 +23,7 @@
 			<td>{$v['cmtid']}</td>
 			<td>{$v['content']['title']}</td>
 			<td>{$v['content']['comments'][0]['user']['nickname']}</td>
-			<td>{$v['content']['comments'][0]['ctime']|date='Y-m-d H:i:s',###}</td>
+			<td>{:date('Y-m-d H:i:s',trim($v['content']['comments'][0]['ctime'],'000'))}</td>
 			<td>{$v['content']['comments'][0]['content']}</td>
 		</tr>
 	</foreach>

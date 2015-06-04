@@ -43,7 +43,7 @@ $(document).ready(function(){
 			<td><?php echo ($v['cmtid']); ?></td>
 			<td><?php echo ($v['content']['title']); ?></td>
 			<td><?php echo ($v['content']['comments'][0]['user']['nickname']); ?></td>
-			<td><?php echo (date('Y-m-d H:i:s',$v['content']['comments'][0]['ctime'])); ?></td>
+			<td><?php echo date('Y-m-d H:i:s',trim($v['content']['comments'][0]['ctime'],'000'));?></td>
 			<td><?php echo ($v['content']['comments'][0]['content']); ?></td>
 		</tr><?php endforeach; endif; ?>
 </table>

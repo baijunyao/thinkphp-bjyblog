@@ -4,7 +4,7 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title>随言碎语<?php echo (C("WEB_NAME")); ?></title>
+	<title>随言碎语-<?php echo (C("WEB_NAME")); ?></title>
 	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
 	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -48,7 +48,17 @@ $(document).ready(function(){
 <!-- 顶部导航开始 -->
 <div id="nav">
 	<div class="b-inside">
-		<div class="logo"><a href="<?php echo U('Home/Index/index');?>">白俊遥博客</a></div>
+		<div class="logo">
+			<div class="code">
+				<p class="php">&lt;?php</p>
+				<p class="echo">echo</p>
+			</div>
+			<p class="word">
+				'<img src="/Template/default/Home/Public/image/logo.jpg" alt="">'
+				<span>;</span>
+			</p>
+			<a href="<?php echo U('Home/Index/index');?>"></a>
+		</div>
 		<ul class="category">
 			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid'])) and (cut_str(__INFO__,'/',-1) != 'chat')): ?>action<?php endif; ?>" >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>

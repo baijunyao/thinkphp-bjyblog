@@ -16,25 +16,60 @@ body{
 		overflow: hidden;
 		/* logo部分开始 */
 		.logo{
-			width: 200px;
+			width: 240px;
 			height: 45px;
-			line-height: 45px;
 			color: #fff;
 			float: left;
-			a{
-				font-size: 30px;
-				font-weight: 800;
-				&:hover{
-					text-decoration: none;
-					color: #337AB7;
+			position: relative;
+			.code{
+				width: 60px;
+				height: 45px;
+				color: #fff;
+				float: left;
+				.php{
+					width: 60px;
+					height: 22px;
 				}
+				.echo{
+					width: 60px;
+					height: 22px;
+					color: #66D9EF;
+					text-indent: 30px;
+				}
+
 			}
+			.word{
+				width: 180px;
+				height: 45px;
+				line-height: 45px;
+				font-size: 24px;
+				font-weight: 800;
+				color: #E6BD48;
+				float: left;
+				span{
+					padding-right: 5px;
+					float: right;
+					height: 45px;
+					line-height: 65px;
+					font-size: 14px;
+					color: #fff;
+				}		
+			}
+			a{
+				display: block;
+				width: 235px;
+				height: 45px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
 		}
 		/* logo部分结束 */
 
 		/* 栏目分类开始 */
 		.category{
-			width: 800px;
+			width: 760px;
 			height: 45px;
 			float: left;
 			.cname{
@@ -174,11 +209,15 @@ body{
 						}
 						.style1{
 							img{
+								-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 								transition: opacity 0.35s, transform 0.35s;
+								-webkit-transform: scale(1);
+								transform: scale(1);
 							}
 						}
 						.style1:hover img{
 							opacity: 0.7;
+							-webkit-transform: scale(1.2);
 							transform: scale(1.2);
 						}
 						/* 图片动态效果结束 */
@@ -198,9 +237,15 @@ body{
 								height: 20px;
 								.readall-a{
 									padding: 0 10px;
-									background: #008CBA;
 									color: #fff;
 									border-radius: 10px;
+									background: #34AFD8;
+									float: right;
+									&:hover{
+										text-decoration: none;
+										transition:ALL 0.5s ease;
+										background: #0583AC;
+									}
 								}
 							}
 						}
@@ -288,7 +333,9 @@ body{
 					border: 1px solid #F2F2F2;
 					border-radius: 5px;
 					&:hover{
-						text-decoration:none; 
+						text-decoration:none;
+						transition:ALL 0.5s ease;
+						background: #F8F5F5;
 					}
 				}
 				.current{
@@ -298,6 +345,8 @@ body{
 					border: 1px solid #008CBA;
 					&:hover{
 						text-decoration:none; 
+						transition:ALL 0.5s ease;
+						background: #008CBA;
 					}
 				}
 			}
@@ -457,15 +506,35 @@ body{
 					}
 					.tstyle-1{
 						background: #43AC6A;
+						&:hover{
+							text-decoration: none;
+							transition:ALL 1s ease;
+							background: #028231;
+						}
 					}
 					.tstyle-2{
-						background: #F08A24;
+						background: #F3A557;
+						&:hover{
+							text-decoration: none;
+							transition:ALL 1s ease;
+							background: #E97705;
+						}
 					}
 					.tstyle-3{
-						background: #F04124;
+						background: #F25E45;
+						&:hover{
+							text-decoration: none;
+							transition:ALL 1s ease;
+							background: #D82508;
+						}
 					}
 					.tstyle-4{
-						background: #008CBA;
+						background: #34AFD8;
+						&:hover{
+							text-decoration: none;
+							transition:ALL 1s ease;
+							background: #0583AC;
+						}
 					}
 				}
 				.search-text{
@@ -531,6 +600,16 @@ body{
 				}
 			}
 		}
+	}
+	.close{
+		transition: all 0.2s linear 0s;
+	}
+	.close:hover{
+	    -webkit-transform: rotate(360deg);
+	    -moz-transform: rotate(360deg);
+	    -o-transform: rotate(360deg);
+	    -ms-transform: rotate(360deg);
+	    transform: rotate(360deg);
 	}
 }
 /* 登录模态框结束 */

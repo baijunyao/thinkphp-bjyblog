@@ -103,7 +103,7 @@ $(document).ready(function(){
 				<input class="icheck" type="radio" name="is_show" value="1" checked="checked">
 				&emsp;
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_show" value="0">				
+				<input class="icheck" type="radio" name="is_show" value="0">
 			</td>
 		</tr>
 		<tr>

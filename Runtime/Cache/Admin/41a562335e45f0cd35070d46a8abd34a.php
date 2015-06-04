@@ -38,31 +38,27 @@ $(document).ready(function(){
 	<ul class="nt-nav list-unstyled">
 		<li class="ntn-li ntn-active">
 			<span class="fa fa-list-ul nt-ico"></span>
-			<br>
 			内容管理
 		</li>
 		<li class="ntn-li">
 			<span class="fa fa-comments nt-ico"></span>
-			<br>
 			碎言评论
 		</li>
 		<li class="ntn-li">
 			<span class="fa fa-trash nt-ico"></span>
-			<br>
 			回收管理
 		</li>
 		<li class="ntn-li">
 			<span class="fa fa-cogs nt-ico"></span>
-			<br>
 			网站设置
 		</li>
 	</ul>
 	<ul class="nt-msg list-unstyled">
 		<li class="nt-go-index">
-			<a href="<?php echo U('Home/Index/index');?>" target="_blank">前台首页</a>
+			<a href="<?php echo U('Home/Index/index');?>" target="_blank"><span class="fa fa-home"></span>前台首页</a>
 		</li>
-		<li>
-			<a href="<?php echo U('Admin/Login/logout');?>">退出</a>
+		<li class="nt-sign-out">
+			<a href="<?php echo U('Admin/Login/logout');?>"><span class="fa fa-sign-out"></span>退出</a>
 		</li>
 	</ul>
 </div>
@@ -79,12 +75,16 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Article/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加文章
-				<div class="nl-checked"></div>
-			</dd>			
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Article/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>文章列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 		<dl>
@@ -94,12 +94,16 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Tag/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加标签
-				<div class="nl-checked"></div>
-			</dd>			
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Tag/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>标签列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 		<dl>
@@ -109,15 +113,19 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Category/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加分类
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Category/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>分类列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
-	</div>	
+	</div>
 	<!-- 内容管理结束 -->
 
 	<!-- 留言评论开始 -->
@@ -125,11 +133,13 @@ $(document).ready(function(){
 		<dl>
 			<dt>
 				<span class="fa fa-comment-o"></span>评论管理
-			</dt>		
+			</dt>
 			<dd>
 				<a href="<?php echo U('Admin/Comment/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>评论列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 		<dl>
@@ -139,12 +149,16 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Chat/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加碎言
-				<div class="nl-checked"></div>
-			</dd>			
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Chat/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>碎言列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 	</div>
@@ -159,17 +173,23 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/article');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删文章
-				<div class="nl-checked"></div>
-			</dd>			
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/chat');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删随言
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Recycle/link');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删友链
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 	</div>
@@ -184,12 +204,16 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Config/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>网站信息
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Config/change_password');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>修改密码
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 		<dl>
@@ -199,12 +223,16 @@ $(document).ready(function(){
 			<dd>
 				<a href="<?php echo U('Admin/Link/add');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>添加友链
-				<div class="nl-checked"></div>
-			</dd>			
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
 			<dd>
 				<a href="<?php echo U('Admin/Link/index');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>友链列表
-				<div class="nl-checked"></div>
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
 			</dd>
 		</dl>
 	</div>
