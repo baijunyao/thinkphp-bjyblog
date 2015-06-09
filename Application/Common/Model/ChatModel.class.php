@@ -59,4 +59,11 @@ class ChatModel extends Model{
 	public function getDataByLid($chid){
 		return $this->where(array('chid'=>$chid))->find();
 	}
+
+	// 传递$map获取count数据
+	public function getCountData($map=array()){
+		return $this->where($map)->count();
+	}
+
+
 }

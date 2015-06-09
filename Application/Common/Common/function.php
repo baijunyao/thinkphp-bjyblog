@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 header("Content-type:text/html;charset=utf-8");
 
@@ -33,7 +33,7 @@ function strip_html_tags($tags,$str,$content=0){
 
 //传递ueditor生成的内容获取其中图片的路径
 function get_ueditor_image_path($str){
-    $preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|gif|png|bmp]*/i';
+    $preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|png|bmp]*/i';
     preg_match_all($preg, $str,$data);
     return current($data);
 }
@@ -87,7 +87,7 @@ function show_verify($config=''){
             'imageW'=>240,
             'length'=>4,
             'fontttf'=>'4.ttf',
-            );        
+            );
     }
     $verify=new \Think\Verify($config);
     return $verify->entry();

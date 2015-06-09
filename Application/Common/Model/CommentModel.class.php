@@ -1,11 +1,11 @@
-<?php 
+<?php
 namespace Common\Model;
 use Think\Model;
 /**
 * 评论model
 */
 class CommentModel extends Model{
-	
+
 	// 添加数据
 	public function addData(){
 		$data=I('post.data');
@@ -24,6 +24,9 @@ class CommentModel extends Model{
 		return $data;
 	}
 
-
+	// 传递$map获取count数据
+	public function getCountData($map=array()){
+		return $this->where($map)->count();
+	}
 
 }

@@ -29,10 +29,53 @@ $(document).ready(function(){
 </head>
 <body>
 <div id="welcome">
-	<dl class="block">
-		<dt class="title">内容统计</dt>
-		<dd></dd>
-	</dl>
+	<div class="block">
+		<h3 class="title">文章统计</h3>
+		<ul class="content">
+			<li>文章总数：<?php echo ($all_article); ?></li>
+			<li>已删文章数：<?php echo ($delete_article); ?></li>
+			<li>不显示的文章数：<?php echo ($hide_article); ?></li>
+		</ul>
+	</div>
+	<div class="block">
+		<h3 class="title">随言碎语统计</h3>
+		<ul class="content">
+			<li>随言总数：<?php echo ($all_chat); ?></li>
+			<li>已删随言数：<?php echo ($delete_chat); ?></li>
+			<li>不显示的随言数：<?php echo ($hide_chat); ?></li>
+		</ul>
+	</div>
+	<div class="block">
+		<h3 class="title">评论统计</h3>
+		<ul class="content">
+			<li>评论总数：<?php echo ($all_comment); ?></li>
+		</ul>
+	</div>
+	<div class="block">
+		<h3 class="title">其他数据</h3>
+		<table>
+			<tr>
+				<th width="100px">服务器信息：</th>
+				<td><?php echo PHP_OS;?></td>
+			</tr>
+			<tr>
+				<th>Apache版本：</th>
+				<td><?php echo apache_get_version();?></td>
+			</tr>
+			<tr>
+				<th>PHP版本：</th>
+				<td><?php echo PHP_VERSION;?></td>
+			</tr>
+			<tr>
+				<th>MySQL版本：</th>
+				<td><?php echo mysql_get_server_info();?></td>
+			</tr>
+			<tr>
+				<th>thinkbjy版本：</th>
+				<td><?php echo (C("THINK_INFORMATION")); ?></td>
+			</tr>
+		</table>
+	</div>
 </div>
 </body>
 </html>

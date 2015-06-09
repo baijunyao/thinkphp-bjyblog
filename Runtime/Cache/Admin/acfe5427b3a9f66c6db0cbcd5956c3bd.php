@@ -39,7 +39,7 @@ $(document).ready(function(){
 	</thead>
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
 			<td><?php echo ($v['chid']); ?></td>
-			<td><?php echo (date('Y-m-d H:i:s',$v['time'])); ?></td>
+			<td><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></td>
 			<td><?php echo ($v['content']); ?></td>
 			<th>
 				<?php if($v['is_show'] == 1): ?>✔

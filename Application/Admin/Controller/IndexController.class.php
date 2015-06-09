@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
 /**
@@ -11,6 +11,16 @@ class IndexController extends AdminBaseController{
 	}
 	// 欢迎页面
 	public function welcome(){
+		$assign=array(
+			'all_article'=>D('Article')->getCountData(),
+			'delete_article'=>D('Article')->getCountData(array('is_delete'=>1)),
+			'hide_article'=>D('Article')->getCountData(array('is_show'=>0)),
+			'all_chat'=>D('Chat')->getCountData(),
+			'delete_chat'=>D('Chat')->getCountData(array('is_delete'=>1)),
+			'hide_chat'=>D('Chat')->getCountData(array('is_show'=>0)),
+			'all_comment'=>D('Comment')->getCountData(),
+			);
+		$this->assign($assign);
 		$this->display();
 	}
 

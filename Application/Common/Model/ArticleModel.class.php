@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace Common\Model;
 use Think\Model;
 /**
@@ -127,12 +127,12 @@ class ArticleModel extends Model{
 			if($is_show=='all'){
 				$where=array(
 					'is_delete'=>$is_delete
-					);				
+					);
 			}else{
 				$where=array(
 					'is_delete'=>$is_delete,
 					'is_show'=>$is_show
-					);					
+					);
 			}
 			$count=$this->where($where)->count();
 			$page=new \Org\Bjy\Page($count,$limit);
@@ -142,13 +142,13 @@ class ArticleModel extends Model{
 				$where=array(
 					'at.tid'=>$tid,
 					'a.is_delete'=>$is_delete
-					);				
+					);
 			}else{
 				$where=array(
 					'at.tid'=>$tid,
 					'a.is_delete'=>$is_delete,
 					'a.is_show'=>$is_show
-					);					
+					);
 			}
 			$count=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->count();
 			$page=new \Org\Bjy\Page($count,$limit);
@@ -158,13 +158,13 @@ class ArticleModel extends Model{
 				$where=array(
 					'cid'=>$cid,
 					'is_delete'=>$is_delete,
-					);				
+					);
 			}else{
 				$where=array(
 					'cid'=>$cid,
 					'is_delete'=>$is_delete,
 					'is_show'=>$is_show
-					);					
+					);
 			}
 			$count=$this->where($where)->count();
 			$page=new \Org\Bjy\Page($count,$limit);
@@ -195,7 +195,7 @@ class ArticleModel extends Model{
 			if(isset($map['tid'])){
 				$prev_map['at.tid']=$map['tid'];
 				$prev_map[]=array('a.is_show'=>1);
-				$prev_map[]=array('a.is_delete'=>0);	
+				$prev_map[]=array('a.is_delete'=>0);
 				$next_map=$prev_map;
 				$prev_map['a.aid']=array('gt',$aid);
 				$next_map['a.aid']=array('lt',$aid);
@@ -204,7 +204,7 @@ class ArticleModel extends Model{
 			}else{
 				$prev_map=$map;
 				$prev_map[]=array('is_show'=>1);
-				$prev_map[]=array('is_delete'=>0);	
+				$prev_map[]=array('is_delete'=>0);
 				$next_map=$prev_map;
 				$prev_map['aid']=array('gt',$aid);
 				$next_map['aid']=array('lt',$aid);
@@ -255,9 +255,13 @@ class ArticleModel extends Model{
 			);
 			return $this->where($where)->order('addtime desc')->select();
 		}
-		
+
 	}
 
+	// 传递$map获取count数据
+	public function getCountData($map=array()){
+		return $this->where($map)->count();
+	}
 
 }
 

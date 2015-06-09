@@ -8,13 +8,13 @@
 // +----------------------------------------------------------------------
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
 // +----------------------------------------------------------------------
-/*   
- * PHP分页类   
+/*
+ * PHP分页类
  * 修改者：白俊遥
  * 日  期：2015.5.10
- * 邮箱：admin@baijunyao.com
- * 博客：http://www.baijunyao.com 
- */  
+ * 邮  箱：baijunyao@baijunyao.com
+ * 博  客：http://www.baijunyao.com
+ */
 namespace Org\Bjy;
 
 class Page{

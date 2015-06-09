@@ -19,5 +19,6 @@ return array(
 		'name'				=>	'BJYSESSION',		//设置session名
 		// 'domain'			=>	'baijunyao.com',	//设置session作用域
 	),
-
+//***********************************其他设置**************************************
+	'THINK_INFORMATION'     =>  '1.0',
 );
