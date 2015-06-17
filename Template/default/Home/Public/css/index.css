@@ -4,6 +4,12 @@ body {
   background: #F8F8F8;
   font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+a {
+  transition: ALL  0.5s ease;
+  -moz-transition: ALL  0.5s ease;
+  -webkit-transition: ALL  0.5s ease;
+  -o-transition: ALL  0.5s ease;
+}
 /* 顶部导航开始 */
 #nav {
   display: table;
@@ -90,7 +96,6 @@ body {
 }
 #nav .b-inside .category .cname a:hover {
   text-decoration: none;
-  transition: ALL 0.5s ease;
   background: #008CBA;
 }
 #nav .b-inside .category .action {
@@ -110,7 +115,6 @@ body {
   float: right;
 }
 #nav .b-inside .user .login:hover {
-  transition: ALL 0.5s ease;
   background: #008CBA;
   cursor: pointer;
 }
@@ -252,7 +256,6 @@ body {
 }
 #content .b-inside .left .list .detail .article .word .readall .readall-a:hover {
   text-decoration: none;
-  transition: ALL 0.5s ease;
   background: #0583AC;
 }
 #content .b-inside .left .metadata {
@@ -348,7 +351,6 @@ body {
 #content .b-inside .left .page .next:hover,
 #content .b-inside .left .page .end:hover {
   text-decoration: none;
-  transition: ALL 0.5s ease;
   background: #F8F5F5;
 }
 #content .b-inside .left .page .current {
@@ -359,7 +361,6 @@ body {
 }
 #content .b-inside .left .page .current:hover {
   text-decoration: none;
-  transition: ALL 0.5s ease;
   background: #008CBA;
 }
 #content .b-inside .left .chat {
@@ -589,7 +590,6 @@ body {
 #content .b-inside .right .search .link-p .tstyle-1:hover,
 #content .b-inside .right .link .link-p .tstyle-1:hover {
   text-decoration: none;
-  transition: ALL 1s ease;
   background: #028231;
 }
 #content .b-inside .right .tags .tags-ul .tstyle-2,
@@ -619,7 +619,6 @@ body {
 #content .b-inside .right .search .link-p .tstyle-2:hover,
 #content .b-inside .right .link .link-p .tstyle-2:hover {
   text-decoration: none;
-  transition: ALL 1s ease;
   background: #E97705;
 }
 #content .b-inside .right .tags .tags-ul .tstyle-3,
@@ -649,7 +648,6 @@ body {
 #content .b-inside .right .search .link-p .tstyle-3:hover,
 #content .b-inside .right .link .link-p .tstyle-3:hover {
   text-decoration: none;
-  transition: ALL 1s ease;
   background: #D82508;
 }
 #content .b-inside .right .tags .tags-ul .tstyle-4,
@@ -679,7 +677,6 @@ body {
 #content .b-inside .right .search .link-p .tstyle-4:hover,
 #content .b-inside .right .link .link-p .tstyle-4:hover {
   text-decoration: none;
-  transition: ALL 1s ease;
   background: #0583AC;
 }
 #content .b-inside .right .tags .search-text,
