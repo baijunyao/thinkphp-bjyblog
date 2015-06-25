@@ -75,6 +75,17 @@ a {
   position: absolute;
   left: 0;
   top: 0;
+  background-image: url('../image/button_bg.png');
+  background-position: bottom left, top right, 0 0, 0 0;
+  -moz-box-shadow: 0 0 1px #fff inset;
+  -webkit-box-shadow: 0 0 1px #fff inset;
+  -webkit-transition: background-position 0.5s;
+  -moz-transition: background-position 0.5s;
+  transition: background-position 0.5s;
+}
+#nav .b-inside .logo a:hover {
+  background-position: top right;
+  background-position: top left, bottom right, 0 0, 0 0;
 }
 #nav .b-inside .category {
   width: 760px;
@@ -113,6 +124,10 @@ a {
   line-height: 45px;
   color: #fff;
   float: right;
+  transition: ALL  0.5s ease;
+  -moz-transition: ALL  0.5s ease;
+  -webkit-transition: ALL  0.5s ease;
+  -o-transition: ALL  0.5s ease;
 }
 #nav .b-inside .user .login:hover {
   background: #008CBA;
@@ -702,6 +717,20 @@ a {
   color: #fff;
   border: none;
   float: left;
+  background-image: url('../image/button_bg.png');
+  background-position: top left, top right, 0 0, 0 0;
+  -moz-box-shadow: 0 0 1px #fff inset;
+  -webkit-box-shadow: 0 0 1px #fff inset;
+  -webkit-transition: background-position 0.5s;
+  -moz-transition: background-position 0.5s;
+  transition: background-position 0.5s;
+}
+#content .b-inside .right .tags .search-submit:hover,
+#content .b-inside .right .recommend .search-submit:hover,
+#content .b-inside .right .search .search-submit:hover,
+#content .b-inside .right .link .search-submit:hover {
+  background-position: bottom right;
+  background-position: bottom left, bottom right, 0 0, 0 0;
 }
 #content .b-inside .right .search {
   padding-top: 20px;
