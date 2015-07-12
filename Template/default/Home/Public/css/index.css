@@ -76,16 +76,12 @@ a {
   left: 0;
   top: 0;
   background-image: url('../image/button_bg.png');
-  background-position: bottom left, top right, 0 0, 0 0;
-  -moz-box-shadow: 0 0 1px #fff inset;
-  -webkit-box-shadow: 0 0 1px #fff inset;
   -webkit-transition: background-position 0.5s;
   -moz-transition: background-position 0.5s;
   transition: background-position 0.5s;
 }
 #nav .b-inside .logo a:hover {
-  background-position: top right;
-  background-position: top left, bottom right, 0 0, 0 0;
+  background-position: bottom right;
 }
 #nav .b-inside .category {
   width: 760px;
@@ -162,6 +158,7 @@ a {
   overflow: hidden;
 }
 #content .b-inside {
+  overflow: hidden;
   /* 左侧列表开始 */
   /* 左侧列表结束 */
   /* 右侧内容开始 */
@@ -718,9 +715,6 @@ a {
   border: none;
   float: left;
   background-image: url('../image/button_bg.png');
-  background-position: top left, top right, 0 0, 0 0;
-  -moz-box-shadow: 0 0 1px #fff inset;
-  -webkit-box-shadow: 0 0 1px #fff inset;
   -webkit-transition: background-position 0.5s;
   -moz-transition: background-position 0.5s;
   transition: background-position 0.5s;
@@ -730,7 +724,6 @@ a {
 #content .b-inside .right .search .search-submit:hover,
 #content .b-inside .right .link .search-submit:hover {
   background-position: bottom right;
-  background-position: bottom left, bottom right, 0 0, 0 0;
 }
 #content .b-inside .right .search {
   padding-top: 20px;

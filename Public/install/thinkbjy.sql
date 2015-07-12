@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2015-05-30 00:40:06
+Date: 2015-07-12 15:08:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `bjy_article` (
 -- ----------------------------
 -- Records of bjy_article
 -- ----------------------------
-INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;br/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '0', '1', '1', '1432649909', '28');
+INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;	&lt;/p&gt;&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '0', '1', '4', '1432649909', '28');
 
 -- ----------------------------
 -- Table structure for `bjy_article_pic`
@@ -49,11 +49,12 @@ CREATE TABLE `bjy_article_pic` (
   `path` varchar(100) NOT NULL DEFAULT '' COMMENT '图片路径',
   `aid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '所属文章id',
   PRIMARY KEY (`ap_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_article_pic
 -- ----------------------------
+INSERT INTO `bjy_article_pic` VALUES ('1', '/Upload/image/ueditor/20150601/1433171136139793.jpg', '17');
 
 -- ----------------------------
 -- Table structure for `bjy_article_tag`
@@ -99,7 +100,7 @@ CREATE TABLE `bjy_chat` (
   `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否显示',
   `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`chid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_chat

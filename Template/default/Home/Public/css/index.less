@@ -70,15 +70,11 @@ a{
 				left: 0;
 				top: 0;
 				background-image:url('../image/button_bg.png');
-				background-position:bottom left, top right, 0 0, 0 0;
-				-moz-box-shadow:0 0 1px #fff inset;
-				-webkit-box-shadow:0 0 1px #fff inset;
 				-webkit-transition:background-position 0.5s;
 				-moz-transition:background-position 0.5s;
 				transition:background-position 0.5s;
 				&:hover{
-					background-position:top right;
-					background-position:top left, bottom right, 0 0, 0 0;
+					background-position:bottom right;
 				}
 			}
 
@@ -167,6 +163,7 @@ a{
 	width: 100%;
 	overflow: hidden;
 	.b-inside{
+		overflow: hidden;
 		.tag-title{
 			padding-left: 15px;
 			width: 840px;
@@ -568,15 +565,11 @@ a{
 					border: none;
 					float: left;
 					background-image:url('../image/button_bg.png');
-					background-position:top left, top right, 0 0, 0 0;
-					-moz-box-shadow:0 0 1px #fff inset;
-					-webkit-box-shadow:0 0 1px #fff inset;
 					-webkit-transition:background-position 0.5s;
 					-moz-transition:background-position 0.5s;
 					transition:background-position 0.5s;
 					&:hover{
 						background-position:bottom right;
-						background-position:bottom left, bottom right, 0 0, 0 0;
 					}
 				}
 			}

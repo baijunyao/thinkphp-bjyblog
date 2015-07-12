@@ -11,6 +11,11 @@
 
 // 应用入口文件
 
+// 检测是否是新安装
+if(file_exists("./Public/install") && !file_exists("./Public/install/install.lock")){
+	header("Location:./Public/install");
+	die;
+}
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
