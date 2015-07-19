@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Common\Model;
 use Think\Model;
 /**
@@ -15,7 +15,7 @@ class ArticlePicModel extends Model{
 		foreach ($image_path as $k => $v) {
 			$pic_data=array(
 				'aid'=>$aid,
-				'path'=>$v,
+				'path'=>'.'.$v,
 				);
 			$this->add($pic_data);
 		}

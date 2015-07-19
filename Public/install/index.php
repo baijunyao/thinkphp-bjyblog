@@ -2,29 +2,12 @@
 /**
  * 安装向导
  */
-// if(empty($_POST)){
-// 	require './install.html';
-// }else{
-// 	$data=$_POST;
-// 	$str=<<<php
-// <?php
-// return array(
-
-// //*************************************数据库设置*************************************
-//     'DB_TYPE'               =>  '{$data['DB_TYPE']}',     // 数据库类型
-//     'DB_HOST'               =>  '{$data['DB_HOST']}',  // 服务器地址
-//     'DB_NAME'               =>  '{$data['DB_NAME']}',   // 数据库名
-//     'DB_USER'               =>  '{$data['DB_USER']}',       // 用户名
-//     'DB_PWD'                =>  '{$data['DB_PWD']}',           // 密码
-//     'DB_PORT'               =>  '{$data['DB_PORT']}',       // 端口
-//     'DB_PREFIX'             =>  '{$data['DB_PREFIX']}',       // 数据库表前缀
-
-// );
-
-// php;
-
-// }
 header('Content-type:text/html;charset=utf-8');
+// 检测是否安装过
+if (file_exists('./install.lock')) {
+    echo '你已经安装过该系统，重新安装需要先删除./Public/install/install.lock 文件';
+    die;
+}
 // 同意协议页面
 if(!isset($_GET['c']) || $_GET['c']=='agreement'){
     require './agreement.html';
@@ -55,7 +38,8 @@ if($_GET['c']=='success'){
             mysql_select_db($data['DB_NAME'], $link);
         }
         // 导入sql数据并创建表
-        $sql_array=preg_split("/;[\r\n]+/", file_get_contents('./thinkbjy.sql'));
+        $thinkbjy_str=file_get_contents('./thinkbjy.sql');
+        $sql_array=preg_split("/;[\r\n]+/", str_replace('bjy_',$data['DB_PREFIX'],$thinkbjy_str));
         foreach ($sql_array as $k => $v) {
            mysql_query($v,$link);
         }
@@ -71,19 +55,12 @@ return array(
     'DB_PWD'                =>  '{$data['DB_PWD']}',           // 密码
     'DB_PORT'               =>  '{$data['DB_PORT']}',       // 端口
     'DB_PREFIX'             =>  '{$data['DB_PREFIX']}',       // 数据库表前缀
-
-
 );
-
 php;
         // 创建数据库链接配置文件
         file_put_contents('../../Application/Common/Conf/db.php', $db_str);
         @touch('./install.lock');
         require './success.html';
-
-
-
-
     }
 
 }

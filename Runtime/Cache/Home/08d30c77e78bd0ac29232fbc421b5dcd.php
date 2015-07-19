@@ -102,11 +102,11 @@ $(document).ready(function(){
 				<li class="category"><span class="fa fa-list-alt"></span><a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
 				<?php if(!empty($v['tag'])): ?><li class="tags "><span class="fa fa-tags"></span>
 						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li><?php endif; ?>							
+					</li><?php endif; ?>
 			</ul>
 			<div class="article">
 				<figure class="pic style1">
-					<img src="<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
+					<img src=".<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
 					<figcaption>
 						<p><?php echo ($v['title']); ?></p>
 						<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
@@ -125,6 +125,7 @@ $(document).ready(function(){
 	<?php echo ($page); ?>
 </div>
 <!-- 左侧列表结束 -->
+
 			<!-- 文章列表结束 -->
 		</div>
 		<!-- 左侧列表结束 -->

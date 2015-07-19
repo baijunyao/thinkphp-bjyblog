@@ -84,6 +84,7 @@ class ArticleModel extends Model{
 			if(isset($data['tids'])){
 				D('ArticleTag')->addData($aid,$data['tids']);
 			}
+			// 删除图片路径
 			D('ArticlePic')->deleteData($aid);
 			if(!empty($image_path)){
 				if(C('WATER_TYPE')!=0){
@@ -91,6 +92,7 @@ class ArticleModel extends Model{
 						add_water('.'.$v);
 					}
 				}
+				// 添加新图片路径
 				D('ArticlePic')->addData($aid,$image_path);
 			}
 			return true;
