@@ -35,13 +35,21 @@ class ArticleModel extends Model{
 
 	// 添加数据
 	public function addData(){
+		// 获取post数据
 		$data=I('post.');
-		// 修改图片默认的title和alt
+		// 反转义为下文的 preg_replace使用
+		$data['content']=htmlspecialchars_decode($data['content']);
+		// 判断是否修改文章中图片的默认的alt 和title
 		$image_title_alt_word=C('IMAGE_TITLE_ALT_WORD');
 		if(!empty($image_title_alt_word)){
-			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',htmlspecialchars_decode($data['content']));
-			$data['content']=htmlspecialchars(preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']));
+			// 修改图片默认的title和alt
+			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',$data['content']);
+			$data['content']=preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']);
 		}
+		// 将绝对路径转换为相对路径
+		$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="/Upload/image/ueditor',$data['content']);
+		// 转义
+		$data['content']=htmlspecialchars($data['content']);
 		if($this->create($data)){
 			//获取文章内容图片
 			$image_path=get_ueditor_image_path($data['content']);
@@ -56,6 +64,7 @@ class ArticleModel extends Model{
 							add_water('.'.$v);
 						}
 					}
+					// 传递图片插入数据库
 					D('ArticlePic')->addData($aid,$image_path);
 				}
 				return $aid;
@@ -69,13 +78,20 @@ class ArticleModel extends Model{
 
 	// 修改数据
 	public function editData(){
+		// 获取post数据
 		$data=I('post.');
-		// 修改图片默认的title和alt
+		// 反转义为下文的 preg_replace使用
+		$data['content']=htmlspecialchars_decode($data['content']);
+		// 判断是否修改文章中图片的默认的alt 和title
 		$image_title_alt_word=C('IMAGE_TITLE_ALT_WORD');
 		if(!empty($image_title_alt_word)){
-			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',htmlspecialchars_decode($data['content']));
-			$data['content']=htmlspecialchars(preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']));
+			// 修改图片默认的title和alt
+			$data['content']=preg_replace('/title=\"(?<=").*?(?=")\"/','title="白俊遥博客"',$data['content']);
+			$data['content']=preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']);
 		}
+		// 将绝对路径转换为相对路径
+		$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="/Upload/image/ueditor',$data['content']);
+		$data['content']=htmlspecialchars($data['content']);
 		if($this->create($data)){
 			$aid=$data['aid'];
 			$this->where(array('aid'=>$aid))->save();
@@ -136,9 +152,15 @@ class ArticleModel extends Model{
 					'is_show'=>$is_show
 					);
 			}
-			$count=$this->where($where)->count();
+			$count=$this
+				->where($where)
+				->count();
 			$page=new \Org\Bjy\Page($count,$limit);
-			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
+			$list=$this
+				->where($where)
+				->order('addtime desc')
+				->limit($page->firstRow.','.$page->listRows)
+				->select();
 		}elseif ($cid=='all' && $tid!='all') {
 			if($is_show=='all'){
 				$where=array(
@@ -152,9 +174,18 @@ class ArticleModel extends Model{
 					'a.is_show'=>$is_show
 					);
 			}
-			$count=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->count();
+			$count=M('article_tag')
+				->alias('at')
+				->join('__ARTICLE__ a ON at.aid=a.aid')
+				->where($where)
+				->count();
 			$page=new \Org\Bjy\Page($count,$limit);
-			$list=M('article_tag')->alias('at')->join('__ARTICLE__ a ON at.aid=a.aid')->where($where)->order('a.addtime desc')->select();
+			$list=M('article_tag')
+				->alias('at')
+				->join('__ARTICLE__ a ON at.aid=a.aid')
+				->where($where)
+				->order('a.addtime desc')
+				->select();
 		}elseif ($cid!='all' && $tid=='all') {
 			if($is_show=='all'){
 				$where=array(
@@ -168,15 +199,25 @@ class ArticleModel extends Model{
 					'is_show'=>$is_show
 					);
 			}
-			$count=$this->where($where)->count();
+			$count=$this
+				->where($where)
+				->count();
 			$page=new \Org\Bjy\Page($count,$limit);
-			$list=$this->where($where)->order('addtime desc')->limit($page->firstRow.','.$page->listRows)->select();
+			$list=$this
+				->where($where)
+				->order('addtime desc')
+				->limit($page->firstRow.','.$page->listRows)
+				->select();
 		}
 		$show=$page->show();
+		$root_path=rtrim($_SERVER['SCRIPT_NAME'],'/index.php');
 		foreach ($list as $k => $v) {
 			$list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
 			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
 			$list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
+			$v['content']=htmlspecialchars_decode($v['content']);
+			$v['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$v['content']);
+			$list[$k]['content']=htmlspecialchars($v['content']);
 		}
 		$data=array(
 			'page'=>$show,
@@ -187,12 +228,14 @@ class ArticleModel extends Model{
 
 	// 传递aid获取单条全部数据 $map 主要为前台页面上下页使用
 	public function getDataByAid($aid,$map=''){
+		$root_path=rtrim($_SERVER['SCRIPT_NAME'],'/index.php');
 		if($map==''){
 			$data=$this->where("aid=$aid")->find();
 			$data['tids']=D('ArticleTag')->getDataByAid($aid);
 			$data['tag']=D('ArticleTag')->getDataByAid($aid,'all');
 			$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
 			$data['content']=htmlspecialchars_decode($data['content']);
+			$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$data['content']);
 		}else{
 			if(isset($map['tid'])){
 				$prev_map['at.tid']=$map['tid'];
@@ -218,6 +261,7 @@ class ArticleModel extends Model{
 				$data['current']['tag']=D('ArticleTag')->getDataByAid($aid,'all');
 				$data['current']['category']=current(D('Category')->getDataByCid($data['current']['cid'],'cid,cid,cname,keywords'));
 				$data['current']['content']=htmlspecialchars_decode($data['current']['content']);
+				$data['current']['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$data['current']['content']);
 		}
 		return $data;
 	}

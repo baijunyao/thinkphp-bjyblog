@@ -6,6 +6,12 @@ error_reporting(E_ERROR);
 header("Content-Type: text/html; charset=utf-8");
 
 $CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents("config.json")), true);
+$base_path=substr($_SERVER['SCRIPT_NAME'],0,strpos($_SERVER['SCRIPT_NAME'], '/Public'));
+foreach ($CONFIG as $k => $v) {
+    if(in_array($k, array('imagePathFormat','scrawlPathFormat','snapscreenPathFormat','catcherPathFormat','videoPathFormat','filePathFormat','imageManagerListPath','fileManagerListPath'))){
+        $CONFIG[$k]=$base_path.$v;
+    }
+}
 $action = $_GET['action'];
 
 switch ($action) {
