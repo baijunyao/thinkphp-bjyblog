@@ -1,8 +1,19 @@
 <IfModule mod_rewrite.c>
-  Options +FollowSymlinks
-  RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  #去掉首页的index.php
-  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+	Options +FollowSymlinks
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	#去掉首页的index.php
+	RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+	#去掉Home/Index/index
+	RewriteRule /Home/Index/index$ http://%{HTTP_HOST} [NC,L]
+	#去掉Home
+	RewriteRule /Home/Index/(.*) http://%{HTTP_HOST}/Index/$1 [NC,L]
+	#优化Home/Chat/index
+	RewriteRule /Home/Chat/index http://%{HTTP_HOST}/Chat [NC,L]
+	#优化cid/0/tid/0/search_word/0
+	RewriteRule /Index/article/cid/0/tid/0/search_word/0/(.*)  http://%{HTTP_HOST}/Index/article/$1 [NC,L]
+	RewriteRule /Index/article/cid/(\d*)/tid/0/search_word/0/(.*)  http://%{HTTP_HOST}/Index/article/cid/$1/$2 [NC,L]
+	RewriteRule /Index/article/cid/0/tid/(\d*)/search_word/0/(.*)  http://%{HTTP_HOST}/Index/article/tid/$1/$2 [NC,L]
+	RewriteRule /Index/article/cid/0/tid/0/search_word/(.*)  http://%{HTTP_HOST}/Index/article/search_word/$1 [NC,L]
 </IfModule>

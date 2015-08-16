@@ -71,14 +71,14 @@ $(document).ready(function(){
 			<a href="<?php echo U('Home/Index/index');?>"></a>
 		</div>
 		<ul class="category">
-			<li class="cname <?php if((!isset($_GET['cid'])) and (!isset($article['category']['cid'])) and (cut_str(__INFO__,'/',-1) != 'chat')): ?>action<?php endif; ?>" >
+			<li class="cname <?php if(($cid) == "index"): ?>action<?php endif; ?> " >
 				<a href="<?php echo U('Home/Index/index');?>">首页</a>
 			</li>
-			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($_GET['cid']== $v['cid']) or ($article['category']['cid'] == $v['cid'])): ?>action<?php endif; ?>">
+			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($cid) == $v['cid']): ?>action<?php endif; ?> ">
 					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 				</li><?php endforeach; endif; ?>
-			<li class="cname <?php if(cut_str(__INFO__,'/',-1) == 'chat'): ?>action<?php endif; ?> ">
-				<a href="<?php echo U('Home/Index/chat');?>">随言碎语</a>
+			<li class="cname <?php if(($cid) == "chat"): ?>action<?php endif; ?> ">
+				<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
 			</li>
 			<li class="cname">
 				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>

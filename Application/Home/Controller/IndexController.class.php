@@ -1,31 +1,24 @@
 <?php
 namespace Home\Controller;
 use Common\Controller\HomeBaseController;
+/**
+ * 网站首页
+ */
 class IndexController extends HomeBaseController {
 
-	// 构造函数 实例化Category、Tag
-	public function __construct(){
-		parent::__construct();
-		$assign=array(
-			'categorys'=>D('Category')->getAllData(),
-			'tags'=>D('Tag')->getAllData(),
-			'links'=>D('Link')->getDataByState(0,1),
-			);
-		$this->assign($assign);
-	}
-
-	// 显示首页
+	// 首页
 	public function index(){
 		$articles=D('Article')->getPageData();
 		$assign=array(
 			'articles'=>$articles['data'],
 			'page'=>$articles['page'],
+			'cid'=>'index'
 			);
 		$this->assign($assign);
 		$this->display();
 	}
 
-	// 显示分类页
+	// 导航分类
 	public function category(){
 		$cid=I('get.cid',0,'intval');
 		$articles=D('Article')->getPageData($cid);
@@ -33,12 +26,13 @@ class IndexController extends HomeBaseController {
 			'category'=>D('Category')->getDataByCid($cid),
 			'articles'=>$articles['data'],
 			'page'=>$articles['page'],
+			'cid'=>$cid
 			);
 		$this->assign($assign);
 		$this->display();
 	}
 
-	// 显示标签页
+	// 标签
 	public function tag(){
 		$tid=I('get.tid',0,'intval');
 		$articles=D('Article')->getPageData('all',$tid);
@@ -48,12 +42,13 @@ class IndexController extends HomeBaseController {
 			'page'=>$articles['page'],
 			'title'=>$tname,
 			'title_word'=>'拥有<span class="highlight">'.$tname.'</span>标签的文章',
+			'cid'=>'index'
 			);
 		$this->assign($assign);
 		$this->display();
 	}
 
-	// 显示文章内容页
+	// 文章内容
 	public function article(){
 		$cid=I('get.cid',0,'intval');
 		$tid=I('get.tid',0,'intval');
@@ -81,7 +76,8 @@ class IndexController extends HomeBaseController {
         $comment=D('Comment')->getChildData($aid);
         $assign=array(
             'article'=>$article,
-            'comment'=>$comment
+            'comment'=>$comment,
+            'cid'=>$article['current']['cid']
             );
         $this->assign($assign);
 		$this->display();
@@ -90,24 +86,20 @@ class IndexController extends HomeBaseController {
 	// 站内搜索
 	public function search(){
 		$search_word=I('get.search_word');
+		$search_word=urldecode($search_word);
 		$articles=D('Article')->getDataByTitle($search_word);
 		$assign=array(
 			'articles'=>$articles['data'],
 			'page'=>$articles['page'],
 			'title'=>$search_word,
 			'title_word'=>'搜索到的与<span class="highlight">'.$search_word.'</span>相关的文章',
+			'cid'=>'index'
 			);
 		$this->assign($assign);
 		$this->display('tag');
 	}
 
-	// 随言碎语
-	public function chat(){
-		$this->assign('data',D('Chat')->getDataByState(0,1));
-		$this->display();
-	}
-
-	// 文章评论
+	// ajax评论文章
 	function ajax_comment(){
 		$data=I('post.');
 		if(empty($data['content']) || !isset($_SESSION['user']['id'])){
