@@ -45,8 +45,11 @@ $(document).ready(function(){
 		SyntaxHighlighter.all();
 		saveLoginUrl="<?php echo U('Home/User/save_login_url','','',true);?>";
 		logoutUrl="<?php echo U('Home/User/logout','','',true);?>";
+		ajaxCommentUrl="<?php echo U('Home/Index/ajax_comment','','',true);?>";
+		check_login="<?php echo U('Home/User/check_login','','',true);?>";
 	</script>
 	<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
+	<script type="text/javascript" src="/Template/default/Home/Public/js/comment.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 </head>
@@ -82,18 +85,19 @@ $(document).ready(function(){
 			</li>
 		</ul>
 		<ul id="login-word" class="user">
-			<?php if(session('user.id')): ?><li class="user-info">
-					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
-					<span><?php echo session('user.nickname') ;?></span>
+			<?php if(empty($_SESSION['user']['head_img'])): ?><li class="login" onclick="showlogin()">登陆</li>
+			<?php else: ?>
+				<li class="user-info">
+					<span><img class="head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
+					<span class="nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
 					<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
-				</li>
-			<?php else: ?>	
-				<li class="login" onclick="showlogin()">登陆</li><?php endif; ?>
-			
+				</li><?php endif; ?>
+
 		</ul>
 	</div>
 </div>
 <!-- 顶部导航结束 -->
+
 <!-- 顶部导航结束 -->
 
 <!-- 主体部分开始 -->
@@ -109,7 +113,7 @@ $(document).ready(function(){
 					<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
 					<?php if(!empty($article['current']['tag'])): ?><li class="tags ">标签：
 							<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
-						</li><?php endif; ?>							
+						</li><?php endif; ?>
 				</ul>
 				<div class="content-word">
 					<?php echo ($article['current']['content']); ?>
@@ -132,12 +136,61 @@ $(document).ready(function(){
 					</ul>
 				</div>
 			</div>
-			<div class="comment">
-				<!-- 畅言评论系统开始 -->
-				<div id="SOHUCS" sid="<?php echo ($_GET['aid']); ?>"></div>
-				<?php echo (C("CHANGYAN_COMMENT")); ?>
-				<!-- 畅言评论系统结束 -->
-			</div>
+			<!-- 引入通用评论开始 -->
+			<!-- 通用评论开始 -->
+<div class="comment">
+	<div class="comment-box">
+		<img class="head-img" src="<?php if(empty($_SESSION['user']['head_img'])): ?>/Template/default/Home/Public/image/default_head_img.gif<?php else: echo ($_SESSION['user']['head_img']); endif; ?>" alt="白俊遥博客" title="白俊遥博客">
+		<div class="box-textarea">
+			<div class="box-content" contenteditable="true"></div>
+			<ul class="emote-submit">
+				<li class="emote">
+					<i class="fa fa-smile-o" onclick="getTuzki(this)"></i>
+					<div class="tuzki">
+
+					</div>
+				</li>
+				<li class="submit-button">
+					<input type="button" value="评 论" aid="<?php echo ($_GET['aid']); ?>" pid="0" onclick="comment(this)">
+				</li>
+				<li class="b-clear-float"></li>
+			</ul>
+		</div>
+		<div class="b-clear-float"></div>
+	</div>
+	<div class="b-h-30"></div>
+	<ul class="comment-title">
+		<li class="new">最新评论</li>
+		<li class="total">总共<span><?php echo count($comment);?></span>条评论</li>
+	</ul>
+	<div class="user-comment">
+		<?php if(is_array($comment)): $i = 0; $__LIST__ = $comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="user parent">
+				<img class="user_pic" src="<?php echo ($v['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+				<p class="content">
+					<span class="user-name"><?php echo ($v['nickname']); ?></span>：<?php echo ($v['content']); ?>
+				</p>
+				<p class="date">
+					<?php echo date('Y-m-d H:i:s',$v['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($v['cmtid']); ?>" username="<?php echo ($v['nickname']); ?>" onclick="reply(this)">回复</a>
+				</p>
+				<?php if(is_array($v['child'])): foreach($v['child'] as $key=>$n): ?><ul class="user child">
+						<img class="user_pic" src="<?php echo ($n['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+						<li class="content">
+							<span class="reply-name"><?php echo ($n['nickname']); ?></span>
+							<span class="reply">回复</span>
+							<span class="user-name"><?php echo ($n['reply_name']); ?></span>：<?php echo ($n['content']); ?>
+						</li>
+						<li class="date">
+							<?php echo date('Y-m-d H:i:s',$n['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($n['cmtid']); ?>" onclick="reply(this)">回复</a>
+						</li>
+						<li class="b-clear-float"></li>
+					</ul><?php endforeach; endif; ?>
+				<li class="b-clear-float"></li>
+			</div><?php endforeach; endif; else: echo "" ;endif; ?>
+	</div>
+</div>
+<!-- 通用评论结束 -->
+
+			<!-- 引入通用评论结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -176,6 +229,7 @@ $(document).ready(function(){
 </div>
 <!-- 通用右部区域结束 -->
 		<!-- 右侧内容结束 -->
+		<li class="b-clear-float"></li>
 	</div>
 </div>
 <!-- 主体部分结束 -->

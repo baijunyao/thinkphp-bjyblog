@@ -16,14 +16,7 @@ class CommentController extends AdminBaseController{
 	// 评论列表
 	public function index(){
 		$data=$this->db->getPageData();
-		foreach ($data['list'] as $k => $v) {
-			$data['list'][$k]['content']=json_decode(htmlspecialchars_decode($v['content']),true);
-		}
-		$assign=array(
-			'page'=>$data['page'],
-			'data'=>$data['list']
-			);
-		$this->assign($assign);
+		$this->assign($data);
 		$this->display();
 	}
 

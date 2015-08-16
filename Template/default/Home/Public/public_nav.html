@@ -29,16 +29,16 @@
 			</li>
 		</ul>
 		<ul id="login-word" class="user">
-			<if condition="session('user.id')" >
+			<empty name="Think.session.user.head_img" >
+				<li class="login" onclick="showlogin()">登陆</li>
+			<else />
 				<li class="user-info">
-					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
-					<span><?php echo session('user.nickname') ;?></span>
+					<span><img class="head_img" src="{$Think.session.user.head_img}"/></span>
+					<span class="nickname">{$Think.session.user.nickname}</span>
 					<span><a href="{:U('Home/User/logout')}">退出</a></span>
 				</li>
-			<else />	
-				<li class="login" onclick="showlogin()">登陆</li>
-			</if>
-			
+			</empty>
+
 		</ul>
 	</div>
 </div>

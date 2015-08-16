@@ -39,16 +39,16 @@ $(document).ready(function(){
 			<th width="40%">评论内容</th>
 		</tr>
 	</thead>
-	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
+	<?php if(is_array($list)): foreach($list as $key=>$v): ?><tr>
 			<td><?php echo ($v['cmtid']); ?></td>
-			<td><?php echo ($v['content']['title']); ?></td>
-			<td><?php echo ($v['content']['comments'][0]['user']['nickname']); ?></td>
-			<td><?php echo date('Y-m-d H:i:s',trim($v['content']['comments'][0]['ctime'],'000'));?></td>
-			<td><?php echo ($v['content']['comments'][0]['content']); ?></td>
+			<td><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></td>
+			<td><?php echo ($v['nickname']); ?></td>
+			<td><?php echo date('Y-m-d H:i:s',$v['date']);?></td>
+			<td><?php echo ($v['content']); ?></td>
 		</tr><?php endforeach; endif; ?>
 </table>
 <div style="text-align: center;">
-	<?php echo ($page); ?>
+	<?php echo ($show); ?>
 </div>
 
 </body>

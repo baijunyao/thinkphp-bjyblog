@@ -180,7 +180,8 @@ a {
   padding: 5px 0;
   width: 840px;
   float: left;
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
   /* 分页开始 */
   /* 分页结束 */
   /* 随言碎语开始 */
@@ -329,9 +330,193 @@ a {
   color: #ccc;
 }
 #content .b-inside .left .comment {
-  padding: 0 40px;
+  padding: 40px;
+  padding-bottom: 210px;
   width: 840px;
   background: #fff;
+  position: relative;
+  z-index: 1;
+}
+#content .b-inside .left .comment .comment-box {
+  padding-left: 60px;
+  width: 760px;
+  height: 130px;
+  position: relative;
+  z-index: 1;
+}
+#content .b-inside .left .comment .comment-box .head-img {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+#content .b-inside .left .comment .box-textarea {
+  margin: 5px 0;
+  width: 700px;
+  height: 120px;
+  border: 2px solid #CCD4D9;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+#content .b-inside .left .comment .box-textarea .box-content {
+  padding: 5px;
+  width: 696px;
+  height: 75px;
+  border: none;
+  border-bottom: 1px solid #E6EAED;
+}
+#content .b-inside .left .comment .emote-submit {
+  width: 694px;
+  height: 40px;
+}
+#content .b-inside .left .comment .emote-submit .emote {
+  padding-right: 569px;
+  width: 604px;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+#content .b-inside .left .comment .emote-submit .emote i {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: #C0C8CE;
+  cursor: pointer;
+}
+#content .b-inside .left .comment .emote-submit .emote i:hover {
+  color: #337AB7;
+}
+#content .b-inside .left .comment .emote-submit .emote .tuzki {
+  width: 522px;
+  height: 209px;
+  border: 1px solid #E6EAED;
+  border-top: none;
+  background: #fff;
+  display: none;
+  position: absolute;
+  left: -2px;
+  top: 41px;
+}
+#content .b-inside .left .comment .emote-submit .emote .tuzki img {
+  width: 52px;
+  height: 52px;
+  border: 1px solid #E6EAED;
+  cursor: pointer;
+}
+#content .b-inside .left .comment .emote-submit .emote .tuzki img:hover {
+  border: 2px solid #008CBA;
+}
+#content .b-inside .left .comment .emote-submit .submit-button {
+  width: 90px;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+#content .b-inside .left .comment .emote-submit .submit-button input {
+  width: 92px;
+  height: 44px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background: #5788AA;
+  border: none;
+  border-bottom-right-radius: 4px;
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  background-image: url('../image/button_bg.png');
+  -webkit-transition: background-position 0.5s;
+  -moz-transition: background-position 0.5s;
+  transition: background-position 0.5s;
+}
+#content .b-inside .left .comment .emote-submit .submit-button input:hover {
+  background-position: bottom right;
+}
+#content .b-inside .left .comment .comment-title {
+  width: 760px;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid #88ABC3;
+  color: #333;
+  font-size: 14px;
+}
+#content .b-inside .left .comment .comment-title .new {
+  width: 380px;
+  height: 40px;
+  float: left;
+}
+#content .b-inside .left .comment .comment-title .total {
+  width: 380px;
+  height: 40px;
+  float: left;
+  text-align: right;
+}
+#content .b-inside .left .comment .comment-title .total span {
+  color: #EE542A;
+}
+#content .b-inside .left .comment .user-comment {
+  width: 760px;
+}
+#content .b-inside .left .comment .user-comment .user {
+  margin-top: 15px;
+  padding-left: 60px;
+  padding-bottom: 10px;
+  width: 760px;
+  border-bottom: 1px dotted #D9D9D9;
+  position: relative;
+  z-index: 0;
+}
+#content .b-inside .left .comment .user-comment .user .user_pic {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  top: 0px;
+}
+#content .b-inside .left .comment .user-comment .user .content {
+  width: 700px;
+  overflow: hidden;
+}
+#content .b-inside .left .comment .user-comment .user .content .reply-name,
+#content .b-inside .left .comment .user-comment .user .content .user-name {
+  color: #ee542a;
+}
+#content .b-inside .left .comment .user-comment .user .content .reply {
+  font-weight: 600;
+}
+#content .b-inside .left .comment .user-comment .user .date {
+  width: 700px;
+  height: 30px;
+  line-height: 30px;
+}
+#content .b-inside .left .comment .user-comment .child {
+  margin-top: 5px;
+  padding-bottom: 5px;
+  width: 700px;
+  border: none;
+}
+#content .b-inside .left .comment .user-comment .child .content {
+  width: 640px;
+}
+#content .b-inside .left .comment .user-comment .child .date {
+  width: 640px;
+}
+#content .b-inside .left .comment .user-comment .child .box-textarea {
+  width: 630px;
+}
+#content .b-inside .left .comment .user-comment .child .box-textarea .box-content {
+  width: 630px;
+}
+#content .b-inside .left .comment .user-comment .child .box-textarea .emote-submit {
+  width: 630px;
+}
+#content .b-inside .left .comment .user-comment .child .box-textarea .emote-submit .emote {
+  padding-right: 0px;
+  width: 534px;
 }
 #content .b-inside .left .page {
   width: 840px;
@@ -741,6 +926,8 @@ a {
   line-height: 40px;
   text-align: center;
   overflow: hidden;
+  position: relative;
+  z-index: 0;
 }
 /* 通用底部结束 */
 /* 登录模态框开始 */

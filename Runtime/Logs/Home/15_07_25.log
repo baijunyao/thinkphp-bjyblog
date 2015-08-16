@@ -1,0 +1,401 @@
+[ 2015-07-25T00:07:15+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0191s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0039s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0188s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048633s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2015-07-25T22:10:03+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0030s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000381s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000626s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0035s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.120167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120268s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000903s ]
+
+[ 2015-07-25T22:10:11+08:00 ] ::1 /index.php/Home/Index/article/cid/0/tid/0/search_word/0/aid/17
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000986s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0035s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` > 17 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` < 17 ORDER BY aid desc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article` WHERE `aid` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0041s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=17 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname`,`keywords` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0003s ]
+SQL: UPDATE `bjy_article` SET `click`=click+1 WHERE `aid` = 17 [ RunTime:0.0643s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined index: category E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 74 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0043s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 161 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 173 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2015-07-25T22:20:33+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001750s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0332s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0056s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000329s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000550s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0067s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051584s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004833s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001745s ]
+
+[ 2015-07-25T22:51:34+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001058s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0035s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0036s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000751s ]
+
+[ 2015-07-25T23:19:58+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000951s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001156s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001367s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=18 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0034s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=18 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0007s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0039s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001252s ]
+
+[ 2015-07-25T23:19:58+08:00 ] ::1 /index.php/Home/Index/Upload/image/ueditor/20150725/1437837591787094.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+
+[ 2015-07-25T23:19:58+08:00 ] ::1 /index.php/Home/Index/Upload/image/ueditor/20150725/1437837591787094.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+
+[ 2015-07-25T23:23:10+08:00 ] ::1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0751s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=18 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0044s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=18 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000317s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0033s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034488s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001363s ]
+
+[ 2015-07-25T23:23:29+08:00 ] ::1 /index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001624s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bjy_article` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=19 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_article_pic` [ RunTime:0.0043s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=19 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=18 )  [ RunTime:0.0003s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=18 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=17 )  [ RunTime:0.0004s ]
+SQL: SELECT `path` FROM `bjy_article_pic` WHERE ( aid=17 ) ORDER BY ap_id asc LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `cid`,`cid`,`cname` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000457s ]
+NOTIC: [8] Undefined index: cid E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+NOTIC: [8] Undefined variable: article E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 64 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0046s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 150 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\08d30c77e78bd0ac29232fbc421b5dcd.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2015-07-25T23:23:29+08:00 ] ::1 /index.php/Home/Index/Upload/image/ueditor/20150725/1437837591787094.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+
+[ 2015-07-25T23:23:29+08:00 ] ::1 /index.php/Home/Index/Upload/image/ueditor/20150725/1437837591787094.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+
+[ 2015-07-25T23:23:31+08:00 ] ::1 /index.php/Home/Index/article/cid/0/tid/0/search_word/0/aid/19
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0046s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` > 19 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE (  `is_show` = 1 ) AND (  `is_delete` = 0 ) AND `aid` < 19 ORDER BY aid desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `bjy_article` WHERE `aid` = 19 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0039s ]
+SQL: SELECT `tid` FROM `bjy_article_tag` WHERE ( aid=19 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bjy_article_tag` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `bjy_article_tag` INNER JOIN bjy_tag ON bjy_article_tag.tid=bjy_tag.tid  WHERE ( aid=19 )  [ RunTime:0.0006s ]
+SQL: SELECT `cid`,`cid`,`cname`,`keywords` FROM `bjy_category` WHERE ( cid=28 )  [ RunTime:0.0003s ]
+SQL: UPDATE `bjy_article` SET `click`=click+1 WHERE `aid` = 19 [ RunTime:0.1153s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+NOTIC: [8] Undefined index: category E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 74 行.
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0043s ]
+SQL: SELECT `aid`,`title` FROM `bjy_article` WHERE ( is_show=1 and is_delete=0 and is_top=1 ) LIMIT 10   [ RunTime:0.0004s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 161 行.
+NOTIC: [8] Use of undefined constant url - assumed 'url' E:\tongbu\wamp\www\Runtime\Cache\Home\d4c1149384e4970b24973a696680cd70.php 第 173 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032539s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001141s ]
+

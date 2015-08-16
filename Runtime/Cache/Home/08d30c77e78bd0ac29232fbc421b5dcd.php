@@ -72,18 +72,19 @@ $(document).ready(function(){
 			</li>
 		</ul>
 		<ul id="login-word" class="user">
-			<?php if(session('user.id')): ?><li class="user-info">
-					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
-					<span><?php echo session('user.nickname') ;?></span>
+			<?php if(empty($_SESSION['user']['head_img'])): ?><li class="login" onclick="showlogin()">登陆</li>
+			<?php else: ?>
+				<li class="user-info">
+					<span><img class="head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
+					<span class="nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
 					<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
-				</li>
-			<?php else: ?>	
-				<li class="login" onclick="showlogin()">登陆</li><?php endif; ?>
-			
+				</li><?php endif; ?>
+
 		</ul>
 	</div>
 </div>
 <!-- 顶部导航结束 -->
+
 <!-- 顶部导航结束 -->
 
 <!-- 主体部分开始 -->

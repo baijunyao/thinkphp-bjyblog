@@ -72,18 +72,19 @@ $(document).ready(function(){
 			</li>
 		</ul>
 		<ul id="login-word" class="user">
-			<?php if(session('user.id')): ?><li class="user-info">
-					<span><img src="<?php echo session('user.head_img') ;?>"/></span>
-					<span><?php echo session('user.nickname') ;?></span>
+			<?php if(empty($_SESSION['user']['head_img'])): ?><li class="login" onclick="showlogin()">登陆</li>
+			<?php else: ?>
+				<li class="user-info">
+					<span><img class="head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
+					<span class="nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
 					<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
-				</li>
-			<?php else: ?>	
-				<li class="login" onclick="showlogin()">登陆</li><?php endif; ?>
-			
+				</li><?php endif; ?>
+
 		</ul>
 	</div>
 </div>
 <!-- 顶部导航结束 -->
+
 <!-- 顶部导航结束 -->
 
 <!-- 主体部分开始 -->
@@ -102,7 +103,7 @@ $(document).ready(function(){
 				<li class="category"><span class="fa fa-list-alt"></span><a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
 				<?php if(!empty($v['tag'])): ?><li class="tags "><span class="fa fa-tags"></span>
 						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li><?php endif; ?>							
+					</li><?php endif; ?>
 			</ul>
 			<div class="article">
 				<figure class="pic style1">
@@ -125,6 +126,7 @@ $(document).ready(function(){
 	<?php echo ($page); ?>
 </div>
 <!-- 左侧列表结束 -->
+
 			<!-- 文章列表结束 -->
 		</div>
 		<!-- 左侧列表结束 -->

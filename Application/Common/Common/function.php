@@ -133,7 +133,7 @@ function getUrlToDomain($domain) {
     cut_str($str,'/',0);  返回 123
     cut_str($str,'/',-1);  返回 789
     cut_str($str,'/',-2);  返回 456
-    具体参考 http://http://www.baijunyao.com/index.php/Home/Index/article/aid/18
+    具体参考 http://www.baijunyao.com/index.php/Home/Index/article/aid/18
 */
 function cut_str($str,$sign,$number){
     $array=explode($sign, $str);
@@ -155,5 +155,11 @@ function cut_str($str,$sign,$number){
     }
 }
 
-
+// 用于评论系统的自定义排序功能
+function comment_sort($a,$b){
+    $prev = isset($a['date']) ? $a['date'] : 0;
+    $next = isset($b['date']) ? $b['date'] : 0;
+    if($prev == $next)return 0;
+    return ($prev<$next) ? -1 : 1;
+}
 

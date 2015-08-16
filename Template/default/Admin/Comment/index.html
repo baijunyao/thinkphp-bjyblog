@@ -18,18 +18,18 @@
 			<th width="40%">评论内容</th>
 		</tr>
 	</thead>
-	<foreach name="data" item="v">
+	<foreach name="list" item="v">
 		<tr>
 			<td>{$v['cmtid']}</td>
-			<td>{$v['content']['title']}</td>
-			<td>{$v['content']['comments'][0]['user']['nickname']}</td>
-			<td>{:date('Y-m-d H:i:s',trim($v['content']['comments'][0]['ctime'],'000'))}</td>
-			<td>{$v['content']['comments'][0]['content']}</td>
+			<td><a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']))}" target="_blank">{$v['title']}</a></td>
+			<td>{$v['nickname']}</td>
+			<td>{:date('Y-m-d H:i:s',$v['date'])}</td>
+			<td>{$v['content']}</td>
 		</tr>
 	</foreach>
 </table>
 <div style="text-align: center;">
-	{$page}
+	{$show}
 </div>
 
 </body>

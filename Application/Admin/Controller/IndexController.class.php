@@ -18,7 +18,7 @@ class IndexController extends AdminBaseController{
 			'all_chat'=>D('Chat')->getCountData(),
 			'delete_chat'=>D('Chat')->getCountData(array('is_delete'=>1)),
 			'hide_chat'=>D('Chat')->getCountData(array('is_show'=>0)),
-			'all_comment'=>D('Comment')->getCountData(),
+			'all_comment'=>M('Comment')->count(),
 			);
 		$this->assign($assign);
 		$this->display();

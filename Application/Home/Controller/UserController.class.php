@@ -14,6 +14,7 @@ class UserController extends HomeBaseController {
 	// 第三方平台退出
 	public function logout(){
 		session('user',null);
+		// die;
 		redirect(session('this_url'));
 	}
 
@@ -23,6 +24,14 @@ class UserController extends HomeBaseController {
 		session('this_url',$url);
 	}
 
+	// 判断是否登陆
+	public function check_login(){
+		if(isset($_SESSION['user']['id'])){
+			echo 1;
+		}else{
+			echo 0;
+		}
+	}
 
 
 }

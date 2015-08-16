@@ -47,7 +47,7 @@ class ArticleModel extends Model{
 			$data['content']=preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']);
 		}
 		// 将绝对路径转换为相对路径
-		$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="/Upload/image/ueditor',$data['content']);
+		$data['content']=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="/Upload/image/ueditor',$data['content']);
 		// 转义
 		$data['content']=htmlspecialchars($data['content']);
 		if($this->create($data)){
@@ -90,7 +90,7 @@ class ArticleModel extends Model{
 			$data['content']=preg_replace('/alt=\"(?<=").*?(?=")\"/','alt="白俊遥博客"',$data['content']);
 		}
 		// 将绝对路径转换为相对路径
-		$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="/Upload/image/ueditor',$data['content']);
+		$data['content']=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="/Upload/image/ueditor',$data['content']);
 		$data['content']=htmlspecialchars($data['content']);
 		if($this->create($data)){
 			$aid=$data['aid'];
@@ -216,7 +216,7 @@ class ArticleModel extends Model{
 			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
 			$list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
 			$v['content']=htmlspecialchars_decode($v['content']);
-			$v['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$v['content']);
+			$v['content']=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="'.$root_path.'/Upload/image/ueditor',$v['content']);
 			$list[$k]['content']=htmlspecialchars($v['content']);
 		}
 		$data=array(
@@ -235,7 +235,7 @@ class ArticleModel extends Model{
 			$data['tag']=D('ArticleTag')->getDataByAid($aid,'all');
 			$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
 			$data['content']=htmlspecialchars_decode($data['content']);
-			$data['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$data['content']);
+			$data['content']=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="'.$root_path.'/Upload/image/ueditor',$data['content']);
 		}else{
 			if(isset($map['tid'])){
 				$prev_map['at.tid']=$map['tid'];
@@ -261,15 +261,9 @@ class ArticleModel extends Model{
 				$data['current']['tag']=D('ArticleTag')->getDataByAid($aid,'all');
 				$data['current']['category']=current(D('Category')->getDataByCid($data['current']['cid'],'cid,cid,cname,keywords'));
 				$data['current']['content']=htmlspecialchars_decode($data['current']['content']);
-				$data['current']['content']=preg_replace('/src=\".*\/Upload\/image\/ueditor/','src="'.$root_path.'/Upload/image/ueditor',$data['current']['content']);
+				$data['current']['content']=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="'.$root_path.'/Upload/image/ueditor',$data['current']['content']);
 		}
 		return $data;
-	}
-
-	// 传递文章adi 点击数+1
-	public function add_click($aid){
-		$this->where(array('aid'=>$aid))->setInc('click',1);
-		return true;
 	}
 
 	// 传递搜索词获取数据

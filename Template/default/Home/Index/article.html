@@ -9,8 +9,11 @@
 		SyntaxHighlighter.all();
 		saveLoginUrl="{:U('Home/User/save_login_url','','',true)}";
 		logoutUrl="{:U('Home/User/logout','','',true)}";
+		ajaxCommentUrl="{:U('Home/Index/ajax_comment','','',true)}";
+		check_login="{:U('Home/User/check_login','','',true)}";
 	</script>
 	<script type="text/javascript" src="__HOME_JS__/oauth.js"></script>
+	<script type="text/javascript" src="__HOME_JS__/comment.js"></script>
 	<link rel="stylesheet" href="__HOME_CSS__/index.css">
 	{$Think.config.WEB_STATISTICS}
 </head>
@@ -37,7 +40,7 @@
 								<a href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
 							</foreach>
 						</li>
-					</if>							
+					</if>
 				</ul>
 				<div class="content-word">
 					{$article['current']['content']}
@@ -66,18 +69,16 @@
 					</ul>
 				</div>
 			</div>
-			<div class="comment">
-				<!-- 畅言评论系统开始 -->
-				<div id="SOHUCS" sid="{$Think.get.aid}"></div>
-				{$Think.config.CHANGYAN_COMMENT}
-				<!-- 畅言评论系统结束 -->
-			</div>
+			<!-- 引入通用评论开始 -->
+			<include file="./Template/default/Home/Public/public_comment.html" />
+			<!-- 引入通用评论结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 
 		<!-- 右侧内容开始 -->
 		<include file="./Template/default/Home/Public/public_right.html" />
 		<!-- 右侧内容结束 -->
+		<li class="b-clear-float"></li>
 	</div>
 </div>
 <!-- 主体部分结束 -->

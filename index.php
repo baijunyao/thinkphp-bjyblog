@@ -10,7 +10,6 @@
 // +----------------------------------------------------------------------
 
 // 应用入口文件
-
 // 检测是否是新安装
 if(file_exists("./Public/install") && !file_exists("./Public/install/install.lock")){
 	// 组装安装url
