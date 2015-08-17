@@ -1,0 +1,1 @@
+a:8:{i:0;s:3:"lid";i:1;s:5:"lname";i:2;s:3:"url";i:3;s:4:"sort";i:4;s:7:"is_show";i:5;s:9:"is_delete";s:3:"_pk";s:3:"lid";s:5:"_type";a:6:{s:3:"lid";s:16:"int(10) unsigned";s:5:"lname";s:11:"varchar(50)";s:3:"url";s:12:"varchar(255)";s:4:"sort";s:19:"tinyint(3) unsigned";s:7:"is_show";s:19:"tinyint(1) unsigned";s:9:"is_delete";s:19:"tinyint(1) unsigned";}}

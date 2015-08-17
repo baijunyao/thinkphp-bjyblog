@@ -16,6 +16,8 @@ return array(
 //***********************************URL设置**************************************
 	'URL_MODEL'             =>  2,								//使用REWRITE模式
 	'MODULE_ALLOW_LIST' 	=>  array('Home','Admin'),  		//允许访问列表
+//***********************************URL设置**************************************
+	'TMPL_EXCEPTION_FILE'	=>  APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
 //***********************************SESSION设置**********************************
 	'SESSION_AUTO_START'    =>  false,							//禁止自动开启session
 	'SESSION_OPTIONS'       =>  array(

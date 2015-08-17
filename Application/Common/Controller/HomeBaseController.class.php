@@ -14,7 +14,7 @@ class HomeBaseController extends Controller{
 				session('session_status',1);
 			}
 		}else{
-			$this->display('./Template/default/Home/Public/web_close.html');
+			$this->display('Public/web_close');
 			die;
 		}
 		// 分配常用数据

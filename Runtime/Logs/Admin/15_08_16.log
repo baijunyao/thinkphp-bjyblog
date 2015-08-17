@@ -1,0 +1,529 @@
+[ 2015-08-16T18:10:04+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+
+[ 2015-08-16T18:10:04+08:00 ] ::1 /Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018557s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2015-08-16T18:10:04+08:00 ] ::1 /Admin/Login/showVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000896s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2015-08-16T18:10:13+08:00 ] ::1 /Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000794s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0863s ]
+SQL: SELECT `value` FROM `bjy_config` WHERE `name` = 'ADMIN_PASSWORD' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2015-08-16T18:10:14+08:00 ] ::1 /Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000414s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000805s ]
+
+[ 2015-08-16T18:10:15+08:00 ] ::1 /Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001766s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.0128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_show` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_chat` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` WHERE `is_delete` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` WHERE `is_show` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_comment` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.151928s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.152165s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001284s ]
+
+[ 2015-08-16T18:10:17+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0163s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000426s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.130825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2015-08-16T18:10:18+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0125s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000305s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000530s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092773s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000866s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001008s ]
+
+[ 2015-08-16T18:14:23+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0206s ]
+SQL: UPDATE `bjy_config` SET `value`='1' WHERE `name` = 'WEB_STATUS' [ RunTime:0.1380s ]
+SQL: UPDATE `bjy_config` SET `value`='网站升级中，请稍后访问。' WHERE `name` = 'WEB_CLOSE_WORD' [ RunTime:0.0715s ]
+SQL: UPDATE `bjy_config` SET `value`='豫ICP备14009546号-3' WHERE `name` = 'WEB_ICP_NUMBER' [ RunTime:0.0431s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao@baijunyao.com' WHERE `name` = 'ADMIN_EMAIL' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'WEB_NAME' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥,帅白,技术博客,个人博客,thinkbjy' WHERE `name` = 'WEB_KEYWORDS' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥的个人技术博客,thinkbjy官方网站' WHERE `name` = 'WEB_DESCRIPTION' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥' WHERE `name` = 'AUTHOR' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com' WHERE `name` = 'COPYRIGHT_WORD' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'IMAGE_TITLE_ALT_WORD' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='1' WHERE `name` = 'WATER_TYPE' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao.com' WHERE `name` = 'TEXT_WATER_WORD' [ RunTime:0.0780s ]
+SQL: UPDATE `bjy_config` SET `value`='./Public/static/font/ariali.ttf' WHERE `name` = 'TEXT_WATER_TTF_PTH' [ RunTime:0.0432s ]
+SQL: UPDATE `bjy_config` SET `value`='15' WHERE `name` = 'TEXT_WATER_FONT_SIZE' [ RunTime:0.0455s ]
+SQL: UPDATE `bjy_config` SET `value`='#008CBA' WHERE `name` = 'TEXT_WATER_COLOR' [ RunTime:0.0400s ]
+SQL: UPDATE `bjy_config` SET `value`='0' WHERE `name` = 'TEXT_WATER_ANGLE' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'TEXT_WATER_LOCATE' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='./Upload/image/logo/logo.png' WHERE `name` = 'IMAGE_WATER_PIC_PTAH' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'IMAGE_WATER_LOCATE' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='80' WHERE `name` = 'IMAGE_WATER_ALPHA' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_ID' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_KEY' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_API_KEY' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_SECRET' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_API_KEY' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_API_KEY' [ RunTime:0.0432s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_API_KEY' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_ID' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_SECRET' [ RunTime:0.0429s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_API_KEY' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'BAIDU_SITE_URL' [ RunTime:0.0431s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'WEB_STATISTICS' [ RunTime:0.0428s ]
+NOTIC: [8] Undefined index: CHANGYAN_COMMENT E:\tongbu\wamp\www\Application\Common\Model\ConfigModel.class.php 第 26 行.
+NOTIC: [8] Undefined index: CHANGEYAN_RETURN_COMMENT E:\tongbu\wamp\www\Application\Common\Model\ConfigModel.class.php 第 76 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012614s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001097s ]
+
+[ 2015-08-16T18:14:24+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0551s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000312s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000522s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096839s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.097031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000700s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2015-08-16T18:27:06+08:00 ] ::1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+
+[ 2015-08-16T18:27:07+08:00 ] ::1 /Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017130s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2015-08-16T18:27:07+08:00 ] ::1 /Admin/Login/showVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001187s ]
+
+[ 2015-08-16T18:27:12+08:00 ] ::1 /Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0182s ]
+SQL: SELECT `value` FROM `bjy_config` WHERE `name` = 'ADMIN_PASSWORD' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018420s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018598s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001095s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001295s ]
+
+[ 2015-08-16T18:27:13+08:00 ] ::1 /Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000251s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000399s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016181s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016312s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000781s ]
+
+[ 2015-08-16T18:27:14+08:00 ] ::1 /Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `bjy_article` [ RunTime:0.2207s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_delete` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_article` WHERE `is_show` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_chat` [ RunTime:0.0133s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` WHERE `is_delete` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_chat` WHERE `is_show` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bjy_comment` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bjy_comment` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2015-08-16T18:27:16+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0843s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063530s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2015-08-16T18:27:20+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0131s ]
+SQL: UPDATE `bjy_config` SET `value`='0' WHERE `name` = 'WEB_STATUS' [ RunTime:0.0771s ]
+SQL: UPDATE `bjy_config` SET `value`='网站升级中，请稍后访问。' WHERE `name` = 'WEB_CLOSE_WORD' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='豫ICP备14009546号-3' WHERE `name` = 'WEB_ICP_NUMBER' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao@baijunyao.com' WHERE `name` = 'ADMIN_EMAIL' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'WEB_NAME' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥,帅白,技术博客,个人博客,thinkbjy' WHERE `name` = 'WEB_KEYWORDS' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥的个人技术博客,thinkbjy官方网站' WHERE `name` = 'WEB_DESCRIPTION' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥' WHERE `name` = 'AUTHOR' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com' WHERE `name` = 'COPYRIGHT_WORD' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'IMAGE_TITLE_ALT_WORD' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='1' WHERE `name` = 'WATER_TYPE' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao.com' WHERE `name` = 'TEXT_WATER_WORD' [ RunTime:0.1098s ]
+SQL: UPDATE `bjy_config` SET `value`='./Public/static/font/ariali.ttf' WHERE `name` = 'TEXT_WATER_TTF_PTH' [ RunTime:0.0828s ]
+SQL: UPDATE `bjy_config` SET `value`='15' WHERE `name` = 'TEXT_WATER_FONT_SIZE' [ RunTime:0.0463s ]
+SQL: UPDATE `bjy_config` SET `value`='#008CBA' WHERE `name` = 'TEXT_WATER_COLOR' [ RunTime:0.0438s ]
+SQL: UPDATE `bjy_config` SET `value`='0' WHERE `name` = 'TEXT_WATER_ANGLE' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'TEXT_WATER_LOCATE' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='./Upload/image/logo/logo.png' WHERE `name` = 'IMAGE_WATER_PIC_PTAH' [ RunTime:0.0443s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'IMAGE_WATER_LOCATE' [ RunTime:0.0418s ]
+SQL: UPDATE `bjy_config` SET `value`='80' WHERE `name` = 'IMAGE_WATER_ALPHA' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_ID' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_KEY' [ RunTime:0.0432s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_API_KEY' [ RunTime:0.0589s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_SECRET' [ RunTime:0.0498s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_API_KEY' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_SECRET' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_API_KEY' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_SECRET' [ RunTime:0.0424s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_API_KEY' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_ID' [ RunTime:0.0431s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_SECRET' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_API_KEY' [ RunTime:0.0432s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_SECRET' [ RunTime:0.0598s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'BAIDU_SITE_URL' [ RunTime:0.0492s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'WEB_STATISTICS' [ RunTime:0.0430s ]
+NOTIC: [8] Undefined index: CHANGYAN_COMMENT E:\tongbu\wamp\www\Application\Common\Model\ConfigModel.class.php 第 26 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009216s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001318s ]
+
+[ 2015-08-16T18:27:22+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0132s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000318s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061368s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+
+[ 2015-08-16T18:47:14+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0146s ]
+SQL: UPDATE `bjy_config` SET `value`='1' WHERE `name` = 'WEB_STATUS' [ RunTime:0.0428s ]
+SQL: UPDATE `bjy_config` SET `value`='网站升级中，请稍后访问。' WHERE `name` = 'WEB_CLOSE_WORD' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='豫ICP备14009546号-3' WHERE `name` = 'WEB_ICP_NUMBER' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao@baijunyao.com' WHERE `name` = 'ADMIN_EMAIL' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'WEB_NAME' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥,帅白,技术博客,个人博客,thinkbjy' WHERE `name` = 'WEB_KEYWORDS' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥的个人技术博客,thinkbjy官方网站' WHERE `name` = 'WEB_DESCRIPTION' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥' WHERE `name` = 'AUTHOR' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com' WHERE `name` = 'COPYRIGHT_WORD' [ RunTime:0.0766s ]
+SQL: UPDATE `bjy_config` SET `value`='白俊遥博客' WHERE `name` = 'IMAGE_TITLE_ALT_WORD' [ RunTime:0.0438s ]
+SQL: UPDATE `bjy_config` SET `value`='1' WHERE `name` = 'WATER_TYPE' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='baijunyao.com' WHERE `name` = 'TEXT_WATER_WORD' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='./Public/static/font/ariali.ttf' WHERE `name` = 'TEXT_WATER_TTF_PTH' [ RunTime:0.0437s ]
+SQL: UPDATE `bjy_config` SET `value`='15' WHERE `name` = 'TEXT_WATER_FONT_SIZE' [ RunTime:0.0429s ]
+SQL: UPDATE `bjy_config` SET `value`='#008CBA' WHERE `name` = 'TEXT_WATER_COLOR' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='0' WHERE `name` = 'TEXT_WATER_ANGLE' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'TEXT_WATER_LOCATE' [ RunTime:0.0431s ]
+SQL: UPDATE `bjy_config` SET `value`='./Upload/image/logo/logo.png' WHERE `name` = 'IMAGE_WATER_PIC_PTAH' [ RunTime:0.0426s ]
+SQL: UPDATE `bjy_config` SET `value`='9' WHERE `name` = 'IMAGE_WATER_LOCATE' [ RunTime:0.0434s ]
+SQL: UPDATE `bjy_config` SET `value`='80' WHERE `name` = 'IMAGE_WATER_ALPHA' [ RunTime:0.0422s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_ID' [ RunTime:0.0430s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'QQ_APP_KEY' [ RunTime:0.0424s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_API_KEY' [ RunTime:0.0696s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SINA_SECRET' [ RunTime:0.0829s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_API_KEY' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'DOUBAN_SECRET' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_API_KEY' [ RunTime:0.0436s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'RENREN_SECRET' [ RunTime:0.0439s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_API_KEY' [ RunTime:0.0425s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'KAIXIN_SECRET' [ RunTime:0.0430s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_ID' [ RunTime:0.0425s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'GITHUB_CLIENT_SECRET' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_API_KEY' [ RunTime:0.0435s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'SOHU_SECRET' [ RunTime:0.0433s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'BAIDU_SITE_URL' [ RunTime:0.0433s ]
+SQL: UPDATE `bjy_config` SET `value`='' WHERE `name` = 'WEB_STATISTICS' [ RunTime:0.0434s ]
+NOTIC: [8] Undefined index: CHANGYAN_COMMENT E:\tongbu\wamp\www\Application\Common\Model\ConfigModel.class.php 第 26 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011317s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+
+[ 2015-08-16T18:47:15+08:00 ] ::1 /Admin/Config/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SHOW COLUMNS FROM `bjy_config` [ RunTime:0.0129s ]
+SQL: SELECT `name`,`value` FROM `bjy_config`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000652s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073943s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000784s ]
+

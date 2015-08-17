@@ -1,0 +1,1 @@
+a:7:{i:0;s:4:"chid";i:1;s:4:"date";i:2;s:7:"content";i:3;s:7:"is_show";i:4;s:9:"is_delete";s:3:"_pk";s:4:"chid";s:5:"_type";a:5:{s:4:"chid";s:16:"int(10) unsigned";s:4:"date";s:16:"int(10) unsigned";s:7:"content";s:4:"text";s:7:"is_show";s:19:"tinyint(1) unsigned";s:9:"is_delete";s:19:"tinyint(1) unsigned";}}

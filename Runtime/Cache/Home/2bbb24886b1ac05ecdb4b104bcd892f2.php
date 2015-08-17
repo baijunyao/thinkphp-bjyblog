@@ -4,9 +4,9 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
-	<meta name="description" content="<?php echo ($category['description']); ?>" />
+	<title><?php echo ($title); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
+	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -35,10 +35,11 @@ $(document).ready(function(){
 		saveLoginUrl="<?php echo U('Home/User/save_login_url','','',true);?>";
 		logoutUrl="<?php echo U('Home/User/logout','','',true);?>";
 	</script>
-	<script type="text/javascript" src="/Template/default/Home/Public/js/oauth.js"></script>
+	<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
-<!-- head头部分结束 -->	
+<!-- head头部分结束 -->
+	
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -87,11 +88,14 @@ $(document).ready(function(){
 
 <!-- 顶部导航结束 -->
 
+
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
+			<h2 class="tag-title"><?php echo ($title_word); ?></h2>
+			<div class="b-h-10"></div>
 			<!-- 文章列表开始 -->
 			<!-- 左侧列表开始 -->
 <div class="list">
@@ -176,8 +180,10 @@ $(document).ready(function(){
 	<div class="b-inside">
 		本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 	</div>
+	<div class="go-top fa fa-angle-up"></div>
 </div>
 <!-- 通用底部文件结束 -->
+
 <!-- 通用底部文件结束 -->
 
 <!-- 登陆框开始 -->

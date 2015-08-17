@@ -53,7 +53,7 @@ return array(
 	'TEXT_WATER_LOCATE'     	=>	'{$data['TEXT_WATER_LOCATE']}',    //文字水印位置 1：上左 2：上中 3：上右 4：中左 5：中中 6：中右 7：下左 8：下中 9：下右
 	'IMAGE_WATER_PIC_PTAH'		=>	'{$data['IMAGE_WATER_PIC_PTAH']}', //图片水印 水印路径
 	'IMAGE_WATER_LOCATE'		=>	'{$data['IMAGE_WATER_LOCATE']}',   //图片水印 水印位置 1：上左 2：上中 3：上右 4：中左 5：中中 6：中右 7：下左 8：下中 9：下右
-	'IMAGE_WATER_ALPHA'			=>	'{$data['IMAGE_WATER_ALPHA']}',    //图片水印 水印透明度：0-100 
+	'IMAGE_WATER_ALPHA'			=>	'{$data['IMAGE_WATER_ALPHA']}',    //图片水印 水印透明度：0-100
 
 //*************************************第三方登录****************************************
 	'QQ_APP_ID'					=>	'{$data['QQ_APP_ID']}',				   // QQ登陆APP D
@@ -71,9 +71,7 @@ return array(
 	'SOHU_API_KEY'				=>  '{$data['SOHU_API_KEY']}',		   	   // 搜狐网登陆API KEY
 	'SOHU_SECRET'				=>  '{$data['SOHU_SECRET']}',		   	   // 搜狐网登陆SECRET
 
-//***********************************其他第三方接口****************************************	
-	'CHANGYAN_COMMENT'			=>	'{$data['CHANGYAN_COMMENT']}',	       // 畅言评论设置
-	'CHANGEYAN_RETURN_COMMENT'	=>	'{$data['CHANGEYAN_RETURN_COMMENT']}', // 畅言评论回推地址
+//***********************************其他第三方接口****************************************
 	'WEB_STATISTICS'			=>	'{$data['WEB_STATISTICS']}',   	   	   // 第三方统计代码
 	'BAIDU_SITE_URL'			=>	'{$data['BAIDU_SITE_URL']}',   	  	   // 百度推送site提交链接
 

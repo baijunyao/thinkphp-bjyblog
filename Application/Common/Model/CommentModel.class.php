@@ -40,6 +40,7 @@ class CommentModel extends Model{
 			->join('__ARTICLE__ a ON a.aid=c.aid')
 			->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
 			->limit($page->firstRow.','.$page->listRows)
+			->order('date desc')
 			->select();
 		$data=array(
 			'list'=>$list,

@@ -2,21 +2,21 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50520
+Source Server Version : 50524
 Source Host           : localhost:3306
 Source Database       : thinkbjy
 
 Target Server Type    : MYSQL
-Target Server Version : 50520
+Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2015-07-12 15:08:23
+Date: 2015-08-18 00:22:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `bjy_article`
+-- Table structure for bjy_article
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_article`;
 CREATE TABLE `bjy_article` (
@@ -41,7 +41,7 @@ CREATE TABLE `bjy_article` (
 INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;	&lt;/p&gt;&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '0', '1', '4', '1432649909', '28');
 
 -- ----------------------------
--- Table structure for `bjy_article_pic`
+-- Table structure for bjy_article_pic
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_article_pic`;
 CREATE TABLE `bjy_article_pic` (
@@ -57,7 +57,7 @@ CREATE TABLE `bjy_article_pic` (
 INSERT INTO `bjy_article_pic` VALUES ('1', '/Upload/image/ueditor/20150601/1433171136139793.jpg', '17');
 
 -- ----------------------------
--- Table structure for `bjy_article_tag`
+-- Table structure for bjy_article_tag
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_article_tag`;
 CREATE TABLE `bjy_article_tag` (
@@ -71,7 +71,7 @@ CREATE TABLE `bjy_article_tag` (
 INSERT INTO `bjy_article_tag` VALUES ('17', '20');
 
 -- ----------------------------
--- Table structure for `bjy_category`
+-- Table structure for bjy_category
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_category`;
 CREATE TABLE `bjy_category` (
@@ -90,7 +90,7 @@ CREATE TABLE `bjy_category` (
 INSERT INTO `bjy_category` VALUES ('28', '测试分类', '测试分类关键词', '测试分类描述', '1', '0');
 
 -- ----------------------------
--- Table structure for `bjy_chat`
+-- Table structure for bjy_chat
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_chat`;
 CREATE TABLE `bjy_chat` (
@@ -108,21 +108,27 @@ CREATE TABLE `bjy_chat` (
 INSERT INTO `bjy_chat` VALUES ('2', '1432827004', '测试随言碎语', '1', '0');
 
 -- ----------------------------
--- Table structure for `bjy_comment`
+-- Table structure for bjy_comment
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_comment`;
 CREATE TABLE `bjy_comment` (
-  `cmtid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论id',
+  `cmtid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `ouid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '评论用户id 关联oauth_user表的id',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1：文章评论',
+  `pid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '父级id',
+  `aid` int(10) unsigned NOT NULL COMMENT '文章id',
   `content` text NOT NULL COMMENT '内容',
+  `date` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '评论日期',
+  `status` tinyint(1) unsigned NOT NULL COMMENT '1:已审核 0：未审核',
   PRIMARY KEY (`cmtid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_comment
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `bjy_config`
+-- Table structure for bjy_config
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_config`;
 CREATE TABLE `bjy_config` (
@@ -178,7 +184,7 @@ INSERT INTO `bjy_config` VALUES ('40', 'GITHUB_CLIENT_SECRET', '');
 INSERT INTO `bjy_config` VALUES ('41', 'IMAGE_TITLE_ALT_WORD', '白俊遥博客');
 
 -- ----------------------------
--- Table structure for `bjy_link`
+-- Table structure for bjy_link
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_link`;
 CREATE TABLE `bjy_link` (
@@ -197,7 +203,7 @@ CREATE TABLE `bjy_link` (
 INSERT INTO `bjy_link` VALUES ('2', '测试友情链接', 'http://www.baijunyao.com', '1', '1', '0');
 
 -- ----------------------------
--- Table structure for `bjy_oauth_user`
+-- Table structure for bjy_oauth_user
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_oauth_user`;
 CREATE TABLE `bjy_oauth_user` (
@@ -221,7 +227,7 @@ CREATE TABLE `bjy_oauth_user` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `bjy_tag`
+-- Table structure for bjy_tag
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_tag`;
 CREATE TABLE `bjy_tag` (
