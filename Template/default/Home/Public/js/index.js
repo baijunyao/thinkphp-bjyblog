@@ -25,5 +25,6 @@ function logout(){
 
 // 点击返回顶部
 function goTop(){
-
+	$('body,html').animate({scrollTop:0},500);
+	return false;
 }
