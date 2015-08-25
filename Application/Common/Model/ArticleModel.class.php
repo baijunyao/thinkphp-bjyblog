@@ -273,7 +273,14 @@ class ArticleModel extends Model{
 			);
 		$count=$this->where($map)->count();
 		$page=new \Org\Bjy\Page($count,10);
-		$list=$this->where($map)->order('addtime desc')->limit($page->firstRow.','.$page->lastRows)->select();
+		$list=$this
+			->where($map)
+			->order('addtime desc')
+			->limit($page->firstRow.','.$page->lastRows)
+			->select();
+		foreach ($list as $k => $v) {
+			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
+		}
 		$show=$page->show();
 		$data=array(
 			'page'=>$show,

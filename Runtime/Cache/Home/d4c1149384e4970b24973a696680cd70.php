@@ -2,11 +2,11 @@
 <html lang="en">
 <!-- head头部分开始 -->
 <head>
-<!-- head头部分开始 -->
+	<!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($title); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
-	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
+	<title><?php echo ($article['current']['title']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($article['current']['category']['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($article['current']['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -39,7 +39,16 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
-	
+
+	<script type="text/javascript" src="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
+	<link rel="stylesheet" href="/Public/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+		ajaxCommentUrl="<?php echo U('Home/Index/ajax_comment','','',true);?>";
+		check_login="<?php echo U('Home/User/check_login','','',true);?>";
+	</script>
+	<script type="text/javascript" src="/Template/default/Home/Public/js/comment.js"></script>
+	<?php echo (C("WEB_STATISTICS")); ?>
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -89,50 +98,97 @@ $(document).ready(function(){
 
 <!-- 顶部导航结束 -->
 
-
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<h2 class="tag-title"><?php echo ($title_word); ?></h2>
-			<div class="b-h-10"></div>
-			<!-- 文章列表开始 -->
-			<!-- 左侧列表开始 -->
-<div class="list">
-	<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-			<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
-			<ul class="metadata">
-				<li class="date"><span class="fa fa-user"></span><?php echo ($v['author']); ?></li>
-				<li class="date"><span class="fa fa-calendar"></span><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-				<li class="category"><span class="fa fa-list-alt"></span><a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-				<?php if(!empty($v['tag'])): ?><li class="tags "><span class="fa fa-tags"></span>
-						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li><?php endif; ?>
-			</ul>
 			<div class="article">
-				<figure class="pic style1">
-					<img src="<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
-					<figcaption>
-						<p><?php echo ($v['title']); ?></p>
-						<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
-					</figcaption>
-				</figure>
-				<div class="word">
-					<p class="description">
-						<?php echo ($v['description']); ?>
-					</p>
-					<div class="readall">
-						<a class="readall-a"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
-					</div>
+				<h1 class="title"><?php echo ($article['current']['title']); ?></h1>
+				<ul class="metadata">
+					<li class="date">作者：<?php echo ($article['current']['author']); ?></li>
+					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['current']['addtime'])); ?></li>
+					<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
+					<?php if(!empty($article['current']['tag'])): ?><li class="tags ">标签：
+							<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
+						</li><?php endif; ?>
+				</ul>
+				<div class="content-word">
+					<?php echo ($article['current']['content']); ?>
+					<?php if(($article['current']['is_original']) == "1"): ?><p class="copyright">
+							<?php echo (C("COPYRIGHT_WORD")); ?>
+						</p><?php endif; ?>
+					<ul class="prev-next">
+						<li class="prev">
+							上一篇：
+							<?php if(empty($article['prev'])): ?><span>没有了</span>
+							<?php else: ?>
+								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']));?>"><?php echo ($article['prev']['title']); ?></a><?php endif; ?>
+						</li>
+						<li class="next">
+							下一篇：
+							<?php if(empty($article['next'])): ?><span>没有了</span>
+							<?php else: ?>
+								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['next']['aid']));?>"><?php echo ($article['next']['title']); ?></a><?php endif; ?>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</div><?php endforeach; endif; ?>
-	<?php echo ($page); ?>
-</div>
-<!-- 左侧列表结束 -->
+			<!-- 引入通用评论开始 -->
+			<!-- 通用评论开始 -->
+<div class="comment">
+	<div class="comment-box">
+		<img class="head-img" src="<?php if(empty($_SESSION['user']['head_img'])): ?>/Template/default/Home/Public/image/default_head_img.gif<?php else: echo ($_SESSION['user']['head_img']); endif; ?>" alt="白俊遥博客" title="白俊遥博客">
+		<div class="box-textarea">
+			<div class="box-content" contenteditable="true"></div>
+			<ul class="emote-submit">
+				<li class="emote">
+					<i class="fa fa-smile-o" onclick="getTuzki(this)"></i>
+					<div class="tuzki">
 
-			<!-- 文章列表结束 -->
+					</div>
+				</li>
+				<li class="submit-button">
+					<input type="button" value="评 论" aid="<?php echo ($_GET['aid']); ?>" pid="0" onclick="comment(this)">
+				</li>
+				<li class="b-clear-float"></li>
+			</ul>
+		</div>
+		<div class="b-clear-float"></div>
+	</div>
+	<div class="b-h-30"></div>
+	<ul class="comment-title">
+		<li class="new">最新评论</li>
+		<li class="total">总共<span><?php echo count($comment);?></span>条评论</li>
+	</ul>
+	<div class="user-comment">
+		<?php if(is_array($comment)): $i = 0; $__LIST__ = $comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="user parent">
+				<img class="user_pic" src="<?php echo ($v['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+				<p class="content">
+					<span class="user-name"><?php echo ($v['nickname']); ?></span>：<?php echo ($v['content']); ?>
+				</p>
+				<p class="date">
+					<?php echo date('Y-m-d H:i:s',$v['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($v['cmtid']); ?>" username="<?php echo ($v['nickname']); ?>" onclick="reply(this)">回复</a>
+				</p>
+				<?php if(is_array($v['child'])): foreach($v['child'] as $key=>$n): ?><ul class="user child">
+						<img class="user_pic" src="<?php echo ($n['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+						<li class="content">
+							<span class="reply-name"><?php echo ($n['nickname']); ?></span>
+							<span class="reply">回复</span>
+							<span class="user-name"><?php echo ($n['reply_name']); ?></span>：<?php echo ($n['content']); ?>
+						</li>
+						<li class="date">
+							<?php echo date('Y-m-d H:i:s',$n['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($n['cmtid']); ?>" onclick="reply(this)">回复</a>
+						</li>
+						<li class="b-clear-float"></li>
+					</ul><?php endforeach; endif; ?>
+				<li class="b-clear-float"></li>
+			</div><?php endforeach; endif; else: echo "" ;endif; ?>
+	</div>
+</div>
+<!-- 通用评论结束 -->
+
+			<!-- 引入通用评论结束 -->
 		</div>
 		<!-- 左侧列表结束 -->
 
@@ -173,6 +229,7 @@ $(document).ready(function(){
 <!-- 通用右部区域结束 -->
 
 		<!-- 右侧内容结束 -->
+		<li class="b-clear-float"></li>
 	</div>
 </div>
 <!-- 主体部分结束 -->

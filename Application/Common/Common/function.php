@@ -5,7 +5,7 @@ header("Content-type:text/html;charset=utf-8");
 
 //传递数据以易于阅读的样式格式化后输出
 function p($data){
-    echo '<pre style="display: block;padding: 9.5px;margin: 0px 0px 10px;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
+	echo '<pre style="display: block;padding: 9.5px;margin: 0px 0px 10px;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
 }
 /**
  * 删除指定的标签和内容
@@ -15,27 +15,27 @@ function p($data){
  * @return string
  */
 function strip_html_tags($tags,$str,$content=0){
-    if($content){
-        $html=array();
-        foreach ($tags as $tag) {
-            $html[]='/(<'.$tag.'.*?>[\s|\S]*?<\/'.$tag.'>)/';
-        }
-        $data=preg_replace($html,'',$str);
-    }else{
-        $html=array();
-        foreach ($tags as $tag) {
-            $html[]="/(<(?:\/".$tag."|".$tag.")[^>]*>)/i";
-        }
-        $data=preg_replace($html, '', $str);
-    }
-    return $data;
+	if($content){
+		$html=array();
+		foreach ($tags as $tag) {
+			$html[]='/(<'.$tag.'.*?>[\s|\S]*?<\/'.$tag.'>)/';
+		}
+		$data=preg_replace($html,'',$str);
+	}else{
+		$html=array();
+		foreach ($tags as $tag) {
+			$html[]="/(<(?:\/".$tag."|".$tag.")[^>]*>)/i";
+		}
+		$data=preg_replace($html, '', $str);
+	}
+	return $data;
 }
 
 //传递ueditor生成的内容获取其中图片的路径
 function get_ueditor_image_path($str){
-    $preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|png|bmp]*/i';
-    preg_match_all($preg, $str,$data);
-    return current($data);
+	$preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|png|bmp]*/i';
+	preg_match_all($preg, $str,$data);
+	return current($data);
 }
 
 /**
@@ -48,55 +48,55 @@ function get_ueditor_image_path($str){
  * @return string
  */
 function re_substr($str, $start=0, $length, $suffix=true, $charset="utf-8") {
-    if(function_exists("mb_substr"))
-        $slice = mb_substr($str, $start, $length, $charset);
-    elseif(function_exists('iconv_substr')) {
-        $slice = iconv_substr($str,$start,$length,$charset);
-    }else{
-        $re['utf-8']   = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|[\xe0-\xef][\x80-\xbf]{2}|[\xf0-\xff][\x80-\xbf]{3}/";
-        $re['gb2312'] = "/[\x01-\x7f]|[\xb0-\xf7][\xa0-\xfe]/";
-        $re['gbk']    = "/[\x01-\x7f]|[\x81-\xfe][\x40-\xfe]/";
-        $re['big5']   = "/[\x01-\x7f]|[\x81-\xfe]([\x40-\x7e]|\xa1-\xfe])/";
-        preg_match_all($re[$charset], $str, $match);
-        $slice = join("",array_slice($match[0], $start, $length));
-    }
-    return $suffix ? $slice.'...' : $slice;
+	if(function_exists("mb_substr"))
+		$slice = mb_substr($str, $start, $length, $charset);
+	elseif(function_exists('iconv_substr')) {
+		$slice = iconv_substr($str,$start,$length,$charset);
+	}else{
+		$re['utf-8']   = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|[\xe0-\xef][\x80-\xbf]{2}|[\xf0-\xff][\x80-\xbf]{3}/";
+		$re['gb2312'] = "/[\x01-\x7f]|[\xb0-\xf7][\xa0-\xfe]/";
+		$re['gbk']	= "/[\x01-\x7f]|[\x81-\xfe][\x40-\xfe]/";
+		$re['big5']   = "/[\x01-\x7f]|[\x81-\xfe]([\x40-\x7e]|\xa1-\xfe])/";
+		preg_match_all($re[$charset], $str, $match);
+		$slice = join("",array_slice($match[0], $start, $length));
+	}
+	return $suffix ? $slice.'...' : $slice;
 }
 
 //传递图片路径根据配置项添加水印
 function add_water($path){
-    $image=new \Think\Image();
-    if(C('WATER_TYPE')==1){
-        $image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
-    }elseif(C('WATER_TYPE')==2){
-        $image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
-    }elseif(C('WATER_TYPE')==3){
-        $image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
-        $image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
-    }
+	$image=new \Think\Image();
+	if(C('WATER_TYPE')==1){
+		$image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
+	}elseif(C('WATER_TYPE')==2){
+		$image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
+	}elseif(C('WATER_TYPE')==3){
+		$image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
+		$image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
+	}
 }
 
 // 设置验证码
 function show_verify($config=''){
-    if($config==''){
-        $config=array(
-            'codeSet'=>'1234567890',
-            'fontSize'=>30,
-            'useCurve'=>false,
-            'imageH'=>60,
-            'imageW'=>240,
-            'length'=>4,
-            'fontttf'=>'4.ttf',
-            );
-    }
-    $verify=new \Think\Verify($config);
-    return $verify->entry();
+	if($config==''){
+		$config=array(
+			'codeSet'=>'1234567890',
+			'fontSize'=>30,
+			'useCurve'=>false,
+			'imageH'=>60,
+			'imageW'=>240,
+			'length'=>4,
+			'fontttf'=>'4.ttf',
+			);
+	}
+	$verify=new \Think\Verify($config);
+	return $verify->entry();
 }
 
 // 检测验证码
 function check_verify($code){
-    $verify=new \Think\Verify();
-    return $verify->check($code);
+	$verify=new \Think\Verify();
+	return $verify->check($code);
 }
 
 /**
@@ -105,20 +105,20 @@ function check_verify($code){
  * @return string 返回根域名
  */
 function getUrlToDomain($domain) {
-    $re_domain = '';
-    $domain_postfix_cn_array = array("com", "net", "org", "gov", "edu", "com.cn", "cn");
-    $array_domain = explode(".", $domain);
-    $array_num = count($array_domain) - 1;
-    if ($array_domain[$array_num] == 'cn') {
-        if (in_array($array_domain[$array_num - 1], $domain_postfix_cn_array)) {
-            $re_domain = $array_domain[$array_num - 2] . "." . $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
-        } else {
-            $re_domain = $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
-        }
-    } else {
-        $re_domain = $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
-    }
-    return $re_domain;
+	$re_domain = '';
+	$domain_postfix_cn_array = array("com", "net", "org", "gov", "edu", "com.cn", "cn");
+	$array_domain = explode(".", $domain);
+	$array_num = count($array_domain) - 1;
+	if ($array_domain[$array_num] == 'cn') {
+		if (in_array($array_domain[$array_num - 1], $domain_postfix_cn_array)) {
+			$re_domain = $array_domain[$array_num - 2] . "." . $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
+		} else {
+			$re_domain = $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
+		}
+	} else {
+		$re_domain = $array_domain[$array_num - 1] . "." . $array_domain[$array_num];
+	}
+	return $re_domain;
 }
 
 /**
@@ -129,37 +129,75 @@ function getUrlToDomain($domain) {
  * @return string 返回截取的内容
  */
 /*  示例
-    $str='123/456/789';
-    cut_str($str,'/',0);  返回 123
-    cut_str($str,'/',-1);  返回 789
-    cut_str($str,'/',-2);  返回 456
-    具体参考 http://www.baijunyao.com/index.php/Home/Index/article/aid/18
+	$str='123/456/789';
+	cut_str($str,'/',0);  返回 123
+	cut_str($str,'/',-1);  返回 789
+	cut_str($str,'/',-2);  返回 456
+	具体参考 http://www.baijunyao.com/index.php/Home/Index/article/aid/18
 */
 function cut_str($str,$sign,$number){
-    $array=explode($sign, $str);
-    $length=count($array);
-    if($number<0){
-        $new_array=array_reverse($array);
-        $abs_number=abs($number);
-        if($abs_number>$length){
-            return 'error';
-        }else{
-            return $new_array[$abs_number-1];
-        }
-    }else{
-        if($number>=$length){
-            return 'error';
-        }else{
-            return $array[$number];
-        }
-    }
+	$array=explode($sign, $str);
+	$length=count($array);
+	if($number<0){
+		$new_array=array_reverse($array);
+		$abs_number=abs($number);
+		if($abs_number>$length){
+			return 'error';
+		}else{
+			return $new_array[$abs_number-1];
+		}
+	}else{
+		if($number>=$length){
+			return 'error';
+		}else{
+			return $array[$number];
+		}
+	}
+}
+
+function send_email($address,$subject,$content){
+	require './ThinkPHP/Library/Org/Bjy/class.phpmailer.php';
+	require './ThinkPHP/Library/Org/Bjy/class.smtp.php';
+	$phpmailer=new \Phpmailer();
+	// 设置PHPMailer使用SMTP服务器发送Email
+	$phpmailer->IsSMTP();
+	// 设置为html格式
+	$phpmailer->IsHTML(true);
+	// 设置邮件的字符编码'
+	$phpmailer->CharSet='UTF-8';
+	// 设置SMTP服务器。
+	$phpmailer->Host='smtp.exmail.qq.com';
+	// 设置为"需要验证"
+	$phpmailer->SMTPAuth=true;
+	// 设置用户名
+	$phpmailer->Username='admin@baijunyao.com';
+	// 设置密码
+	$phpmailer->Password='shuaibai123123';
+	// 设置邮件头的From字段。
+	$phpmailer->From='admin@baijunyao.com';
+	// 设置发件人名字
+	$phpmailer->FromName='shuaibai';
+	// 添加收件人地址，可以多次使用来添加多个收件人
+	$phpmailer->AddAddress('b593026987@qq.com');
+	// 设置邮件标题
+	$phpmailer->Subject='123';
+	// 设置邮件正文
+	$phpmailer->Body='test123';
+
+	// 发送邮件。
+	if(!$phpmailer->Send()) {
+		$phpmailererror=$phpmailer->ErrorInfo;
+		return array("error"=>1,"message"=>$mailerror);
+	}else{
+		return array("error"=>0);
+	}
 }
 
 // 用于评论系统的自定义排序功能
 function comment_sort($a,$b){
-    $prev = isset($a['date']) ? $a['date'] : 0;
-    $next = isset($b['date']) ? $b['date'] : 0;
-    if($prev == $next)return 0;
-    return ($prev<$next) ? -1 : 1;
+	$prev = isset($a['date']) ? $a['date'] : 0;
+	$next = isset($b['date']) ? $b['date'] : 0;
+	if($prev == $next)return 0;
+	return ($prev<$next) ? -1 : 1;
 }
 

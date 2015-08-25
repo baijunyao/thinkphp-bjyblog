@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 namespace Common\Tag;
 use Think\Template\TagLib;
@@ -87,7 +87,7 @@ php;
 	 	$limit=$tag['limit'];
 	 	// p($recommend);
 	 	$php=<<<php
-<?php	 	
+<?php
 			\$recommend=M('Article')->field('aid,title')->where("$where")->limit($limit)->select();
 			foreach (\$recommend as \$k => \$field) {
 				\$url=U('Home/Index/article',array('aid'=>\$field['aid']));

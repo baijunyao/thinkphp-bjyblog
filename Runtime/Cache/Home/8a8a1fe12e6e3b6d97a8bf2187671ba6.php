@@ -4,9 +4,9 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($title); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
-	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
+	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
+	<meta name="description" content="<?php echo ($category['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,admin@baijunyao.com">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
@@ -39,7 +39,7 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
-	
+
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -89,14 +89,11 @@ $(document).ready(function(){
 
 <!-- 顶部导航结束 -->
 
-
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
 		<!-- 左侧列表开始 -->
 		<div class="left">
-			<h2 class="tag-title"><?php echo ($title_word); ?></h2>
-			<div class="b-h-10"></div>
 			<!-- 文章列表开始 -->
 			<!-- 左侧列表开始 -->
 <div class="list">

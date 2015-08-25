@@ -4,7 +4,7 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($title); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<title>随言碎语-<?php echo (C("WEB_NAME")); ?></title>
 	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
 	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -39,10 +39,12 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
-	
+
+<script type="text/javascript" src="/Template/default/Home/Public/js/chat.js"></script>
 </head>
 <!-- head头部分结束 -->
 <body>
+
 <!-- 顶部导航开始 -->
 <!-- 顶部导航开始 -->
 <div id="nav">
@@ -85,56 +87,39 @@ $(document).ready(function(){
 	</div>
 </div>
 <!-- 顶部导航结束 -->
-<div class="b-h-40"></div>
 
 <!-- 顶部导航结束 -->
-
 
 <!-- 主体部分开始 -->
 <div id="content">
 	<div class="b-inside">
-		<!-- 左侧列表开始 -->
+		<!-- 随言碎语开始 -->
 		<div class="left">
-			<h2 class="tag-title"><?php echo ($title_word); ?></h2>
-			<div class="b-h-10"></div>
-			<!-- 文章列表开始 -->
-			<!-- 左侧列表开始 -->
-<div class="list">
-	<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="detail">
-			<h3 class="title"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
-			<ul class="metadata">
-				<li class="date"><span class="fa fa-user"></span><?php echo ($v['author']); ?></li>
-				<li class="date"><span class="fa fa-calendar"></span><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-				<li class="category"><span class="fa fa-list-alt"></span><a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-				<?php if(!empty($v['tag'])): ?><li class="tags "><span class="fa fa-tags"></span>
-						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li><?php endif; ?>
-			</ul>
-			<div class="article">
-				<figure class="pic style1">
-					<img src="<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
-					<figcaption>
-						<p><?php echo ($v['title']); ?></p>
-						<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
-					</figcaption>
-				</figure>
-				<div class="word">
-					<p class="description">
-						<?php echo ($v['description']); ?>
-					</p>
-					<div class="readall">
-						<a class="readall-a"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
-					</div>
+			<div class="chat">
+				<div class="chat-left">
+					<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "0"): ?><ul class="chat-one ">
+								<li class="chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+								<li class="chat-content"><?php echo ($v['content']); ?></li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+				</div>
+				<div class="chat-middle"></div>
+				<div class="chat-right">
+					<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "1"): ?><ul class="chat-one ">
+								<li class="chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+								<li class="chat-content"><?php echo ($v['content']); ?></li>
+								<div class="arrows-right1">
+									<div class="arrows-round"></div>
+								</div>
+								<div class="arrows-right2"></div>
+							</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
-		</div><?php endforeach; endif; ?>
-	<?php echo ($page); ?>
-</div>
-<!-- 左侧列表结束 -->
-
-			<!-- 文章列表结束 -->
 		</div>
-		<!-- 左侧列表结束 -->
+		<!-- 随言碎语结束 -->
 
 		<!-- 右侧内容开始 -->
 		<!-- 通用右部区域开始 -->
@@ -153,8 +138,7 @@ $(document).ready(function(){
 	<div class="recommend">
 		<h4 class="title">置顶推荐</h4>
 		<p class="recommend-p">
-			<?php
- $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
+			<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
 	<div class="search">
@@ -166,18 +150,17 @@ $(document).ready(function(){
 	<div class="link">
 		<h4 class="title">友情链接</h4>
 		<p class="link-p">
-			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
 		</p>
 	</div>
 </div>
 <!-- 通用右部区域结束 -->
-
 		<!-- 右侧内容结束 -->
 	</div>
 </div>
 <!-- 主体部分结束 -->
 
-<!-- 通用底部文件开始 -->
+<!-- 底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
 	<div class="b-inside">

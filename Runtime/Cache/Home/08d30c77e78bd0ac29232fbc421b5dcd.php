@@ -39,7 +39,7 @@ $(document).ready(function(){
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
-	
+
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -85,6 +85,7 @@ $(document).ready(function(){
 	</div>
 </div>
 <!-- 顶部导航结束 -->
+<div class="b-h-40"></div>
 
 <!-- 顶部导航结束 -->
 
@@ -149,7 +150,8 @@ $(document).ready(function(){
 	<div class="recommend">
 		<h4 class="title">置顶推荐</h4>
 		<p class="recommend-p">
-			<?php	 $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><?php echo ($k+1); ?>：<?php echo ($field['title']); ?></a><?php } ?>
+			<?php
+ $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
 	<div class="search">
@@ -161,11 +163,12 @@ $(document).ready(function(){
 	<div class="link">
 		<h4 class="title">友情链接</h4>
 		<p class="link-p">
-			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
 		</p>
 	</div>
 </div>
 <!-- 通用右部区域结束 -->
+
 		<!-- 右侧内容结束 -->
 	</div>
 </div>
@@ -177,7 +180,7 @@ $(document).ready(function(){
 	<div class="b-inside">
 		本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 	</div>
-	<div class="go-top fa fa-angle-up"></div>
+	<div class="go-top fa fa-angle-up" onclick="goTop()"></div>
 </div>
 <!-- 通用底部文件结束 -->
 

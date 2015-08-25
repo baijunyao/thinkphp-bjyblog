@@ -309,6 +309,7 @@ a {
   margin-bottom: 10px;
   padding: 40px;
   border-bottom: 1px solid #E2E2E2;
+  font-size: 16px;
 }
 #content .b-inside .left .article .content-word .copyright {
   width: 760px;
@@ -320,6 +321,7 @@ a {
   margin-top: 40px;
   width: 760px;
   height: 60px;
+  font-size: 14px;
 }
 #content .b-inside .left .article .content-word .prev-next .prev,
 #content .b-inside .left .article .content-word .prev-next .next {
@@ -876,6 +878,9 @@ a {
 #content .b-inside .right .recommend .recommend-p .recommend-a {
   margin: 5px 0;
   display: block;
+}
+#content .b-inside .right .b-black {
+  color: #333;
 }
 /* 主体部分结束 */
 /* 通用底部开始 */
