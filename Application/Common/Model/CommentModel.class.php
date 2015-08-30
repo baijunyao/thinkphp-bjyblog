@@ -9,29 +9,52 @@ class CommentModel extends Model{
 	// 添加数据
 	public function addData($type){
 		$data=I('post.');
+		$ouid=$_SESSION['user']['id'];
+		$data['content']=htmlspecialchars_decode($data['content']);
+		$comment_content=trim($data['content'],'<br>');
+		$comment_content=htmlspecialchars($comment_content);
+		echo $comment_content;die;
 		$comment=array(
-			'ouid'=>$_SESSION['user']['id'],
+			'ouid'=>$ouid,
 			'type'=>$type,
 			'aid'=>$data['aid'],
 			'pid'=>$data['pid'],
-			'content'=>$data['content'],
+			'content'=>$comment_content,
 			'date'=>time(),
 			'status'=>1
 			);
 		// p($comment);die;
 		$cmtid=$this->add($comment);
+		if(C('COMMENT_REVIEW')){
+			$address=C('EMAIL_RECEIVE');
+			if(!empty($address)){
+				$nickname=M('Oauth_user')->getFieldById($ouid,'nickname');
+				$title=M('Article')->getFieldByAid($data['aid'],'title');
+				$url=U('Home/Index/article',array('aid'=>$data['aid']),'',true);
+				$date=date('Y-m-d H:i:s');
+				$content=<<<html
+站长你好：<br>
+&emsp; $nickname $date 评论了您的文章 <a href="$url">$title</a> 内容如下:<br>
+$comment_content
+
+html;
+				send_email($address,$nickname.'评论了 '.$title,$content);
+			}
+		}
 		return $cmtid;
 	}
 
 	/**
 	 * 获取分页数据供后台使用
+	 * @param  int   是否删除
 	 * @return array 评论数据
 	 */
-	public function getPageData(){
+	public function getDataByState($is_delete){
 		$count=$this
 			->alias('c')
 			->join('__ARTICLE__ a ON a.aid=c.aid')
 			->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
+			->where(array('c.is_delete'=>$is_delete))
 			->count();
 		$page=new \Org\Bjy\Page($count,10);
 		$list=$this
@@ -39,13 +62,15 @@ class CommentModel extends Model{
 			->alias('c')
 			->join('__ARTICLE__ a ON a.aid=c.aid')
 			->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
+			->where(array('c.is_delete'=>$is_delete))
 			->limit($page->firstRow.','.$page->listRows)
 			->order('date desc')
 			->select();
 		$data=array(
-			'list'=>$list,
-			'show'=>$page->show()
+			'data'=>$list,
+			'page'=>$page->show()
 			);
+
 		return $data;
 	}
 
@@ -55,12 +80,20 @@ class CommentModel extends Model{
 	 * @return array    树状结构数组
 	 */
 	public function getChildData($aid){
+		// 组合where条件
+		$status=C('COMMENT_REVIEW') ? array('c.status'=>1) : array();
+		$other=array(
+			'c.aid'=>$aid,
+			'c.pid'=>0,
+			'c.is_delete'=>0
+			);
+		$where=array_merge($status,$other);
 		// 关联第三方用户表获取一级评论
 		$data=$this
 			->field('c.*,ou.nickname,ou.head_img')
 			->alias('c')
 			->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
-			->where(array('aid'=>$aid,'pid'=>0))
+			->where($where)
 			->order('date desc')
 			->select();
 		foreach ($data as $k => $v) {

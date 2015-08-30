@@ -16,7 +16,7 @@ class LinkModel extends Model{
 	public function addData(){
 		$data=I('post.');
 		if($this->create($data)){
-			$data['url']='http://'.trim($data['url'],'http://');
+			$data['url']='http://'.str_replace(array('http://','https://'), '', $data['url']);
 			$lid=$this->add($data);
 			return $lid;
 		}else{
@@ -28,25 +28,12 @@ class LinkModel extends Model{
 	public function editData(){
 		$data=I('post.');
 		if($this->create($data)){
-			$data['url']='http://'.trim($data['url'],'http://');
+			$data['url']='http://'.str_replace(array('http://','https://'), '', $data['url']);
 			$this->where(array('lid'=>$data['lid']))->save($data);
 			return true;
 		}else{
 			return false;
 		}
-	}
-
-	// 放入回收站
-	public function recycleData(){
-		$lid=I('get.lid',0,'intval');
-		return $this->where(array('lid'=>$lid))->setField('is_delete',1);
-	}
-
-	// 彻底删除
-	public function deleteData(){
-		$lid=I('get.lid',0,'intval');
-		$this->where("lid=$lid")->delete();
-		return true;
 	}
 
 	// 传递is_delete和is_show获取对应数据

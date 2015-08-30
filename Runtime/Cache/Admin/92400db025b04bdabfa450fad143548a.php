@@ -35,7 +35,7 @@ $(document).ready(function(){
 			<th width="20%">链接名</th>
 			<th width="35%">链接地址</th>
 			<th width="10%">是否显示</th>
-			<th width="15%">操作</th>			
+			<th width="15%">操作</th>
 		</tr>
 	</thead>
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
@@ -51,8 +51,8 @@ $(document).ready(function(){
 					✘<?php endif; ?>
 			</th>
 			<td>
-				<a href="<?php echo U('Admin/Link/edit',array('lid'=>$v['lid']));?>">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Link/recycle',array('lid'=>$v['lid']));?>'">删除</a>				
+				<a href="<?php echo U('Admin/Link/edit',array('lid'=>$v['lid']));?>">修改</a> |
+				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Recycle/recycle',array('table_name'=>'Link','id_name'=>'lid','id_number'=>$v['lid']));?>'">删除</a>
 			</td>
 		</tr><?php endforeach; endif; ?>
 </table>

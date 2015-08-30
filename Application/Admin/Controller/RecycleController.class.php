@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
 /**
@@ -24,6 +24,16 @@ class RecycleController extends AdminBaseController{
 		$this->display();
 	}
 
+	// 已删评论
+	public function comment(){
+		$data=D('Comment')->getDataByState(1);
+		$this->assign('data',$data['data']);
+		$this->assign('page',$data['page']);
+		// p($data);
+		// die;
+		$this->display();
+	}
+
 	// 已删友情链接
 	public function link(){
 		$data=D('Link')->getDataByState(1);
@@ -40,21 +50,26 @@ class RecycleController extends AdminBaseController{
 		$this->display();
 	}
 
+	// 根据$_GET数组放入回收站
+	public function recycle(){
+		$data=I('get.');
+		M($data['table_name'])->where(array($data['id_name']=>$data['id_number']))->setField('is_delete',1);
+		$this->success('放入回收站成功');
+	}
+
 	// 根据$_GET数组恢复删除
 	public function recover(){
 		$data=I('get.');
-		D($data['model_name'])->where(array($data['id_name']=>$data['id_number']))->setField('is_delete',0);
+		M($data['table_name'])->where(array($data['id_name']=>$data['id_number']))->setField('is_delete',0);
 		$this->success('恢复成功');
 	}
 
 	// 根据$_GET数组彻底删除
 	public function delete(){
 		$data=I('get.');
-		M($data['model_name'])->where(array($data['id_name']=>$data['id_number']))->delete();
+		M($data['table_name'])->where(array($data['id_name']=>$data['id_number']))->delete();
 		$this->success('删除成功');
 	}
-
-
 
 
 

@@ -5,7 +5,7 @@ header("Content-type:text/html;charset=utf-8");
 
 //传递数据以易于阅读的样式格式化后输出
 function p($data){
-	echo '<pre style="display: block;padding: 9.5px;margin: 0px 0px 10px;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
+	echo '<pre style="display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
 }
 /**
  * 删除指定的标签和内容
@@ -31,7 +31,11 @@ function strip_html_tags($tags,$str,$content=0){
 	return $data;
 }
 
-//传递ueditor生成的内容获取其中图片的路径
+/**
+ * 传递ueditor生成的内容获取其中图片的路径
+ * @param  string $str 含有图片链接的字符串
+ * @return array       匹配的图片数组
+ */
 function get_ueditor_image_path($str){
 	$preg='/\/Upload\/image\/ueditor\/\d*\/\d*\.[jpg|jpeg|png|bmp]*/i';
 	preg_match_all($preg, $str,$data);
@@ -63,7 +67,10 @@ function re_substr($str, $start=0, $length, $suffix=true, $charset="utf-8") {
 	return $suffix ? $slice.'...' : $slice;
 }
 
-//传递图片路径根据配置项添加水印
+/**
+ * 传递图片路径根据配置项添加水印
+ * @param string $path 图片路径
+ */
 function add_water($path){
 	$image=new \Think\Image();
 	if(C('WATER_TYPE')==1){
@@ -155,7 +162,22 @@ function cut_str($str,$sign,$number){
 	}
 }
 
+/**
+ * 发送邮件
+ * @param  string $address 需要发送的邮箱地址
+ * @param  string $subject 标题
+ * @param  string $content 内容
+ * @return boolean         是否成功
+ */
 function send_email($address,$subject,$content){
+	$email_smtp=C('EMAIL_SMTP');
+	$email_username=C('EMAIL_USERNAME');
+	$email_password=C('EMAIL_PASSWORD');
+	$email_from_name=C('EMAIL_FROM_NAME');
+	if(empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)){
+		return array("error"=>1,"message"=>'邮箱配置不完整');
+	}
+	echo 2;
 	require './ThinkPHP/Library/Org/Bjy/class.phpmailer.php';
 	require './ThinkPHP/Library/Org/Bjy/class.smtp.php';
 	$phpmailer=new \Phpmailer();
@@ -166,28 +188,28 @@ function send_email($address,$subject,$content){
 	// 设置邮件的字符编码'
 	$phpmailer->CharSet='UTF-8';
 	// 设置SMTP服务器。
-	$phpmailer->Host='smtp.exmail.qq.com';
+	$phpmailer->Host=$email_smtp;
 	// 设置为"需要验证"
 	$phpmailer->SMTPAuth=true;
 	// 设置用户名
-	$phpmailer->Username='admin@baijunyao.com';
+	$phpmailer->Username=$email_username;
 	// 设置密码
-	$phpmailer->Password='shuaibai123123';
+	$phpmailer->Password=$email_password;
 	// 设置邮件头的From字段。
-	$phpmailer->From='admin@baijunyao.com';
+	$phpmailer->From=$email_username;
 	// 设置发件人名字
-	$phpmailer->FromName='shuaibai';
+	$phpmailer->FromName=$email_from_name;
 	// 添加收件人地址，可以多次使用来添加多个收件人
-	$phpmailer->AddAddress('b593026987@qq.com');
+	$phpmailer->AddAddress($address);
 	// 设置邮件标题
-	$phpmailer->Subject='123';
+	$phpmailer->Subject=$subject;
 	// 设置邮件正文
-	$phpmailer->Body='test123';
+	$phpmailer->Body=$content;
 
 	// 发送邮件。
 	if(!$phpmailer->Send()) {
 		$phpmailererror=$phpmailer->ErrorInfo;
-		return array("error"=>1,"message"=>$mailerror);
+		return array("error"=>1,"message"=>$phpmailererror);
 	}else{
 		return array("error"=>0);
 	}

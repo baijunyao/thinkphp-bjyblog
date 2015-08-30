@@ -54,4 +54,26 @@ class OauthUserModel extends Model{
 		return $this->where(array('openid'=>$openid))->find();
 	}
 
+	// 获取用户分页数据
+	public function getPageData(){
+		$count=$this->count();
+		$page=new \Org\Bjy\Page($count,20);
+		$list=$this
+			->order('last_login_time desc')
+			->limit($page->firstRow.','.$page->listRows)
+			->select();
+		$type=array('','QQ','新浪微博','豆瓣','人人','开心网');
+		foreach ($list as $k => $v) {
+			$list[$k]['type']=$type[$v['type']];
+		}
+		$data=array(
+			'data'=>$list,
+			'page'=>$page->show()
+			);
+		return $data;
+
+	}
+
+
+
 }

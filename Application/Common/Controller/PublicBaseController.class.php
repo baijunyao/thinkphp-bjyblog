@@ -17,6 +17,8 @@ class PublicBaseController extends Controller{
 			$this->display('Public/web_close');
 			die;
 		}
+		// 判断是否开启了rewrite 设置URL_MODEL
+		in_array('mod_rewrite', apache_get_modules()) ? C('URL_MODEL',2) : C('URL_MODEL',1);
 	}
 
 

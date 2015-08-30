@@ -117,12 +117,6 @@ class ArticleModel extends Model{
 		}
 	}
 
-	// 放入回收站
-	public function recycleData(){
-		$aid=I('get.aid',0,'intval');
-		return $this->where("aid=$aid")->setField('is_delete',1);
-	}
-
 	// 彻底删除
 	public function deleteData(){
 		$aid=I('get.aid',0,'intval');

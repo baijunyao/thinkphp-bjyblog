@@ -370,6 +370,8 @@ a {
   height: 75px;
   border: none;
   border-bottom: 1px solid #E6EAED;
+  color: #999;
+  overflow: auto;
 }
 #content .b-inside .left .comment .emote-submit {
   width: 694px;
@@ -877,7 +879,14 @@ a {
 }
 #content .b-inside .right .recommend .recommend-p .recommend-a {
   margin: 5px 0;
+  padding-left: 18px;
   display: block;
+  position: relative;
+}
+#content .b-inside .right .recommend .recommend-p .recommend-a .fa {
+  position: absolute;
+  left: 0;
+  top: 5px;
 }
 #content .b-inside .right .b-black {
   color: #333;
@@ -888,25 +897,24 @@ a {
   display: table;
   width: 100%;
   height: 40px;
-  line-height: 40px;
   text-align: center;
-  overflow: hidden;
   position: relative;
   z-index: 0;
 }
+#foot .b-inside .copyright {
+  width: 1200px;
+  height: 20px;
+  line-height: 20px;
+}
 #foot .go-top {
+  display: block;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  cursor: pointer;
   background: #0B94C1;
   font-size: 60px;
   color: #fff;
   display: none;
-  transition: ALL  0.5s ease;
-  -moz-transition: ALL  0.5s ease;
-  -webkit-transition: ALL  0.5s ease;
-  -o-transition: ALL  0.5s ease;
   position: fixed;
   right: 75px;
   bottom: 100px;

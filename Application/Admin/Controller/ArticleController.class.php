@@ -1,4 +1,4 @@
-<?php  
+<?php
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
 /**
@@ -43,7 +43,7 @@ class ArticleController extends AdminBaseController{
 			$allTag=D('Tag')->getAllData();
 			$this->assign('allCategory',$allCategory);
 			$this->assign('allTag',$allTag);
-			$this->display();	
+			$this->display();
 		}
 
 	}
@@ -90,15 +90,6 @@ class ArticleController extends AdminBaseController{
 			$this->assign('allTag',$allTag);
 			$this->assign('data',$data);
 			$this->display();
-		}
-	}
-	
-	// 放入回收站
-	public function recycle(){
-		if($this->db->recycleData()){
-			$this->success('放入回收站成功');
-		}else{
-			$this->error('放入回收站失败');
 		}
 	}
 

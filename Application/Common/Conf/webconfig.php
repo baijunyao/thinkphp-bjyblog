@@ -1,6 +1,6 @@
 <?php
 return array(
-//此配置项为自动生成；如需改动请在后台网站设置
+//此配置项为自动生成请勿直接修改；如需改动请在后台网站设置
 //*************************************网站设置****************************************
 	'WEB_STATUS'				=>	'1',	       //网站状态1:开启 0:关闭
 	'WEB_CLOSE_WORD'			=>	'网站升级中，请稍后访问。',	   //网站关闭时提示文字
@@ -28,25 +28,31 @@ return array(
 	'IMAGE_WATER_ALPHA'			=>	'80',    //图片水印 水印透明度：0-100
 
 //*************************************第三方登录****************************************
-	'QQ_APP_ID'					=>	'',				   // QQ登陆APP D
-	'QQ_APP_KEY'				=>	'',			   // QQ登陆APP KEY
-	'SINA_API_KEY'				=>  '',		   	   // 新浪登陆API KEY
-	'SINA_SECRET'				=>  '',		   	   // 新浪登陆SECRET
-	'DOUBAN_API_KEY'			=>  '',		   // 豆瓣登陆API KEY
-	'DOUBAN_SECRET'				=>  '',		   	   // 豆瓣登陆SECRET
-	'RENREN_API_KEY'			=>  '',		   // 人人登陆API KEY
-	'RENREN_SECRET'				=>  '',		   	   // 人人登陆SECRET
-	'KAIXIN_API_KEY'			=>  '',		   // 开心网登陆API KEY
-	'KAIXIN_SECRET'				=>  '',		   	   // 开心网登陆SECRET
-	'GITHUB_CLIENT_ID'			=>  '',		   // github登陆API KEY
-	'GITHUB_CLIENT_SECRET'		=>  '',	   // github登陆SECRET
-	'SOHU_API_KEY'				=>  '',		   	   // 搜狐网登陆API KEY
-	'SOHU_SECRET'				=>  '',		   	   // 搜狐网登陆SECRET
-
+	'QQ_APP_ID'					=>	'',			   // QQ登陆APP D
+	'QQ_APP_KEY'				=>	'',		   // QQ登陆APP KEY
+	'SINA_API_KEY'				=>  '',		   // 新浪登陆API KEY
+	'SINA_SECRET'				=>  '',		   // 新浪登陆SECRET
+	'DOUBAN_API_KEY'			=>  '',	   // 豆瓣登陆API KEY
+	'DOUBAN_SECRET'				=>  '',		   // 豆瓣登陆SECRET
+	'RENREN_API_KEY'			=>  '',	   // 人人登陆API KEY
+	'RENREN_SECRET'				=>  '',		   // 人人登陆SECRET
+	'KAIXIN_API_KEY'			=>  '',	   // 开心网登陆API KEY
+	'KAIXIN_SECRET'				=>  '',		   // 开心网登陆SECRET
+	'GITHUB_CLIENT_ID'			=>  '',	   // github登陆API KEY
+	'GITHUB_CLIENT_SECRET'		=>  '', // github登陆SECRET
+	'SOHU_API_KEY'				=>  '',		   // 搜狐网登陆API KEY
+	'SOHU_SECRET'				=>  '',		   // 搜狐网登陆SECRT
 //***********************************其他第三方接口****************************************
-	'WEB_STATISTICS'			=>	'',   	   	   // 第三方统计代码
-	'BAIDU_SITE_URL'			=>	'',   	  	   // 百度推送site提交链接
-
-
+	'WEB_STATISTICS'			=>	'',   	   // 第三方统计代码
+	'BAIDU_SITE_URL'			=>	'',   	   // 百度推送site提交接
+//***********************************邮箱设置***********************************************
+	'EMAIL_SMTP'				=>	'',		   //  SMTP服务器
+	'EMAIL_USERNAME'			=>	'',	   //  邮箱用户名
+	'EMAIL_PASSWORD'			=>	'',	   //  邮箱密码
+	'EMAIL_FROM_NAME'			=>	'',	   //  发件名
+//***********************************评论管理***********************************************
+	'COMMENT_REVIEW'			=>	'1',	   // 是否开启评论1:开启 0:关闭
+	'COMMENT_SEND_EMAIL'		=>	'0',   // 被评论后送邮件1:开启 0:关闭
+	'EMAIL_RECEIVE'				=>	'',   	   // 接收评论通知邮箱
 
 );

@@ -24,6 +24,8 @@ class HomeBaseController extends Controller{
 			'links'=>D('Link')->getDataByState(0,1),
 			);
 		$this->assign($assign);
+		// 判断是否开启了rewrite 设置URL_MODEL
+		in_array('mod_rewrite', apache_get_modules()) ? C('URL_MODEL',2) : C('URL_MODEL',1);
 	}
 
 

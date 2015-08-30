@@ -49,6 +49,10 @@ $(document).ready(function(){
 			回收管理
 		</li>
 		<li class="ntn-li">
+			<span class="fa fa-users nt-ico"></span>
+			用户管理
+		</li>
+		<li class="ntn-li">
 			<span class="fa fa-cogs nt-ico"></span>
 			网站设置
 		</li>
@@ -178,6 +182,13 @@ $(document).ready(function(){
 				</div>
 			</dd>
 			<dd>
+				<a href="<?php echo U('Admin/Recycle/comment');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>已删评论
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
+			<dd>
 				<a href="<?php echo U('Admin/Recycle/chat');?>" target="right_content"></a>
 				<span class="fa fa-caret-right"></span>已删随言
 				<div class="nl-checked">
@@ -194,6 +205,23 @@ $(document).ready(function(){
 		</dl>
 	</div>
 	<!-- 回收管理结束 -->
+
+	<!-- 用户管理开始 -->
+	<div class="nl-con">
+		<dl>
+			<dt>
+				<span class="fa fa-user"></span>用户管理
+			</dt>
+			<dd>
+				<a href="<?php echo U('Admin/User/index');?>" target="right_content"></a>
+				<span class="fa fa-caret-right"></span>第三方用户
+				<div class="nl-checked">
+					<div class="nl-arrows"></div>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	<!-- 用户管理结束 -->
 
 	<!-- 网站设置开始 -->
 	<div class="nl-con">

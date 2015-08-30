@@ -34,19 +34,6 @@ class ChatModel extends Model{
 		}
 	}
 
-	// 放入回收站
-	public function recycleData(){
-		$chid=I('get.chid',0,'intval');
-		return $this->where(array('chid'=>$chid))->setField('is_delete',1);
-	}
-
-	// 彻底删除
-	public function deleteData(){
-		$chid=I('get.chid',0,'intval');
-		$this->where(array('chid'=>$chid))->delete();
-		return true;
-	}
-
 	// 传递is_delete和is_show获取对应数据
 	public function getDataByState($is_delete='all',$is_show='all'){
 		$is_delete=$is_delete==='all' ? '' : "is_delete=$is_delete";

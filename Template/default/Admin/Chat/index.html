@@ -13,7 +13,7 @@
 			<th width="20%">发表时间</th>
 			<th width="60%">内容</th>
 			<th width="5%">显示</th>
-			<th width="10%">操作</th>			
+			<th width="10%">操作</th>
 		</tr>
 	</thead>
 	<foreach name="data" item="v">
@@ -29,8 +29,8 @@
 				</if>
 			</th>
 			<td>
-				<a href="{:U('Admin/Chat/edit',array('chid'=>$v['chid']))}">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Chat/recycle',array('chid'=>$v['chid']))}'">删除</a>				
+				<a href="{:U('Admin/Chat/edit',array('chid'=>$v['chid']))}">修改</a> |
+				<a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Chat','id_name'=>'chid','id_number'=>$v['chid']))}'">删除</a>
 			</td>
 		</tr>
 	</foreach>

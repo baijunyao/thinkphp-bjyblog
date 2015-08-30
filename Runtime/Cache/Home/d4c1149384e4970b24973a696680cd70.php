@@ -140,7 +140,7 @@ $(document).ready(function(){
 	<div class="comment-box">
 		<img class="head-img" src="<?php if(empty($_SESSION['user']['head_img'])): ?>/Template/default/Home/Public/image/default_head_img.gif<?php else: echo ($_SESSION['user']['head_img']); endif; ?>" alt="白俊遥博客" title="白俊遥博客">
 		<div class="box-textarea">
-			<div class="box-content" contenteditable="true"></div>
+			<div class="box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后发表评论</div>
 			<ul class="emote-submit">
 				<li class="emote">
 					<i class="fa fa-smile-o" onclick="getTuzki(this)"></i>
@@ -237,10 +237,16 @@ $(document).ready(function(){
 <!-- 通用底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
-	<div class="b-inside">
-		本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
-	</div>
-	<div class="go-top fa fa-angle-up" onclick="goTop()"></div>
+	<ul class="b-inside">
+		<li class="copyright">
+			本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
+		</li>
+		<li class="copyright">
+			联系邮箱：baijunyao@baijunyao.com
+		</li>
+	</ul>
+	<div class="b-h-20"></div>
+	<a class="go-top fa fa-angle-up" href="javascript:;" onclick="goTop()"></a>
 </div>
 <!-- 通用底部文件结束 -->
 

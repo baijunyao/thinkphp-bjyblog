@@ -125,3 +125,12 @@ function reply(obj){
 	var str='<div class="box-textarea"><div class="box-content" contenteditable="true"></div><ul class="emote-submit"><li class="emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><div class="tuzki"></div></li><li class="submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
 	$(obj).parents('.date').eq(0).after(str);
 }
+
+// 删除提示和样式
+function delete_hint(obj){
+	var word=$(obj).text();
+	if(word=='请先登陆后发表评论'){
+		$(obj).text('');
+		$(obj).css('color', '#333');
+	}
+}

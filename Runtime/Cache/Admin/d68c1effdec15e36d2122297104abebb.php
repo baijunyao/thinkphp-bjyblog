@@ -71,9 +71,9 @@ $(document).ready(function(){
 			<td><?php echo ($v['click']); ?></td>
 			<td><?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></td>
 			<td>
-				<a href="<?php echo U('Admin/Article/edit',array('aid'=>$v['aid']));?>">修改</a> | 
-				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Article/recycle',array('aid'=>$v['aid']));?>'">删除</a>
-			</td>		
+				<a href="<?php echo U('Admin/Article/edit',array('aid'=>$v['aid']));?>">修改</a> |
+				<a href="javascript:if(confirm('确定要删除吗?')) location='<?php echo U('Admin/Recycle/recycle',array('table_name'=>'Article','id_name'=>'aid','id_number'=>$v['aid']));?>'">删除</a>
+			</td>
 		</tr><?php endforeach; endif; ?>
 </table>
 <div style="text-align: center;">

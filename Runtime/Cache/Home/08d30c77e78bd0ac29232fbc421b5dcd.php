@@ -154,17 +154,17 @@ $(document).ready(function(){
  $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
-	<div class="search">
-		<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
-			<input class="search-text" type="text" name="search_word">
-			<input class="search-submit" type="submit" value="全站搜索">
-		</form>
-	</div>
 	<div class="link">
 		<h4 class="title">友情链接</h4>
 		<p class="link-p">
 			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
 		</p>
+	</div>
+	<div class="search">
+		<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
+			<input class="search-text" type="text" name="search_word">
+			<input class="search-submit" type="submit" value="全站搜索">
+		</form>
 	</div>
 </div>
 <!-- 通用右部区域结束 -->
@@ -177,10 +177,16 @@ $(document).ready(function(){
 <!-- 底部文件开始 -->
 <!-- 通用底部文件开始 -->
 <div id="foot">
-	<div class="b-inside">
-		本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
-	</div>
-	<div class="go-top fa fa-angle-up" onclick="goTop()"></div>
+	<ul class="b-inside">
+		<li class="copyright">
+			本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
+		</li>
+		<li class="copyright">
+			联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?>
+		</li>
+	</ul>
+	<div class="b-h-20"></div>
+	<a class="go-top fa fa-angle-up" href="javascript:;" onclick="goTop()"></a>
 </div>
 <!-- 通用底部文件结束 -->
 

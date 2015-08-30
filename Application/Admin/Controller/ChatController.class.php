@@ -29,7 +29,7 @@ class ChatController extends AdminBaseController{
 				$this->error($this->db->getError());
 			}
 		}else{
-			$this->display();	
+			$this->display();
 		}
 
 	}
@@ -47,24 +47,6 @@ class ChatController extends AdminBaseController{
 			$data=$this->db->getDataByLid($chid);
 			$this->assign('data',$data);
 			$this->display();
-		}
-	}
-	
-	// 放入回收站
-	public function recycle(){
-		if($this->db->recycleData()){
-			$this->success('放入回收站成功');
-		}else{
-			$this->error('放入回收站失败');
-		}
-	}
-
-	// 彻底删除
-	public function delete(){
-		if($this->db->deleteData()){
-			$this->success('彻底删除成功');
-		}else{
-			$this->error('彻底删除失败');
 		}
 	}
 

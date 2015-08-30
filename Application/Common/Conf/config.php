@@ -14,7 +14,6 @@ return array(
 	    '__ADMIN_IMAGE__'	=> 	__ROOT__.trim(TMPL_PATH,'.').'Admin/Public/image',
 	),
 //***********************************URL设置**************************************
-	'URL_MODEL'             =>  2,								//使用REWRITE模式
 	'MODULE_ALLOW_LIST' 	=>  array('Home','Admin','Api'),  		//允许访问列表
 //***********************************URL设置**************************************
 	'TMPL_EXCEPTION_FILE'	=>  APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
