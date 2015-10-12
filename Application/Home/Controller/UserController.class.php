@@ -14,8 +14,11 @@ class UserController extends HomeBaseController {
 	// 第三方平台退出
 	public function logout(){
 		session('user',null);
-		// die;
-		redirect(session('this_url'));
+		if(session('?this_url')){
+			redirect(session('this_url'));
+		}else{
+			redirect(U('Home/Index/index'));
+		}
 	}
 
 	// 保存登陆或者退出时的url

@@ -31,27 +31,28 @@ class My extends TagLib {
 	public function _bootstrap($tag){
 		$icheck=isset($tag['icheck']) ? $tag['icheck'] : 'blue';
 		$link=<<<php
-<script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/font-awesome-4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/bjy.css">
-<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
-<![endif]-->
-<script type="text/javascript" src="__PUBLIC__/static/iCheck-1.0.2/icheck.min.js"></script>
-<link rel="stylesheet" href="__PUBLIC__/static/iCheck-1.0.2/skins/all.css">
-<script>
-$(document).ready(function(){
-  $('.icheck').iCheck({
-    checkboxClass: "icheckbox_square-$icheck",
-    radioClass: "iradio_square-$icheck",
-    increaseArea: "20%"
-  });
-});
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/bjy.css">
+	<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="__PUBLIC__/static/iCheck-1.0.2/icheck.min.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/static/iCheck-1.0.2/skins/all.css">
+	<script>
+	$(document).ready(function(){
+	  $('.icheck').iCheck({
+	    checkboxClass: "icheckbox_square-$icheck",
+	    radioClass: "iradio_square-$icheck",
+	    increaseArea: "20%"
+	  });
+	});
+	</script>
 
 php;
 		return $link;
@@ -65,9 +66,7 @@ php;
 		$name=$tag['name'];
 		$content=$tag['content'];
 		$link=<<<php
-<script id="container" name="$name" type="text/plain">
-	$content
-</script>
+<script id="container" name="$name" type="text/plain">$content</script>
 <script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/ueditor.config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/ueditor.all.js"></script>
 <script type="text/javascript">

@@ -41,7 +41,7 @@ class IndexController extends HomeBaseController {
 			'articles'=>$articles['data'],
 			'page'=>$articles['page'],
 			'title'=>$tname,
-			'title_word'=>'拥有<span class="highlight">'.$tname.'</span>标签的文章',
+			'title_word'=>'拥有<span class="b-highlight">'.$tname.'</span>标签的文章',
 			'cid'=>'index'
 			);
 		$this->assign($assign);
@@ -100,12 +100,12 @@ class IndexController extends HomeBaseController {
 	}
 
 	// ajax评论文章
-	function ajax_comment(){
+	public function ajax_comment(){
 		$data=I('post.');
 		if(empty($data['content']) || !isset($_SESSION['user']['id'])){
 			die('未登陆,或内容为空');
 		}else{
-			$cmtid=D('Comment')->addData($type);
+			$cmtid=D('Comment')->addData($data);
             echo $cmtid;
 		}
 	}

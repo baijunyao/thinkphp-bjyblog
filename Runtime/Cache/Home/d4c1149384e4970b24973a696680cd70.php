@@ -8,32 +8,33 @@
 	<meta name="keywords" content="<?php echo ($article['current']['category']['keywords']); ?>" />
 	<meta name="description" content="<?php echo ($article['current']['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<meta name="author" content="baijunyao,admin@baijunyao.com">
+	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
-<script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
-<script type="text/javascript" src="/Public/static/js/respond.min.js"></script>
-<![endif]-->
-<script type="text/javascript" src="/Public/static/iCheck-1.0.2/icheck.min.js"></script>
-<link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
-<script>
-$(document).ready(function(){
-  $('.icheck').iCheck({
-    checkboxClass: "icheckbox_square-blue",
-    radioClass: "iradio_square-blue",
-    increaseArea: "20%"
-  });
-});
-</script>
+	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+	<script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="/Public/static/js/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/Public/static/iCheck-1.0.2/icheck.min.js"></script>
+	<link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
+	<script>
+	$(document).ready(function(){
+	  $('.icheck').iCheck({
+	    checkboxClass: "icheckbox_square-blue",
+	    radioClass: "iradio_square-blue",
+	    increaseArea: "20%"
+	  });
+	});
+	</script>
 
 	<script type="text/javascript">
-		saveLoginUrl="<?php echo U('Home/User/save_login_url','','',true);?>";
-		logoutUrl="<?php echo U('Home/User/logout','','',true);?>";
+		saveLoginUrl="<?php echo U('Home/User/save_login_url');?>";
+		logoutUrl="<?php echo U('Home/User/logout');?>";
 	</script>
 	<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
 	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
@@ -54,78 +55,85 @@ $(document).ready(function(){
 <body>
 <!-- 顶部导航开始 -->
 <!-- 顶部导航开始 -->
-<div id="nav">
-	<div class="b-inside">
-		<div class="logo">
-			<div class="code">
-				<p class="php">&lt;?php</p>
-				<p class="echo">echo</p>
-			</div>
-			<p class="word">
-				'<img src="/Template/default/Home/Public/image/logo.jpg" alt="">'
-				<span>;</span>
-			</p>
-			<a href="<?php echo U('Home/Index/index');?>"></a>
-		</div>
-		<ul class="category">
-			<li class="cname <?php if(($cid) == "index"): ?>action<?php endif; ?> " >
-				<a href="<?php echo U('Home/Index/index');?>">首页</a>
-			</li>
-			<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="cname <?php if(($cid) == $v['cid']): ?>action<?php endif; ?> ">
-					<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
-				</li><?php endforeach; endif; ?>
-			<li class="cname <?php if(($cid) == "chat"): ?>action<?php endif; ?> ">
-				<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
-			</li>
-			<li class="cname">
-				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
-			</li>
-		</ul>
-		<ul id="login-word" class="user">
-			<?php if(empty($_SESSION['user']['head_img'])): ?><li class="login" onclick="showlogin()">登陆</li>
-			<?php else: ?>
-				<li class="user-info">
-					<span><img class="head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
-					<span class="nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
-					<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
-				</li><?php endif; ?>
-
-		</ul>
-	</div>
-</div>
-<!-- 顶部导航结束 -->
-<div class="b-h-40"></div>
-
-<!-- 顶部导航结束 -->
-
-<!-- 主体部分开始 -->
-<div id="content">
-	<div class="b-inside">
-		<!-- 左侧列表开始 -->
-		<div class="left">
-			<div class="article">
-				<h1 class="title"><?php echo ($article['current']['title']); ?></h1>
-				<ul class="metadata">
-					<li class="date">作者：<?php echo ($article['current']['author']); ?></li>
-					<li class="date">发布时间：<?php echo (date('Y-m-d H:i:s',$article['current']['addtime'])); ?></li>
-					<li class="category">分类：<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
-					<?php if(!empty($article['current']['tag'])): ?><li class="tags ">标签：
-							<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
-						</li><?php endif; ?>
+<header id="b-public-nav" class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">
+				<ul class="b-logo-code">
+					<li class="b-lc-start">&lt;?php</li>
+					<li class="b-lc-echo">echo</li>
 				</ul>
-				<div class="content-word">
+				<p class="b-logo-word">'白俊遥博客'</p>
+				<p class="b-logo-end">;</p>
+			</a>
+			<!-- <a class="b-logo-a" href="<?php echo U('Home/Index/index');?>"></a> -->
+			<!-- <a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">白俊遥博客</a> -->
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
+						<a href="<?php echo U('Home/Index/index');?>">首页</a>
+					</li>
+					<li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
+						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
+					</li><?php endforeach; endif; ?>
+				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
+					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+				</li>
+			</ul>
+			<ul id="b-login-word" class="nav navbar-nav navbar-right">
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
+				<?php else: ?>
+					<li class="b-user-info">
+						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
+						<span class="b-nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
+						<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
+					</li><?php endif; ?>
+			</ul>
+		</div>
+	</div>
+</header>
+<!-- 顶部导航结束 -->
+
+<!-- 顶部导航结束 -->
+<div class="b-h-70"></div>
+<!-- 主体部分开始 -->
+<div id="b-content" class="container">
+	<div class="row">
+		<!-- 左侧文章开始 -->
+		<div class="col-xs-12 col-md-12 col-lg-8">
+			<div class="row b-article">
+				<h1 class="col-xs-12 col-md-12 col-lg-12 b-title"><?php echo ($article['current']['title']); ?></h1>
+				<div class="col-xs-12 col-md-12 col-lg-12">
+					<ul class="row b-metadata">
+						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-user"></i> <?php echo ($article['current']['author']); ?></li>
+						<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> <?php echo (date('Y-m-d H:i:s',$article['current']['addtime'])); ?></li>
+						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
+						<?php if(!empty($article['current']['tag'])): ?><li class="col-xs-7 col-md-5 col-lg-5 "><i class="fa fa-tags"></i>
+								<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
+							</li><?php endif; ?>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-md-12 col-lg-12 b-content-word">
 					<?php echo ($article['current']['content']); ?>
-					<?php if(($article['current']['is_original']) == "1"): ?><p class="copyright">
+					<?php if(($article['current']['is_original']) == "1"): ?><p class="b-h-20"></p>
+						<p class="b-copyright">
 							<?php echo (C("COPYRIGHT_WORD")); ?>
 						</p><?php endif; ?>
-					<ul class="prev-next">
-						<li class="prev">
+					<ul class="b-prev-next">
+						<li class="b-prev">
 							上一篇：
 							<?php if(empty($article['prev'])): ?><span>没有了</span>
 							<?php else: ?>
 								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']));?>"><?php echo ($article['prev']['title']); ?></a><?php endif; ?>
 						</li>
-						<li class="next">
+						<li class="b-next">
 							下一篇：
 							<?php if(empty($article['next'])): ?><span>没有了</span>
 							<?php else: ?>
@@ -136,19 +144,19 @@ $(document).ready(function(){
 			</div>
 			<!-- 引入通用评论开始 -->
 			<!-- 通用评论开始 -->
-<div class="comment">
-	<div class="comment-box">
-		<img class="head-img" src="<?php if(empty($_SESSION['user']['head_img'])): ?>/Template/default/Home/Public/image/default_head_img.gif<?php else: echo ($_SESSION['user']['head_img']); endif; ?>" alt="白俊遥博客" title="白俊遥博客">
-		<div class="box-textarea">
-			<div class="box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后发表评论</div>
-			<ul class="emote-submit">
-				<li class="emote">
+<div class="row b-comment">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 b-comment-box">
+		<img class="b-head-img" src="<?php if(empty($_SESSION['user']['head_img'])): ?>/Template/default/Home/Public/image/default_head_img.gif<?php else: echo ($_SESSION['user']['head_img']); endif; ?>" alt="白俊遥博客" title="白俊遥博客">
+		<div class="b-box-textarea">
+			<div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后发表评论</div>
+			<ul class="b-emote-submit">
+				<li class="b-emote">
 					<i class="fa fa-smile-o" onclick="getTuzki(this)"></i>
-					<div class="tuzki">
+					<div class="b-tuzki">
 
 					</div>
 				</li>
-				<li class="submit-button">
+				<li class="b-submit-button">
 					<input type="button" value="评 论" aid="<?php echo ($_GET['aid']); ?>" pid="0" onclick="comment(this)">
 				</li>
 				<li class="b-clear-float"></li>
@@ -156,33 +164,47 @@ $(document).ready(function(){
 		</div>
 		<div class="b-clear-float"></div>
 	</div>
-	<div class="b-h-30"></div>
-	<ul class="comment-title">
-		<li class="new">最新评论</li>
-		<li class="total">总共<span><?php echo count($comment);?></span>条评论</li>
-	</ul>
-	<div class="user-comment">
-		<?php if(is_array($comment)): $i = 0; $__LIST__ = $comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="user parent">
-				<img class="user_pic" src="<?php echo ($v['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
-				<p class="content">
-					<span class="user-name"><?php echo ($v['nickname']); ?></span>：<?php echo ($v['content']); ?>
-				</p>
-				<p class="date">
-					<?php echo date('Y-m-d H:i:s',$v['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($v['cmtid']); ?>" username="<?php echo ($v['nickname']); ?>" onclick="reply(this)">回复</a>
-				</p>
-				<?php if(is_array($v['child'])): foreach($v['child'] as $key=>$n): ?><ul class="user child">
-						<img class="user_pic" src="<?php echo ($n['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
-						<li class="content">
-							<span class="reply-name"><?php echo ($n['nickname']); ?></span>
-							<span class="reply">回复</span>
-							<span class="user-name"><?php echo ($n['reply_name']); ?></span>：<?php echo ($n['content']); ?>
-						</li>
-						<li class="date">
-							<?php echo date('Y-m-d H:i:s',$n['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($n['cmtid']); ?>" onclick="reply(this)">回复</a>
-						</li>
-						<li class="b-clear-float"></li>
-					</ul><?php endforeach; endif; ?>
-				<li class="b-clear-float"></li>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 b-comment-title">
+		<ul class="row">
+			<li class="col-xs-6 col-sm-6 col-md-6 col-lg-6">最新评论</li>
+			<li class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">总共<span><?php echo count($comment);?></span>条评论</li>
+		</ul>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 b-user-comment">
+		<?php if(is_array($comment)): $i = 0; $__LIST__ = $comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="row b-user b-parent">
+				<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 b-pic-col">
+					<img class="b-user-pic" src="<?php echo ($v['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+				</div>
+				<div class="col-xs-10 col-sm-11 col-md-11 col-lg-11 b-content-col">
+					<p class="b-content">
+						<span class="b-user-name"><?php echo ($v['nickname']); ?></span>：<?php echo ($v['content']); ?>
+					</p>
+					<p class="b-date">
+						<?php echo date('Y-m-d H:i:s',$v['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($v['cmtid']); ?>" username="<?php echo ($v['nickname']); ?>" onclick="reply(this)">回复</a>
+					</p>
+					<?php if(is_array($v['child'])): foreach($v['child'] as $key=>$n): ?><div class="row b-user b-child">
+							<div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 b-pic-col">
+								<img class="b-user-pic" src="<?php echo ($n['head_img']); ?>" alt="白俊遥博客" title="白俊遥博客">
+							</div>
+							<ul class="col-xs-10 col-sm-11 col-md-11 col-lg-11 b-content-col">
+								<li class="b-content">
+									<span class="b-reply-name"><?php echo ($n['nickname']); ?></span>
+									<span class="b-reply">回复</span>
+									<span class="b-user-name"><?php echo ($n['reply_name']); ?></span>：<?php echo ($n['content']); ?>
+								</li>
+								<li class="b-date">
+									<?php echo date('Y-m-d H:i:s',$n['date']);?> <a href="javascript:;" aid="<?php echo ($_GET['aid']); ?>" pid="<?php echo ($n['cmtid']); ?>" onclick="reply(this)">回复</a>
+								</li>
+								<li class="b-clear-float"></li>
+							</ul>
+						</div><?php endforeach; endif; ?>
+					<div class="b-clear-float"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="b-border"></div>
+				</div>
 			</div><?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>
 </div>
@@ -190,103 +212,106 @@ $(document).ready(function(){
 
 			<!-- 引入通用评论结束 -->
 		</div>
-		<!-- 左侧列表结束 -->
+		<!-- 左侧文章结束 -->
 
-		<!-- 右侧内容开始 -->
+		<!-- 通用右侧开始 -->
 		<!-- 通用右部区域开始 -->
-<div class="right">
-	<div class="tags">
-		<h4 class="title">热门标签</h4>
-		<ul class="tags-ul">
+<div id="b-public-right" class="col-lg-4 hidden-xs hidden-sm hidden-md">
+	<div class="b-tags">
+		<h4 class="b-title">热门标签</h4>
+		<ul class="b-all-tname">
 			<?php $tag_i=0 ?>
 			<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
 				<?php $tag_i=$tag_i==5?1:$tag_i ?>
-				<li class="tname">
+				<li class="b-tname">
 					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
 	</div>
-	<div class="recommend">
-		<h4 class="title">置顶推荐</h4>
-		<p class="recommend-p">
+	<div class="b-recommend">
+		<h4 class="b-title">置顶推荐</h4>
+		<p class="b-recommend-p">
 			<?php
- $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
+ $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
-	<div class="search">
-		<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
-			<input class="search-text" type="text" name="search_word">
-			<input class="search-submit" type="submit" value="全站搜索">
-		</form>
-	</div>
-	<div class="link">
-		<h4 class="title">友情链接</h4>
+	<div class="b-link">
+		<h4 class="b-title">友情链接</h4>
 		<p class="link-p">
 			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
 		</p>
 	</div>
+	<div class="b-search">
+		<form class="form-inline"  role="form" action="<?php echo U('Home/Index/search');?>" method="get">
+			<input class="b-search-text" type="text" name="search_word">
+			<input class="b-search-submit" type="submit" value="全站搜索">
+		</form>
+	</div>
 </div>
 <!-- 通用右部区域结束 -->
 
-		<!-- 右侧内容结束 -->
-		<li class="b-clear-float"></li>
+		<!-- 通用右侧结束 -->
 	</div>
-</div>
-<!-- 主体部分结束 -->
-
-<!-- 通用底部文件开始 -->
-<!-- 通用底部文件开始 -->
-<div id="foot">
-	<ul class="b-inside">
-		<li class="copyright">
+	<div class="row">
+		<!-- 底部文件开始 -->
+		<!-- 通用底部文件开始 -->
+<footer id="b-foot" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<ul>
+		<li class="text-center">
 			本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 		</li>
-		<li class="copyright">
-			联系邮箱：baijunyao@baijunyao.com
+		<li class="text-center">
+			联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?>
 		</li>
 	</ul>
 	<div class="b-h-20"></div>
 	<a class="go-top fa fa-angle-up" href="javascript:;" onclick="goTop()"></a>
-</div>
+</footer>
 <!-- 通用底部文件结束 -->
 
-<!-- 通用底部文件结束 -->
+		<!-- 通用底部文件结束 -->
+	</div>
+</div>
+<!-- 主体部分结束 -->
 
 <!-- 登陆框开始 -->
 <!-- 登录模态框开始 -->
-<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
-      </div>
-      <ul class="modal-body">
-        <!-- <span id="qqLoginBtn"></span> -->
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default/Home/Public/image/sina-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default/Home/Public/image/douban-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default/Home/Public/image/renren-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
+<div class="modal fade" id="b-modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content row">
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<ul class="row">
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default/Home/Public/image/sina-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default/Home/Public/image/douban-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default/Home/Public/image/renren-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- 登录模态框结束 -->
+
 <!-- 登陆框结束 -->
 </body>
 </html>

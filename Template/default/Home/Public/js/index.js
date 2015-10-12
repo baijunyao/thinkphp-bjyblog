@@ -1,4 +1,7 @@
 $(function(){
+	// 设置iframe宽度
+	$('.b-article iframe').width('95%');
+	// 返回顶部
 	$(window).scroll(function(e) {
 		//若滚动条离顶部大于200元素
 		if($(window).scrollTop()>200){
@@ -7,18 +10,30 @@ $(function(){
 			$(".go-top").fadeOut(500);
 		}
 	});
-})
 
-// 第三方登陆
-function showlogin(){
-	$.post(saveLoginUrl, {"url":top.location.href}, function(data, textStatus, xhr) {
-		$('#modal-login').modal('show');
+	// 改变导航栏高度
+	$(window).scroll(function(e) {
+		//若滚动条离顶部大于100元素
+		if($(window).scrollTop()>100){
+			$('#b-public-nav .b-user-info').animate({'padding':'5px'},10);
+			$('#b-public-nav .b-nav-cname a').animate({'padding':'10px'},10);
+			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
+		}else{
+			$('#b-public-nav .b-nav-cname a').animate({'padding':'15px'},10);
+			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
+			$('#b-public-nav .b-user-info').animate({'padding':'10px'},10);
+		}
 	});
-}
+
+	// 为分页类增加响应式class
+	$('.b-page .first,.num,.end').addClass('hidden-xs');
+	$('.b-page .rows').addClass('hidden-xs');
+
+})
 
 // 退出
 function logout(){
-	$.post(saveLoginUrl, {"url":top.location.href}, function(data, textStatus, xhr) {
+	$.post(saveLoginUrl, {"url":top.location.href}, function(data) {
 		location.href=logoutUrl;
 	});
 }

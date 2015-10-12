@@ -1,38 +1,38 @@
 <!-- 通用右部区域开始 -->
-<div class="right">
-	<div class="tags">
-		<h4 class="title">热门标签</h4>
-		<ul class="tags-ul">
+<div id="b-public-right" class="col-lg-4 hidden-xs hidden-sm hidden-md">
+	<div class="b-tags">
+		<h4 class="b-title">热门标签</h4>
+		<ul class="b-all-tname">
 			<php>$tag_i=0</php>
 			<foreach name="tags" key="k" item="v">
 				<php>$tag_i++</php>
 				<php>$tag_i=$tag_i==5?1:$tag_i</php>
-				<li class="tname">
+				<li class="b-tname">
 					<a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
 				</li>
 			</foreach>
 		</ul>
 	</div>
-	<div class="recommend">
-		<h4 class="title">置顶推荐</h4>
-		<p class="recommend-p">
+	<div class="b-recommend">
+		<h4 class="b-title">置顶推荐</h4>
+		<p class="b-recommend-p">
 			<recommend cid="" limit="10">
-				<a class="recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank"><span class="fa fa-th-list b-black"></span> {$field['title']}</a>
+				<a class="b-recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank"><span class="fa fa-th-list b-black"></span> {$field['title']}</a>
 			</recommend>
 		</p>
 	</div>
-	<div class="link">
-		<h4 class="title">友情链接</h4>
+	<div class="b-link">
+		<h4 class="b-title">友情链接</h4>
 		<p class="link-p">
 			<foreach name="links" key="k" item="v">
 				<a class="link-a" href="{$v[url]}" target="_blank"><span class="fa fa-link b-black"></span> {$v['lname']}</a>
 			</foreach>
 		</p>
 	</div>
-	<div class="search">
+	<div class="b-search">
 		<form class="form-inline"  role="form" action="{:U('Home/Index/search')}" method="get">
-			<input class="search-text" type="text" name="search_word">
-			<input class="search-submit" type="submit" value="全站搜索">
+			<input class="b-search-text" type="text" name="search_word">
+			<input class="b-search-submit" type="submit" value="全站搜索">
 		</form>
 	</div>
 </div>

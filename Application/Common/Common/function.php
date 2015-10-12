@@ -5,7 +5,7 @@ header("Content-type:text/html;charset=utf-8");
 
 //传递数据以易于阅读的样式格式化后输出
 function p($data){
-	echo '<pre style="display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
+	echo '<pre style="margin-top:50px;display: block;padding: 9.5px;margin: 44px 0 0 0;font-size: 13px;line-height: 1.42857;color: #333;word-break: break-all;word-wrap: break-word;background-color: #F5F5F5;border: 1px solid #CCC;border-radius: 4px;">'.print_r($data,true).'</pre>';
 }
 /**
  * 删除指定的标签和内容
@@ -177,7 +177,6 @@ function send_email($address,$subject,$content){
 	if(empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)){
 		return array("error"=>1,"message"=>'邮箱配置不完整');
 	}
-	echo 2;
 	require './ThinkPHP/Library/Org/Bjy/class.phpmailer.php';
 	require './ThinkPHP/Library/Org/Bjy/class.smtp.php';
 	$phpmailer=new \Phpmailer();

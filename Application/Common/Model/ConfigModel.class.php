@@ -79,8 +79,8 @@ return array(
 	'EMAIL_PASSWORD'			=>	'{$data['EMAIL_PASSWORD']}',	   //  邮箱密码
 	'EMAIL_FROM_NAME'			=>	'{$data['EMAIL_FROM_NAME']}',	   //  发件名
 //***********************************评论管理***********************************************
-	'COMMENT_REVIEW'			=>	'{$data['COMMENT_REVIEW']}',	   // 是否开启评论1:开启 0:关闭
-	'COMMENT_SEND_EMAIL'		=>	'{$data['COMMENT_SEND_EMAIL']}',   // 被评论后送邮件1:开启 0:关闭
+	'COMMENT_REVIEW'			=>	'{$data['COMMENT_REVIEW']}',	   // 评论审核1:开启 0:关闭
+	'COMMENT_SEND_EMAIL'		=>	'{$data['COMMENT_SEND_EMAIL']}',   // 被评论邮件通知1:开启 0:关闭
 	'EMAIL_RECEIVE'				=>	'{$data['EMAIL_RECEIVE']}',   	   // 接收评论通知邮箱
 
 );

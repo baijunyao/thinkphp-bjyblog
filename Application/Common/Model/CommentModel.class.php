@@ -10,10 +10,8 @@ class CommentModel extends Model{
 	public function addData($type){
 		$data=I('post.');
 		$ouid=$_SESSION['user']['id'];
-		$data['content']=htmlspecialchars_decode($data['content']);
-		$comment_content=trim($data['content'],'<br>');
-		$comment_content=htmlspecialchars($comment_content);
-		echo $comment_content;die;
+		// 删除开头或者结尾的换行
+		$comment_content=trim($data['content'],'&lt;br&gt;');
 		$comment=array(
 			'ouid'=>$ouid,
 			'type'=>$type,
@@ -23,9 +21,9 @@ class CommentModel extends Model{
 			'date'=>time(),
 			'status'=>1
 			);
-		// p($comment);die;
 		$cmtid=$this->add($comment);
-		if(C('COMMENT_REVIEW')){
+		// 发送通知邮件
+		if(C('COMMENT_SEND_EMAIL')){
 			$address=C('EMAIL_RECEIVE');
 			if(!empty($address)){
 				$nickname=M('Oauth_user')->getFieldById($ouid,'nickname');

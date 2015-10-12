@@ -1,46 +1,48 @@
 <!-- 顶部导航开始 -->
-<div id="nav">
-	<div class="b-inside">
-		<div class="logo">
-			<div class="code">
-				<p class="php">&lt;?php</p>
-				<p class="echo">echo</p>
-			</div>
-			<p class="word">
-				'<img src="__HOME_IMAGE__/logo.jpg" alt="">'
-				<span>;</span>
-			</p>
-			<a href="{:U('Home/Index/index')}"></a>
+<header id="b-public-nav" class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{:U('Home/Index/index')}">
+				<ul class="b-logo-code">
+					<li class="b-lc-start">&lt;?php</li>
+					<li class="b-lc-echo">echo</li>
+				</ul>
+				<p class="b-logo-word">'白俊遥博客'</p>
+				<p class="b-logo-end">;</p>
+			</a>
 		</div>
-		<ul class="category">
-			<li class="cname <eq name="cid" value="index">action</eq> " >
-				<a href="{:U('Home/Index/index')}">首页</a>
-			</li>
-			<foreach name="categorys" item="v">
-				<li class="cname <eq name="cid" value="$v['cid']">action</eq> ">
-					<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="b-nav-cname <eq name="cid" value="index">b-nav-active</eq> " >
+					<a href="{:U('Home/Index/index')}">首页</a>
 				</li>
-			</foreach>
-			<li class="cname <eq name="cid" value="chat">action</eq> ">
-				<a href="{:U('Home/Chat/index')}">随言碎语</a>
-			</li>
-			<li class="cname">
-				<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>
-			</li>
-		</ul>
-		<ul id="login-word" class="user">
-			<empty name="Think.session.user.head_img" >
-				<li class="login" onclick="showlogin()">登陆</li>
-			<else />
-				<li class="user-info">
-					<span><img class="head_img" src="{$Think.session.user.head_img}"/></span>
-					<span class="nickname">{$Think.session.user.nickname}</span>
-					<span><a href="{:U('Home/User/logout')}">退出</a></span>
+				<foreach name="categorys" item="v">
+					<li class="b-nav-cname <eq name="cid" value="$v['cid']">b-nav-active</eq> ">
+						<a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
+					</li>
+				</foreach>
+				<li class="b-nav-cname <eq name="cid" value="chat">b-nav-active</eq> ">
+					<a href="{:U('Home/Chat/index')}">随言碎语</a>
 				</li>
-			</empty>
-
-		</ul>
+			</ul>
+			<ul id="b-login-word" class="nav navbar-nav navbar-right">
+				<empty name="Think.session.user.head_img" >
+					<li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
+				<else />
+					<li class="b-user-info">
+						<span><img class="b-head_img" src="{$Think.session.user.head_img}"/></span>
+						<span class="b-nickname">{$Think.session.user.nickname}</span>
+						<span><a href="{:U('Home/User/logout')}">退出</a></span>
+					</li>
+				</empty>
+			</ul>
+		</div>
 	</div>
-</div>
+</header>
 <!-- 顶部导航结束 -->
-<div class="b-h-40"></div>

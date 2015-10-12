@@ -1,7 +1,7 @@
 // js动态加载表情
 tuzkiNumber=1;
 function getTuzki(obj){
-	var tuzkiObj=$(obj).siblings('.tuzki');
+	var tuzkiObj=$(obj).siblings('.b-tuzki');
 	if(tuzkiNumber){
 		tuzkiObj.show();
 		var alt=['Kiss', 'Love', 'Yeah', '啊！', '背扭', '顶', '抖胸', '88', '汗', '瞌睡', '鲁拉', '拍砖', '揉脸', '生日快乐', '摊手', '睡觉', '瘫坐', '无聊', '星星闪', '旋转', '也不行', '郁闷', '正Music', '抓墙', '撞墙至死', '歪头', '戳眼', '飘过', '互相拍砖', '砍死你', '扔桌子', '少林寺', '什么？', '转头', '我爱牛奶', '我踢', '摇晃', '晕厥', '在笼子里', '震荡'];
@@ -33,11 +33,11 @@ function formatNum(Source,Length){
 }
 
 // 点击添加表情
-$('html').on('click','.tuzki img', function(event) {
+$('html').on('click','.b-tuzki img', function(event) {
 	var str=$(this).prop("outerHTML");
-	$(this).parents('.box-textarea').eq(0).find('.box-content').focus();
+	$(this).parents('.b-box-textarea').eq(0).find('.b-box-content').focus();
 	insertHtmlAtCaret(str);
-	$(this).parents('.tuzki').hide();
+	$(this).parents('.b-tuzki').hide();
 	tuzkiNumber=1;
 });
 
@@ -76,7 +76,7 @@ function insertHtmlAtCaret(str) {
 function comment(obj){
 	$.post(check_login, function(data) {
 		if(data==1){
-			var content=$(obj).parents('.box-textarea').eq(0).find('.box-content').html();
+			var content=$(obj).parents('.b-box-textarea').eq(0).find('.b-box-content').html();
 			if(content!=''){
 				var aid=$(obj).attr('aid');
 				var pid=$(obj).attr('pid');
@@ -91,45 +91,45 @@ function comment(obj){
 					var now = new Date();
 					// 获取当前时间
 					var date=now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate()+'&emsp;'+(now.getHours()<10?"0":"")+now.getHours()+':'+(now.getMinutes()<10?"0":"")+now.getMinutes()+':'+(now.getSeconds()<10?"0":"")+now.getSeconds();
-					var headImg=$('#login-word .head_img').attr('src');
-					var nickName=$('#login-word .nickname').text();
+					var headImg=$('#b-login-word .b-head_img').attr('src');
+					var nickName=$('#b-login-word .b-nickname').text();
 					if(pid==0){
 						// pid为0表示新增评论
-						var str='<div class="user parent"><img class="user_pic" src="'+headImg+'" alt="白俊遥博客" title="白俊遥博客"><p class="content"></span><span class="user-name">'+nickName+'</span>：'+content+'</p><p class="date">'+date+' <a href="javascript:;" aid="'+aid+'" pid="'+newPid+'" username="'+nickName+'" onclick="reply(this)">回复</a></p></div>';
-						$('.user-comment').prepend(str);
+						var str='<div class="row b-user b-parent"><div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 b-pic-col"><img title="白俊遥博客" alt="白俊遥博客" src="'+headImg+'" class="b-user-pic"></div><div class="col-xs-10 col-sm-11 col-md-11 col-lg-11 b-content-col"><p class="b-content"><span class="b-user-name">'+nickName+'</span>：'+content+'</p><p class="b-date">'+date+' <a onclick="reply(this)" username="'+nickName+'" pid="'+newPid+'" aid="'+aid+'" href="javascript:;">回复</a></p><div class="b-clear-float"></div></div></div>';
+						$('.b-user-comment').prepend(str);
 					}else{
 						// pid不为0表示是回复评论
-						var str='<div class="user child"><img class="user_pic" src="'+headImg+'" alt="白俊遥博客" title="白俊遥博客"><p class="content"><span class="reply-name">'+nickName+'</span><span class="reply">回复</span><span class="user-name">'+replyName+'</span>：'+content+'</p><p class="date">'+date+' <a href="javascript:;" aid="'+aid+'" pid="'+newPid+'" username="'+replyName+'" onclick="reply(this)">回复</a></p></div>';
-						$(obj).parents('.parent').eq(0).append(str);
-						$(obj).parents('.box-textarea').eq(0).remove();
+						var str='<div class="row b-user b-child"><div class="col-xs-2 col-sm-1 col-md-1 col-lg-1 b-pic-col"><img title="白俊遥博客" alt="白俊遥博客" src="'+headImg+'" class="b-user-pic"></div><ul class="col-xs-10 col-sm-11 col-md-11 col-lg-11 b-content-col"><li class="b-content"><span class="b-reply-name">'+nickName+'</span><span class="b-reply">回复</span><span class="b-user-name">'+replyName+'</span>：'+content+'</li><li class="b-date">'+date+' <a onclick="reply(this)" pid="'+newPid+'" aid="'+aid+'" username="'+replyName+'" href="javascript:;">回复</a></li><li class="b-clear-float"></li></ul></div>';
+						$(obj).parents('.b-content-col').eq(0).append(str);
+						$(obj).parents('.b-box-textarea').eq(0).remove();
 					}
 
-					$(obj).parents('.box-textarea').eq(0).find('.box-content').html('');
+					$(obj).parents('.b-box-textarea').eq(0).find('.b-box-content').html('');
 				});
 			}
 		}else{
-			$('#modal-login').modal('show');
+			$('#b-modal-login').modal('show');
 		}
 	});
 }
 
 // 回复评论
 function reply(obj){
-	var boxTextarea=$('.user-comment').find('.box-textarea');
+	var boxTextarea=$('.b-user-comment').find('.b-box-textarea');
 	if(boxTextarea.length==1){
 		boxTextarea.remove();
 	}
 	var aid=$(obj).attr('aid');
 	var pid=$(obj).attr('pid');
 	var username=$(obj).attr('username');
-	var str='<div class="box-textarea"><div class="box-content" contenteditable="true"></div><ul class="emote-submit"><li class="emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><div class="tuzki"></div></li><li class="submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
-	$(obj).parents('.date').eq(0).after(str);
+	var str='<div class="b-box-textarea"><div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后回复评论</div><ul class="b-emote-submit"><li class="b-emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><div class="b-tuzki"></div></li><li class="b-submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
+	$(obj).parents('.b-date').eq(0).after(str);
 }
 
 // 删除提示和样式
 function delete_hint(obj){
 	var word=$(obj).text();
-	if(word=='请先登陆后发表评论'){
+	if(word=='请先登陆后发表评论' || word=='请先登陆后回复评论'){
 		$(obj).text('');
 		$(obj).css('color', '#333');
 	}

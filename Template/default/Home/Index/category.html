@@ -9,28 +9,25 @@
 <!-- 顶部导航开始 -->
 <include file="./Template/default/Home/Public/public_nav.html" />
 <!-- 顶部导航结束 -->
-
+<div class="b-h-70"></div>
 <!-- 主体部分开始 -->
-<div id="content">
-	<div class="b-inside">
-		<!-- 左侧列表开始 -->
-		<div class="left">
-			<!-- 文章列表开始 -->
-			<include file="./Template/default/Home/Public/public_list.html" />
-			<!-- 文章列表结束 -->
-		</div>
-		<!-- 左侧列表结束 -->
+<div id="b-content" class="container">
+	<div class="row">
+		<!-- 通用左侧列表开始 -->
+		<include file="./Template/default/Home/Public/public_list.html" />
+		<!-- 通用左侧列表结束 -->
 
-		<!-- 右侧内容开始 -->
+		<!-- 通用右侧开始 -->
 		<include file="./Template/default/Home/Public/public_right.html" />
-		<!-- 右侧内容结束 -->
+		<!-- 通用右侧结束 -->
+	</div>
+	<div class="row">
+		<!-- 底部文件开始 -->
+		<include file="./Template/default/Home/Public/public_foot.html" />
+		<!-- 通用底部文件结束 -->
 	</div>
 </div>
 <!-- 主体部分结束 -->
-
-<!-- 通用底部文件开始 -->
-<include file="./Template/default/Home/Public/public_foot.html" />
-<!-- 通用底部文件结束 -->
 
 <!-- 登陆框开始 -->
 <include file="./Template/default/Home/Public/public_login.html" />
