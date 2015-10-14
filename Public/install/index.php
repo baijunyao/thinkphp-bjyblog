@@ -9,19 +9,19 @@ if (file_exists('./install.lock')) {
     die;
 }
 // 同意协议页面
-if(!isset($_GET['c']) || $_GET['c']=='agreement'){
+if(@!isset($_GET['c']) || @$_GET['c']=='agreement'){
     require './agreement.html';
 }
 // 检测环境页面
-if($_GET['c']=='test'){
+if(@$_GET['c']=='test'){
     require './test.html';
 }
 // 创建数据库页面
-if($_GET['c']=='create'){
+if(@$_GET['c']=='create'){
     require './create.html';
 }
 // 安装成功页面
-if($_GET['c']=='success'){
+if(@$_GET['c']=='success'){
     // 判断是否为post
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $data=$_POST;

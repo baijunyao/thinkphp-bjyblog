@@ -2,7 +2,7 @@
 <html lang="en">
 <!-- head头部分开始 -->
 <head>
-	<include file="./Template/default/Home/Public/public_head.html" title="{$article['current']['title']}-"  keywords="{$article['current']['category']['keywords']}" description="{$article['current']['description']}" />
+	<include file="Public/public_head" title="{$article['current']['title']}-"  keywords="{$article['current']['category']['keywords']}" description="{$article['current']['description']}" />
 	<script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
 	<script type="text/javascript">
@@ -16,7 +16,7 @@
 <!-- head头部分结束 -->
 <body>
 <!-- 顶部导航开始 -->
-<include file="./Template/default/Home/Public/public_nav.html" />
+<include file="Public/public_nav" />
 <!-- 顶部导航结束 -->
 <div class="b-h-70"></div>
 <!-- 主体部分开始 -->
@@ -28,13 +28,13 @@
 				<h1 class="col-xs-12 col-md-12 col-lg-12 b-title">{$article['current']['title']}</h1>
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<ul class="row b-metadata">
-						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-user"></i> {$article['current']['author']}</li>
+						<li class="col-xs-5 col-md-2 col-lg-3"><i class="fa fa-user"></i> {$article['current']['author']}</li>
 						<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> {$article['current']['addtime']|date='Y-m-d H:i:s',###}</li>
 						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$article['current']['category']['cname']}</a>
 						<if condition="!empty($article['current']['tag'])">
-							<li class="col-xs-7 col-md-5 col-lg-5 "><i class="fa fa-tags"></i>
+							<li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
 								<foreach name="article['current']['tag']" item="v">
-									<a href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
+									<a class="b-tag-name" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}">{$v['tname']}</a>
 								</foreach>
 							</li>
 						</if>
@@ -69,25 +69,25 @@
 				</div>
 			</div>
 			<!-- 引入通用评论开始 -->
-			<include file="./Template/default/Home/Public/public_comment.html" />
+			<include file="Public/public_comment" />
 			<!-- 引入通用评论结束 -->
 		</div>
 		<!-- 左侧文章结束 -->
 
 		<!-- 通用右侧开始 -->
-		<include file="./Template/default/Home/Public/public_right.html" />
+		<include file="Public/public_right" />
 		<!-- 通用右侧结束 -->
 	</div>
 	<div class="row">
 		<!-- 底部文件开始 -->
-		<include file="./Template/default/Home/Public/public_foot.html" />
+		<include file="Public/public_foot" />
 		<!-- 通用底部文件结束 -->
 	</div>
 </div>
 <!-- 主体部分结束 -->
 
 <!-- 登陆框开始 -->
-<include file="./Template/default/Home/Public/public_login.html" />
+<include file="Public/public_login" />
 <!-- 登陆框结束 -->
 </body>
 </html>

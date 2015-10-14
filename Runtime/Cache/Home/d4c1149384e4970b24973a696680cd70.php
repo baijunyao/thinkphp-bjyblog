@@ -72,19 +72,20 @@
 				<p class="b-logo-word">'白俊遥博客'</p>
 				<p class="b-logo-end">;</p>
 			</a>
-			<!-- <a class="b-logo-a" href="<?php echo U('Home/Index/index');?>"></a> -->
-			<!-- <a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">白俊遥博客</a> -->
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
-						<a href="<?php echo U('Home/Index/index');?>">首页</a>
-					</li>
-					<li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
+				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
+					<a href="<?php echo U('Home/Index/index');?>">首页</a>
+				</li>
+				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
 						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
 					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+				</li>
+				<li class="b-nav-cname hidden-sm">
+					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
@@ -112,11 +113,11 @@
 				<h1 class="col-xs-12 col-md-12 col-lg-12 b-title"><?php echo ($article['current']['title']); ?></h1>
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<ul class="row b-metadata">
-						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-user"></i> <?php echo ($article['current']['author']); ?></li>
+						<li class="col-xs-5 col-md-2 col-lg-3"><i class="fa fa-user"></i> <?php echo ($article['current']['author']); ?></li>
 						<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> <?php echo (date('Y-m-d H:i:s',$article['current']['addtime'])); ?></li>
 						<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($article['current']['category']['cname']); ?></a>
-						<?php if(!empty($article['current']['tag'])): ?><li class="col-xs-7 col-md-5 col-lg-5 "><i class="fa fa-tags"></i>
-								<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
+						<?php if(!empty($article['current']['tag'])): ?><li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
+								<?php if(is_array($article['current']['tag'])): foreach($article['current']['tag'] as $key=>$v): ?><a class="b-tag-name" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>"><?php echo ($v['tname']); ?></a><?php endforeach; endif; ?>
 							</li><?php endif; ?>
 					</ul>
 				</div>

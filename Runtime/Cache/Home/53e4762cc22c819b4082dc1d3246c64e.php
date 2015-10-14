@@ -64,19 +64,20 @@
 				<p class="b-logo-word">'白俊遥博客'</p>
 				<p class="b-logo-end">;</p>
 			</a>
-			<!-- <a class="b-logo-a" href="<?php echo U('Home/Index/index');?>"></a> -->
-			<!-- <a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">白俊遥博客</a> -->
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
-						<a href="<?php echo U('Home/Index/index');?>">首页</a>
-					</li>
-					<li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
+				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
+					<a href="<?php echo U('Home/Index/index');?>">首页</a>
+				</li>
+				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
 						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
 					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+				</li>
+				<li class="b-nav-cname hidden-sm">
+					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
@@ -101,25 +102,25 @@
 		<!-- 左侧文章开始 -->
 		<div class="col-xs-12 col-md-12 col-lg-8 b-chat">
 			<div class="b-chat-left">
-				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "0"): ?><ul class="b-chat-one ">
-							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
-							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
-							<div class="b-arrows-right1">
-								<div class="b-arrows-round"></div>
-							</div>
-							<div class="b-arrows-right2"></div>
-						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+				<?php if(is_array($data['odd'])): $i = 0; $__LIST__ = $data['odd'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><ul class="b-chat-one ">
+						<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+						<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+						<div class="b-arrows-right1">
+							<div class="b-arrows-round"></div>
+						</div>
+						<div class="b-arrows-right2"></div>
+					</ul><?php endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 			<div class="b-chat-middle"></div>
 			<div class="b-chat-right">
-				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "1"): ?><ul class="b-chat-one ">
-							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
-							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
-							<div class="b-arrows-right1">
-								<div class="b-arrows-round"></div>
-							</div>
-							<div class="b-arrows-right2"></div>
-						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+				<?php if(is_array($data['even'])): $i = 0; $__LIST__ = $data['even'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><ul class="b-chat-one ">
+						<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+						<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+						<div class="b-arrows-right1">
+							<div class="b-arrows-round"></div>
+						</div>
+						<div class="b-arrows-right2"></div>
+					</ul><?php endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 		</div>
 		<!-- 左侧文章结束 -->

@@ -75,6 +75,9 @@
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
 					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
 				</li>
+				<li class="b-nav-cname hidden-sm">
+					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>
+				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
 				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
@@ -111,9 +114,9 @@
 					<li class="col-xs-5 col-md-2 col-lg-3"><i class="fa fa-user"></i> <?php echo ($v['author']); ?></li>
 					<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> <?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 					<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-					<?php if(!empty($v['tag'])): ?><li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
-							<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a class="b-tag-name" href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-						</li><?php endif; ?>
+					<li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
+						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a class="b-tag-name" href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
+					</li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-md-12 col-lg-12">
@@ -135,11 +138,11 @@
 					<!-- 文章描述开始 -->
 					<div class="col-xs-12 col-sm-6  col-md-6 col-lg-8 b-des-read">
 						<?php echo ($v['description']); ?>
-						<!-- <a class="hidden-xs b-readall"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a> -->
 					</div>
 					<!-- 文章描述结束 -->
 				</div>
 			</div>
+			<a class=" b-readall"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
 		</div><?php endforeach; endif; ?>
 	<!-- 循环文章列表结束 -->
 
@@ -226,7 +229,7 @@
 					<h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-md-12 col-lg-12 b-login-row">
 				<ul class="row">
 					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
 						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
