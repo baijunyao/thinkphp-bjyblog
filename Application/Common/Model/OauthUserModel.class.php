@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 第三方登陆model
 */
-class OauthUserModel extends Model{
+class OauthUserModel extends BaseModel{
 	// 自动验证
 	protected $_validate=array(
 		array('type','require','类型必填'),

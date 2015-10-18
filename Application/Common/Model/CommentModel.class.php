@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 评论model
 */
-class CommentModel extends Model{
+class CommentModel extends BaseModel{
 
 	// 添加数据
 	public function addData($type){

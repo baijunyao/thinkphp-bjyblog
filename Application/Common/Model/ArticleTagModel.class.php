@@ -1,10 +1,10 @@
-<?php  
+<?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 文章标签关联表model
 */
-class ArticleTagModel extends Model{
+class ArticleTagModel extends BaseModel{
 
 	/**
 	 * 添加数据
@@ -35,7 +35,7 @@ class ArticleTagModel extends Model{
 		}else{
 			return $this->where("aid=$aid")->getField('tid',true);
 		}
-		
+
 	}
 
 

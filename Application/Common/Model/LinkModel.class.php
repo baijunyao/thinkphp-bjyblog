@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 友情链接model
 */
-class LinkModel extends Model{
+class LinkModel extends BaseModel{
 	// 定义自动验证规则
 	protected $_validate=array(
 		array('lname','require','链接名称必填'),

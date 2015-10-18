@@ -102,25 +102,25 @@
 		<!-- 左侧文章开始 -->
 		<div class="col-xs-12 col-md-12 col-lg-8 b-chat">
 			<div class="b-chat-left">
-				<?php if(is_array($data['odd'])): $i = 0; $__LIST__ = $data['odd'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><ul class="b-chat-one ">
-						<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
-						<li class="b-chat-content"><?php echo ($v['content']); ?></li>
-						<div class="b-arrows-right1">
-							<div class="b-arrows-round"></div>
-						</div>
-						<div class="b-arrows-right2"></div>
-					</ul><?php endforeach; endif; else: echo "" ;endif; ?>
+				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "0"): ?><ul class="b-chat-one ">
+							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+							<div class="b-arrows-right1">
+								<div class="b-arrows-round"></div>
+							</div>
+							<div class="b-arrows-right2"></div>
+						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 			<div class="b-chat-middle"></div>
 			<div class="b-chat-right">
-				<?php if(is_array($data['even'])): $i = 0; $__LIST__ = $data['even'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><ul class="b-chat-one ">
-						<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
-						<li class="b-chat-content"><?php echo ($v['content']); ?></li>
-						<div class="b-arrows-right1">
-							<div class="b-arrows-round"></div>
-						</div>
-						<div class="b-arrows-right2"></div>
-					</ul><?php endforeach; endif; else: echo "" ;endif; ?>
+				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "1"): ?><ul class="b-chat-one ">
+							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+							<div class="b-arrows-right1">
+								<div class="b-arrows-round"></div>
+							</div>
+							<div class="b-arrows-right2"></div>
+						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 		</div>
 		<!-- 左侧文章结束 -->
@@ -196,7 +196,7 @@
 					<h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-md-12 col-lg-12 b-login-row">
 				<ul class="row">
 					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
 						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>

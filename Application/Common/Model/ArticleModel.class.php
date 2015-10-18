@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 文章model
 */
-class ArticleModel extends Model{
+class ArticleModel extends BaseModel{
 	// 自动验证
 	protected $_validate=array(
 		array('tid','require','必须选择栏目'),

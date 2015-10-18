@@ -286,7 +286,7 @@
 					<h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-md-12 col-lg-12 b-login-row">
 				<ul class="row">
 					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
 						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>

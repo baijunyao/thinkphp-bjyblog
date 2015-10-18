@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 配置项model
 */
-class ConfigModel extends Model{
+class ConfigModel extends BaseModel{
 
 	// // 自动验证
 	// protected $_validate=array(

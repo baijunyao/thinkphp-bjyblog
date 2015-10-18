@@ -8,6 +8,9 @@ class IndexController extends HomeBaseController {
 
 	// 首页
 	public function index(){
+		p(C('URL_MODEL'));
+
+		// die;
 		$articles=D('Article')->getPageData();
 		$assign=array(
 			'articles'=>$articles['data'],

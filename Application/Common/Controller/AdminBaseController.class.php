@@ -1,22 +1,19 @@
-<?php  
+<?php
 namespace Common\Controller;
-use Think\Controller;
-
-class AdminBaseController extends Controller{
-	public function __construct(){
-		parent::__construct();
-		if(!isset($_SESSION['session_status'])){
-			$lifeTime = 3600;
-			session_set_cookie_params($lifeTime);
-			session('[start]');
-			session('session_status',1);
-		}
+use Common\Controller\BaseController;
+/**
+ * 后台基类Controller
+ */
+class AdminBaseController extends BaseController{
+	/**
+	 * 初始化方法
+	 */
+	public function _initialize(){
 		if(session('admin')!='is_login'){
 			redirect(U('Admin/Login/login'));
 		}
 	}
 
 
-	
 }
 

@@ -1,10 +1,10 @@
-<?php  
+<?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 分类model
 */
-class CategoryModel extends Model{
+class CategoryModel extends BaseModel{
 	// 自动验证
 	protected $_validate=array(
 		array('cname','require','分类名不能为空'),
@@ -50,7 +50,7 @@ class CategoryModel extends Model{
 	}
 
 	//传递数据库字段名 获取对应的数据
-	//不传递获取全部数据 
+	//不传递获取全部数据
 	public function getAllData($field='all',$tree=true){
 		if($field=='all'){
 			$data=$this->order('sort')->select();
@@ -65,14 +65,14 @@ class CategoryModel extends Model{
 		}
 	}
 
-	//传递cid和field获取对应的数据 
+	//传递cid和field获取对应的数据
 	public function getDataByCid($cid,$field='all'){
 		if($field=='all'){
 			return $this->where("cid=$cid")->find();
 		}else{
 			return $this->where("cid=$cid")->getField($field);
 		}
-		
+
 	}
 
 	// 传递cid获得所有子栏目

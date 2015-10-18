@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 闲言碎语model
 */
-class ChatModel extends Model{
+class ChatModel extends BaseModel{
 	// 定义自动验证规则
 	protected $_vachidate=array(
 		array('content','require','内容必填'),

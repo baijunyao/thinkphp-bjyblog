@@ -1,10 +1,10 @@
 <?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 文章图片关联表model
 */
-class ArticlePicModel extends Model{
+class ArticlePicModel extends BaseModel{
 
 	/**
 	 * 添加数据

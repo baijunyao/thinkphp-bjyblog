@@ -233,7 +233,7 @@ function get_rand_number($start=1,$end=10,$length=4){
 	$connt=0;
 	$temp=array();
 	while($connt<$length){
-		$temp[]=rand($start,$end);
+		$temp[]=mt_rand($start,$end);
 		$data=array_unique($temp);
 		$connt=count($data);
 	}

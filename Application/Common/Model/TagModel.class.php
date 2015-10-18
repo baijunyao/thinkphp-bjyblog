@@ -1,10 +1,10 @@
-<?php  
+<?php
 namespace Common\Model;
-use Think\Model;
+use Common\Model\BaseModel;
 /**
 * 标签model
 */
-Class TagModel extends Model{
+Class TagModel extends BaseModel{
 	// 添加标签
 	public function addData(){
 		$str=I('post.tnames');
@@ -22,7 +22,7 @@ Class TagModel extends Model{
 				}
 			}
 			return true;
-		}		
+		}
 
 	}
 
@@ -75,5 +75,5 @@ Class TagModel extends Model{
 	}
 
 
-	
+
 }
