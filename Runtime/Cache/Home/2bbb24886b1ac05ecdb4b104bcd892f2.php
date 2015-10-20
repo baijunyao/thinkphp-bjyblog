@@ -55,22 +55,32 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">白俊遥博客</a>
+			<a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">
+				<ul class="b-logo-code">
+					<li class="b-lc-start">&lt;?php</li>
+					<li class="b-lc-echo">echo</li>
+				</ul>
+				<p class="b-logo-word">'白俊遥博客'</p>
+				<p class="b-logo-end">;</p>
+			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
-						<a href="<?php echo U('Home/Index/index');?>">首页</a>
-					</li>
-					<li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
-						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
+				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
+					<a href="/">首页</a>
+				</li>
+				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
+						<a href="<?php echo U('category/'.$v['cid']);?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
-					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+					<a href="/chat">随言碎语</a>
+				</li>
+				<li class="b-nav-cname hidden-sm">
+					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="javascript:;" onclick="showlogin()">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
@@ -98,28 +108,28 @@
 		</div><?php endif; ?>
 	<!-- 循环文章列表开始 -->
 	<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="row b-one-article">
-			<h3 class="col-xs-12 col-md-12 col-lg-12"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
+			<h3 class="col-xs-12 col-md-12 col-lg-12"><a href="<?php echo ($v['url']); ?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
 			<div class="col-xs-12 col-md-12 col-lg-12 b-date">
 				<ul class="row">
-					<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-user"></i> <?php echo ($v['author']); ?></li>
+					<li class="col-xs-5 col-md-2 col-lg-3"><i class="fa fa-user"></i> <?php echo ($v['author']); ?></li>
 					<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> <?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
 					<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-					<?php if(!empty($v['tag'])): ?><li class="col-xs-7 col-md-5 col-lg-5 "><i class="fa fa-tags"></i>
-							<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-						</li><?php endif; ?>
+					<li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
+						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a class="b-tag-name" href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
+					</li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-md-12 col-lg-12">
 				<div class="row">
 					<!-- 文章封面图片开始 -->
 					<div class="col-sm-6 col-md-6 col-lg-4 hidden-xs">
-						<figure class="b-oa-pic">
-							<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">
+						<figure class="b-oa-pic b-style1">
+							<a href="<?php echo ($v['url']); ?>" target="_blank">
 								<img src="<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
 							</a>
 							<figcaption>
 								<!-- <p><?php echo ($v['title']); ?></p> -->
-								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
+								<a href="<?php echo ($v['url']); ?>" target="_blank"></a>
 							</figcaption>
 						</figure>
 					</div>
@@ -128,11 +138,11 @@
 					<!-- 文章描述开始 -->
 					<div class="col-xs-12 col-sm-6  col-md-6 col-lg-8 b-des-read">
 						<?php echo ($v['description']); ?>
-						<!-- <a class="hidden-xs b-readall"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a> -->
 					</div>
 					<!-- 文章描述结束 -->
 				</div>
 			</div>
+			<a class=" b-readall" href="<?php echo ($v['url']); ?>" target="_blank">阅读全文</a>
 		</div><?php endforeach; endif; ?>
 	<!-- 循环文章列表结束 -->
 
@@ -158,7 +168,7 @@
 			<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
 				<?php $tag_i=$tag_i==5?1:$tag_i ?>
 				<li class="b-tname">
-					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
+					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('tag/'.$v['tid']);?>" target="_blank"><?php echo ($v['tname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
 	</div>
@@ -166,7 +176,7 @@
 		<h4 class="b-title">置顶推荐</h4>
 		<p class="b-recommend-p">
 			<?php
- $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
+ $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('article/'.$field['aid']);?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
 	<div class="b-link">
@@ -210,39 +220,42 @@
 
 <!-- 登陆框开始 -->
 <!-- 登录模态框开始 -->
-<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
-      </div>
-      <ul class="modal-body">
-        <!-- <span id="qqLoginBtn"></span> -->
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default/Home/Public/image/sina-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default/Home/Public/image/douban-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default/Home/Public/image/renren-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
-        </li>
-        <li class="login-img">
-            <a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
-        </li>
-      </ul>
-
-    </div>
-  </div>
+<div class="modal fade" id="b-modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content row">
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title b-ta-center" id="myModalLabel">无需注册，用以下帐号即可直接登录</h4>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-12 col-lg-12 b-login-row">
+				<ul class="row">
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'qq'));?>"><img src="/Template/default/Home/Public/image/qq-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'sina'));?>"><img src="/Template/default/Home/Public/image/sina-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'douban'));?>"><img src="/Template/default/Home/Public/image/douban-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'renren'));?>"><img src="/Template/default/Home/Public/image/renren-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>'kaixin'));?>"><img src="/Template/default/Home/Public/image/kaixin-login.png" alt=""></a>
+					</li>
+					<li class="col-xs-6 col-md-4 col-lg-4 b-login-img">
+						<a href="<?php echo U('Home/User/oauth_login',array('type'=>''));?>"><img src="" alt=""></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- 登录模态框结束 -->
+
 <!-- 登陆框结束 -->
 </body>
 </html>

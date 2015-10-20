@@ -54,7 +54,7 @@
 							<empty name="article['prev']">
 								<span>没有了</span>
 							<else />
-								<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']))}">{$article['prev']['title']}</a>
+								<a href="{$article['prev']['url']}">{$article['prev']['title']}</a>
 							</empty>
 						</li>
 						<li class="b-next">
@@ -62,7 +62,7 @@
 							<empty name="article['next']">
 								<span>没有了</span>
 							<else />
-								<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['next']['aid']))}">{$article['next']['title']}</a>
+								<a href="{$article['next']['url']}">{$article['next']['title']}</a>
 							</empty>
 						</li>
 					</ul>

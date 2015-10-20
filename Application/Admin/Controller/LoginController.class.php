@@ -23,7 +23,7 @@ class LoginController extends PublicBaseController{
 				session('ADMIN_PASSWORD',$data['ADMIN_PASSWORD']);
 				$this->success('验证码输入错误',U('Admin/Login/login'));
 			}
-			
+
 		}else{
 			$this->display();
 		}
@@ -37,7 +37,6 @@ class LoginController extends PublicBaseController{
 
 	// 生成验证码
 	public function showVerify(){
-		// $config=
 		show_verify();
 	}
 

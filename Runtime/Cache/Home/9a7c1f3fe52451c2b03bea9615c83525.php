@@ -4,9 +4,9 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
-	<meta name="description" content="<?php echo ($category['description']); ?>" />
+	<title><?php echo ($title); ?>-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
+	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

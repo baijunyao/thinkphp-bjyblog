@@ -9,6 +9,7 @@ class HomeBaseController extends BaseController{
 	 * 初始化方法
 	 */
 	public function _initialize(){
+		parent::_initialize();
 		if(C('WEB_STATUS')!=1){
 			$this->display('Public/web_close');
 			die;
@@ -20,8 +21,6 @@ class HomeBaseController extends BaseController{
 			'links'=>D('Link')->getDataByState(0,1),
 			);
 		$this->assign($assign);
-		// 判断是否开启了rewrite 设置URL_MODEL
-		in_array('mod_rewrite', apache_get_modules()) ? C('URL_MODEL',2) : C('URL_MODEL',1);
 	}
 
 

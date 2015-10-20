@@ -8,9 +8,6 @@ class IndexController extends HomeBaseController {
 
 	// 首页
 	public function index(){
-		p(C('URL_MODEL'));
-
-		// die;
 		$articles=D('Article')->getPageData();
 		$assign=array(
 			'articles'=>$articles['data'],
@@ -21,7 +18,7 @@ class IndexController extends HomeBaseController {
 		$this->display();
 	}
 
-	// 导航分类
+	// 分类
 	public function category(){
 		$cid=I('get.cid',0,'intval');
 		$articles=D('Article')->getPageData($cid);
@@ -86,6 +83,16 @@ class IndexController extends HomeBaseController {
 		$this->display();
 	}
 
+	// 随言碎语
+	public function chat(){
+		$assign=array(
+			'data'=>D('Chat')->getDataByState(0,1),
+			'cid'=>'chat'
+			);
+		$this->assign($assign);
+		$this->display();
+	}
+
 	// 站内搜索
 	public function search(){
 		$search_word=I('get.search_word');
@@ -95,7 +102,7 @@ class IndexController extends HomeBaseController {
 			'articles'=>$articles['data'],
 			'page'=>$articles['page'],
 			'title'=>$search_word,
-			'title_word'=>'搜索到的与<span class="highlight">'.$search_word.'</span>相关的文章',
+			'title_word'=>'搜索到的与<span class="b-highlight">'.$search_word.'</span>相关的文章',
 			'cid'=>'index'
 			);
 		$this->assign($assign);

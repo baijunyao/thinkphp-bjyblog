@@ -68,13 +68,13 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
-					<a href="<?php echo U('Home/Index/index');?>">首页</a>
+					<a href="/">首页</a>
 				</li>
 				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
-						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
+						<a href="<?php echo U('cat/'.$v['cid']);?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
-					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+					<a href="/chat">随言碎语</a>
 				</li>
 				<li class="b-nav-cname hidden-sm">
 					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>

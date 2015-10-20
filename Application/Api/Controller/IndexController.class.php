@@ -3,7 +3,7 @@ namespace Api\Controller;
 use Common\Controller\HomeBaseController;
 
 class IndexController extends HomeBaseController{
-	
+
 	public function oauth(){
 		$type=I('get.type');
 		$code=I('get.code');
@@ -228,7 +228,7 @@ class IndexController extends HomeBaseController{
 		$taobao = \ThinkOauth::getInstance('taobao', $token);
 		$fields = 'user_id,nick,sex,buyer_credit,avatar,has_shop,vip_info';
 		$data   = $taobao->call('taobao.user.buyer.get', "fields={$fields}");
-		
+
 		if(!empty($data['user_buyer_get_response']['user'])){
 			$user = $data['user_buyer_get_response']['user'];
 			$userInfo['type'] = 'TAOBAO';
@@ -240,12 +240,12 @@ class IndexController extends HomeBaseController{
 			throw_exception("获取淘宝网用户信息失败：{$data['error_response']['msg']}");
 		}
 	}
-	
+
 	//登录成功，获取百度用户信息
 	public function baidu($token){
 		$baidu = \ThinkOauth::getInstance('baidu', $token);
 		$data  = $baidu->call('passport/users/getLoggedInUser');
-		
+
 		if(!empty($data['uid'])){
 			$userInfo['type'] = 'BAIDU';
 			$userInfo['name'] = $data['uid'];
@@ -261,7 +261,7 @@ class IndexController extends HomeBaseController{
 	public function kaixin($token){
 		$kaixin = \ThinkOauth::getInstance('kaixin', $token);
 		$data   = $kaixin->call('users/me');
-		
+
 		if(!empty($data['uid'])){
 			$userInfo['type'] = 5;
 			$userInfo['name'] = $data['uid'];
@@ -277,7 +277,7 @@ class IndexController extends HomeBaseController{
 	public function sohu($token){
 		$sohu = \ThinkOauth::getInstance('sohu', $token);
 		$data = $sohu->call('user/get_info');
-		
+
 		if('success' == $data['message'] && !empty($data['data'])){
 			$userInfo['type'] = 'SOHU';
 			$userInfo['name'] = $data['data']['open_id'];

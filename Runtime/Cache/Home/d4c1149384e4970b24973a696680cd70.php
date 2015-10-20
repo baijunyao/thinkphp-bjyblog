@@ -76,13 +76,13 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
-					<a href="<?php echo U('Home/Index/index');?>">首页</a>
+					<a href="/">首页</a>
 				</li>
 				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
-						<a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>"><?php echo ($v['cname']); ?></a>
+						<a href="<?php echo U('category/'.$v['cid']);?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
-					<a href="<?php echo U('Home/Chat/index');?>">随言碎语</a>
+					<a href="/chat">随言碎语</a>
 				</li>
 				<li class="b-nav-cname hidden-sm">
 					<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank" rel="nofollow">thinkbjy</a>
@@ -132,13 +132,13 @@
 							上一篇：
 							<?php if(empty($article['prev'])): ?><span>没有了</span>
 							<?php else: ?>
-								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['prev']['aid']));?>"><?php echo ($article['prev']['title']); ?></a><?php endif; ?>
+								<a href="<?php echo ($article['prev']['url']); ?>"><?php echo ($article['prev']['title']); ?></a><?php endif; ?>
 						</li>
 						<li class="b-next">
 							下一篇：
 							<?php if(empty($article['next'])): ?><span>没有了</span>
 							<?php else: ?>
-								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'aid'=>$article['next']['aid']));?>"><?php echo ($article['next']['title']); ?></a><?php endif; ?>
+								<a href="<?php echo ($article['next']['url']); ?>"><?php echo ($article['next']['title']); ?></a><?php endif; ?>
 						</li>
 					</ul>
 				</div>
@@ -225,7 +225,7 @@
 			<?php if(is_array($tags)): foreach($tags as $k=>$v): $tag_i++ ?>
 				<?php $tag_i=$tag_i==5?1:$tag_i ?>
 				<li class="b-tname">
-					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('Home/Index/tag',array('tid'=>$v['tid']));?>" target="_blank"><?php echo ($v['tname']); ?></a>
+					<a class="tstyle-<?php echo ($tag_i); ?>" href="<?php echo U('tag/'.$v['tid']);?>" target="_blank"><?php echo ($v['tname']); ?></a>
 				</li><?php endforeach; endif; ?>
 		</ul>
 	</div>
@@ -233,7 +233,7 @@
 		<h4 class="b-title">置顶推荐</h4>
 		<p class="b-recommend-p">
 			<?php
- $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
+ $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('article/'.$field['aid']);?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
 	<div class="b-link">

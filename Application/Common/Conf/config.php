@@ -1,8 +1,8 @@
 <?php
 return array(
 
-//*************************************附加设置***********************************
-	'SHOW_PAGE_TRACE' 		=>	false,
+//***********************************附加设置*************************************
+	'SHOW_PAGE_TRACE' 		=>	false,							 //关闭Trace信息
     'TAGLIB_BUILD_IN'       =>  'Cx,Common\Tag\My',  			 //加载自定义标签
 	'LOAD_EXT_CONFIG'       =>  'db,webconfig,oauth',        	 //加载网站设置文件
 	'TMPL_PARSE_STRING'		=> 	array(			      			 //定义常用路径
@@ -14,15 +14,15 @@ return array(
 	    '__ADMIN_IMAGE__'	=> 	__ROOT__.trim(TMPL_PATH,'.').'Admin/Public/image',
 	),
 //***********************************URL设置**************************************
-	'MODULE_ALLOW_LIST' 	=>  array('Home','Admin','Api'),  		//允许访问列表
-//***********************************URL设置**************************************
-	'TMPL_EXCEPTION_FILE'	=>  APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',
+	'MODULE_ALLOW_LIST' 	=>  array('Home','Admin','Api'),	//允许访问列表
+	'TMPL_EXCEPTION_FILE'	=>  APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',									//404设置
 //***********************************SESSION设置**********************************
-	'SESSION_AUTO_START'    =>  false,							//禁止自动开启session
 	'SESSION_OPTIONS'       =>  array(
 		'name'				=>	'BJYSESSION',					//设置session名
-		// 'domain'			=>	'baijunyao.com',				//设置session作用域
+		'expire'			=>	24*3600*15,						//SESSION保存15天
+		'use_trans_sid'		=>	1,								//跨页传递
+		'use_only_cookies'	=>	0,								//是否只开启基于cookies的session的会话方式
 	),
 //***********************************其他设置*************************************
-	'THINK_INFORMATION'     =>  '1.0',
+	'THINK_INFORMATION'     =>  '1.0',							//thinkbjy版本
 );

@@ -1,0 +1,14 @@
+[ 2015-10-20T22:59:42+08:00 ] 127.0.0.1 /index.php/Api/Index/oauth/type/qq?code=82178EC9512A99DF551EA699D2DD0D5E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `bjy_category` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `bjy_category` ORDER BY sort  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `bjy_tag` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `bjy_tag`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `bjy_link` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `bjy_link` WHERE `is_delete` = 0 AND `is_show` = 1 ORDER BY sort  [ RunTime:0.0004s ]
+

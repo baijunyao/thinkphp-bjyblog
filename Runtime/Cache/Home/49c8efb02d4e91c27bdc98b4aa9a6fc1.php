@@ -4,9 +4,9 @@
 <head>
 <!-- head头部分开始 -->
 	<meta charset="UTF-8">
-	<title><?php echo ($category['cname']); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo ($category['keywords']); ?>" />
-	<meta name="description" content="<?php echo ($category['description']); ?>" />
+	<title>随言碎语-<?php echo (C("WEB_NAME")); ?></title>
+	<meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>" />
+	<meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -41,6 +41,7 @@
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
 
+<script type="text/javascript" src="/Template/default/Home/Public/js/chat.js"></script>
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -55,7 +56,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">
+			<a class="navbar-brand" href="/">
 				<ul class="b-logo-code">
 					<li class="b-lc-start">&lt;?php</li>
 					<li class="b-lc-echo">echo</li>
@@ -70,7 +71,7 @@
 					<a href="/">首页</a>
 				</li>
 				<?php if(is_array($categorys)): foreach($categorys as $key=>$v): ?><li class="b-nav-cname <?php if(($cid) == $v['cid']): ?>b-nav-active<?php endif; ?> ">
-						<a href="<?php echo U('cat/'.$v['cid']);?>"><?php echo ($v['cname']); ?></a>
+						<a href="<?php echo U('category/'.$v['cid']);?>"><?php echo ($v['cname']); ?></a>
 					</li><?php endforeach; endif; ?>
 				<li class="b-nav-cname <?php if(($cid) == "chat"): ?>b-nav-active<?php endif; ?> ">
 					<a href="/chat">随言碎语</a>
@@ -98,65 +99,31 @@
 <!-- 主体部分开始 -->
 <div id="b-content" class="container">
 	<div class="row">
-		<!-- 通用左侧列表开始 -->
-		<!-- 左侧列表开始 -->
-<div class="col-xs-12 col-md-12 col-lg-8">
-	<?php if(!empty($title_word)): ?><div class="row b-tag-title">
-			<div class="col-xs-12 col-md-12 col-lg-12">
-				<h2><?php echo ($title_word); ?></h2>
+		<!-- 左侧文章开始 -->
+		<div class="col-xs-12 col-md-12 col-lg-8 b-chat">
+			<div class="b-chat-left">
+				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "0"): ?><ul class="b-chat-one ">
+							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+							<div class="b-arrows-right1">
+								<div class="b-arrows-round"></div>
+							</div>
+							<div class="b-arrows-right2"></div>
+						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</div>
-		</div><?php endif; ?>
-	<!-- 循环文章列表开始 -->
-	<?php if(is_array($articles)): foreach($articles as $key=>$v): ?><div class="row b-one-article">
-			<h3 class="col-xs-12 col-md-12 col-lg-12"><a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></h3>
-			<div class="col-xs-12 col-md-12 col-lg-12 b-date">
-				<ul class="row">
-					<li class="col-xs-5 col-md-2 col-lg-3"><i class="fa fa-user"></i> <?php echo ($v['author']); ?></li>
-					<li class="col-xs-7 col-md-3 col-lg-3"><i class="fa fa-calendar"></i> <?php echo (date('Y-m-d H:i:s',$v['addtime'])); ?></li>
-					<li class="col-xs-5 col-md-2 col-lg-2"><i class="fa fa-list-alt"></i> <a href="<?php echo U('Home/Index/category',array('cid'=>$v['cid']));?>" target="_blank"><?php echo ($v['category']['cname']); ?></a>
-					<li class="col-xs-7 col-md-5 col-lg-4 "><i class="fa fa-tags"></i>
-						<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): ?><a class="b-tag-name" href="<?php echo U('Home/Index/tag',array('tid'=>$n['tid']));?>" target="_blank"><?php echo ($n['tname']); ?></a><?php endforeach; endif; ?>
-					</li>
-				</ul>
+			<div class="b-chat-middle"></div>
+			<div class="b-chat-right">
+				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if(($mod) == "1"): ?><ul class="b-chat-one ">
+							<li class="b-chat-title "><?php echo (date('Y-m-d H:i:s',$v['date'])); ?></li>
+							<li class="b-chat-content"><?php echo ($v['content']); ?></li>
+							<div class="b-arrows-right1">
+								<div class="b-arrows-round"></div>
+							</div>
+							<div class="b-arrows-right2"></div>
+						</ul><?php endif; endforeach; endif; else: echo "" ;endif; ?>
 			</div>
-			<div class="col-xs-12 col-md-12 col-lg-12">
-				<div class="row">
-					<!-- 文章封面图片开始 -->
-					<div class="col-sm-6 col-md-6 col-lg-4 hidden-xs">
-						<figure class="b-oa-pic b-style1">
-							<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">
-								<img src="<?php echo ($v['pic_path']); ?>" alt="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>" title="<?php echo (C("IMAGE_TITLE_ALT_WORD")); ?>">
-							</a>
-							<figcaption>
-								<!-- <p><?php echo ($v['title']); ?></p> -->
-								<a href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank"></a>
-							</figcaption>
-						</figure>
-					</div>
-					<!-- 文章封面图片结束 -->
-
-					<!-- 文章描述开始 -->
-					<div class="col-xs-12 col-sm-6  col-md-6 col-lg-8 b-des-read">
-						<?php echo ($v['description']); ?>
-					</div>
-					<!-- 文章描述结束 -->
-				</div>
-			</div>
-			<a class=" b-readall"  href="<?php echo U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']));?>" target="_blank">阅读全文</a>
-		</div><?php endforeach; endif; ?>
-	<!-- 循环文章列表结束 -->
-
-	<!-- 列表分页开始 -->
-	<div class="row">
-		<div class="col-xs-12 col-md-12 col-lg-12 b-page">
-			<?php echo ($page); ?>
 		</div>
-	</div>
-	<!-- 列表分页结束 -->
-</div>
-<!-- 左侧列表结束 -->
-
-		<!-- 通用左侧列表结束 -->
+		<!-- 左侧文章结束 -->
 
 		<!-- 通用右侧开始 -->
 		<!-- 通用右部区域开始 -->
@@ -176,7 +143,7 @@
 		<h4 class="b-title">置顶推荐</h4>
 		<p class="b-recommend-p">
 			<?php
- $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('Home/Index/article',array('aid'=>$field['aid']));?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
+ $recommend=M('Article')->field('aid,title')->where("is_show=1 and is_delete=0 and is_top=1")->limit(10)->select(); foreach ($recommend as $k => $field) { $url=U('Home/Index/article',array('aid'=>$field['aid'])); ?><a class="b-recommend-a" href="<?php echo U('article/'.$field['aid']);?>" target="_blank"><span class="fa fa-th-list b-black"></span> <?php echo ($field['title']); ?></a><?php } ?>
 		</p>
 	</div>
 	<div class="b-link">
