@@ -80,7 +80,7 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="javascript:;" onclick="login()">登陆</a></li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>

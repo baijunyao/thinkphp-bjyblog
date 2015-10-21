@@ -17,13 +17,13 @@ class QqSDK extends ThinkOauth{
 	 * @var string
 	 */
 	protected $GetRequestCodeURL = 'https://graph.qq.com/oauth2.0/authorize';
-	
+
 	/**
 	 * 获取access_token的api接口
 	 * @var string
 	 */
 	protected $GetAccessTokenURL = 'https://graph.qq.com/oauth2.0/token';
-	
+
 	/**
 	 * 获取request_code的额外参数,可在配置中修改 URL查询字符串格式
 	 * @var srting
@@ -51,13 +51,13 @@ class QqSDK extends ThinkOauth{
 			'openid'             => $this->openid(),
 			'format'             => 'json'
 		);
-		
+
 		$data = $this->http($this->url($api), $this->param($params, $param), $method);
 		return json_decode($data, true);
 	}
-	
+
 	/**
-	 * 解析access_token方法请求后的返回值 
+	 * 解析access_token方法请求后的返回值
 	 * @param string $result 获取access_token的方法的返回值
 	 */
 	protected function parseToken($result, $extend){
@@ -69,7 +69,7 @@ class QqSDK extends ThinkOauth{
 		} else
 			throw new Exception("获取腾讯QQ ACCESS_TOKEN 出错：{$result}");
 	}
-	
+
 	/**
 	 * 获取当前授权应用的openid
 	 * @return string

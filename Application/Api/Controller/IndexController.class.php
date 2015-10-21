@@ -10,7 +10,6 @@ class IndexController extends HomeBaseController{
 		//加载ThinkOauth类并实例化一个对象
 		import("Org.ThinkSDK.ThinkOauth");
 		$sns  = \ThinkOauth::getInstance($type);
-		// echo 2;die;
 		//腾讯微博需传递的额外参数
 		$extend = null;
 		if($type == 'tencent'){
@@ -18,7 +17,6 @@ class IndexController extends HomeBaseController{
 		}
 
 		$token = $sns->getAccessToken($code , $extend);
-		// p($token);die;
 		//获取当前登录用户信息
 		if(is_array($token)){
 			$user_info = $this->$type($token);
@@ -42,7 +40,8 @@ class IndexController extends HomeBaseController{
 				'nickname'=>$data['nickname'],
 				);
 			session('user',$login_info);
-			redirect(session('this_url'));
+			$_COOKIE['this_url']=empty($_COOKIE['this_url']) ? '/' : cookie('this_url');
+			redirect(cookie('this_url'));
 		}
 	}
 
@@ -51,7 +50,7 @@ class IndexController extends HomeBaseController{
 		import("Org.ThinkSDK.ThinkOauth");
 		$qq   = \ThinkOauth::getInstance('qq', $token);
 		$data = $qq->call('user/get_user_info');
-
+		// p($data);die;
 		if($data['ret'] == 0){
 			$userInfo['type'] = 1;
 			$userInfo['name'] = $data['nickname'];
