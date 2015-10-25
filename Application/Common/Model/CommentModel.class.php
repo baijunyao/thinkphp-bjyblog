@@ -10,8 +10,12 @@ class CommentModel extends BaseModel{
 	public function addData($type){
 		$data=I('post.');
 		$ouid=$_SESSION['user']['id'];
-		// 删除开头或者结尾的换行
-		$comment_content=trim($data['content'],'&lt;br&gt;');
+		$data['content']=htmlspecialchars_decode($data['content']);
+		// 删除除img外的其他标签
+		$comment_content=trim(strip_tags($data['content'],'<img>'));
+		if (empty($comment_content)) {
+			return false;
+		}
 		$comment=array(
 			'ouid'=>$ouid,
 			'type'=>$type,
@@ -95,7 +99,9 @@ html;
 			->order('date desc')
 			->select();
 		foreach ($data as $k => $v) {
-			$data[$k]['content']=htmlspecialchars_decode($v['content']);
+			// 删除除img外的其他标签
+			$v['content']=htmlspecialchars_decode($v['content']);
+			$data[$k]['content']=strip_tags($v['content'],'<img>');
 			// 获取二级评论
 			$child=$this->getTree(array(),$v);
 			if(!empty($child)){

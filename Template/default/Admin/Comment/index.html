@@ -25,7 +25,7 @@
 		<tr>
 			<td>{$v['cmtid']}</td>
 			<td>
-				<a href="{:U('Home/Index/article',array('cid'=>isset($_GET['cid'])?$_GET['cid']:0,'tid'=>isset($_GET['tid'])?$_GET['tid']:0,'search_word'=>isset($_GET['search_word'])?$_GET['search_word']:0,'aid'=>$v['aid']))}" target="_blank">{$v['title']}</a>
+				<a href="/article/{$v['aid']}" target="_blank">{$v['title']}</a>
 			</td>
 			<td>{$v['nickname']}</td>
 			<td>{:date('Y-m-d H:i:s',$v['date'])}</td>

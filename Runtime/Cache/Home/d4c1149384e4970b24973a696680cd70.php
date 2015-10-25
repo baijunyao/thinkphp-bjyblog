@@ -33,7 +33,6 @@
 	</script>
 
 	<script type="text/javascript">
-		saveLoginUrl="<?php echo U('Home/User/save_login_url');?>";
 		logoutUrl="<?php echo U('Home/User/logout');?>";
 	</script>
 	<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
@@ -64,7 +63,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<?php echo U('Home/Index/index');?>">
+			<a class="navbar-brand" href="/">
 				<ul class="b-logo-code">
 					<li class="b-lc-start">&lt;?php</li>
 					<li class="b-lc-echo">echo</li>
@@ -89,12 +88,12 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="#b-modal-login" data-toggle="modal">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="javascript:;" onclick="login()">登陆</a></li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
 						<span class="b-nickname"><?php echo ($_SESSION['user']['nickname']); ?></span>
-						<span><a href="<?php echo U('Home/User/logout');?>">退出</a></span>
+						<span><a href="javascript:;" onclick="logout()">退出</a></span>
 					</li><?php endif; ?>
 			</ul>
 		</div>

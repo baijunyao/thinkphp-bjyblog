@@ -49,7 +49,7 @@
 	<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
 			<td><?php echo ($v['aid']); ?></td>
 			<td><?php echo ($v['category']['cname']); ?></td>
-			<td><a href="<?php echo U('Home/Index/article',array('cid'=>0,'tid'=>0,'search_word'=>0,'aid'=>$v['aid']));?>" target="_blank"><?php echo ($v['title']); ?></a></td>
+			<td><a href="/article/<?php echo ($v['aid']); ?>" target="_blank"><?php echo ($v['title']); ?></a></td>
 			<td><?php echo ($v['author']); ?></td>
 			<td>
 				<?php if(is_array($v['tag'])): foreach($v['tag'] as $key=>$n): echo ($n['tname']); ?>&nbsp;<?php endforeach; endif; ?>

@@ -115,7 +115,7 @@ class IndexController extends HomeBaseController {
 		if(empty($data['content']) || !isset($_SESSION['user']['id'])){
 			die('未登陆,或内容为空');
 		}else{
-			$cmtid=D('Comment')->addData($data);
+			$cmtid=D('Comment')->addData(1);
             echo $cmtid;
 		}
 	}
