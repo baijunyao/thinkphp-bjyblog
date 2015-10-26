@@ -5,7 +5,7 @@
 	<!-- head头部分开始 -->
 	<meta charset="UTF-8">
 	<title><?php echo ($article['current']['title']); ?>-<?php echo (C("WEB_NAME")); ?></title>
-	<meta name="keywords" content="<?php echo ($article['current']['category']['keywords']); ?>" />
+	<meta name="keywords" content="<?php echo ($article['current']['keywords']); ?>" />
 	<meta name="description" content="<?php echo ($article['current']['description']); ?>" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">

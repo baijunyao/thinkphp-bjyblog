@@ -59,6 +59,12 @@
 			</td>
 		</tr>
 		<tr>
+			<th>关键词</th>
+			<td>
+				<input class="form-control modal-sm" type="text"placeholder="多个关键词用顿号分隔" type="text"  name="keywords" value="<?php echo str_replace(',', '、', $data['keywords']);?>">
+			</td>
+		</tr>
+		<tr>
 			<th>描述</th>
 			<td>
 				<textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述"><?php echo ($data['description']); ?></textarea>
@@ -99,7 +105,7 @@
 				<span class="inputword">是</span>
 				<input class="icheck" type="radio" name="is_show" value="1" <?php if($data['is_show'] == 1): ?>checked="checked"<?php endif; ?> >
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_show" value="0" <?php if($data['is_show'] == 0): ?>checked="checked"<?php endif; ?> >				
+				<input class="icheck" type="radio" name="is_show" value="0" <?php if($data['is_show'] == 0): ?>checked="checked"<?php endif; ?> >
 			</td>
 		</tr>
 		<tr>

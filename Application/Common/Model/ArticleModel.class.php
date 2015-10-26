@@ -19,6 +19,7 @@ class ArticleModel extends BaseModel{
 		array('is_delete',0),
 		array('addtime','time',1,'function'),
 		array('description','getDescription',3,'callback'),
+		array('keywords','comma2coa',3,'callback'),
 		);
 
 	// 获得描述；供自动完成调用
@@ -31,6 +32,11 @@ class ArticleModel extends BaseModel{
 			$des=re_substr(strip_tags($des),0,200,false);
 			return $des;
 		}
+	}
+
+	// 顿号转换为英文逗号
+	protected function comma2coa($keywords){
+		return str_replace('、', ',', $keywords);
 	}
 
 	// 添加数据

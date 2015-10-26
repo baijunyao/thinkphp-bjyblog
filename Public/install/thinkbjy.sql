@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50524
-Source Host           : localhost:3306
+Source Server Version : 50617
+Source Host           : 127.0.0.1:3306
 Source Database       : thinkbjy
 
 Target Server Type    : MYSQL
-Target Server Version : 50524
+Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-08-31 00:12:47
+Date: 2015-10-25 16:18:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,6 +24,7 @@ CREATE TABLE `bjy_article` (
   `title` char(100) NOT NULL DEFAULT '' COMMENT '标题',
   `author` varchar(15) NOT NULL DEFAULT '' COMMENT '作者',
   `content` text NOT NULL COMMENT '文章内容',
+  `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字',
   `description` char(255) NOT NULL DEFAULT '' COMMENT '描述',
   `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '文章是否显示 1是 0否',
   `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除 1是 0否',
@@ -33,12 +34,12 @@ CREATE TABLE `bjy_article` (
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `cid` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '分类id',
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_article
 -- ----------------------------
-INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;	&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '测试文章描述', '1', '0', '1', '1', '118', '1432649909', '28');
+INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '关键词,多个', '测试文章描述', '1', '0', '1', '1', '362', '1432649909', '28');
 
 -- ----------------------------
 -- Table structure for bjy_article_pic
@@ -49,12 +50,12 @@ CREATE TABLE `bjy_article_pic` (
   `path` varchar(100) NOT NULL DEFAULT '' COMMENT '图片路径',
   `aid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '所属文章id',
   PRIMARY KEY (`ap_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_article_pic
 -- ----------------------------
-INSERT INTO `bjy_article_pic` VALUES ('2', '/Upload/image/ueditor/20150601/1433171136139793.jpg', '17');
+INSERT INTO `bjy_article_pic` VALUES ('11', '/Upload/image/ueditor/20150601/1433171136139793.jpg', '17');
 
 -- ----------------------------
 -- Table structure for bjy_article_tag
@@ -100,12 +101,13 @@ CREATE TABLE `bjy_chat` (
   `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否显示',
   `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`chid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_chat
 -- ----------------------------
 INSERT INTO `bjy_chat` VALUES ('2', '1432827004', '测试随言碎语', '1', '0');
+INSERT INTO `bjy_chat` VALUES ('3', '1444529995', '测试碎言', '1', '0');
 
 -- ----------------------------
 -- Table structure for bjy_comment
@@ -122,11 +124,13 @@ CREATE TABLE `bjy_comment` (
   `status` tinyint(1) unsigned NOT NULL COMMENT '1:已审核 0：未审核',
   `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`cmtid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_comment
 -- ----------------------------
+INSERT INTO `bjy_comment` VALUES ('19', '1', '1', '0', '17', '测试评论&lt;img src=&quot;/Public/emote/tuzki/t_0002.gif&quot; title=&quot;Love&quot; alt=&quot;白俊遥博客&quot;&gt;', '1445747059', '1', '0');
+INSERT INTO `bjy_comment` VALUES ('20', '1', '1', '0', '17', '<img src=\"http://localhost/Public/emote/tuzki/t_0040.gif\" title=\"震荡\" alt=\"白俊遥博客\">222', '1445756095', '1', '0');
 
 -- ----------------------------
 -- Table structure for bjy_config
@@ -208,7 +212,7 @@ CREATE TABLE `bjy_link` (
 -- ----------------------------
 -- Records of bjy_link
 -- ----------------------------
-INSERT INTO `bjy_link` VALUES ('2', '测试友情链接', 'http://www.baijunyao.com', '1', '1', '0');
+INSERT INTO `bjy_link` VALUES ('2', '白俊遥博客', 'http://www.baijunyao.com', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for bjy_oauth_user
@@ -228,7 +232,7 @@ CREATE TABLE `bjy_oauth_user` (
   `login_times` int(6) unsigned DEFAULT '0' COMMENT '登录次数',
   `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_oauth_user
