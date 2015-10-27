@@ -7,8 +7,10 @@ class My extends TagLib {
 	// 定义标签
 	protected $tags=array(
 		'jquery'=>array('attr'=>'','close'=>0),
-		'bjycss'=>array('attr'=>'','close'=>0),
-		'bootstrap'=>array('attr'=>'icheck','close'=>0),
+		'bootstrapcss'=>array('','close'=>0),
+		'bootstrapjs'=>array('','close'=>0),
+		'icheckcss'=>array('','close'=>0),
+		'icheckjs'=>array('attr'=>'icheck','close'=>0),
 		'ueditor'=> array('attr'=>'name,content','close'=>0),
 		'recommend'=>array('attr'=>'limit','level'=>1)
 		);
@@ -18,49 +20,70 @@ class My extends TagLib {
 		return '<script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>';
 	}
 
-	//引入bootstrap的css组件
-	public function _bjycss(){
-		return '<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/bjy.css">';
-	}
-
 	/**
-	*引入jquery、bootstrap、font-awesome、ickeck
-	*@param string $tag  name:表单name content：编辑器初始化后 默认内容
+	* bootstrap的css部分
 	*/
-	//引入jquery、bootstrap css组件、bootstrap js组件
-	public function _bootstrap($tag){
+	public function _bootstrapcss($tag){
 		$icheck=isset($tag['icheck']) ? $tag['icheck'] : 'blue';
 		$link=<<<php
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/bjy.css">
-	<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="__PUBLIC__/static/iCheck-1.0.2/icheck.min.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/static/iCheck-1.0.2/skins/all.css">
-	<script>
-	$(document).ready(function(){
-	  $('.icheck').iCheck({
-	    checkboxClass: "icheckbox_square-$icheck",
-	    radioClass: "iradio_square-$icheck",
-	    increaseArea: "20%"
-	  });
-	});
-	</script>
-
 php;
 		return $link;
 	}
 
 	/**
-	*引入ueidter编辑器
-	*@param string $tag  name:表单name content：编辑器初始化后 默认内容
+	* 引入jquery、bootstrap的js部分
+	*/
+	public function _bootstrapjs(){
+		$link=<<<php
+<script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
+<![endif]-->
+php;
+		return $link;
+	}
+
+	/**
+	* 引入ickeck的css部分
+	*/
+	public function _icheckcss(){
+		$link=<<<php
+	<link rel="stylesheet" href="__PUBLIC__/static/iCheck-1.0.2/skins/all.css">
+php;
+		return $link;
+	}
+
+	/**
+	* 引入ickeck的js部分
+	* @param string $tag  颜色主题
+	*/
+	public function _icheckjs($tag){
+		$color=isset($tag['color']) ? $tag['color'] : 'blue';
+		$link=<<<php
+<script type="text/javascript" src="__PUBLIC__/static/iCheck-1.0.2/icheck.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('.icheck').iCheck({
+		checkboxClass: "icheckbox_square-$color",
+		radioClass: "iradio_square-$color",
+		increaseArea: "20%"
+	});
+});
+</script>
+php;
+		return $link;
+	}
+
+	/**
+	* 引入ueidter编辑器
+	* @param string $tag  name:表单name content：编辑器初始化后 默认内容
 	*/
 	public function _ueditor($tag){
 		$name=$tag['name'];

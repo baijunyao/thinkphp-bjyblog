@@ -255,3 +255,14 @@ function preg_ueditor_image_path($data){
 	$data=preg_replace('/src=\"^\/.*\/Upload\/image\/ueditor$/','src="'.$root_path.'/Upload/image/ueditor',$data);
 	return $data;
 }
+
+
+/**
+ * 将字符串分割为数组	
+ * @param  string $str 字符串
+ * @return array       分割得到的数组
+ */
+function mb_str_split($str){
+	return preg_split('/(?<!^)(?!$)/u', $str );
+}
+

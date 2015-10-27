@@ -10,33 +10,14 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
-	<script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
-	<script type="text/javascript" src="/Public/static/js/respond.min.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="/Public/static/iCheck-1.0.2/icheck.min.js"></script>
-	<link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
-	<script>
-	$(document).ready(function(){
-	  $('.icheck').iCheck({
-	    checkboxClass: "icheckbox_square-blue",
-	    radioClass: "iradio_square-blue",
-	    increaseArea: "20%"
-	  });
-	});
-	</script>
-
 	<script type="text/javascript">
 		logoutUrl="<?php echo U('Home/User/logout');?>";
 	</script>
-	<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
-	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/Template/default/Home/Public/css/index.css" />
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
 
@@ -180,8 +161,8 @@
 	</div>
 	<div class="b-link">
 		<h4 class="b-title">友情链接</h4>
-		<p class="link-p">
-			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
+		<p>
+			<?php if(is_array($links)): foreach($links as $k=>$v): ?><a class="b-link-a" href="<?php echo ($v[url]); ?>" target="_blank"><span class="fa fa-link b-black"></span> <?php echo ($v['lname']); ?></a><?php endforeach; endif; ?>
 		</p>
 	</div>
 	<div class="b-search">
@@ -201,7 +182,7 @@
 <footer id="b-foot" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<ul>
 		<li class="text-center">
-			本站使用自主开发的<a href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
+			本站使用自主开发的<a rel="nofollow" href="http://git.oschina.net/shuaibai123/thinkbjy" target="_blank">thinkbjy</a>开源博客程序搭建  © 2014-2015 baijunyao.com 版权所有 ICP证：豫ICP备14009546号-3
 		</li>
 		<li class="text-center">
 			联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?>
@@ -254,6 +235,16 @@
 	</div>
 </div>
 <!-- 登录模态框结束 -->
+
+<!-- 引入bootstrjs部分开始 -->
+<script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="/Public/static/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
+<!-- 引入bootstrjs部分结束 -->
 
 <!-- 登陆框结束 -->
 </body>

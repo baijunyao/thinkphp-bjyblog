@@ -3,14 +3,7 @@
 <!-- head头部分开始 -->
 <head>
 	<include file="Public/public_head" title="{$article['current']['title']}-"  keywords="{$article['current']['keywords']}" description="{$article['current']['description']}" />
-	<script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css">
-	<script type="text/javascript">
-		SyntaxHighlighter.all();
-		ajaxCommentUrl="{:U('Home/Index/ajax_comment','','',true)}";
-		check_login="{:U('Home/User/check_login','','',true)}";
-	</script>
-	<script type="text/javascript" src="__HOME_JS__/comment.js"></script>
+	<css file="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css" />
 	{$Think.config.WEB_STATISTICS}
 </head>
 <!-- head头部分结束 -->
@@ -89,5 +82,13 @@
 <!-- 登陆框开始 -->
 <include file="Public/public_login" />
 <!-- 登陆框结束 -->
+
+<js file="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCore.js" />
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+	ajaxCommentUrl="{:U('Home/Index/ajax_comment','','',true)}";
+	check_login="{:U('Home/User/check_login','','',true)}";
+</script>
+<js file="__HOME_JS__/comment.js" />
 </body>
 </html>

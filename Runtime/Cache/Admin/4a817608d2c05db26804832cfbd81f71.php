@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>修改友情链接</title>
+	<title>修改随言碎语</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
@@ -11,41 +11,29 @@
 		<link rel="stylesheet" href="/Public/static/iCheck-1.0.2/skins/all.css">
 </head>
 <body>
-<form class="form-group" action="<?php echo U('Admin/Link/edit');?>" method="post">
-	<input type="hidden" name="lid" value="<?php echo ($data['lid']); ?>">
+<form class="form-group" action="<?php echo U('Admin/Chat/edit');?>" method="post">
+	<input type="hidden" name="chid" value="<?php echo ($data['chid']); ?>">
 	<table class="table table-bordered table-striped table-hover table-condensed">
 		<tr>
-			<th>链接名</th>
+			<th>内容</th>
 			<td>
-				<input class="form-control modal-sm" type="text" name="lname" value="<?php echo ($data['lname']); ?>">
-			</td>
-		</tr>
-		<tr>
-			<th>链接地址</th>
-			<td>
-				<input class="form-control modal-sm" type="text" name="url" value="<?php echo ($data['url']); ?>">
-			</td>
-		</tr>
-		<tr>
-			<th>排序</th>
-			<td>
-				<input class="form-control modal-sm" type="text" name="sort" value="<?php echo ($data['sort']); ?>">
+				<textarea class="form-control modal-sm" name="content" rows="7"><?php echo ($data['content']); ?></textarea>
 			</td>
 		</tr>
 		<tr>
 			<th>是否显示</th>
 			<td>
 				<span class="inputword">是</span>
-				<input class="icheck" type="radio" name="is_show" value="1" <?php if($data['is_show'] == 1): ?>checked='checked'<?php endif; ?> >
+				<input id="test" class="icheck" type="radio" name="is_show" value="1" <?php if($data['is_show'] == 1): ?>checked='checked'<?php endif; ?> >
 				&emsp;
 				<span class="inputword">否</span>
-				<input class="icheck" type="radio" name="is_show" value="0" <?php if($data['is_show'] == 0): ?>checked='checked'<?php endif; ?> >				
+				<input class="icheck" type="radio" name="is_show" value="0"  <?php if($data['is_show'] == 0): ?>checked='checked'<?php endif; ?> >				
 			</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<input class="btn btn-default" type="submit" value="修改">
+				<input class="btn btn-default" type="submit" value="添加">
 			</td>
 		</tr>
 	</table>
