@@ -1,5 +1,21 @@
 $(function(){
-	// 设置iframe宽度
+	// 调整导航条hover的样式
+	if($('.b-nav-mobile').css('display')=='block'){
+		var widthLeft=getWidthLeft($('.b-nav-active'),false);
+		$('.b-nav-mobile').css({
+			'width': widthLeft['width'],
+			'left': widthLeft['left']
+		});
+	}
+	
+	// 鼠标移入导航条的hover状态
+	$('.b-nav-parent li').hover(function() {
+		getWidthLeft($(this));
+	}, function() {
+		getWidthLeft($('.b-nav-active'));
+	});
+
+	// 设置文章页iframe宽度
 	$('.b-article iframe').width('95%');
 	// 返回顶部
 	$(window).scroll(function(e) {
@@ -18,10 +34,14 @@ $(function(){
 			$('#b-public-nav .b-user-info').animate({'padding':'5px'},10);
 			$('#b-public-nav .b-nav-cname a').animate({'padding':'10px'},10);
 			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
+			var widthLeft=getWidthLeft($('.b-nav-active a'),false);
+			$('.b-nav-mobile').stop().animate({'left':widthLeft['left'],'width':widthLeft['width']+20}, 300);
 		}else{
 			$('#b-public-nav .b-nav-cname a').animate({'padding':'15px'},10);
 			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
 			$('#b-public-nav .b-user-info').animate({'padding':'10px'},10);
+			var widthLeft=getWidthLeft($('.b-nav-active a'),false);
+			$('.b-nav-mobile').stop().animate({'left':widthLeft['left'],'width':widthLeft['width']+30}, 300);
 		}
 	});
 
@@ -36,6 +56,25 @@ $(function(){
 		$(el).css('top', $(el).parent('.b-chat-one').height()/2.5);
 	});
 })
+
+/**
+ * 传递对象；获取left值和width
+ * @param  {subject}  obj    html对象
+ * @param  {Boolean} change  true获取left和宽；false改变left和宽；
+ * @return {subject}         获取到的left和宽            
+ */
+function getWidthLeft(obj,change=true){
+	var mobileLeft=obj.position().left;
+	var mobileWidth=obj.width();
+	var widthLeft={
+		'left':mobileLeft,
+		'width':mobileWidth
+	}
+	if(!change){
+		return widthLeft;
+	}
+	$('.b-nav-mobile').stop().animate({'left':mobileLeft,'width':mobileWidth}, 300);
+}
 
 // 登陆
 function login(){

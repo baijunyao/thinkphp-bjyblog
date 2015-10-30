@@ -47,7 +47,8 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav b-nav-parent">
+				<li class="hidden-xs b-nav-mobile"></li>
 				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
 					<a href="/">首页</a>
 				</li>
@@ -62,7 +63,7 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="javascript:;" onclick="login()">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-login"><a href="javascript:;" onclick="login()">登陆</a></li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>

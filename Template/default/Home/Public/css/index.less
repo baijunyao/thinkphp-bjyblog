@@ -4,7 +4,7 @@ body{
 	background: #F8F8F8;
 	font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-a,.b-nav-cname{
+a{
 	transition:ALL  0.5s ease;
 	-moz-transition:ALL  0.5s ease;
 	-webkit-transition:ALL  0.5s ease;
@@ -63,16 +63,31 @@ a,.b-nav-cname{
 		}
 	}
 
-	.b-nav-active{
-		background: #008CBA;
-		a{
-			color: #fff;
+
+	.b-nav-parent{
+		position: relative;
+		overflow: hidden;
+		.b-nav-mobile{
+			height: 50px;
+			background: #008CBA;
+			position: absolute;
 		}
+		.b-nav-active{
+			a{
+				color: #fff;
+			}
+			
+		}		
 	}
 	.b-nav-cname{
 		margin-right: 1px;
-		&:hover{
-			background: #008CBA;
+		position: relative;
+	}
+	.b-nav-login{
+		a{
+			&:hover{
+				background: #008CBA;
+			}
 		}
 	}
 	.b-user-info{
@@ -555,7 +570,7 @@ a,.b-nav-cname{
 					border-width: 10px;
 					border-color: transparent transparent transparent #E2E2E2;
 					position: absolute;
-					left: 100%;
+					right: -20px;
 					.b-arrows-round{
 						width: 10px;
 						height: 10px;
@@ -573,7 +588,7 @@ a,.b-nav-cname{
 					border-width: 10px;
 					border-color: transparent transparent transparent #fff;
 					position: absolute;
-					left: 100%;
+					right: -19px;
 				}
 			}
 		}
@@ -719,5 +734,3 @@ a,.b-nav-cname{
 		}
 	}
 }
-
-

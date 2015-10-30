@@ -17,8 +17,7 @@
 	<script type="text/javascript">
 		logoutUrl="<?php echo U('Home/User/logout');?>";
 	</script>
-	<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
-	<link rel="stylesheet" href="/Template/default/Home/Public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/Template/default/Home/Public/css/index.css" />
 	<?php echo (C("WEB_STATISTICS")); ?>
 <!-- head头部分结束 -->
 
@@ -46,7 +45,8 @@
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav b-nav-parent">
+				<li class="hidden-xs b-nav-mobile"></li>
 				<li class="b-nav-cname <?php if(($cid) == "index"): ?>b-nav-active<?php endif; ?> " >
 					<a href="/">首页</a>
 				</li>
@@ -61,7 +61,7 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname"><a href="javascript:;" onclick="login()">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-login"><a href="javascript:;" onclick="login()">登陆</a></li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
@@ -237,12 +237,16 @@
 </div>
 <!-- 登录模态框结束 -->
 
-<!-- 登陆框结束 -->
+<!-- 引入bootstrjs部分开始 -->
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
 <script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
 <script type="text/javascript" src="/Public/static/js/respond.min.js"></script>
 <![endif]-->
+<script type="text/javascript" src="/Template/default/Home/Public/js/index.js"></script>
+<!-- 引入bootstrjs部分结束 -->
+
+<!-- 登陆框结束 -->
 </body>
 </html>
