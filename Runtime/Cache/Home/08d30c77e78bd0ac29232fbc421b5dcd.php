@@ -10,9 +10,9 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<meta name="author" content="baijunyao,<?php echo (C("ADMIN_EMAIL")); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/css/animate.css">
 	<script type="text/javascript">
@@ -244,7 +244,7 @@
 
 <!-- 引入bootstrjs部分开始 -->
 <script type="text/javascript" src="/Public/static/js/jquery-2.0.0.min.js"></script>
-<script type="text/javascript" src="/Public/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Public/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="/Public/static/js/html5shiv.min.js"></script>
 <script type="text/javascript" src="/Public/static/js/respond.min.js"></script>

@@ -33,9 +33,9 @@ class My extends TagLib {
 		$icheck=isset($tag['icheck']) ? $tag['icheck'] : 'blue';
 		$link=<<<php
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/font-awesome-4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/static/css/bjy.css">
 php;
 		return $link;
@@ -47,7 +47,7 @@ php;
 	public function _bootstrapjs(){
 		$link=<<<php
 <script type="text/javascript" src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
