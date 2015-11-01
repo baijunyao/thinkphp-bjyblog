@@ -12,10 +12,13 @@ a{
 }
 /* 通用顶部导航栏开始 */
 #b-public-nav{
+	padding-top: 0px;
+	padding-bottom: 0px;
 	background: #333;
 	color: #fff;
 	border: none;
 	min-height: 40px;
+	overflow: hidden;
 	.navbar-header{
 		background-image:url('../image/button_bg.png');
 		-webkit-transition:background-position 0.5s;
@@ -25,12 +28,29 @@ a{
 			background-position:bottom right;
 		}
 		.navbar-brand{
-			padding: 5px;
+			padding: 0;
 			height: 40px;
-			overflow: hidden;
+			position: relative;
+			.b-nav-background{
+				width: 100%;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				top: -5px;
+				background-image:url('../image/button_bg.png');
+				-webkit-transition:background-position 0.5s;
+				-moz-transition:background-position 0.5s;
+				transition:background-position 0.5s;
+				&:hover{
+					background-position:bottom right;
+				}				
+			}
 			.b-logo-code,.b-logo-word,.b-logo-end{
-				height: 30px;
+				height: 40px;
 				float: left;
+			}
+			.b-logo-code{
+				padding-top: 4px;
 			}
 			.b-lc-start{
 				height: 15px;
@@ -45,9 +65,7 @@ a{
 				text-indent: 15px;
 			}
 			.b-logo-word{
-				padding-left: 5px;
-				padding-right: 5px;
-				line-height: 30px;
+				line-height: 40px;
 				color: #FDD257;
 			}
 			.b-logo-end{
@@ -62,15 +80,13 @@ a{
 			height: 40px;
 		}
 	}
-
-
 	.b-nav-parent{
 		position: relative;
-		overflow: hidden;
 		.b-nav-mobile{
 			height: 50px;
 			background: #008CBA;
 			position: absolute;
+			top: -5px;
 		}
 		.b-nav-active{
 			a{
@@ -80,21 +96,36 @@ a{
 		}		
 	}
 	.b-nav-cname{
-		margin-right: 1px;
+		height: 40px;
 		position: relative;
+		a{
+			padding: 10px;
+		}
 	}
 	.b-nav-login{
-		a{
-			&:hover{
+		height: 40px;
+		position: relative;
+		.b-login-mobile{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 0;
+			top: -5px;
+			transition:ALL  0.5s ease;
+			-moz-transition:ALL  0.5s ease;
+			-webkit-transition:ALL  0.5s ease;
+			-o-transition:ALL  0.5s ease;
+		}
+		&:hover{
+			.b-login-mobile{
 				background: #008CBA;
 			}
 		}
 	}
 	.b-user-info{
-		padding: 5px;
 		.b-head_img{
-			width: 30px;
-			height: 30px;
+			width: 40px;
+			height: 40px;
 		}
 	}
 }
@@ -679,7 +710,6 @@ a{
 	position: relative;
 	z-index: 2;
 	.go-top{
-		display: none;
 		width: 30px;
 		height: 30px;
 		line-height: 25px;
@@ -688,10 +718,10 @@ a{
 		background: #0B94C1;
 		font-size: 20px;
 		color: #fff;
-		display: none;
 		position: fixed;
 		right: 5px;
 		bottom: 50px;
+		display: none;
 		&:hover{
 			background: #027CA5;
 		}
@@ -722,7 +752,15 @@ a{
 }
 /* 网站关闭页面结束 */
 
+/* 为pc设置样式开始 */
 @media (min-width: 992px) {
+	#b-public-nav{
+		padding-top: 5px;
+		padding-bottom: 5px;
+		.navbar-header{
+			background-image: none;
+		}
+	}
 	#b-foot{
 		.go-top{
 			width: 70px;
@@ -734,3 +772,5 @@ a{
 		}
 	}
 }
+/* 为pc设置样式结束 */
+

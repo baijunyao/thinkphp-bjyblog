@@ -36,6 +36,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="/">
+				<div class="hidden-xs b-nav-background"></div>
 				<ul class="b-logo-code">
 					<li class="b-lc-start">&lt;?php</li>
 					<li class="b-lc-echo">echo</li>
@@ -61,7 +62,10 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-login"><a href="javascript:;" onclick="login()">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname b-nav-login">
+						<div class="hidden-xs b-login-mobile"></div>
+						<a href="javascript:;" onclick="login()">登陆</a>
+					</li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>

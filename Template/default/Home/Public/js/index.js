@@ -10,9 +10,9 @@ $(function(){
 	
 	// 鼠标移入导航条的hover状态
 	$('.b-nav-parent li').hover(function() {
-		getWidthLeft($(this));
+		getWidthLeft($(this),true);
 	}, function() {
-		getWidthLeft($('.b-nav-active'));
+		getWidthLeft($('.b-nav-active'),true);
 	});
 
 	// 设置文章页iframe宽度
@@ -21,30 +21,26 @@ $(function(){
 	$(window).scroll(function(e) {
 		//若滚动条离顶部大于200元素
 		if($(window).scrollTop()>200){
-			$(".go-top").fadeIn(500);
+			$('.go-top').show();
+			$(".go-top").removeClass('animated rotateOut');
+			$(".go-top").addClass('animated rotateIn');
 		}else{
-			$(".go-top").fadeOut(500);
+			$(".go-top").removeClass('animated rotateIn');
+			$(".go-top").addClass('animated rotateOut');
 		}
 	});
 
 	// 改变导航栏高度
-	$(window).scroll(function(e) {
-		//若滚动条离顶部大于100元素
-		if($(window).scrollTop()>100){
-			$('#b-public-nav .b-user-info').animate({'padding':'5px'},10);
-			$('#b-public-nav .b-nav-cname a').animate({'padding':'10px'},10);
-			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
-			var widthLeft=getWidthLeft($('.b-nav-active a'),false);
-			$('.b-nav-mobile').stop().animate({'left':widthLeft['left'],'width':widthLeft['width']+20}, 300);
-		}else{
-			$('#b-public-nav .b-nav-cname a').animate({'padding':'15px'},10);
-			$('#b-public-nav .navbar-brand').animate({'padding':'5px'},10);
-			$('#b-public-nav .b-user-info').animate({'padding':'10px'},10);
-			var widthLeft=getWidthLeft($('.b-nav-active a'),false);
-			$('.b-nav-mobile').stop().animate({'left':widthLeft['left'],'width':widthLeft['width']+30}, 300);
-		}
-	});
-
+	if(window.innerWidth>=768){
+		$(window).scroll(function(e) {
+			//若滚动条离顶部大于100元素
+			if($(window).scrollTop()>100){
+				$('#b-public-nav').stop().animate({'padding-top':'0px','padding-bottom':'0px'},100);
+			}else{
+				$('#b-public-nav').stop().animate({'padding-top':'5px','padding-bottom':'5px'},100);
+			}
+		});
+	}
 	// 为分页类增加响应式class
 	$('.b-page .first,.num,.end').addClass('hidden-xs');
 	$('.b-page .rows').addClass('hidden-xs');
@@ -59,11 +55,11 @@ $(function(){
 
 /**
  * 传递对象；获取left值和width
- * @param  {subject}  obj    html对象
+ * @param  {subject}  obj	html对象
  * @param  {Boolean} change  true获取left和宽；false改变left和宽；
- * @return {subject}         获取到的left和宽            
+ * @return {subject}		 获取到的left和宽			
  */
-function getWidthLeft(obj,change=true){
+function getWidthLeft(obj,change){
 	var mobileLeft=obj.position().left;
 	var mobileWidth=obj.width();
 	var widthLeft={
@@ -96,8 +92,8 @@ function goTop(){
 
 // 设置cookie
 function setCookie(name,value) {
-    var Days = 30;
-    var exp = new Date();
-    exp.setTime(exp.getTime() + Days*24*60*60*1000);
-    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+	var Days = 30;
+	var exp = new Date();
+	exp.setTime(exp.getTime() + Days*24*60*60*1000);
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }

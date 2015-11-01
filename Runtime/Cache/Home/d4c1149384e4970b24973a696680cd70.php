@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="/Public/static/bootstrap-3.3.4/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/font-awesome-4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/Public/static/css/bjy.css">
+	<link rel="stylesheet" type="text/css" href="/Public/static/css/animate.css">
 	<script type="text/javascript">
 		logoutUrl="<?php echo U('Home/User/logout');?>";
 	</script>
@@ -38,6 +39,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="/">
+				<div class="hidden-xs b-nav-background"></div>
 				<ul class="b-logo-code">
 					<li class="b-lc-start">&lt;?php</li>
 					<li class="b-lc-echo">echo</li>
@@ -63,7 +65,10 @@
 				</li>
 			</ul>
 			<ul id="b-login-word" class="nav navbar-nav navbar-right">
-				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-login"><a href="javascript:;" onclick="login()">登陆</a></li>
+				<?php if(empty($_SESSION['user']['head_img'])): ?><li class="b-nav-cname b-nav-login">
+						<div class="hidden-xs b-login-mobile"></div>
+						<a href="javascript:;" onclick="login()">登陆</a>
+					</li>
 				<?php else: ?>
 					<li class="b-user-info">
 						<span><img class="b-head_img" src="<?php echo ($_SESSION['user']['head_img']); ?>"/></span>
@@ -240,7 +245,7 @@
 		</li>
 	</ul>
 	<div class="b-h-20"></div>
-	<a class="go-top fa fa-angle-up" href="javascript:;" onclick="goTop()"></a>
+	<a class="go-top fa fa-angle-up animated jello" href="javascript:;" onclick="goTop()"></a>
 </footer>
 <!-- 通用底部文件结束 -->
 
