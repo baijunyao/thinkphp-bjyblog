@@ -1,8 +1,8 @@
 ## 简介
-闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；<br />
-如今博客的功能基本已经齐备；特开源以供各类猿们免费使用<br />
-亦可以作为初学thinkphp的同学们的参考源代码；<br />
-下图即是使用thinkbjy开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://www.baijunyao.com <br />
+闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；<br /><br />
+如今博客的功能基本已经齐备；特开源以供各类猿们免费使用<br /><br />
+亦可以作为初学thinkphp的同学们的参考源代码；<br /><br />
+下图即是使用thinkbjy开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://www.baijunyao.com <br /><br />
 ![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)
 ## 使用说明
 下载解压按提示进行安装；<br />
