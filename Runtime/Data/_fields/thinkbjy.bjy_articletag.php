@@ -1,1 +1,0 @@
-a:3:{i:0;s:3:"aid";i:1;s:3:"tid";s:5:"_type";a:2:{s:3:"aid";s:16:"int(10) unsigned";s:3:"tid";s:16:"int(10) unsigned";}}

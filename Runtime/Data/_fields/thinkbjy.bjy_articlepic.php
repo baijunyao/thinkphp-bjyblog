@@ -1,1 +1,0 @@
-a:5:{i:0;s:5:"ap_id";i:1;s:4:"path";i:2;s:3:"aid";s:3:"_pk";s:5:"ap_id";s:5:"_type";a:3:{s:5:"ap_id";s:16:"int(10) unsigned";s:4:"path";s:12:"varchar(100)";s:3:"aid";s:16:"int(10) unsigned";}}

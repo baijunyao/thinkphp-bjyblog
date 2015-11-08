@@ -1,6 +1,0 @@
-[ 2015-05-06T23:42:59+08:00 ] ::1 /index.php/admi
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
-ERR: 无法加载模块:Admi
-

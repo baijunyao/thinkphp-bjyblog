@@ -1,1 +1,0 @@
-a:4:{i:0;s:3:"tid";i:1;s:5:"tname";s:3:"_pk";s:3:"tid";s:5:"_type";a:2:{s:3:"tid";s:16:"int(10) unsigned";s:5:"tname";s:11:"varchar(10)";}}

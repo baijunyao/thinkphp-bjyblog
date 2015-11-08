@@ -18,7 +18,7 @@
 			<div class="b-chat-left">
 				<volist name="data" id="v" mod="2">
 					<eq name="mod" value="0">
-						<ul class="b-chat-one ">
+						<ul class="b-chat-one animated bounceInLeft">
 							<li class="b-chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
 							<li class="b-chat-content">{$v['content']}</li>
 							<div class="b-arrows-right1">
@@ -33,7 +33,7 @@
 			<div class="b-chat-right">
 				<volist name="data" id="v" mod="2">
 					<eq name="mod" value="1">
-						<ul class="b-chat-one ">
+						<ul class="b-chat-one animated bounceInRight">
 							<li class="b-chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
 							<li class="b-chat-content">{$v['content']}</li>
 							<div class="b-arrows-right1">
