@@ -8,7 +8,7 @@
 				<php>$tag_i++</php>
 				<php>$tag_i=$tag_i==5?1:$tag_i</php>
 				<li class="b-tname">
-					<a class="tstyle-{$tag_i}" href="{:U('tag/'.$v['tid'])}" target="_blank">{$v['tname']}</a>
+					<a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']}</a>
 				</li>
 			</foreach>
 		</ul>
@@ -17,7 +17,7 @@
 		<h4 class="b-title">置顶推荐</h4>
 		<p class="b-recommend-p">
 			<recommend cid="" limit="10">
-				<a class="b-recommend-a" href="{:U('article/'.$field['aid'])}" target="_blank"><span class="fa fa-th-list b-black"></span> {$field['title']}</a>
+				<a class="b-recommend-a" href="{:U('Home/Index/article',array('aid'=>$field['aid']))}" target="_blank"><span class="fa fa-th-list b-black"></span> {$field['title']}</a>
 			</recommend>
 		</p>
 	</div>

@@ -998,6 +998,8 @@ function U($url='',$vars='',$suffix=true,$domain=false) {
     if($domain) {
         $url   =  (is_ssl()?'https://':'http://').$domain.$url;
     }
+    // 将U函数生成的链接转换为路由链接
+    $url=C('URL_MODEL')==2 ? RU($url) : $url;
     return $url;
 }
 

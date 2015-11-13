@@ -266,3 +266,53 @@ function mb_str_split($str){
 	return preg_split('/(?<!^)(?!$)/u', $str );
 }
 
+/**
+ * 获取访问用户ip
+ */
+function getRealIpAddr(){
+	if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+		$ip=$_SERVER['HTTP_CLIENT_IP'];
+	}elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+		$ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+	}else{
+		$ip=$_SERVER['REMOTE_ADDR'];
+	}
+	return $ip;
+}
+
+/**
+ * 将U函数生成的链接转换为路由链接
+ * @param string $url U函数生成的链接
+ */
+function RU($url){
+	// 兼容 category/:cid\d 路由
+	if(preg_match('/\/Home\/Index\/category\/cid\/\d+/', $url)){
+		$url=str_replace(array('/Home/Index','/cid'), '', $url);
+	}
+	// 兼容 tag/:tid\d 路由
+	if(preg_match('/\/Home\/Index\/tag\/tid\/\d+/', $url)) {
+		$url=str_replace(array('/Home/Index','/tid'), '', $url);
+	}
+	// 兼容article/cid/:cid\d/:aid\d
+	if(preg_match('/\/Home\/Index\/artilce\/cid\/\d+\/aid\/\d+/', $url)){
+		$url=str_replace(array('/Home/Index','/aid'), '', $url);
+	}
+	// 兼容 article/tid/:tid\d/:aid\d
+	if(preg_match('/\/Home\/Index\/artilce\/tid\/\d+\/aid\/\d+/', $url)){
+		$url=str_replace(array('/Home/Index','/aid'), '', $url);
+	}
+	// 兼容article/sw/:search_word\S/:aid\d
+	if(preg_match('/\/Home\/Index\/artilce\/search_word\/\S+\/aid\/\d+/', $url)){
+		$url=str_replace(array('/Home/Index','/aid'), '', $url);
+		$url=str_replace('search_word', 'sw', $url);
+	}
+	// 兼容article/:aid\d'=>'Index/article
+	if(preg_match('/\/Home\/Index\/article\/aid\/\d+/', $url)){
+		$url=str_replace(array('/Home/Index','/aid'), '', $url);
+	}
+	// 兼容 chat
+	if($url=='/Home/Index/chat'){
+		$url='/chat';
+	}
+	return $url;
+}

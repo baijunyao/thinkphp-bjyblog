@@ -162,6 +162,7 @@ class ArticleModel extends BaseModel{
 				->order('addtime desc')
 				->limit($page->firstRow.','.$page->listRows)
 				->select();
+			$url_array=array();
 		}elseif ($cid=='all' && $tid!='all') {
 			// 获取tid下的全部文章
 			if($is_show=='all'){
@@ -188,7 +189,7 @@ class ArticleModel extends BaseModel{
 				->where($where)
 				->order('a.addtime desc')
 				->select();
-			$url_from='tid/'.$tid.'/';
+			$url_array=array('tid'=>$tid);
 		}elseif ($cid!='all' && $tid=='all') {
 			// 获取cid下的全部文章
 			if($is_show=='all'){
@@ -212,7 +213,7 @@ class ArticleModel extends BaseModel{
 				->order('addtime desc')
 				->limit($page->firstRow.','.$page->listRows)
 				->select();
-			$url_from='cid/'.$cid.'/';
+			$url_array=array('cid'=>$cid);
 		}
 		$show=$page->show();
 		foreach ($list as $k => $v) {
@@ -221,7 +222,8 @@ class ArticleModel extends BaseModel{
 			$list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
 			$v['content']=preg_ueditor_image_path($v['content']);
 			$list[$k]['content']=htmlspecialchars($v['content']);
-			$list[$k]['url']=U('article/'.$url_from.$v['aid']);
+			$all_url_array=array_merge($url_array,array('aid'=>$v['aid']));
+			$list[$k]['url']=U('Home/Index/article/',$all_url_array);
 		}
 		$data=array(
 			'page'=>$show,
@@ -232,7 +234,6 @@ class ArticleModel extends BaseModel{
 
 	// 传递aid获取单条全部数据 $map 主要为前台页面上下页使用
 	public function getDataByAid($aid,$map=''){
-		// 兼容图片路径
 		if($map==''){
 			// $map 为空则不获取上下篇文章
 			$data=$this->where(array('aid'=>$aid))->find();
@@ -241,6 +242,7 @@ class ArticleModel extends BaseModel{
 			$data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
 			// 获取相对路径的图片地址
 			$data['content']=preg_ueditor_image_path($data['content']);
+			$url_array=array();
 		}else{
 			if(isset($map['tid'])){
 				// 根据此标签tid获取上下篇文章
@@ -252,11 +254,10 @@ class ArticleModel extends BaseModel{
 				$next_map['a.aid']=array('lt',$aid);
 				$data['prev']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($prev_map)->limit(1)->find();
 				$data['next']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($next_map)->order('a.aid desc')->limit(1)->find();
-				$from=array(
-					'word'=>'tid',
-					'id'=>$map['tid']
+				$url_array=array(
+					'tid'=>$map['tid']
 					);
-			}else{
+			}else if(isset($map['cid'])){
 				// 根据此分类cid获取上下篇文章
 				$prev_map=$map;
 				$prev_map[]=array('is_show'=>1);
@@ -266,18 +267,28 @@ class ArticleModel extends BaseModel{
 				$next_map['aid']=array('lt',$aid);
 				$data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
 				$data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
-				$from=array(
-					'word'=>'cid',
-					'id'=>$map['cid']
-					);
-
+				$url_array=array('cid'=>$map['cid']);
+			}else{
+				// 根据搜索词获取上下篇文章
+				$prev_map=array('title'=>array('like','%'.$map['title'].'%'));
+				$prev_map[]=array('is_show'=>1);
+				$prev_map[]=array('is_delete'=>0);
+				$next_map=$prev_map;
+				$prev_map['aid']=array('gt',$aid);
+				$next_map['aid']=array('lt',$aid);
+				$data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
+				$data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
+				$url_array=array('search_word'=>$map['title']);
 			}
+			
 			// 如果不为空 添加url
 			if(!empty($data['prev'])){
-				$data['prev']['url']=U('article/'.$from['word'].'/'.$from['id'].'/'.$data['prev']['aid']);
+				$all_url_array=array_merge($url_array,array('aid'=>$data['prev']['aid']));
+				$data['prev']['url']=U('Home/Index/article/',$all_url_array);
 			}
 			if(!empty($data['next'])){
-				$data['next']['url']=U('article/'.$from['word'].'/'.$from['id'].'/'.$data['next']['aid']);
+				$all_url_array=array_merge($url_array,array('aid'=>$data['next']['aid']));
+				$data['next']['url']=U('Home/Index/article/',$all_url_array);
 			}
 			$data['current']=$this->where(array('aid'=>$aid))->find();
 			$data['current']['tids']=D('ArticleTag')->getDataByAid($aid);
@@ -302,7 +313,7 @@ class ArticleModel extends BaseModel{
 			->select();
 		foreach ($list as $k => $v) {
 			$list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
-			$list[$k]['url']=U('article/sw/'.$search_word.'/'.$v['aid']);
+			$list[$k]['url']=U('Home/Index/article/',array('search_word'=>$search_word,'aid'=>$v['aid']));
 		}
 		$show=$page->show();
 		$data=array(
