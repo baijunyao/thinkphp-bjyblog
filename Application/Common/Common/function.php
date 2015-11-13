@@ -294,15 +294,15 @@ function RU($url){
 		$url=str_replace(array('/Home/Index','/tid'), '', $url);
 	}
 	// 兼容article/cid/:cid\d/:aid\d
-	if(preg_match('/\/Home\/Index\/artilce\/cid\/\d+\/aid\/\d+/', $url)){
+	if(preg_match('/\/Home\/Index\/article\/cid\/\d+\/aid\/\d+/', $url)){
 		$url=str_replace(array('/Home/Index','/aid'), '', $url);
 	}
 	// 兼容 article/tid/:tid\d/:aid\d
-	if(preg_match('/\/Home\/Index\/artilce\/tid\/\d+\/aid\/\d+/', $url)){
+	if(preg_match('/\/Home\/Index\/article\/tid\/\d+\/aid\/\d+/', $url)){
 		$url=str_replace(array('/Home/Index','/aid'), '', $url);
 	}
 	// 兼容article/sw/:search_word\S/:aid\d
-	if(preg_match('/\/Home\/Index\/artilce\/search_word\/\S+\/aid\/\d+/', $url)){
+	if(preg_match('/\/Home\/Index\/article\/search_word\/\S+\/aid\/\d+/', $url)){
 		$url=str_replace(array('/Home/Index','/aid'), '', $url);
 		$url=str_replace('search_word', 'sw', $url);
 	}

@@ -8,7 +8,6 @@ class IndexController extends HomeBaseController {
 
 	// 首页
 	public function index(){
-		RU('Home/Index/index');
 		$articles=D('Article')->getPageData();
 		$assign=array(
 			'articles'=>$articles['data'],
@@ -21,7 +20,6 @@ class IndexController extends HomeBaseController {
 
 	// 分类
 	public function category(){
-		RU('Home/Index/index');
 		$cid=I('get.cid',0,'intval');
 		$articles=D('Article')->getPageData($cid);
 		$assign=array(
@@ -52,7 +50,6 @@ class IndexController extends HomeBaseController {
 
 	// 文章内容
 	public function article(){
-		RU('Home/Index/index');
 		$cid=I('get.cid',0,'intval');
 		$tid=I('get.tid',0,'intval');
 		$aid=I('get.aid',0,'intval');
