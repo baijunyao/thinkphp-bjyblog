@@ -92,8 +92,8 @@ php;
 	* @param string $tag  name:表单name content：编辑器初始化后 默认内容
 	*/
 	public function _ueditor($tag){
-		$color=isset($tag['name']) ? $tag['name'] : 'content';
-		$color=isset($tag['content']) ? $tag['content'] : '';
+		$name=isset($tag['name']) ? $tag['name'] : 'content';
+		$content=isset($tag['content']) ? $tag['content'] : '';
 		$link=<<<php
 <script id="container" name="$name" type="text/plain">$content</script>
 <script type="text/javascript" src="__PUBLIC__/static/ueditor1_4_3/ueditor.config.js"></script>
