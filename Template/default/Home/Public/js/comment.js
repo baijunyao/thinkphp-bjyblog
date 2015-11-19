@@ -123,7 +123,7 @@ function reply(obj){
 	var pid=$(obj).attr('pid');
 	var username=$(obj).attr('username');
 	var str='<div class="b-box-textarea"><div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后回复评论</div><ul class="b-emote-submit"><li class="b-emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><div class="b-tuzki"></div></li><li class="b-submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
-	$(obj).parents('.b-date').eq(0).after(str);
+	var parentObj=$(obj).parents('.b-cc-first').eq(0).append(str);
 }
 
 // 删除提示和样式
