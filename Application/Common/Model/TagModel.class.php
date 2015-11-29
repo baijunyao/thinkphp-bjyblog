@@ -50,7 +50,11 @@ Class TagModel extends BaseModel{
 
 	//获得全部数据
 	public function getAllData(){
-		return $this->select();
+		$data=$this->select();
+		foreach ($data as $k => $v) {
+			$data[$k]['count']=M('Article_tag')->where(array('tid'=>$v['tid']))->count();
+		}
+		return $data;
 	}
 
 	// 根据tid获取单条数据
