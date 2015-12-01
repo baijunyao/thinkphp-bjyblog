@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-10-25 16:18:27
+Date: 2015-12-01 23:34:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,12 +34,12 @@ CREATE TABLE `bjy_article` (
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   `cid` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '分类id',
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_article
 -- ----------------------------
-INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '关键词,多个', '测试文章描述', '1', '0', '1', '1', '362', '1432649909', '28');
+INSERT INTO `bjy_article` VALUES ('17', '测试文章标题', '白俊遥', '&lt;p&gt;测试文章内容&lt;img alt=&quot;白俊遥博客&quot; src=&quot;/Upload/image/ueditor/20150601/1433171136139793.jpg&quot; title=&quot;白俊遥博客&quot;/&gt;&lt;/p&gt;', '关键词,多个', '测试文章描述', '1', '0', '1', '1', '376', '1432649909', '28');
 
 -- ----------------------------
 -- Table structure for bjy_article_pic
@@ -124,13 +124,13 @@ CREATE TABLE `bjy_comment` (
   `status` tinyint(1) unsigned NOT NULL COMMENT '1:已审核 0：未审核',
   `is_delete` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否删除',
   PRIMARY KEY (`cmtid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_comment
 -- ----------------------------
 INSERT INTO `bjy_comment` VALUES ('19', '1', '1', '0', '17', '测试评论&lt;img src=&quot;/Public/emote/tuzki/t_0002.gif&quot; title=&quot;Love&quot; alt=&quot;白俊遥博客&quot;&gt;', '1445747059', '1', '0');
-INSERT INTO `bjy_comment` VALUES ('20', '1', '1', '0', '17', '<img src=\"http://localhost/Public/emote/tuzki/t_0040.gif\" title=\"震荡\" alt=\"白俊遥博客\">222', '1445756095', '1', '0');
+INSERT INTO `bjy_comment` VALUES ('21', '1', '1', '19', '17', '测试回复', '1447943018', '1', '0');
 
 -- ----------------------------
 -- Table structure for bjy_config
@@ -220,23 +220,26 @@ INSERT INTO `bjy_link` VALUES ('2', '白俊遥博客', 'http://www.baijunyao.com
 DROP TABLE IF EXISTS `bjy_oauth_user`;
 CREATE TABLE `bjy_oauth_user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `uid` int(10) unsigned DEFAULT '0' COMMENT '关联的本站用户id',
-  `type` tinyint(3) unsigned DEFAULT '1' COMMENT '类型 1：QQ  2：新浪微博 3：豆瓣 4：人人 5：开心网',
-  `nickname` varchar(30) DEFAULT '' COMMENT '第三方昵称',
-  `head_img` varchar(255) DEFAULT '' COMMENT '头像',
-  `openid` varchar(40) DEFAULT '' COMMENT '第三方用户id',
-  `access_token` varchar(255) DEFAULT '' COMMENT 'access_token token',
-  `create_time` int(10) unsigned DEFAULT '0' COMMENT '绑定时间',
-  `last_login_time` int(10) unsigned DEFAULT '0' COMMENT '最后登录时间',
-  `last_login_ip` varchar(16) DEFAULT '' COMMENT '最后登录ip',
-  `login_times` int(6) unsigned DEFAULT '0' COMMENT '登录次数',
-  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态',
+  `uid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '关联的本站用户id',
+  `type` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '类型 1：QQ  2：新浪微博 3：豆瓣 4：人人 5：开心网',
+  `nickname` varchar(30) NOT NULL DEFAULT '' COMMENT '第三方昵称',
+  `head_img` varchar(255) NOT NULL DEFAULT '' COMMENT '头像',
+  `openid` varchar(40) NOT NULL DEFAULT '' COMMENT '第三方用户id',
+  `access_token` varchar(255) NOT NULL DEFAULT '' COMMENT 'access_token token',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '绑定时间',
+  `last_login_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最后登录时间',
+  `last_login_ip` varchar(16) NOT NULL DEFAULT '' COMMENT '最后登录ip',
+  `login_times` int(6) unsigned NOT NULL DEFAULT '0' COMMENT '登录次数',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态',
+  `email` varchar(255) NOT NULL DEFAULT '' COMMENT '邮箱',
+  `is_admin` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否是admin',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bjy_oauth_user
 -- ----------------------------
+INSERT INTO `bjy_oauth_user` VALUES ('1', '0', '1', 'test', 'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100', '', '', '0', '0', '', '0', '1', '', '1');
 
 -- ----------------------------
 -- Table structure for bjy_tag
