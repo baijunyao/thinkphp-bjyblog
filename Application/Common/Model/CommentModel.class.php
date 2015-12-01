@@ -10,6 +10,7 @@ class CommentModel extends BaseModel{
 	public function addData($type){
 		$data=I('post.');
 		$ouid=$_SESSION['user']['id'];
+		$is_admin=M('Oauth_user')->getFieldById($ouid,'is_admin');
 		$data['content']=htmlspecialchars_decode($data['content']);
 		// 删除除img外的其他标签
 		$comment_content=trim(strip_tags($data['content'],'<img>'));
@@ -27,7 +28,7 @@ class CommentModel extends BaseModel{
 			);
 		$cmtid=$this->add($comment);
 		// 发送通知邮件
-		if(C('COMMENT_SEND_EMAIL')){
+		if(C('COMMENT_SEND_EMAIL') && $is_admin==0){
 			$address=C('EMAIL_RECEIVE');
 			if(!empty($address)){
 				$nickname=M('Oauth_user')->getFieldById($ouid,'nickname');
