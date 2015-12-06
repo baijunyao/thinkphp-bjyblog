@@ -5,8 +5,12 @@ use Common\Model\BaseModel;
 * 评论model
 */
 class CommentModel extends BaseModel{
+	private $child=array();
 
-	// 添加数据
+	/**
+	 * 添加数据
+	 * @param integer $type 1：文章评论
+	 */
 	public function addData($type){
 		$data=I('post.');
 		$ouid=$_SESSION['user']['id'];
@@ -104,7 +108,9 @@ html;
 			$v['content']=htmlspecialchars_decode($v['content']);
 			$data[$k]['content']=strip_tags($v['content'],'<img>');
 			// 获取二级评论
-			$child=$this->getTree(array(),$v);
+			$this->child=array();
+			$this->getTree($v);
+			$child=$this->child;
 			if(!empty($child)){
 				// 按评论时间asc排序
 				uasort($child,'comment_sort');
@@ -120,22 +126,18 @@ html;
 		return $data;
 	}
 	// 递归获取树状结构
-	public function getTree($tree,$data){
+	public function getTree($data){
 		$child=$this
 			->field('c.*,ou.nickname,ou.head_img')
 			->alias('c')
 			->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
 			->where(array('pid'=>$data['cmtid']))
 			->select();
-		if(empty($child)){
-			return $tree;
-		}else{
+		if(!empty($child)){
 			foreach ($child as $k => $v) {
 				$v['content']=htmlspecialchars_decode($v['content']);
-				$tree[]=$v;
-			}
-			foreach ($child as $k => $v) {
-				return $this->getTree($tree,$v);
+				$this->child[]=$v;
+				$this->getTree($v);
 			}
 		}
 
