@@ -63,7 +63,7 @@ html;
 			->join('__OAUTH_USER__ ou ON ou.id=c.ouid')
 			->where(array('c.is_delete'=>$is_delete))
 			->count();
-		$page=new \Org\Bjy\Page($count,10);
+		$page=new \Org\Bjy\Page($count,15);
 		$list=$this
 			->field('c.*,a.title,ou.nickname')
 			->alias('c')
