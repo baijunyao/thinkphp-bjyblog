@@ -7,6 +7,7 @@
 			<ul class="b-emote-submit">
 				<li class="b-emote">
 					<i class="fa fa-smile-o" onclick="getTuzki(this)"></i>
+					<input class="form-control b-email" type="text" name="email" placeholder="接收回复的email地址">
 					<div class="b-tuzki">
 
 					</div>
@@ -50,7 +51,7 @@
 									<span class="b-user-name">{$n['reply_name']}</span>：{$n['content']}
 								</li>
 								<li class="b-date">
-									{:date('Y-m-d H:i:s',$n['date'])} <a href="javascript:;" aid="{$Think.get.aid}" pid="{$n['cmtid']}" onclick="reply(this)">回复</a>
+									{:date('Y-m-d H:i:s',$n['date'])} <a href="javascript:;" aid="{$Think.get.aid}" pid="{$n['cmtid']}" username="{$n['reply_name']}" onclick="reply(this)">回复</a>
 								</li>
 								<li class="b-clear-float"></li>
 							</ul>

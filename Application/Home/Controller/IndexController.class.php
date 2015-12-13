@@ -120,5 +120,13 @@ class IndexController extends HomeBaseController {
 		}
 	}
 
+	// 产生一个登陆状态的用户用以测试
+	public function test_login(){
+		$_SESSION['user']=array(
+			'id'=>1,
+			'head_img'=>'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100',
+			'nickname'=>'云淡风晴'
+			);
+	}
 
 }

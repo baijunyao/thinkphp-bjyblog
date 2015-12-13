@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
 /**
- * 友情链接管理
+ * 评论管理
  */
 class CommentController extends AdminBaseController{
 	// 定义数据

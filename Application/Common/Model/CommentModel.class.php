@@ -14,6 +14,7 @@ class CommentModel extends BaseModel{
 	public function addData($type){
 		$data=I('post.');
 		$ouid=$_SESSION['user']['id'];
+		$nickname=$_SESSION['user']['nickname'];
 		$is_admin=M('Oauth_user')->getFieldById($ouid,'is_admin');
 		$data['content']=htmlspecialchars_decode($data['content']);
 		// 删除除img外的其他标签
@@ -30,12 +31,18 @@ class CommentModel extends BaseModel{
 			'date'=>time(),
 			'status'=>1
 			);
+		$pattern = "/^([0-9A-Za-z\\-_\\.]+)@([0-9a-z]+\\.[a-z]{2,3}(\\.[a-z]{2})?)$/i";
+		// 如果用户输入邮箱；则将邮箱记录入oauth_user表中
+		if (preg_match($pattern, $data['email'])) {
+			D('Oauth_user')->where(array('id'=>$_SESSION['user']['id']))->setField('email',$data['email']);
+		}
+		// 添加数据
 		$cmtid=$this->add($comment);
-		// 发送通知邮件
+
+		// 给站长发送通知邮件
 		if(C('COMMENT_SEND_EMAIL') && $is_admin==0){
 			$address=C('EMAIL_RECEIVE');
 			if(!empty($address)){
-				$nickname=M('Oauth_user')->getFieldById($ouid,'nickname');
 				$title=M('Article')->getFieldByAid($data['aid'],'title');
 				$url=U('Home/Index/article',array('aid'=>$data['aid']),'',true);
 				$date=date('Y-m-d H:i:s');
@@ -47,6 +54,26 @@ $comment_content
 html;
 				send_email($address,$nickname.'评论了 '.$title,$content);
 			}
+		}
+		// 给用户发送邮件通知
+		if (C('COMMENT_SEND_EMAIL') && $data['pid']!=0) {
+			$parent_uid=$this->getFieldByCmtid($data['pid'],'ouid');
+			$parent_data=M('Oauth_user')->field('nickname,email')->find($parent_uid);
+			$parent_address=$parent_data['email'];
+			if (!empty($parent_address)) {
+				$parent_name=$parent_data['nickname'];
+				$title=M('Article')->getFieldByAid($data['aid'],'title');
+				$url=U('Home/Index/article',array('aid'=>$data['aid']),'',true);
+				$date=date('Y-m-d H:i:s');
+				$parent_content=<<<html
+$parent_name你好：<br>
+&emsp; $nickname $date 回复了您对 <a href="$url">$title</a> 的评论  内容如下:<br>
+$comment_content
+
+html;
+				send_email($parent_address,$nickname.'回复了 '.$title,$parent_content);				
+			}
+
 		}
 		return $cmtid;
 	}
