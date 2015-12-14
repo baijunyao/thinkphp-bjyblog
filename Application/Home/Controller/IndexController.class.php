@@ -79,6 +79,9 @@ class IndexController extends HomeBaseController {
             'comment'=>$comment,
             'cid'=>$article['current']['cid']
             );
+        if (!empty($_SESSION['user']['id'])) {
+        	$assign['user_email']=M('Oauth_user')->getFieldById($_SESSION['user']['id'],'email');
+        }
         $this->assign($assign);
 		$this->display();
 	}
@@ -122,6 +125,8 @@ class IndexController extends HomeBaseController {
 
 	// 产生一个登陆状态的用户用以测试
 	public function test_login(){
+		echo 'error';
+		die;
 		$_SESSION['user']=array(
 			'id'=>1,
 			'head_img'=>'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100',
