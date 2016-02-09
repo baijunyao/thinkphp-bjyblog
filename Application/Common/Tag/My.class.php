@@ -49,8 +49,8 @@ php;
 <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
 (function(){
-	var BasePath='__PUBLIC__';
-	window.jQuery || document.write('<script src="'+BasePath+'/static/js/jquery-2.0.0.min.js"><\/script>');
+	var basePath='__PUBLIC__';
+	window.jQuery || document.write('<script src="'+basePath+'/static/js/jquery-2.0.0.min.js"><\/script>');
 })();
 </script>
 <script type="text/javascript" src="__PUBLIC__/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
