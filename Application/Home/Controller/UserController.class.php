@@ -14,6 +14,7 @@ class UserController extends HomeBaseController {
 	// 第三方平台退出
 	public function logout(){
 		session('user',null);
+		session('admin',null);
 	}
 
 	// 判断是否登陆

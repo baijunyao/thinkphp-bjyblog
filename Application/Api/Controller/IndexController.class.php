@@ -15,10 +15,10 @@ class IndexController extends HomeBaseController{
 		if($type == 'tencent'){
 			$extend = array('openid' => $this->_get('openid'), 'openkey' => $this->_get('openkey'));
 		}
-
 		$token = $sns->getAccessToken($code , $extend);
 		//获取当前登录用户信息
 		if(is_array($token)){
+			// 获取第三方账号数据
 			$user_info = $this->$type($token);
 			$data=array(
 				'uid'=>0,
@@ -28,18 +28,26 @@ class IndexController extends HomeBaseController{
 				'openid'=>$token['openid'],
 				'access_token'=>$token['access_token'],
 				);
-			$openid=D('OauthUser')->getDataByOpenid($data['openid']);
-			if(empty($openid)){
+			// 获取本地数据库的用户数据
+			$user_data=D('OauthUser')->getDataByOpenid($data['openid']);
+			// 如果登陆过 则覆盖；没有登陆这添加数据
+			if(empty($user_data)){
 				$id=D('OauthUser')->addData($data);
 			}else{
 				$id=D('OauthUser')->editData($data);
 			}
+			// 组合存session的数据
 			$login_info=array(
 				'id'=>$id,
 				'head_img'=>$data['head_img'],
 				'nickname'=>$data['nickname'],
 				);
 			session('user',$login_info);
+			// 如果此账号是admin 则设置后台登陆状态
+			if ($user_info['is_admin']===1) {
+				session('admin','is_login');
+			}
+			// 跳转到登陆前的页面
 			$_COOKIE['this_url']=empty($_COOKIE['this_url']) ? '/' : cookie('this_url');
 			redirect(cookie('this_url'));
 		}
@@ -50,7 +58,6 @@ class IndexController extends HomeBaseController{
 		import("Org.ThinkSDK.ThinkOauth");
 		$qq   = \ThinkOauth::getInstance('qq', $token);
 		$data = $qq->call('user/get_user_info');
-		// p($data);die;
 		if($data['ret'] == 0){
 			$userInfo['type'] = 1;
 			$userInfo['name'] = $data['nickname'];
@@ -67,7 +74,6 @@ class IndexController extends HomeBaseController{
 		import("Org.ThinkSDK.ThinkOauth");
 		$tencent = \ThinkOauth::getInstance('tencent', $token);
 		$data    = $tencent->call('user/info');
-
 		if($data['ret'] == 0){
 			$userInfo['type'] = 'TENCENT';
 			$userInfo['name'] = $data['data']['name'];
@@ -98,7 +104,6 @@ class IndexController extends HomeBaseController{
 	public function t163($token){
 		$t163 = \ThinkOauth::getInstance('t163', $token);
 		$data = $t163->call('users/show');
-
 		if($data['error_code'] == 0){
 			$userInfo['type'] = 'T163';
 			$userInfo['name'] = $data['name'];
@@ -113,7 +118,6 @@ class IndexController extends HomeBaseController{
 	//登录成功，获取人人网用户信息
 	public function renren($token){
 		$renren = \ThinkOauth::getInstance('renren', $token);
-		// echo 1;die;
 		$data   = $renren->call('user/get');
 		if(!isset($data['error'])){
 			$userInfo['type'] = 4;
@@ -130,7 +134,6 @@ class IndexController extends HomeBaseController{
 	public function x360($token){
 		$x360 = \ThinkOauth::getInstance('x360', $token);
 		$data = $x360->call('user/me');
-
 		if($data['error_code'] == 0){
 			$userInfo['type'] = 'X360';
 			$userInfo['name'] = $data['name'];
@@ -146,7 +149,6 @@ class IndexController extends HomeBaseController{
 	public function douban($token){
 		$douban = \ThinkOauth::getInstance('douban', $token);
 		$data   = $douban->call('user/~me');
-
 		if(empty($data['code'])){
 			$userInfo['type'] = 3;
 			$userInfo['name'] = $data['name'];
@@ -162,7 +164,6 @@ class IndexController extends HomeBaseController{
 	public function github($token){
 		$github = \ThinkOauth::getInstance('github', $token);
 		$data   = $github->call('user');
-
 		if(empty($data['code'])){
 			$userInfo['type'] = 'GITHUB';
 			$userInfo['name'] = $data['login'];
@@ -178,7 +179,6 @@ class IndexController extends HomeBaseController{
 	public function google($token){
 		$google = \ThinkOauth::getInstance('google', $token);
 		$data   = $google->call('userinfo');
-
 		if(!empty($data['id'])){
 			$userInfo['type'] = 'GOOGLE';
 			$userInfo['name'] = $data['name'];
@@ -194,7 +194,6 @@ class IndexController extends HomeBaseController{
 	public function msn($token){
 		$msn  = \ThinkOauth::getInstance('msn', $token);
 		$data = $msn->call('me');
-
 		if(!empty($data['id'])){
 			$userInfo['type'] = 'MSN';
 			$userInfo['name'] = $data['name'];
@@ -210,7 +209,6 @@ class IndexController extends HomeBaseController{
 	public function diandian($token){
 		$diandian  = \ThinkOauth::getInstance('diandian', $token);
 		$data      = $diandian->call('user/info');
-
 		if(!empty($data['meta']['status']) && $data['meta']['status'] == 200){
 			$userInfo['type'] = 'DIANDIAN';
 			$userInfo['name'] = $data['response']['name'];
@@ -227,7 +225,6 @@ class IndexController extends HomeBaseController{
 		$taobao = \ThinkOauth::getInstance('taobao', $token);
 		$fields = 'user_id,nick,sex,buyer_credit,avatar,has_shop,vip_info';
 		$data   = $taobao->call('taobao.user.buyer.get', "fields={$fields}");
-
 		if(!empty($data['user_buyer_get_response']['user'])){
 			$user = $data['user_buyer_get_response']['user'];
 			$userInfo['type'] = 'TAOBAO';
@@ -244,7 +241,6 @@ class IndexController extends HomeBaseController{
 	public function baidu($token){
 		$baidu = \ThinkOauth::getInstance('baidu', $token);
 		$data  = $baidu->call('passport/users/getLoggedInUser');
-
 		if(!empty($data['uid'])){
 			$userInfo['type'] = 'BAIDU';
 			$userInfo['name'] = $data['uid'];
@@ -260,7 +256,6 @@ class IndexController extends HomeBaseController{
 	public function kaixin($token){
 		$kaixin = \ThinkOauth::getInstance('kaixin', $token);
 		$data   = $kaixin->call('users/me');
-
 		if(!empty($data['uid'])){
 			$userInfo['type'] = 5;
 			$userInfo['name'] = $data['uid'];
@@ -276,7 +271,6 @@ class IndexController extends HomeBaseController{
 	public function sohu($token){
 		$sohu = \ThinkOauth::getInstance('sohu', $token);
 		$data = $sohu->call('user/get_info');
-
 		if('success' == $data['message'] && !empty($data['data'])){
 			$userInfo['type'] = 'SOHU';
 			$userInfo['name'] = $data['data']['open_id'];
