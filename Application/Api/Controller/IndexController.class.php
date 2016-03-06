@@ -44,7 +44,7 @@ class IndexController extends HomeBaseController{
 				);
 			session('user',$login_info);
 			// 如果此账号是admin 则设置后台登陆状态
-			if ($user_info['is_admin']===1) {
+			if ($user_data['is_admin']==1) {
 				session('admin','is_login');
 			}
 			// 跳转到登陆前的页面
