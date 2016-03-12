@@ -5,12 +5,12 @@ use Common\Controller\BaseController;
  * 后台基类Controller
  */
 class AdminBaseController extends BaseController{
-	/**
-	 * 初始化方法
-	 */
-	public function _initialize(){
-		parent::_initialize();
-		if(session('admin')!='is_login'){
+    /**
+     * 初始化方法
+     */
+    public function _initialize(){
+        parent::_initialize();
+        if(session('admin')!='is_login'){
             // 判断第三方登陆账号中是否有admin
             $oauth_has_admin=M('Oauth_user')->where(array('is_admin'=>1))->count();
             // 如果有第三方账号有admin  则要求用第三方登陆 否则用常规登陆
@@ -19,8 +19,8 @@ class AdminBaseController extends BaseController{
             }else{
                 redirect(U('Admin/Login/login'));
             }
-		}
-	}
+        }
+    }
 
 
 }
