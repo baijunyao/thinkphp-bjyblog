@@ -5,13 +5,14 @@
 下图即是使用thinkbjy开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://www.baijunyao.com <br /><br />
 ![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)
 ## 使用说明
-下载解压按提示进行安装；<br />
-后台登陆密码默认为admin
+1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/thinkbjy/ ；
+2. 下载解压按提示进行安装；
+3. 后台登陆密码默认为admin；
 
-## 针对thinkphp的改进优化
-1. 修复tinkphp的session设置周期无效的bug
-2. 自定义标签 /Application/Common/Tag/My.class.php
-3. 将html视图页面分离
+## 针对thinkphp的改进优化；
+1. 修复tinkphp的session设置周期无效的bug；
+2. 自定义标签 /Application/Common/Tag/My.class.php；
+3. 将html视图页面分离；
 
 ## 项目特色
 1. 前台响应式页面布局;
