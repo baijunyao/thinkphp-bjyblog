@@ -237,11 +237,6 @@ CREATE TABLE `bjy_oauth_user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of bjy_oauth_user
--- ----------------------------
-INSERT INTO `bjy_oauth_user` VALUES ('1', '0', '1', 'test', 'http://qzapp.qlogo.cn/qzapp/101206152/F16ABCFCE42A66BA9049DA0D95593D19/100', '', '', '0', '0', '', '0', '1', '', '1');
-
--- ----------------------------
 -- Table structure for bjy_tag
 -- ----------------------------
 DROP TABLE IF EXISTS `bjy_tag`;
