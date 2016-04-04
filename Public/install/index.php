@@ -48,13 +48,13 @@ if(@$_GET['c']=='success'){
 return array(
 
 //*************************************数据库设置*************************************
-    'DB_TYPE'               =>  'mysqli',     // 数据库类型
-    'DB_HOST'               =>  '{$data['DB_HOST']}',  // 服务器地址
-    'DB_NAME'               =>  '{$data['DB_NAME']}',   // 数据库名
-    'DB_USER'               =>  '{$data['DB_USER']}',       // 用户名
-    'DB_PWD'                =>  '{$data['DB_PWD']}',           // 密码
-    'DB_PORT'               =>  '{$data['DB_PORT']}',       // 端口
-    'DB_PREFIX'             =>  '{$data['DB_PREFIX']}',       // 数据库表前缀
+    'DB_TYPE'               =>  'mysqli',                 // 数据库类型
+    'DB_HOST'               =>  '{$data['DB_HOST']}',     // 服务器地址
+    'DB_NAME'               =>  '{$data['DB_NAME']}',     // 数据库名
+    'DB_USER'               =>  '{$data['DB_USER']}',     // 用户名
+    'DB_PWD'                =>  '{$data['DB_PWD']}',      // 密码
+    'DB_PORT'               =>  '{$data['DB_PORT']}',     // 端口
+    'DB_PREFIX'             =>  '{$data['DB_PREFIX']}',   // 数据库表前缀
 );
 php;
         // 创建数据库链接配置文件
