@@ -8,7 +8,9 @@
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/thinkbjy/ ；
 2. 下载解压按提示进行安装；
 3. 后台登陆密码默认为admin；
-
+4. 如果确认开启了mod_rewrite；请将/Application/Common/Conf/config.php中的URL_MODEL改为2以优化url;如下是URL_MODEL为1和2时的示例<br>
+URL_MODEL:1  http://www.baijunyao.com/index.php/Home/Index/article/aid/60 <br>
+URL_MODEL:2  http://www.baijunyao.com/article/60
 ## 针对thinkphp的改进优化；
 1. 修复tinkphp的session设置周期无效的bug；
 2. 自定义标签 /Application/Common/Tag/My.class.php；
