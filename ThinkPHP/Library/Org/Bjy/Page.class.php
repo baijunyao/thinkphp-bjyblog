@@ -115,24 +115,24 @@ class Page{
         $link_page = "";
         for($i = 1; $i <= $this->rollPage; $i++){
 			if(($this->nowPage - $now_cool_page) <= 0 ){
-                // echo $i;die;
 				$page = $i;
 			}elseif(($this->nowPage + $now_cool_page - 1) >= $this->totalPages){
 				$page = $this->totalPages - $this->rollPage + $i;
 			}else{
 				$page = $this->nowPage - $now_cool_page_ceil + $i;
 			}
-            // echo $this->nowPage;die;
-            if($page > 0 && $page != $this->nowPage){
-
-                if($page <= $this->totalPages){
-                    $link_page .= '<a class="num" href="' . $this->url($page) . '">' . $page . '</a>';
+            if ($page>0) {
+                if($page != $this->nowPage){
+                    if($page <= $this->totalPages){
+                        $link_page .= '<a class="num" href="' . $this->url($page) . '">' . $page . '</a>';
+                    }else{
+                        break;
+                    }
                 }else{
-                    break;
-                }
-            }else{
-                $link_page .= '<span class="current">' . $page . '</span>';
+                    $link_page .= '<span class="current">' . $page . '</span>';
+                }                
             }
+
         }
 
         //替换分页内容
