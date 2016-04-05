@@ -24,13 +24,13 @@ class Page{
     public $totalRows; // 总行数
     public $totalPages; // 分页总页面数
     public $rollPage   = 5;// 分页栏每页显示的页数
-	public $lastSuffix = true; // 最后一页是否显示总页数
+    public $lastSuffix = true; // 最后一页是否显示总页数
 
     private $p       = 'p'; //分页参数名
     private $url     = ''; //当前链接URL
     private $nowPage = 1;
 
-	// 分页显示定制
+    // 分页显示定制
     private $config  = array(
         'header' => '<span class="rows">共 %TOTAL_ROW% 条记录</span>',
         'first'   => '首页',
@@ -95,7 +95,7 @@ class Page{
 
         /* 计算分页零时变量 */
         $now_cool_page      = $this->rollPage/2;
-		$now_cool_page_ceil = ceil($now_cool_page);
+        $now_cool_page_ceil = ceil($now_cool_page);
 
         //上一页
         $up_row  = $this->nowPage - 1;
@@ -114,13 +114,13 @@ class Page{
         //数字连接
         $link_page = "";
         for($i = 1; $i <= $this->rollPage; $i++){
-			if(($this->nowPage - $now_cool_page) <= 0 ){
-				$page = $i;
-			}elseif(($this->nowPage + $now_cool_page - 1) >= $this->totalPages){
-				$page = $this->totalPages - $this->rollPage + $i;
-			}else{
-				$page = $this->nowPage - $now_cool_page_ceil + $i;
-			}
+            if(($this->nowPage - $now_cool_page) <= 0 ){
+                $page = $i;
+            }elseif(($this->nowPage + $now_cool_page - 1) >= $this->totalPages){
+                $page = $this->totalPages - $this->rollPage + $i;
+            }else{
+                $page = $this->nowPage - $now_cool_page_ceil + $i;
+            }
             if ($page>0) {
                 if($page != $this->nowPage){
                     if($page <= $this->totalPages){

@@ -1,2 +1,189 @@
-@charset "utf-8";html{overflow-y:hidden}#nav-top{width:100%;height:50px;background:#34495e}#nav-top .nt-logo{width:190px;height:50px;line-height:50px;text-align:center;font-size:30px;font-weight:700;float:left;background:#008cba;position:relative}#nav-top .nt-logo a{display:block;width:190px;height:50px;position:absolute;left:0;top:0}#nav-top .nt-nav{padding:0 2px;width:700px;height:50px;float:left}#nav-top .nt-nav li{width:120px;height:50px;line-height:50px;text-align:center;cursor:pointer;color:#fff;font-size:15px;float:left}#nav-top .nt-nav li .nt-ico{font-size:20px}#nav-top .nt-nav .ntn-active{background:#1c2b3c}#nav-top .nt-msg{padding-right:20px;width:220px;height:50px;float:right}#nav-top .nt-msg li{width:100px;height:50px;line-height:50px;text-align:center;background:#2e8965;float:left}#nav-top .nt-msg li a{display:block;width:100px;height:50px;line-height:50px;font-size:15px;color:#333}#nav-top .nt-msg .nt-sign-out{background:#892e65}#nav-left{width:190px;height:100%;border-right:1px solid #ccc;position:absolute;left:0;top:50px;background:#f2f2f2}#nav-left .nl-con{display:none}#nav-left .nl-con dl{margin:0}#nav-left .nl-con dl dt{padding-left:15px;width:190px;height:40px;line-height:40px;border-bottom:1px solid #e5e5e5}#nav-left .nl-con dl dt span{margin-right:10px}#nav-left .nl-con dl dd{padding-left:30px;width:189px;height:40px;line-height:40px;border-top:1px solid #fff;border-bottom:1px solid #e5e5e5;background:#fff;position:relative}#nav-left .nl-con dl dd span{margin-right:5px}#nav-left .nl-con dl dd a{display:block;width:190px;height:40px;position:absolute;top:0;left:0}#nav-left .nl-con dl dd .nl-checked{width:2px;height:40px;background:#438eb9;display:none;position:absolute;right:-1px;top:0}#nav-left .nl-con dl dd .nl-checked .nl-arrows{width:0;height:0;border-style:solid;border-width:16px;border-color:transparent #438eb9 transparent transparent;position:absolute;left:-30px;top:3px}#nav-left .nl-show{display:block}#content{padding:10px 0 0 200px;width:100%;height:590px;overflow-y:hidden;overflow-x:hidden}#welcome{padding:0 10px 0 0}#welcome .block .title{width:100%;height:40px;line-height:40px;text-indent:10px;font-size:16px;background:#e4f5fa;font-weight:600}#welcome .block .content{width:100%;height:30px}#welcome .block .content li{width:380px;height:30px;line-height:30px;float:left;text-indent:10px}#welcome .block th{width:100px;height:30px;line-height:30px;font-weight:400;text-align:right}
-/*# sourceMappingURL=index.css.map */
+@charset "utf-8";
+/* CSS Document */
+html {
+  overflow-y: hidden;
+}
+/* 顶部导航条开始 */
+#nav-top {
+  width: 100%;
+  height: 50px;
+  background: #34495E;
+}
+#nav-top .nt-logo {
+  width: 190px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  float: left;
+  background: #008CBA;
+  position: relative;
+}
+#nav-top .nt-logo a {
+  display: block;
+  width: 190px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#nav-top .nt-nav {
+  padding: 0 2px;
+  width: 700px;
+  height: 50px;
+  float: left;
+}
+#nav-top .nt-nav li {
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  float: left;
+}
+#nav-top .nt-nav li .nt-ico {
+  font-size: 20px;
+}
+#nav-top .nt-nav .ntn-active {
+  background: #1C2B3C;
+}
+#nav-top .nt-msg {
+  padding-right: 20px;
+  width: 220px;
+  height: 50px;
+  float: right;
+}
+#nav-top .nt-msg li {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #2E8965;
+  float: left;
+}
+#nav-top .nt-msg li a {
+  display: block;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 15px;
+  color: #333;
+}
+#nav-top .nt-msg .nt-sign-out {
+  background: #892E65;
+}
+/* 顶部导航条结束 */
+/* 左侧导航开始 */
+#nav-left {
+  width: 190px;
+  height: 100%;
+  border-right: 1px solid #CCCCCC;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background: #F2F2F2;
+}
+#nav-left .nl-con {
+  display: none;
+}
+#nav-left .nl-con dl {
+  margin: 0;
+}
+#nav-left .nl-con dl dt {
+  padding-left: 15px;
+  width: 190px;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #E5E5E5;
+}
+#nav-left .nl-con dl dt span {
+  margin-right: 10px;
+}
+#nav-left .nl-con dl dd {
+  padding-left: 30px;
+  width: 189px;
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #E5E5E5;
+  background: #fff;
+  position: relative;
+}
+#nav-left .nl-con dl dd span {
+  margin-right: 5px;
+}
+#nav-left .nl-con dl dd a {
+  display: block;
+  width: 190px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#nav-left .nl-con dl dd .nl-checked {
+  width: 2px;
+  height: 40px;
+  background: #438EB9;
+  display: none;
+  position: absolute;
+  right: -1px;
+  top: 0;
+}
+#nav-left .nl-con dl dd .nl-checked .nl-arrows {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px;
+  border-color: transparent #438EB9 transparent transparent ;
+  position: absolute;
+  left: -30px;
+  top: 3px;
+}
+#nav-left .nl-show {
+  display: block;
+}
+/* 左侧导航结束 */
+/* 右侧内容区域开始 */
+#content {
+  padding: 10px 0px 0px 200px;
+  width: 100%;
+  height: 590px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+/* 右侧区域导航结束 */
+/* 欢迎页面开始 */
+#welcome {
+  padding: 0 10px 0 0;
+}
+#welcome .block .title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 10px;
+  font-size: 16px;
+  background: #E4F5FA;
+  font-weight: 600;
+}
+#welcome .block .content {
+  width: 100%;
+  height: 30px;
+}
+#welcome .block .content li {
+  width: 380px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  text-indent: 10px;
+}
+#welcome .block th {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: right;
+}
+/* 欢迎页面结束 */

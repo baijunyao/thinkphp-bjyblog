@@ -58,6 +58,7 @@ php;
 <script type="text/javascript" src="__PUBLIC__/static/js/html5shiv.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/static/js/respond.min.js"></script>
 <![endif]-->
+<script type="text/javascript" src="__PUBLIC__/static/pace/pace.min.js"></script>
 php;
         return $link;
     }
