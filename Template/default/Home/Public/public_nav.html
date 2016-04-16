@@ -44,7 +44,7 @@
                     </li>
                 <else />
                     <li class="b-user-info">
-                        <span><img class="b-head_img" src="{$Think.session.user.head_img}"/></span>
+                        <span><img class="b-head_img" src="{$Think.session.user.head_img}" alt="{$Think.session.user.nickname}" title="{$Think.session.user.nickname}"  /></span>
                         <span class="b-nickname">{$Think.session.user.nickname}</span>
                         <span><a href="javascript:;" onclick="logout()">退出</a></span>
                     </li>
