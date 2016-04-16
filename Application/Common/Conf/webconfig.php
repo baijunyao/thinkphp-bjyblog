@@ -9,8 +9,8 @@ return array(
 
 //*************************************优化推广****************************************
     'WEB_NAME'                  =>  '白俊遥博客',               //网站名：
-    'WEB_KEYWORDS'              =>  '白俊遥,帅白,技术博客,个人博客,thinkbjy',           //网站关键字
-    'WEB_DESCRIPTION'           =>  '白俊遥的个人技术博客,thinkbjy官方网站',     //网站描述
+    'WEB_KEYWORDS'              =>  '白俊遥,帅白,技术博客,个人博客,bjyblog',           //网站关键字
+    'WEB_DESCRIPTION'           =>  '白俊遥的个人技术博客,bjyblog官方网站',     //网站描述
     'AUTHOR'                    =>  '白俊遥',             //默认作者
     'COPYRIGHT_WORD'            =>  '本文为白俊遥原创文章,转载无需和我联系,但请注明来自白俊遥博客baijunyao.com',    //文章保留版权提示
     'IMAGE_TITLE_ALT_WORD'      =>  '白俊遥博客', //图片默认title和alt
