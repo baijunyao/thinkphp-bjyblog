@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50617
 Source Host           : 127.0.0.1:3306
-Source Database       : thinkbjy
+Source Database       : bjyblog
 
 Target Server Type    : MYSQL
 Target Server Version : 50617
@@ -147,8 +147,8 @@ CREATE TABLE `bjy_config` (
 -- Records of bjy_config
 -- ----------------------------
 INSERT INTO `bjy_config` VALUES ('1', 'WEB_NAME', '白俊遥博客');
-INSERT INTO `bjy_config` VALUES ('2', 'WEB_KEYWORDS', '白俊遥,帅白,技术博客,个人博客,thinkbjy');
-INSERT INTO `bjy_config` VALUES ('3', 'WEB_DESCRIPTION', '白俊遥的个人技术博客,thinkbjy官方网站');
+INSERT INTO `bjy_config` VALUES ('2', 'WEB_KEYWORDS', '白俊遥,帅白,技术博客,个人博客,bjyblog');
+INSERT INTO `bjy_config` VALUES ('3', 'WEB_DESCRIPTION', '白俊遥的个人技术博客,bjyblog官方网站');
 INSERT INTO `bjy_config` VALUES ('4', 'WEB_STATUS', '1');
 INSERT INTO `bjy_config` VALUES ('5', 'ADMIN_PASSWORD', '21232f297a57a5a743894a0e4a801fc3');
 INSERT INTO `bjy_config` VALUES ('6', 'WATER_TYPE', '1');

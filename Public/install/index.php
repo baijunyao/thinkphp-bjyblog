@@ -26,23 +26,26 @@ if(@$_GET['c']=='success'){
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $data=$_POST;
         // 连接数据库
-        $link=@mysql_connect("{$data['DB_HOST']}:{$data['DB_PORT']}",$data['DB_USER'],$data['DB_PWD']);
+        $link=@new mysqli("{$data['DB_HOST']}:{$data['DB_PORT']}",$data['DB_USER'],$data['DB_PWD']);
         $link or die("<script>alert('链接失败');history.go(-1)</script>");
         // 设置字符集
-        mysql_query("SET NAMES 'utf8'");
-        mysql_get_server_info($link)>5.0 or die("<script>alert('请将您的mysql升级到5.0以上');history.go(-1)</script>");
+        $link->query("SET NAMES 'utf8'");
+        $link->server_info>5.0 or die("<script>alert('请将您的mysql升级到5.0以上');history.go(-1)</script>");
         // 创建数据库并选中
-        if(!mysql_select_db($data['DB_NAME'], $link)){
+        if(!$link->select_db($data['DB_NAME'])){
             $create_sql='CREATE DATABASE IF NOT EXISTS '.$data['DB_NAME'].' DEFAULT CHARACTER SET utf8;';
-            mysql_query($create_sql,$link) or die('创建数据库失败');
-            mysql_select_db($data['DB_NAME'], $link);
+            $link->query($create_sql) or die('创建数据库失败');
+            $link->select_db($data['DB_NAME']);
         }
         // 导入sql数据并创建表
-        $thinkbjy_str=file_get_contents('./thinkbjy.sql');
-        $sql_array=preg_split("/;[\r\n]+/", str_replace('bjy_',$data['DB_PREFIX'],$thinkbjy_str));
+        $bjyblog_str=file_get_contents('./bjyblog.sql');
+        $sql_array=preg_split("/;[\r\n]+/", str_replace('bjy_',$data['DB_PREFIX'],$bjyblog_str));
         foreach ($sql_array as $k => $v) {
-           mysql_query($v,$link);
+            if (!empty($v)) {
+                $link->query($v);
+            }
         }
+        $link->close();
         $db_str=<<<php
 <?php
 return array(
