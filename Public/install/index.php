@@ -27,7 +27,9 @@ if(@$_GET['c']=='success'){
         $data=$_POST;
         // 连接数据库
         $link=@new mysqli("{$data['DB_HOST']}:{$data['DB_PORT']}",$data['DB_USER'],$data['DB_PWD']);
-        $link or die("<script>alert('链接失败');history.go(-1)</script>");
+        if ($error=$link->connect_error) {
+            die("<script>alert('数据库链接失败');history.go(-1)</script>");
+        }
         // 设置字符集
         $link->query("SET NAMES 'utf8'");
         $link->server_info>5.0 or die("<script>alert('请将您的mysql升级到5.0以上');history.go(-1)</script>");
