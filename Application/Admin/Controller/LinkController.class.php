@@ -50,6 +50,20 @@ class LinkController extends AdminBaseController{
         }
     }
 
+    /**
+     * 排序
+     */
+    public function sort(){
+        $data=I('post.');
+        if (!empty($data)) {
+            foreach ($data as $k => $v) {
+                $this->db->where(array('lid'=>$k))->save(array('sort'=>$v));
+            }
+        }
+        $this->success('修改成功',U('Admin/Link/index'));
+    }
+
+
 
 }
 

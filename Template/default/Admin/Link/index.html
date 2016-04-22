@@ -6,6 +6,7 @@
     <bootstrapcss />
 </head>
 <body>
+<form action="{:U('Admin/Link/sort')}" method="post">
 <table class="table table-bordered table-striped table-hover table-condensed">
     <thead>
         <tr>
@@ -21,7 +22,7 @@
         <tr>
             <td>{$v['lid']}</td>
             <td>
-                <input class="form-control" type="text" value="{$v['sort']}">
+                <input class="form-control" type="text" name="{$v['lid']}" value="{$v['sort']}">
             </td>
             <td>{$v['lname']}</td>
             <td>{$v['url']}</td>
@@ -38,6 +39,14 @@
             </td>
         </tr>
     </foreach>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            <input class="btn btn-success" type="submit" value="排序">
+        </td>
+    </tr>
 </table>
 <bootstrapjs />
 </body>
