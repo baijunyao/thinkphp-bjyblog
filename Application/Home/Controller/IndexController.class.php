@@ -99,7 +99,6 @@ class IndexController extends HomeBaseController {
     // 站内搜索
     public function search(){
         $search_word=I('get.search_word');
-        $search_word=urldecode($search_word);
         $articles=D('Article')->getDataByTitle($search_word);
         $assign=array(
             'articles'=>$articles['data'],

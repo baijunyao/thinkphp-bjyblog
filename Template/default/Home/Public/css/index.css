@@ -266,6 +266,7 @@ a {
 #b-content .b-tag-title h2 {
   padding-top: 20px;
   padding-bottom: 20px;
+  overflow-y: hidden;
 }
 #b-content .b-tag-title .b-highlight {
   margin: 0 5px;
