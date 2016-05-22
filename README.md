@@ -32,7 +32,7 @@ URL_MODEL:2  http://www.baijunyao.com/article/60<br>
 
 ## 链接
 官网：http://www.baijunyao.com <br />
-github：https://github.com/shuaibai/thinkphp-bjyblog <br />
+github：https://github.com/baijunyao/thinkphp-bjyblog <br />
 oschina：http://git.oschina.net/shuaibai123/thinkbjy <br />
 
 ## 商业友好的开源协议
