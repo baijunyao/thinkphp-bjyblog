@@ -1,10 +1,17 @@
+# thinkphp-bjyblog
+
 ## 简介
-闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；<br /><br />
-如今博客的功能基本已经齐备；特开源以供各类猿们免费使用<br /><br />
-亦可以作为初学thinkphp的同学们的参考源代码；<br /><br />
-下图即是使用bjyblog开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://www.baijunyao.com <br /><br />
-![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)<br />
-想研究Auth权限管理、支付宝等更多功能的可以参考bjyadmin https://github.com/shuaibai/thinkphp-bjyadmin
+闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；  
+
+如今博客的功能基本已经齐备；特开源以供各类猿们免费使用  
+
+亦可以作为初学thinkphp的同学们的参考源代码；  
+
+想研究支付宝、微信支付、邮件发送、短信通知验证码发送、oss云存储、融云即时通讯、友盟推送、Memcached缓存、权限管理、等更多功能的可以参考进阶版的bjyadmin https://github.com/shuaibai/thinkphp-bjyadmin  
+
+下图即是使用bjyblog开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://www.baijunyao.com  
+
+![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)  
 
 ## 使用说明
 1. 请将程序直接放在根目录下；不要多层目录；例如正确：www/;错误：www/thinkbjy/ ；
@@ -31,11 +38,11 @@ URL_MODEL:2  http://www.baijunyao.com/article/60<br>
 6. iCheck；
 
 ## 链接
-官网：http://www.baijunyao.com <br />
-github：https://github.com/baijunyao/thinkphp-bjyblog <br />
-oschina：http://git.oschina.net/shuaibai123/thinkbjy <br />
+官网：http://www.baijunyao.com   
+github：https://github.com/baijunyao/thinkphp-bjyblog   
+oschina：http://git.oschina.net/shuaibai123/thinkbjy   
 
 ## 商业友好的开源协议
-Thinkbjy遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
+bjyblog遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
 
 
