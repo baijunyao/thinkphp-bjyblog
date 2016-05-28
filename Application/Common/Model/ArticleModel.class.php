@@ -188,6 +188,7 @@ class ArticleModel extends BaseModel{
                 ->join('__ARTICLE__ a ON at.aid=a.aid')
                 ->where($where)
                 ->order('a.addtime desc')
+                ->limit($page->firstRow.','.$page->listRows)
                 ->select();
             $url_array=array('tid'=>$tid);
         }elseif ($cid!='all' && $tid=='all') {
