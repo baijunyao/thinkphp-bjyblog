@@ -297,34 +297,33 @@ function getRealIpAddr(){
  * @param string $url U函数生成的链接
  */
 function RU($url){
-    $url=strtolower($url);
     // 兼容 category/:cid\d 路由
-    if(preg_match('/\/home\/index\/category\/cid\/\d+/', $url)){
-        $url=str_replace(array('/home/index','/cid'), '', $url);
+    if(preg_match('/\/Home\/Index\/category\/cid\/\d+/', $url)){
+        $url=str_replace(array('/Home/Index','/cid'), '', $url);
     }
     // 兼容 tag/:tid\d 路由
-    if(preg_match('/\/home\/index\/tag\/tid\/\d+/', $url)) {
-        $url=str_replace(array('/home/index','/tid'), '', $url);
+    if(preg_match('/\/Home\/Index\/tag\/tid\/\d+/', $url)) {
+        $url=str_replace(array('/Home/Index','/tid'), '', $url);
     }
     // 兼容article/cid/:cid\d/:aid\d
-    if(preg_match('/\/home\/index\/article\/cid\/\d+\/aid\/\d+/', $url)){
-        $url=str_replace(array('/home/index','/aid'), '', $url);
+    if(preg_match('/\/Home\/Index\/article\/cid\/\d+\/aid\/\d+/', $url)){
+        $url=str_replace(array('/Home/Index','/aid'), '', $url);
     }
     // 兼容 article/tid/:tid\d/:aid\d
-    if(preg_match('/\/home\/index\/article\/tid\/\d+\/aid\/\d+/', $url)){
-        $url=str_replace(array('/home/index','/aid'), '', $url);
+    if(preg_match('/\/Home\/Index\/article\/tid\/\d+\/aid\/\d+/', $url)){
+        $url=str_replace(array('/Home/Index','/aid'), '', $url);
     }
     // 兼容article/sw/:search_word\S/:aid\d
-    if(preg_match('/\/home\/index\/article\/search_word\/\S+\/aid\/\d+/', $url)){
-        $url=str_replace(array('/home/index','/aid'), '', $url);
+    if(preg_match('/\/Home\/Index\/article\/search_word\/\S+\/aid\/\d+/', $url)){
+        $url=str_replace(array('/Home/Index','/aid'), '', $url);
         $url=str_replace('search_word', 'sw', $url);
     }
-    // 兼容article/:aid\d'=>'index/article
-    if(preg_match('/\/home\/index\/article\/aid\/\d+/', $url)){
-        $url=str_replace(array('/home/index','/aid'), '', $url);
+    // 兼容article/:aid\d'=>'Index/article
+    if(preg_match('/\/Home\/Index\/article\/aid\/\d+/', $url)){
+        $url=str_replace(array('/Home/Index','/aid'), '', $url);
     }
     // 兼容 chat
-    if($url=='/home/index/chat'){
+    if($url=='/Home/Index/chat'){
         $url='/chat';
     }
     return $url;
