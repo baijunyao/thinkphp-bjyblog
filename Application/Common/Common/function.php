@@ -313,14 +313,18 @@ function RU($url){
     if(preg_match('/\/Home\/Index\/article\/tid\/\d+\/aid\/\d+/', $url)){
         $url=str_replace(array('/Home/Index','/aid'), '', $url);
     }
-    // 兼容article/sw/:search_word\S/:aid\d
+    // 兼容 article/sw/:search_word\S/:aid\d
     if(preg_match('/\/Home\/Index\/article\/search_word\/\S+\/aid\/\d+/', $url)){
         $url=str_replace(array('/Home/Index','/aid'), '', $url);
         $url=str_replace('search_word', 'sw', $url);
     }
-    // 兼容article/:aid\d'=>'Index/article
+    // 兼容 article/:aid\d=>Index/article
     if(preg_match('/\/Home\/Index\/article\/aid\/\d+/', $url)){
         $url=str_replace(array('/Home/Index','/aid'), '', $url);
+    }
+    // 兼容 index/:p\d=>'Index/index
+    if(preg_match('/\/Home\/Index\/index\/p\/\d+/', $url)){
+        $url=str_replace('/Home/Index', '', $url);
     }
     // 兼容 chat
     if($url=='/Home/Index/chat'){
