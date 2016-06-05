@@ -4,7 +4,6 @@
 <head>
     <include file="Public/public_head" title="{$article['current']['title']}-"  keywords="{$article['current']['keywords']}" description="{$article['current']['description']}" />
     <css file="__PUBLIC__/static/ueditor1_4_3/third-party/SyntaxHighlighter/shCoreDefault.css" />
-    {$Think.config.WEB_STATISTICS}
 </head>
 <!-- head头部分结束 -->
 <body>
@@ -90,13 +89,5 @@
     check_login="{:U('Home/User/check_login','','',true)}";
 </script>
 <js file="__HOME_JS__/comment.js" />
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 </body>
 </html>
