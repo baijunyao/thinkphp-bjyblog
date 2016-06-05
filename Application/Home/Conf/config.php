@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'URL_ROUTER_ON'         =>  true,                           // 开启路由
+    'URL_ROUTER_ON'         =>  false,                          // 开启路由
     'URL_ROUTE_RULES'       =>  array(                          // 路由规则
         'category/:cid\d'=>'Index/category',                    // 分类路由
         'tag/:tid\d'=>'Index/tag',                              // 标签路由
