@@ -47,13 +47,9 @@ php;
     public function _bootstrapjs(){
         $web_statistics=C('WEB_STATISTICS');
         $link=<<<php
-<script src="//apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="__PUBLIC__/static/js/jquery-2.0.0.min.js"></script>
 <script>
-(function(){
-    var basePath='__PUBLIC__';
-    window.jQuery || document.write('<script src="'+basePath+'/static/js/jquery-2.0.0.min.js"><\/script>');
-})();
-logoutUrl="{:U('Home/User/logout')}";
+    logoutUrl="{:U('Home/User/logout')}";
 </script>
 <script src="__PUBLIC__/static/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
