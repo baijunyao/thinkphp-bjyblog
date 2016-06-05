@@ -17,14 +17,10 @@
 1. 请将项目内的所有文件直接放在根目录下；不要多层目录；  
 例如正确：www/;错误：www/thinkbjy/；
 2. 后台登陆密码默认为admin；
-
-## 路由设置
-- 如果确认开启了mod_rewrite  
-请将/Application/Common/Conf/config.php中的URL_MODEL改为2  
-请将/Application/Home/Conf/config.php中的URL_ROUTER_ON改为true  
+3. 如果确认开启了mod_rewrite  
+请将/Application/Common/Conf/config.php中的URL_MODEL改为2以优化url
 未开启路由：http://baijunyao.com/index.php/Home/Index/article/aid/60  
 开启路由后：http://baijunyao.com/article/60
-- 如果没有开启了mod_rewrite请不要改动上面两项配置；否则会造成链接访问错误；
 
 ## 针对thinkphp的改进优化；
 1. 修复tinkphp的session设置周期无效的bug；

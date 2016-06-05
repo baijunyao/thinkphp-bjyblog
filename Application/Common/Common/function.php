@@ -323,8 +323,9 @@ function RU($url){
         $url=str_replace(array('/Home/Index','/aid'), '', $url);
     }
     // 兼容 index/:p\d=>'Index/index
-    if(preg_match('/\/Home\/Index\/index\/p\/\d+/', $url)){
+    if(preg_match('/\/Home\/Index\/index\/p/', $url)){
         $url=str_replace('/Home/Index', '', $url);
+        $url=str_replace('/p', '', $url);
     }
     // 兼容 chat
     if($url=='/Home/Index/chat'){
