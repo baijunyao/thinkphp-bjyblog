@@ -18,7 +18,7 @@
 例如正确：www/;错误：www/thinkbjy/；
 2. 后台登陆密码默认为admin；
 3. 如果确认开启了mod_rewrite  
-请将/Application/Common/Conf/config.php中的URL_MODEL改为2以优化url
+请将/Application/Common/Conf/config.php中的URL_MODEL改为2以优化url  
 未开启路由：http://baijunyao.com/index.php/Home/Index/article/aid/60  
 开启路由后：http://baijunyao.com/article/60
 
