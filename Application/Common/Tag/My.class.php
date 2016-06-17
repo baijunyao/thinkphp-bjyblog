@@ -134,15 +134,28 @@ php;
     // 置顶推荐文章标签 cid为空时则抓取全部分类下的推荐文章
     public function _recommend($tag,$content){
         if(empty($tag['cid'])){
-            $where="is_show=1 and is_delete=0 and is_top=1";
+            $where=array(
+                'is_show'=>1,
+                'is_delete'=>0,
+                'is_top'=>1
+                );
         }else{
-            $where='is_show=1 and is_delete=0 and is_top=1 and cid='.$tag['cid'];
+            $where=array(
+                'is_show'=>1,
+                'is_delete'=>0,
+                'is_top'=>1,
+                'cid'=>$tag['cid']
+                );
         }
         $limit=$tag['limit'];
-        // p($recommend);
         $php=<<<php
 <?php
-            \$recommend=M('Article')->field('aid,title')->where("$where")->limit($limit)->select();
+            \$recommend=M('Article')
+                ->field('aid,title')
+                ->where(\$where)
+                ->order('aid desc')
+                ->limit($limit)
+                ->select();
             foreach (\$recommend as \$k => \$field) {
                 \$url=U('Home/Index/article',array('aid'=>\$field['aid']));
 ?>
