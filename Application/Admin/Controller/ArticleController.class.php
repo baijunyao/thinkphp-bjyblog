@@ -51,7 +51,7 @@ class ArticleController extends AdminBaseController{
     // 向同步百度推送
     public function baidu_site($aid){
         $urls=array();
-        $urls[]=$_SERVER['HTTP_HOST'].'/article/'.$aid; 
+        $urls[]=U('Home/Index/article',array('aid'=>$aid),'',true);
         $api=C('BAIDU_SITE_URL');
         $ch=curl_init();
         $options=array(
@@ -65,13 +65,10 @@ class ArticleController extends AdminBaseController{
         $result=curl_exec($ch);
         $msg=json_decode($result,true);
         if($msg['code']==500){
-            curl_setopt_array($ch, $options);
+            curl_exec($ch);
         }
-        curl_exec($ch);
         curl_close($ch);
     }
-
-
 
     // 修改文章
     public function edit(){
