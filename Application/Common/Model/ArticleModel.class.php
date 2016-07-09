@@ -73,6 +73,23 @@ class ArticleModel extends BaseModel{
                     // 传递图片插入数据库
                     D('ArticlePic')->addData($aid,$image_path);
                 }
+                // 获取未删除和展示的文章
+                $sitemap_map=array(
+                    'is_show'=>1,
+                    'is_delete'=>0
+                    );
+                $list=M('Article')
+                    ->field('aid,addtime')
+                    ->where($sitemap_map)
+                    ->order('aid desc')
+                    ->select();
+                // 生成sitemap文件
+                $sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<urlset>\r\n";
+                foreach($list as $k=>$v){
+                    $sitemap .= "    <url>\r\n"."        <loc>".U('Home/Index/article',array('aid'=>$v['aid']),'',true)."</loc>\r\n"."        <lastmod>".date('Y-m-d',$v['addtime'])."</lastmod>\r\n        <changefreq>weekly</changefreq>\r\n        <priority>0.8</priority>\r\n    </url>\r\n";
+                }
+                $sitemap .= '</urlset>';
+                file_put_contents('./sitemap.xml',$sitemap);
                 return $aid;
             }else{
                 return false;
