@@ -13,7 +13,7 @@
  * 修改者：白俊遥
  * 日  期：2015.5.10
  * 邮  箱：baijunyao@baijunyao.com
- * 博  客：http://www.baijunyao.com
+ * 博  客：http://baijunyao.com
  */
 namespace Org\Bjy;
 

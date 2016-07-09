@@ -212,7 +212,7 @@ CREATE TABLE `bjy_link` (
 -- ----------------------------
 -- Records of bjy_link
 -- ----------------------------
-INSERT INTO `bjy_link` VALUES ('2', '白俊遥博客', 'http://www.baijunyao.com', '1', '1', '0');
+INSERT INTO `bjy_link` VALUES ('2', '白俊遥博客', 'http://baijunyao.com', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for bjy_oauth_user

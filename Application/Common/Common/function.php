@@ -142,7 +142,7 @@ function getUrlToDomain($domain) {
     cut_str($str,'/',0);  返回 123
     cut_str($str,'/',-1);  返回 789
     cut_str($str,'/',-2);  返回 456
-    具体参考 http://www.baijunyao.com/index.php/Home/Index/article/aid/18
+    具体参考 http://baijunyao.com/article/18
 */
 function cut_str($str,$sign,$number){
     $array=explode($sign, $str);
