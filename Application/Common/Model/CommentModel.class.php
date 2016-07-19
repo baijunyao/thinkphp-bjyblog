@@ -131,9 +131,6 @@ html;
             ->order('date desc')
             ->select();
         foreach ($data as $k => $v) {
-            // 删除除img外的其他标签
-            $v['content']=htmlspecialchars_decode($v['content']);
-            $data[$k]['content']=strip_tags($v['content'],'<img>');
             // 获取二级评论
             $this->child=array();
             $this->getTree($v);
