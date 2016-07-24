@@ -23,7 +23,7 @@ CREATE TABLE `bjy_article` (
   `aid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '文章表主键',
   `title` char(100) NOT NULL DEFAULT '' COMMENT '标题',
   `author` varchar(15) NOT NULL DEFAULT '' COMMENT '作者',
-  `content` text NOT NULL COMMENT '文章内容',
+  `content` mediumtext NOT NULL COMMENT '文章内容',
   `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字',
   `description` char(255) NOT NULL DEFAULT '' COMMENT '描述',
   `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '文章是否显示 1是 0否',
