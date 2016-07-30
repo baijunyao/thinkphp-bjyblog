@@ -145,6 +145,7 @@ a {
   padding: 10px 20px;
   background: #fff;
   box-shadow: 0px 1px 2px 0px #E2E2E2;
+  overflow: hidden;
 }
 #b-public-right .b-tags .b-title,
 #b-public-right .b-recommend .b-title,
@@ -216,6 +217,8 @@ a {
 }
 #b-public-right .b-link-a {
   margin-right: 10px;
+  display: block;
+  float: left;
 }
 #b-public-right .b-search {
   padding: 20px;
