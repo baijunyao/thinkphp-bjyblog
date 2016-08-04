@@ -8,7 +8,7 @@
                 <php>$tag_i++</php>
                 <php>$tag_i=$tag_i==5?1:$tag_i</php>
                 <li class="b-tname">
-                    <a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" target="_blank">{$v['tname']} ({$v['count']})</a>
+                    <a class="tstyle-{$tag_i}" href="{:U('Home/Index/tag',array('tid'=>$v['tid']))}" onclick="return recordId('tid',{$v['tid']})">{$v['tname']} ({$v['count']})</a>
                 </li>
             </foreach>
         </ul>

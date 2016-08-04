@@ -107,3 +107,38 @@ function setCookie(name,value,days) {
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
+// 获取cookie
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+// 删除cookie
+function deleteCookie(name) {
+    setCookie(name,"",-1);
+}
+
+/**
+ * 记录当前选中的分类或者标签
+ * @param  {string} category index：首页 cid：分类  tid：标签
+ * @param  {integer} id      id
+ * @return {boolean}         true 接着跳转
+ */
+function recordId(category,id){
+    // 设置默认值为0
+    setCookie('cid',0);
+    setCookie('tid',0);
+    setCookie('search_word',0);
+    // 如果不是首页 则记录当前选中的分类或者标签
+    if (category!='index' && category!='/') {
+        setCookie(category,id);
+    }
+    return true;
+}
+

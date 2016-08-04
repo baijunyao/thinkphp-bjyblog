@@ -22,9 +22,7 @@ class CategoryModel extends BaseModel{
     // 修改数据
     public function editData(){
         $data=I('post.');
-        // p($data);die;
         if($this->create($data)){
-            // p($data);die;
             return $this->where(array('cid'=>$data['cid']))->save($data);
         }
     }
@@ -42,7 +40,7 @@ class CategoryModel extends BaseModel{
             $this->error='请先删除此分类下的文章';
             return false;
         }
-        if($this->where("cid=$cid")->delete()){
+        if($this->where(array('cid'=>$cid))->delete()){
             return true;
         }else{
             return false;
@@ -68,9 +66,9 @@ class CategoryModel extends BaseModel{
     //传递cid和field获取对应的数据
     public function getDataByCid($cid,$field='all'){
         if($field=='all'){
-            return $this->where("cid=$cid")->find();
+            return $this->where(array('cid'=>$cid))->find();
         }else{
-            return $this->where("cid=$cid")->getField($field);
+            return $this->where(array('cid'=>$cid))->getField($field);
         }
 
     }

@@ -50,13 +50,13 @@ class IndexController extends HomeBaseController {
 
     // 文章内容
     public function article(){
-        $cid=I('get.cid',0,'intval');
-        $tid=I('get.tid',0,'intval');
         $aid=I('get.aid',0,'intval');
+        $cid=intval(cookie('cid'));
+        $tid=intval(cookie('tid'));
+        $search_word=cookie('search_word');
+        $search_word=empty($search_word) ? 0 : $search_word;
         // 文章点击量+1
         M('Article')->where(array('aid'=>$aid))->setInc('click',1);
-        // 获取文章数据
-        $search_word=I('get.search_word',0);
         switch(true){
             case $cid==0 && $tid==0 && $search_word==(string)0:
                 $map=array();
@@ -71,6 +71,7 @@ class IndexController extends HomeBaseController {
                 $map=array('title'=>$search_word);
                 break;
         }
+        // 获取文章数据
         $article=D('Article')->getDataByAid($aid,$map);
         // 获取评论数据
         $comment=D('Comment')->getChildData($aid);

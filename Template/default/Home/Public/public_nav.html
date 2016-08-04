@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/" onclick="recordId('/',0)">
                 <div class="hidden-xs b-nav-background"></div>
                 <ul class="b-logo-code">
                     <li class="b-lc-start">&lt;?php</li>
@@ -22,11 +22,11 @@
             <ul class="nav navbar-nav b-nav-parent">
                 <li class="hidden-xs b-nav-mobile"></li>
                 <li class="b-nav-cname <eq name="cid" value="index">b-nav-active</eq> " >
-                    <a href="/">首页</a>
+                    <a href="/" onclick="recordId('/',0)">首页</a>
                 </li>
                 <foreach name="categorys" item="v">
                     <li class="b-nav-cname <eq name="cid" value="$v['cid']">b-nav-active</eq> ">
-                        <a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}">{$v['cname']}</a>
+                        <a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}" onclick="return recordId('cid',{$v['cid']})">{$v['cname']}</a>
                     </li>
                 </foreach>
                 <li class="b-nav-cname <eq name="cid" value="chat">b-nav-active</eq> ">

@@ -179,7 +179,10 @@ class ArticleModel extends BaseModel{
                 ->order('addtime desc')
                 ->limit($page->firstRow.','.$page->listRows)
                 ->select();
-            $url_array=array();
+            $extend=array(
+                'type'=>'index',
+                'id'=>0
+                );
         }elseif ($cid=='all' && $tid!='all') {
             // 获取tid下的全部文章
             if($is_show=='all'){
@@ -207,7 +210,10 @@ class ArticleModel extends BaseModel{
                 ->order('a.addtime desc')
                 ->limit($page->firstRow.','.$page->listRows)
                 ->select();
-            $url_array=array('tid'=>$tid);
+            $extend=array(
+                'type'=>'tid',
+                'id'=>$tid
+                );
         }elseif ($cid!='all' && $tid=='all') {
             // 获取cid下的全部文章
             if($is_show=='all'){
@@ -231,7 +237,10 @@ class ArticleModel extends BaseModel{
                 ->order('addtime desc')
                 ->limit($page->firstRow.','.$page->listRows)
                 ->select();
-            $url_array=array('cid'=>$cid);
+            $extend=array(
+                'type'=>'cid',
+                'id'=>$cid
+                );
         }
         $show=$page->show();
         foreach ($list as $k => $v) {
@@ -240,8 +249,8 @@ class ArticleModel extends BaseModel{
             $list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
             $v['content']=preg_ueditor_image_path($v['content']);
             $list[$k]['content']=htmlspecialchars($v['content']);
-            $all_url_array=array_merge($url_array,array('aid'=>$v['aid']));
-            $list[$k]['url']=U('Home/Index/article/',$all_url_array);
+            $list[$k]['url']=U('Home/Index/article/',array('aid'=>$v['aid']));
+            $list[$k]['extend']=$extend;
         }
         $data=array(
             'page'=>$show,
@@ -260,7 +269,6 @@ class ArticleModel extends BaseModel{
             $data['category']=current(D('Category')->getDataByCid($data['cid'],'cid,cid,cname,keywords'));
             // 获取相对路径的图片地址
             $data['content']=preg_ueditor_image_path($data['content']);
-            $url_array=array();
         }else{
             if(isset($map['tid'])){
                 // 根据此标签tid获取上下篇文章
@@ -272,9 +280,6 @@ class ArticleModel extends BaseModel{
                 $next_map['a.aid']=array('lt',$aid);
                 $data['prev']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($prev_map)->limit(1)->find();
                 $data['next']=$this->field('a.aid,a.title')->alias('a')->join('__ARTICLE_TAG__ at ON a.aid=at.aid')->where($next_map)->order('a.aid desc')->limit(1)->find();
-                $url_array=array(
-                    'tid'=>$map['tid']
-                    );
             }else if(isset($map['cid'])){
                 // 根据此分类cid获取上下篇文章
                 $prev_map=$map;
@@ -285,7 +290,6 @@ class ArticleModel extends BaseModel{
                 $next_map['aid']=array('lt',$aid);
                 $data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
                 $data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
-                $url_array=array('cid'=>$map['cid']);
             }else{
                 // 根据搜索词获取上下篇文章
                 $prev_map=array('title'=>array('like','%'.$map['title'].'%'));
@@ -296,17 +300,13 @@ class ArticleModel extends BaseModel{
                 $next_map['aid']=array('lt',$aid);
                 $data['prev']=$this->field('aid,title')->where($prev_map)->limit(1)->find();
                 $data['next']=$this->field('aid,title')->where($next_map)->order('aid desc')->limit(1)->find();
-                $url_array=array('search_word'=>$map['title']);
             }
-            
             // 如果不为空 添加url
             if(!empty($data['prev'])){
-                $all_url_array=array_merge($url_array,array('aid'=>$data['prev']['aid']));
-                $data['prev']['url']=U('Home/Index/article/',$all_url_array);
+                $data['prev']['url']=U('Home/Index/article/',array('aid'=>$data['prev']['aid']));
             }
             if(!empty($data['next'])){
-                $all_url_array=array_merge($url_array,array('aid'=>$data['next']['aid']));
-                $data['next']['url']=U('Home/Index/article/',$all_url_array);
+                $data['next']['url']=U('Home/Index/article/',array('aid'=>$data['next']['aid']));
             }
             $data['current']=$this->where(array('aid'=>$aid))->find();
             $data['current']['tids']=D('ArticleTag')->getDataByAid($aid);
@@ -344,7 +344,7 @@ class ArticleModel extends BaseModel{
     // 传递cid获得此分类下面的文章数据
     // is_all为true时获取全部数据 false时不获取is_show为0 和is_delete为1的数据
     public function getDataByCid($cid,$is_all=false){
-        if($is_delete){
+        if($is_all){
             return $this->order('addtime desc')->elect();
         }else{
             $where=array(
