@@ -87,6 +87,9 @@ function comment(obj){
                     'content':content,
                     'email':email
                 };
+                // 显示loading
+                layer.load(1);
+                // ajax评论
                 $.post(ajaxCommentUrl, postData, function(data) {
                     var newPid=data;
                     var replyName=$(obj).attr('username');
@@ -105,8 +108,9 @@ function comment(obj){
                         $(obj).parents('.b-content-col').eq(0).append(str);
                         $(obj).parents('.b-box-textarea').eq(0).remove();
                     }
-
                     $(obj).parents('.b-box-textarea').eq(0).find('.b-box-content').html('');
+                    // 关闭loading
+                    layer.closeAll();
                 });
             }
         }else{
