@@ -55,8 +55,21 @@ class IndexController extends HomeBaseController {
         $tid=intval(cookie('tid'));
         $search_word=cookie('search_word');
         $search_word=empty($search_word) ? 0 : $search_word;
-        // 文章点击量+1
-        M('Article')->where(array('aid'=>$aid))->setInc('click',1);
+        $read=cookie('read');
+        // 判断是否已经记录过aid
+        if (array_key_exists($aid, $read)) {
+            // 判断点击本篇文章的时间是否已经超过一天
+            if ($read[$aid]-time()>=86400) {
+                $read[$aid]=time();
+                // 文章点击量+1
+                M('Article')->where(array('aid'=>$aid))->setInc('click',1);
+            }
+        }else{
+            $read[$aid]=time();
+            // 文章点击量+1
+            M('Article')->where(array('aid'=>$aid))->setInc('click',1);
+        }
+        cookie('read',$read,864000);
         switch(true){
             case $cid==0 && $tid==0 && $search_word==(string)0:
                 $map=array();
