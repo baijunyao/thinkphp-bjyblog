@@ -17,6 +17,3 @@ class ArticleViewModel extends ViewModel{
 
 
 
-
-
-?>

@@ -34,14 +34,14 @@ Class TagModel extends BaseModel{
             $this->error='标签名不能为空';
             return false;
         }else{
-            return $this->where("tid=$tid")->save($data);
+            return $this->where(array('tid'=>$tid))->save($data);
         }
     }
 
     // 删除数据
     public function deleteData(){
         $tid=I('get.tid',0,'intval');
-        if($this->where("tid=$tid")->delete()){
+        if($this->where(array('tid'=>$tid))->delete()){
             return true;
         }else{
             return false;
@@ -60,7 +60,7 @@ Class TagModel extends BaseModel{
     // 根据tid获取单条数据
     public function getDataByTid($tid,$field='all'){
         if($field=='all'){
-            return $this->where("tid=$tid")->find();
+            return $this->where(array('tid'=>$tid))->find();
         }else{
             return $this->getFieldByTid($tid,'tname');
         }
@@ -73,7 +73,7 @@ Class TagModel extends BaseModel{
      */
     public function getTnames($tids){
         foreach ($tids as $k => $v) {
-            $tnames[]=$this->where("tid=$v")->getField('tname');
+            $tnames[]=$this->where(array('tid'=>$v))->getField('tname');
         }
         return $tnames;
     }

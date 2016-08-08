@@ -145,7 +145,7 @@ class ArticleModel extends BaseModel{
         $aid=I('get.aid',0,'intval');
         D('ArticlePic')->deleteData($aid);
         D('ArticleTag')->deleteData($aid);
-        $this->where("aid=$aid")->delete();
+        $this->where(array('aid'=>$aid))->delete();
         return true;
     }
 

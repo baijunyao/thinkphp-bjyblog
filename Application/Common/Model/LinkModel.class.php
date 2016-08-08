@@ -47,6 +47,6 @@ class LinkModel extends BaseModel{
 
     // 传递lid获取单条数据
     public function getDataByLid($lid){
-        return $this->where("lid=$lid")->find();
+        return $this->where(array('lid'=>$lid))->find();
     }
 }
