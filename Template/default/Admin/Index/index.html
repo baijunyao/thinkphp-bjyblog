@@ -253,5 +253,10 @@
 <!-- 右侧内容结束 -->
 <bootstrapjs />
 <js file="__ADMIN_JS__/index.js" />
+<script>
+// 动态调整iframe的高度以适应不同高度的显示器
+$('#content').height($(window).height());
+$('#content').css('padding-bottom',50);
+</script>
 </body>
 </html>
