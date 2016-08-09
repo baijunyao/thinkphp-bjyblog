@@ -218,6 +218,7 @@ a {
 #b-public-right .b-link-a {
   margin-right: 10px;
   display: block;
+  float: left;
 }
 #b-public-right .b-search {
   padding: 20px;
@@ -777,3 +778,7 @@ a {
   }
 }
 /* 为pc设置样式结束 */
+.osc_git_box {
+  margin-bottom: 50px !important;
+  width: 750px;
+}
