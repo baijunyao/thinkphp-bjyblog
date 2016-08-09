@@ -112,6 +112,10 @@ class IndexController extends HomeBaseController {
 
     // 开源项目
     public function git(){
+        $assign=array(
+            'cid'=>'git'
+            );
+        $this->assign($assign);
         $this->display();
     }
 

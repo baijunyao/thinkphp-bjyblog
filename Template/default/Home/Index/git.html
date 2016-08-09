@@ -64,21 +64,6 @@
                 </style>
                 <!-- 资源结束 -->
             </div>
-            <div class="b-chat-middle"></div>
-            <div class="b-chat-right">
-                <volist name="data" id="v" mod="2">
-                    <eq name="mod" value="1">
-                        <ul class="b-chat-one animated bounceInRight">
-                            <li class="b-chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
-                            <li class="b-chat-content">{$v['content']}</li>
-                            <div class="b-arrows-right1">
-                                <div class="b-arrows-round"></div>
-                            </div>
-                            <div class="b-arrows-right2"></div>
-                        </ul>
-                    </eq>
-                </volist>
-            </div>
         </div>
         <!-- 左侧开源项目结束 -->
 
