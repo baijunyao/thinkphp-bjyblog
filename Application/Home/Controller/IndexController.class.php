@@ -110,6 +110,11 @@ class IndexController extends HomeBaseController {
         $this->display();
     }
 
+    // 开源项目
+    public function git(){
+        $this->display();
+    }
+
     // 站内搜索
     public function search(){
         $search_word=I('get.search_word');
@@ -135,5 +140,8 @@ class IndexController extends HomeBaseController {
             echo $cmtid;
         }
     }
+
+    
+
 
 }
