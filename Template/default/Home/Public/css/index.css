@@ -375,6 +375,9 @@ a {
 #b-content .b-article .b-metadata .b-tag-name {
   margin-right: 5px;
 }
+#b-content .b-article .b-content-word {
+  line-height: 28px;
+}
 #b-content .b-article .b-content-word img {
   max-width: 100%;
   height: auto;
