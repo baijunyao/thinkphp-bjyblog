@@ -327,11 +327,14 @@ class ArticleModel extends BaseModel{
         $list=$this
             ->where($map)
             ->order('addtime desc')
-            ->limit($page->firstRow.','.$page->lastRows)
+            ->limit($page->firstRow.','.$page->listRows)
             ->select();
         foreach ($list as $k => $v) {
             $list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
             $list[$k]['url']=U('Home/Index/article/',array('search_word'=>$search_word,'aid'=>$v['aid']));
+            $list[$k]['tids']=D('ArticleTag')->getDataByAid($v['aid']);
+            $list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
+            $list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname,keywords'));
         }
         $show=$page->show();
         $data=array(
