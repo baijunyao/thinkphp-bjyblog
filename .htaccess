@@ -1,7 +1,16 @@
 <IfModule mod_rewrite.c>
-	RewriteEngine on
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	#去掉首页的index.php
-	RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    #去掉首页的index.php
+    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+    RewriteRule /Home/Index/article/aid/(\d+) http://%{HTTP_HOST}/article/$1 [NC,L,R=301]
+    RewriteRule /Home/Index/article/cid/(\d+)/tid/(\d+)/search_word/0/aid/(\d+) http://%{HTTP_HOST}/article/$3 [NC,L,R=301]
+    RewriteRule /Home/Index/article/cid/(\d+)/tid/(\d+)/aid/(\d+) http://%{HTTP_HOST}/article/$3 [NC,L,R=301]
+    RewriteRule /Index/article/aid/(\d+) http://%{HTTP_HOST}/article/$1 [NC,L,R=301]
+    RewriteRule /Index/article/tid/(\d+)/aid/(\d+) http://%{HTTP_HOST}/article/$2 [NC,L,R=301]
+    RewriteRule /Index/article/cid/(\d+)/aid/(\d+) http://%{HTTP_HOST}/article/$2 [NC,L,R=301]
+    RewriteRule /Index/article/cid/(\d+)/tid/(\d+)/aid/(\d+) http://%{HTTP_HOST}/article/$3 [NC,L,R=301]
+    RewriteRule /article/cid/(\d+)/(\d+) http://%{HTTP_HOST}/article/$2 [NC,L,R=301]
+    RewriteRule /article/tid/(\d+)/(\d+) http://%{HTTP_HOST}/article/$2 [NC,L,R=301]
 </IfModule>
