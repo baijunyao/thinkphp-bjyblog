@@ -124,8 +124,8 @@ html;
         $where=array_merge($status,$other);
         // 关联第三方用户表获取一级评论
         $data=$this
-            ->field('c.*,ou.nickname,ou.head_img')
             ->alias('c')
+            ->field('c.*,ou.nickname,ou.head_img')
             ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
             ->where($where)
             ->order('date desc')
@@ -167,6 +167,27 @@ html;
 
     }
 
+    /**
+     * 获取最新的评论
+     */
+    public function getNewComment(){
+        $map=array(
+            'c.pid'=>0
+            );
+        $data=$this
+            ->field('c.content,c.date,a.title,a.aid,ou.nickname,ou.head_img')
+            ->alias('c')
+            ->join('__ARTICLE__ a ON c.aid=a.aid')
+            ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
+            ->where($map)
+            ->order('c.date desc')
+            ->limit(15)
+            ->select();
+        foreach ($data as $k => $v) {
+            $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
+        }
+        return $data;
+    }
 
 
 }
