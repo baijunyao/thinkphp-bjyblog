@@ -331,6 +331,10 @@ function RU($url){
     if($url=='/Home/Index/chat'){
         $url='/chat';
     }
+    // 兼容 git
+    if($url=='/Home/Index/git'){
+        $url='/git';
+    }
     return $url;
 }
 
