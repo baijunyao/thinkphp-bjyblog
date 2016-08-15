@@ -2,7 +2,8 @@
 <html lang="en">
 <!-- head头部分开始 -->
 <head>
-<include file="Public/public_head" title="{$category['cname']}-"  keywords="{$category['keywords']}" description="{$category['description']}" />
+    <include file="Public/public_head" title="{$category['cname']}-"  keywords="{$category['keywords']}" description="{$category['description']}" />
+    <link rel="canonical" href="{:U('Home/Index/category',array('cid'=>$_GET['cid']),'',true)}" />
 </head>
 <!-- head头部分结束 -->
 <body>

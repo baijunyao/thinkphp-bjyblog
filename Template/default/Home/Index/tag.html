@@ -2,7 +2,8 @@
 <html lang="en">
 <!-- head头部分开始 -->
 <head>
-<include file="Public/public_head" title="{$title}-"  keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
+    <include file="Public/public_head" title="{$title}-"  keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
+    <link rel="canonical" href="{:U('Home/Index/tag',array('tid'=>$_GET['tid']),'',true)}" />
 </head>
 <!-- head头部分结束 -->
 <body>
