@@ -27,7 +27,7 @@ if(@$_GET['c']=='success'){
         $data=$_POST;
         // 连接数据库
         $link=@new mysqli("{$data['DB_HOST']}:{$data['DB_PORT']}",$data['DB_USER'],$data['DB_PWD']);
-        $link->connect_error && die("<script>alert('数据库链接失败');history.go(-1)</script>");
+        $link->connect_error && die("<script>alert('数据库连接失败');history.go(-1)</script>");
         // 设置字符集
         $link->query("SET NAMES 'utf8'");
         $link->server_info>5.0 or die("<script>alert('请将您的mysql升级到5.0以上');history.go(-1)</script>");
@@ -60,7 +60,7 @@ return array(
     'DB_PREFIX'             =>  '{$data['DB_PREFIX']}',   // 数据库表前缀
 );
 php;
-        // 创建数据库链接配置文件
+        // 创建数据库连接配置文件
         file_put_contents('../../Application/Common/Conf/db.php', $db_str);
         @touch('./install.lock');
         require './success.html';
