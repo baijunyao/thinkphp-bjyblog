@@ -12,7 +12,7 @@ class PublicBaseController extends BaseController{
         parent::_initialize();
         if(C('WEB_STATUS')!=1){
             $this->display('Public/web_close');
-            die;
+            exit();
         }
         // 分配常用数据
         $assign=array(

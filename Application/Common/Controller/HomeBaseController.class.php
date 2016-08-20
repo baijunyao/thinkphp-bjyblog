@@ -13,7 +13,7 @@ class HomeBaseController extends BaseController{
         // 判断博客是否关闭
         if(C('WEB_STATUS')!=1){
             $this->display('Public/web_close');
-            die;
+            exit();
         }
         // 组合置顶推荐where
         $recommend_map=array(
