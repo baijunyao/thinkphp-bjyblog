@@ -15,7 +15,7 @@ class LinkController extends AdminBaseController{
 
     // 友情链接列表
     public function index(){
-        $data=$this->db->getDataByState(0);
+        $data=$this->db->getDataByState(0,'all');
         $this->assign('data',$data);
         $this->display();
     }

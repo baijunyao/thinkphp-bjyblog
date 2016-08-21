@@ -42,6 +42,10 @@ class LinkModel extends BaseModel{
             'is_delete'=>$is_delete,
             'is_show'=>$is_show,
             );
+        // 如果是获取全部链接；则删除is_show限制
+        if ($is_show==='all') {
+            unset($where['is_show']);
+        }
         return $this->where($where)->order('sort')->select();
     }
 
