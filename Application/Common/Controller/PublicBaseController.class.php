@@ -10,10 +10,6 @@ class PublicBaseController extends BaseController{
      */
     public function _initialize(){
         parent::_initialize();
-        if(C('WEB_STATUS')!=1){
-            $this->display('Public/web_close');
-            exit();
-        }
         // 分配常用数据
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
