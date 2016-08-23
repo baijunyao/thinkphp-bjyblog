@@ -185,6 +185,7 @@ html;
             ->select();
         foreach ($data as $k => $v) {
             $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
+            $data[$k]['content']=re_substr($v['content'],0,30);
         }
         return $data;
     }
