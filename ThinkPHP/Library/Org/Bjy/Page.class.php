@@ -99,11 +99,11 @@ class Page{
 
         //上一页
         $up_row  = $this->nowPage - 1;
-        $up_page = $up_row > 0 ? '<a class="prev" href="' . $this->url($up_row) . '">' . $this->config['prev'] . '</a>' : '<a class="prev" href="javascript:;">' . $this->config['prev'] . '</a>';
+        $up_page = $up_row > 0 ? '<a class="prev" href="' . $this->url($up_row) . '">' . $this->config['prev'] . '</a>' : '<a class="prev not-allowed" href="javascript:;">' . $this->config['prev'] . '</a>';
 
         //下一页
         $down_row  = $this->nowPage + 1;
-        $down_page = ($down_row <= $this->totalPages) ? '<a class="next" href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a>' : '<a class="next" href="javascript:;">' . $this->config['next'] . '</a>';
+        $down_page = ($down_row <= $this->totalPages) ? '<a class="next" href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a>' : '<a class="next not-allowed" href="javascript:;">' . $this->config['next'] . '</a>';
 
         //第一页
         $the_first = '<a class="first" href="' . $this->url(1) . '">' . $this->config['first'] . '</a>';

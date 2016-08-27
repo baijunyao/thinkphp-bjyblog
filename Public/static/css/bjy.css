@@ -208,6 +208,9 @@ textarea {
   text-decoration: none;
   background: #008CBA;
 }
+.page .not-allowed {
+  cursor: not-allowed;
+}
 /* 分页结束 */
 .pace {
   -webkit-pointer-events: none;
