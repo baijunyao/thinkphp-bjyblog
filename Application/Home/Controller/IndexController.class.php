@@ -86,6 +86,11 @@ class IndexController extends HomeBaseController {
         }
         // 获取文章数据
         $article=D('Article')->getDataByAid($aid,$map);
+        if (empty($article['current']['aid'])) {
+            header("HTTP/1.0  404  Not Found");
+            $this->display('./Template/default/Home/Public/404.html');
+            exit(0);
+        }
         // 获取评论数据
         $comment=D('Comment')->getChildData($aid);
         $assign=array(
