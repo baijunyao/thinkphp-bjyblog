@@ -23,7 +23,7 @@ class IndexController extends HomeBaseController {
         $cid=I('get.cid',0,'intval');
         // 获取分类数据
         $category=D('Category')->getDataByCid($cid);
-        // 如果文章不存在；则返回404页面
+        // 如果分类不存在；则返回404页面
         if (empty($category)) {
             header("HTTP/1.0  404  Not Found");
             $this->display('./Template/default/Home/Public/404.html');
@@ -44,8 +44,16 @@ class IndexController extends HomeBaseController {
     // 标签
     public function tag(){
         $tid=I('get.tid',0,'intval');
-        $articles=D('Article')->getPageData('all',$tid);
+        // 获取标签名
         $tname=D('Tag')->getFieldByTid($tid,'tname');
+        // 如果标签不存在；则返回404页面
+        if (empty($tname)) {
+            header("HTTP/1.0  404  Not Found");
+            $this->display('./Template/default/Home/Public/404.html');
+            exit(0);
+        }
+        // 获取文章数据
+        $articles=D('Article')->getPageData('all',$tid);
         $assign=array(
             'articles'=>$articles['data'],
             'page'=>$articles['page'],
