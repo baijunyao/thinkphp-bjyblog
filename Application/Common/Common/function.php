@@ -281,7 +281,7 @@ function mb_str_split($str){
 /**
  * 获取访问用户ip
  */
-function getRealIpAddr(){
+function get_ip(){
     if(!empty($_SERVER['HTTP_CLIENT_IP'])){
         $ip=$_SERVER['HTTP_CLIENT_IP'];
     }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
