@@ -171,9 +171,19 @@ html;
      * 获取最新的评论
      */
     public function getNewComment(){
-        $map=array(
-            'c.pid'=>0
-            );
+        // 获取后台管理员
+        $uids=M('Oauth_user')
+            ->where(array('is_admin'))
+            ->getField('id',true);
+        // 如果没有设置管理员；显示全部评论
+        if (empty($uids)) {
+            $map=array();
+        }else{
+            // 设置了管理员；则不显示管理员的评论
+            $map=array(
+                'ou.id'=>array('notin',$uids)
+                );
+        }
         $data=$this
             ->field('c.content,c.date,a.title,a.aid,ou.nickname,ou.head_img')
             ->alias('c')
@@ -181,7 +191,7 @@ html;
             ->join('__OAUTH_USER__ ou ON c.ouid=ou.id')
             ->where($map)
             ->order('c.date desc')
-            ->limit(15)
+            ->limit(20)
             ->select();
         foreach ($data as $k => $v) {
             $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
