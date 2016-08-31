@@ -801,6 +801,7 @@ a {
 }
 .b-new-comment .b-nickname {
   font-size: 13px;
+  overflow: hidden;
 }
 .b-new-comment .b-nickname span {
   color: #999;
