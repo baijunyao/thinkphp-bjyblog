@@ -40,14 +40,16 @@
             </foreach>
         </div>
     </div>
-    <div class="b-link">
-        <h4 class="b-title">友情链接</h4>
-        <p>
-            <foreach name="links" key="k" item="v">
-                <a class="b-link-a" href="{$v[url]}" target="_blank"><span class="fa fa-link b-black"></span> {$v['lname']}</a>
-            </foreach>
-        </p>
-    </div>
+    <eq name="show_link" value="1">
+        <div class="b-link">
+            <h4 class="b-title">友情链接</h4>
+            <p>
+                <foreach name="links" key="k" item="v">
+                    <a class="b-link-a" href="{$v[url]}" target="_blank"><span class="fa fa-link b-black"></span> {$v['lname']}</a>
+                </foreach>
+            </p>
+        </div>
+    </eq>
     <div class="b-search">
         <form class="form-inline"  role="form" action="{:U('Home/Index/search')}" method="get">
             <input class="b-search-text" type="text" name="search_word">

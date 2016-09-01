@@ -29,13 +29,16 @@ class HomeBaseController extends BaseController{
             ->select();
         // 获取最新评论
         $new_comment=D('Comment')->getNewComment();
+        // 判断是否显示友情链接
+        $show_link=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME=='Home/Index/index' ? 1 : 0;
         // 分配常用数据
         $assign=array(
             'categorys'=>D('Category')->getAllData(),
             'tags'=>D('Tag')->getAllData(),
             'links'=>D('Link')->getDataByState(0,1),
             'recommend'=>$recommend,
-            'new_comment'=>$new_comment
+            'new_comment'=>$new_comment,
+            'show_link'=>$show_link
             );
         $this->assign($assign);
     }
