@@ -25,7 +25,7 @@
                 <input class="form-control" type="text" name="{$v['lid']}" value="{$v['sort']}">
             </td>
             <td>{$v['lname']}</td>
-            <td>{$v['url']}</td>
+            <td><a href="{$v['url']}" target="_blank">{$v['url']}</a></td>
             <th>
                 <if condition="$v['is_show'] eq 1">
                     ✔
