@@ -11,6 +11,12 @@
     <input type="hidden" name="aid" value="{$data['aid']}">
     <table class="table table-bordered table-striped table-hover table-condensed">
         <tr>
+            <th width="80px">文章链接</th>
+            <td>
+                <a href="{:U('Home/Index/article',array('aid'=>$data['aid']),true,true)}">{:U('Home/Index/article',array('aid'=>$data['aid']),true,true)}</a>
+            </td>
+        </tr>
+        <tr>
             <th width="80px">所属分类</th>
             <td>
                 <select class="form-control modal-sm" name="cid">
