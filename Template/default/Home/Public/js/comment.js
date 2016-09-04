@@ -77,7 +77,7 @@ function comment(obj){
     $.post(check_login, function(data) {
         if(data==1){
             var content=$(obj).parents('.b-box-textarea').eq(0).find('.b-box-content').html();
-            if(content!=''){
+            if(content!='' && content!='请先登陆后发表评论'){
                 var aid=$(obj).attr('aid'),
                     pid=$(obj).attr('pid'),
                     email=$(obj).parents('.b-box-textarea').eq(0).find("input[name='email']").val(),
