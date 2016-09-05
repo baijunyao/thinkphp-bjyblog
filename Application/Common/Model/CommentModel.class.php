@@ -19,6 +19,7 @@ class CommentModel extends BaseModel{
         $data['content']=htmlspecialchars_decode($data['content']);
         // 删除除img外的其他标签
         $comment_content=trim(strip_tags($data['content'],'<img>'));
+        $comment_content=htmlspecialchars($comment_content); 
         if (empty($comment_content)) {
             return false;
         }
@@ -131,6 +132,7 @@ html;
             ->order('date desc')
             ->select();
         foreach ($data as $k => $v) {
+            $data[$k]['content']=htmlspecialchars_decode($v['content']);
             // 获取二级评论
             $this->child=array();
             $this->getTree($v);
