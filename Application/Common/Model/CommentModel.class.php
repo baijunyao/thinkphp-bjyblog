@@ -198,7 +198,7 @@ html;
         foreach ($data as $k => $v) {
             $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
             // 处理有表情时直接截取会把img表情截断的问题
-            $content=strip_tags($v['content']);
+            $content=strip_tags(htmlspecialchars_decode($v['content']));
             if (mb_strlen($content)>10) {
                 $data[$k]['content']=re_substr($content,0,40);
             }
