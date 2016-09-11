@@ -19,8 +19,8 @@ class CommentModel extends BaseModel{
         $data['content']=htmlspecialchars_decode($data['content']);
         // 删除除img外的其他标签
         $comment_content=trim(strip_tags($data['content'],'<img>'));
-        $comment_content=htmlspecialchars($comment_content); 
-        if (empty($comment_content)) {
+        $content=htmlspecialchars($comment_content);
+        if (empty($content)) {
             return false;
         }
         $comment=array(
@@ -28,7 +28,7 @@ class CommentModel extends BaseModel{
             'type'=>$type,
             'aid'=>$data['aid'],
             'pid'=>$data['pid'],
-            'content'=>$comment_content,
+            'content'=>$content,
             'date'=>time(),
             'status'=>1
             );
@@ -201,8 +201,9 @@ html;
             $content=strip_tags(htmlspecialchars_decode($v['content']));
             if (mb_strlen($content)>10) {
                 $data[$k]['content']=re_substr($content,0,40);
+            }else{
+                $data[$k]['content']=htmlspecialchars_decode($v['content']);
             }
-            
         }
         return $data;
     }
