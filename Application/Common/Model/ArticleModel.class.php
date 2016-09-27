@@ -348,7 +348,7 @@ class ArticleModel extends BaseModel{
     // is_all为true时获取全部数据 false时不获取is_show为0 和is_delete为1的数据
     public function getDataByCid($cid,$is_all=false){
         if($is_all){
-            return $this->order('addtime desc')->elect();
+            return $this->order('addtime desc')->select();
         }else{
             $where=array(
                 'cid'=>$cid,
