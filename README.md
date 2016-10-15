@@ -9,7 +9,7 @@
 
 此博客程序前后台页面以及逻辑代码的都由我手工打造；没有版权限制；可以随意折腾；
 
-想研究支付宝、微信支付、邮件发送、短信通知验证码发送、oss云存储、融云即时通讯、友盟推送、Memcached缓存、权限管理、等更多功能的可以参考进阶版的bjyadmin http://git.oschina.net/shuaibai123/thinkphp-bjyadmin  
+想研究支付宝、微信支付、邮件发送、短信通知验证码发送、oss云存储、融云即时通讯、友盟推送、Memcached缓存、权限管理、等更多功能的可以参考进阶版的bjyadmin https://github.com/baijunyao/thinkphp-bjyadmin  
 
 下图即是使用bjyblog开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://baijunyao.com  
 
