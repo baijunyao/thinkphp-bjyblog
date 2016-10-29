@@ -1,5 +1,10 @@
 # thinkphp-bjyblog
 
+## 链接
+- 博客：http://baijunyao.com   
+- github：https://github.com/baijunyao/thinkphp-bjyblog   
+- oschina：http://git.oschina.net/shuaibai123/thinkbjy   
+
 ## 简介
 闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；  
 
@@ -39,11 +44,6 @@
 5. ueditor 百度富文本编辑器；
 7. font-awesome；
 8. iCheck；
-
-## 链接
-- 官网：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyblog   
-- oschina：http://git.oschina.net/shuaibai123/thinkbjy   
 
 ## 商业友好的开源协议
 bjyblog遵循Apache2开源协议发布。Apache Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再作为开源或商业软件发布。
