@@ -196,7 +196,7 @@ html;
             ->limit(20)
             ->select();
         foreach ($data as $k => $v) {
-            $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
+            $data[$k]['date']=word_time($v['date']);
             // 截取文章标题
             $data[$k]['title']=re_substr($v['title'],0,20);
             // 处理有表情时直接截取会把img表情截断的问题
