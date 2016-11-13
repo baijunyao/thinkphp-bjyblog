@@ -1,5 +1,4 @@
 // js动态加载表情
-tuzkiNumber=1;
 function getTuzki(obj){
     var tuzkiObj=$(obj).siblings('.b-tuzki');
     if(tuzkiNumber){
@@ -26,7 +25,7 @@ function getTuzki(obj){
  */
 function formatNum(Source,Length){
     var strTemp="";
-    for(i=1;i<=Length-Source.toString().length;i++){
+    for(var i=1;i<=Length-Source.toString().length;i++){
         strTemp+="0";
     }
     return strTemp+Source;
