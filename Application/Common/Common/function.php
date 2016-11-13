@@ -374,6 +374,8 @@ function word_time($time) {
         $str = sprintf('%d分钟前', floor($int / 60));
     }elseif ($int < 86400){
         $str = sprintf('%d小时前', floor($int / 3600));
+    }elseif ($int < 1728000){
+        $str = sprintf('%d天前', floor($int / 86400));
     }else{
         $str = date('Y-m-d H:i:s', $time);
     }
