@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>已删碎言</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="5%">cmtid</th>
+            <th width="10%">评论用户</th>
+            <th width="15%">评论时间</th>
+            <th width="50%">内容</th>
+            <th width="10%">是否审核</th>
+            <th width="10%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['cmtid']}</td>
+            <td>{$v['nickname']}</td>
+            <td>{$v['date']|date='Y-m-d H:i:s',###}</td>
+            <td>{$v['content']}</td>
+            <th>
+                <eq name="v['status']" value="1">
+                    ✔
+                <else />
+                    ✘
+                </eq>
+            </th>
+            <td>
+                <a href="{:U('Admin/Recycle/recover',array('table_name'=>'Comment','id_name'=>'cmtid','id_number'=>$v['cmtid']))}">恢复</a> |
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/delete',array('table_name'=>'Comment','id_name'=>'cmtid','id_number'=>$v['cmtid']))}'">彻底删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+{$page}
+<bootstrapjs />
+</body>
+</html>

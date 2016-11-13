@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加友情链接</title>
+    <bootstrapcss />
+    <icheckcss />
+</head>
+<body>
+<form class="form-group" action="{:U('Admin/Link/add')}" method="post">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <tr>
+            <th>链接名</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="lname">
+            </td>
+        </tr>
+        <tr>
+            <th>链接地址</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="url">
+            </td>
+        </tr>
+        <tr>
+            <th>排序</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="sort">
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示</th>
+            <td>
+                <span class="inputword">是</span>
+                <input id="test" class="icheck" type="radio" name="is_show" value="1" checked="checked">
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_show" value="0">                
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-success" type="submit" value="添加">
+            </td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+<icheckjs />
+</body>
+</html>

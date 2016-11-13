@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆后台管理系统</title>
+	<bootstrapcss />
+	<css file="__ADMIN_CSS__/login.css" />
+</head>
+<body>
+<form class="form-group" action="{:U('Admin/Login/login')}" method="post">
+	<div id="Login">
+		<input class="form-control modal-sm" type="password" placeholder="后台登陆密码" name="ADMIN_PASSWORD" value="{$_SESSION['ADMIN_PASSWORD']}">
+		<input class="form-control modal-sm" type="text" placeholder="验证码" autocomplete="off"  name="verify">
+		<img class="verify" src="{:U('Admin/Login/showVerify')}" title="点击更换"  onclick="this.src+='/'+Math.random();">
+		<input class="btn btn-primary submit" type="submit" value="登陆">
+	</div>
+</form>
+<bootstrapjs />
+</body>
+</html>

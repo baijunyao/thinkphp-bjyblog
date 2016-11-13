@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<form action="{:U('Admin/Link/sort')}" method="post">
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="10%">lid</th>
+            <th width="10%">排序</th>
+            <th width="20%">链接名</th>
+            <th width="35%">链接地址</th>
+            <th width="10%">是否显示</th>
+            <th width="15%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['lid']}</td>
+            <td>
+                <input class="form-control" type="text" name="{$v['lid']}" value="{$v['sort']}">
+            </td>
+            <td>{$v['lname']}</td>
+            <td><a href="{$v['url']}" target="_blank">{$v['url']}</a></td>
+            <th>
+                <if condition="$v['is_show'] eq 1">
+                    ✔
+                <else />
+                    ✘
+                </if>
+            </th>
+            <td>
+                <a href="{:U('Admin/Link/edit',array('lid'=>$v['lid']))}">修改</a> |
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Link','id_name'=>'lid','id_number'=>$v['lid']))}'">删除</a>
+            </td>
+        </tr>
+    </foreach>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            <input class="btn btn-success" type="submit" value="排序">
+        </td>
+    </tr>
+</table>
+<bootstrapjs />
+</body>
+</html>

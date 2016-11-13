@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head头部分开始 -->
+<head>
+<include file="Public/public_head" title="随言碎语-" keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}" />
+</head>
+<!-- head头部分结束 -->
+<body>
+<!-- 顶部导航开始 -->
+<include file="Public/public_nav" />
+<!-- 顶部导航结束 -->
+<div class="b-h-70"></div>
+<!-- 主体部分开始 -->
+<div id="b-content" class="container">
+    <div class="row">
+        <!-- 左侧文章开始 -->
+        <div class="col-xs-12 col-md-12 col-lg-8 b-chat">
+            <div class="b-chat-left">
+                <volist name="data" id="v" mod="2">
+                    <eq name="mod" value="0">
+                        <ul class="b-chat-one animated bounceInLeft">
+                            <li class="b-chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
+                            <li class="b-chat-content">{$v['content']}</li>
+                            <div class="b-arrows-right1">
+                                <div class="b-arrows-round"></div>
+                            </div>
+                            <div class="b-arrows-right2"></div>
+                        </ul>
+                    </eq>
+                </volist>
+            </div>
+            <div class="b-chat-middle"></div>
+            <div class="b-chat-right">
+                <volist name="data" id="v" mod="2">
+                    <eq name="mod" value="1">
+                        <ul class="b-chat-one animated bounceInRight">
+                            <li class="b-chat-title ">{$v['date']|date='Y-m-d H:i:s',###}</li>
+                            <li class="b-chat-content">{$v['content']}</li>
+                            <div class="b-arrows-right1">
+                                <div class="b-arrows-round"></div>
+                            </div>
+                            <div class="b-arrows-right2"></div>
+                        </ul>
+                    </eq>
+                </volist>
+            </div>
+        </div>
+        <!-- 左侧文章结束 -->
+
+        <!-- 通用右侧开始 -->
+        <include file="Public/public_right" />
+        <!-- 通用右侧结束 -->
+    </div>
+    <div class="row">
+        <!-- 底部文件开始 -->
+        <include file="Public/public_foot" />
+        <!-- 通用底部文件结束 -->
+    </div>
+</div>
+<!-- 主体部分结束 -->
+
+<!-- 登陆框开始 -->
+<include file="Public/public_login" />
+<!-- 登陆框结束 -->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加标签</title>
+    <bootstrapcss />
+</head>
+<body>
+<form action="{:U('Admin/Tag/add')}" method="post">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <tr>
+            <th>标签名</th>
+            <td>
+                <textarea class="form-control modal-sm" name="tnames" rows="5" placeholder="可以批量添加标签，每行一个。"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-success" type="submit" value="添加">
+            </td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+</body>
+</html>

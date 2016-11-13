@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改随言碎语</title>
+    <bootstrapcss />
+    <icheckcss />
+</head>
+<body>
+<form class="form-group" action="{:U('Admin/Chat/edit')}" method="post">
+    <input type="hidden" name="chid" value="{$data['chid']}">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <tr>
+            <th>内容</th>
+            <td>
+                <textarea class="form-control modal-sm" name="content" rows="7">{$data['content']}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示</th>
+            <td>
+                <span class="inputword">是</span>
+                <input id="test" class="icheck" type="radio" name="is_show" value="1" <if condition="$data['is_show'] eq 1">checked='checked'</if> >
+                &emsp;
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_show" value="0"  <if condition="$data['is_show'] eq 0">checked='checked'</if> >             
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-success" type="submit" value="添加">
+            </td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+<icheckjs />
+</body>
+</html>

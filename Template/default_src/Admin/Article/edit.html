@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文章</title>
+    <bootstrapcss />
+    <icheckcss />
+</head>
+<body>
+<form class="form-group" action="{:U('Admin/Article/edit',array('aid'=>$_GET['aid']))}" method="post">
+    <input type="hidden" name="aid" value="{$data['aid']}">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <tr>
+            <th width="80px">文章链接</th>
+            <td>
+                <a href="{:U('Home/Index/article',array('aid'=>$data['aid']),true,true)}" target="_blank">{:U('Home/Index/article',array('aid'=>$data['aid']),true,true)}</a>
+            </td>
+        </tr>
+        <tr>
+            <th width="80px">所属分类</th>
+            <td>
+                <select class="form-control modal-sm" name="cid">
+                    <foreach name="allCategory" item="v">
+                        <option value="{$v['cid']}" <if condition="$v['cid'] eq $data['cid']">selected='selected'</if> >{$v['_name']}</option>
+                    </foreach>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>标题</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="title" value="{$data['title']}">
+            </td>
+        </tr>
+        <tr>
+            <th>作者</th>
+            <td>
+                <input class="form-control modal-sm" type="text" name="author" value="{$data['author']}">
+            </td>
+        </tr>
+        <tr>
+            <th>标签</th>
+            <td>
+                <foreach name="allTag" item="v">
+                    <span>{$v['tname']}</span>
+                    <input class="icheck" type="checkbox" name="tids[]" value="{$v['tid']}" <if condition="in_array($v['tid'],$data['tids'])">checked='checked'</if> >
+                </foreach>
+            </td>
+        </tr>
+        <tr>
+            <th>关键词</th>
+            <td>
+                <input class="form-control modal-sm" type="text"placeholder="多个关键词用顿号分隔" type="text"  name="keywords" value="{:str_replace(',', '、', $data['keywords'])}">
+            </td>
+        </tr>
+        <tr>
+            <th>描述</th>
+            <td>
+                <textarea class="form-control modal-sm" name="description" rows="7" placeholder="可以不填，如不填；则截取文章内容前300字为描述">{$data['description']}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>内容</th>
+            <td>
+                <ueditor name="content" content="{$data['content']}" />
+            </td>
+        </tr>
+        <tr>
+            <th>是否原创</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="is_original" value="1" <if condition="$data['is_original'] eq 1">checked="checked"</if> >
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_original" value="0" <if condition="$data['is_original'] eq 0">checked="checked"</if> >
+            </td>
+        </tr>
+        <tr>
+            <th>是否置顶</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="is_top" value="1" <if condition="$data['is_top'] eq 1">checked="checked"</if> >
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_top" value="0" <if condition="$data['is_top'] eq 0">checked="checked"</if> >
+            </td>
+        </tr>
+        <tr>
+            <th>是否显示</th>
+            <td>
+                <span class="inputword">是</span>
+                <input class="icheck" type="radio" name="is_show" value="1" <if condition="$data['is_show'] eq 1">checked="checked"</if> >
+                <span class="inputword">否</span>
+                <input class="icheck" type="radio" name="is_show" value="0" <if condition="$data['is_show'] eq 0">checked="checked"</if> >
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input class="btn btn-success" type="submit" value="修改">
+            </td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+<icheckjs />
+</body>
+</html>

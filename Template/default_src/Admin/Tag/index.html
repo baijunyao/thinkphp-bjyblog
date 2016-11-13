@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th>tid</th>
+            <th>标签名</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['tid']}</td>
+            <td>{$v['tname']}</td>
+            <td>
+                <a href="{:U('Admin/Tag/edit',array('tid'=>$v['tid']))}">修改</a> | 
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Tag/delete',array('tid'=>$v['tid']))}'">删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<bootstrapjs />
+</body>
+</html>

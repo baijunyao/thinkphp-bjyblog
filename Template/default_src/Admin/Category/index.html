@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分类列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<form action="{:U('Admin/Category/sort')}" method="post">
+    <table class="table table-bordered table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th width="10%">cid</th>
+                <th width="10%">排序</th>
+                <th width="15%">分类名</th>
+                <th width="25%">关键词</th>
+                <th width="25%">描述</th>
+                <th width="15%">操作</th>         
+            </tr>
+        </thead>
+        <foreach name="data" item="v">
+            <tr>
+                <td>{$v['cid']}</td>
+                <td>
+                    <input class="form-control" type="text" name="{$v['cid']}" value="{$v['sort']}">
+                </td>
+                <td>{$v['_name']}</td>
+                <td>{$v['keywords']}</td>
+                <td>{$v['description']}</td>
+                <td>
+                    <a href="{:U('Admin/Category/add',array('cid'=>$v['cid']))}">添加子分类</a> | 
+                    <a href="{:U('Admin/Category/edit',array('cid'=>$v['cid']))}">修改</a> | 
+                    <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Category/delete',array('cid'=>$v['cid']))}'">删除</a>             
+                </td>
+            </tr>
+        </foreach>
+        <tr>
+            <td></td>
+            <td>
+                <input class="btn btn-success" type="submit" value="排序">
+            </td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全部用户</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="5%">id</th>
+            <th width="10%">来源</th>
+            <th width="15%">用户名</th>
+            <th width="15%">创建时间</th>
+            <th width="15%">最后登录时间</th>
+            <th width="10%">登录次数</th>
+            <th width="20%">邮箱</th>
+            <th width="10%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['id']}</td>
+            <td>{$v['type']}</td>
+            <td>{$v['nickname']}</td>
+            <td>{:date('Y-m-d H:i:s',$v['create_time'])}</td>
+            <td>{:date('Y-m-d H:i:s',$v['last_login_time'])}</td>
+            <td>{$v['login_times']}</td>
+            <td>{$v['email']}</td>
+            <td>
+                <a href="{:U('Admin/User/is_admin',array('id'=>$v['id'],'is_admin'=>$v['is_admin']))}">
+                    <eq name="v['is_admin']" value="1">取消标记<else />标记为站长</eq>
+                </a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<div style="text-align: center;">
+    {$page}
+</div>
+<bootstrapjs />
+</body>
+</html>

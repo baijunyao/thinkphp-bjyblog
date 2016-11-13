@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>已删文章</title>
+    <bootstrapcss />
+    <style type="text/css">
+    table {
+        word-break:break-all;
+        word-wrap:break-word;
+    }
+    </style>
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="5%">aid</th>
+            <th width="15%">所属分类</th>
+            <th width="20%">作者</th>
+            <th width="30%">标题</th>
+            <th width="30%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['aid']}</td>
+            <td>{$v['category']['cname']}</td>
+            <td>{$v['author']}</td>
+            <td>{$v['title']}</td>
+            <td>
+                <a href="{:U('Admin/Recycle/recover',array('table_name'=>'Article','id_name'=>'aid','id_number'=>$v['aid']))}">恢复</a> |
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Article/delete',array('aid'=>$v['aid']))}'">彻底删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<bootstrapjs />
+</body>
+</html>

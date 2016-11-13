@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="5%">cmtid</th>
+            <th width="20%">被评文章</th>
+            <th width="15%">评论人</th>
+            <th width="15%">评论时间</th>
+            <th width="30%">评论内容</th>
+            <th width="5%">审核</th>
+            <th width="10%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['cmtid']}</td>
+            <td>
+                <a href="/article/{$v['aid']}" target="_blank">{$v['title']}</a>
+            </td>
+            <td>{$v['nickname']}</td>
+            <td>{:date('Y-m-d H:i:s',$v['date'])}</td>
+            <td>{$v['content']}</td>
+            <th>
+                <eq name="v['status']" value="1">
+                    ✔
+                <else />
+                    ✘
+                </eq>
+            </th>
+            <td>
+                <eq name="Think.config.COMMENT_REVIEW" value="1">
+                    <eq name="v['status']" value="1">
+                        <a href="{:U('Admin/Comment/change_status',array('cmtid'=>$v['cmtid'],'status'=>0))}">取消审核</a>
+                    <else/>
+                        <a href="{:U('Admin/Comment/change_status',array('cmtid'=>$v['cmtid'],'status'=>1))}">通过审核</a>
+                    </eq> |
+                </eq>
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Comment','id_name'=>'cmtid','id_number'=>$v['cmtid']))}'">删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<div style="text-align: center;">
+    {$page}
+</div>
+<bootstrapjs />
+</body>
+</html>

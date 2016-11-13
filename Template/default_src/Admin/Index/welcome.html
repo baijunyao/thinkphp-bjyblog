@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面</title>
+    <bootstrapcss />
+    <css file="__ADMIN_CSS__/index.css" />
+</head>
+<body>
+<div id="welcome">
+    <div class="block">
+        <h3 class="title">文章统计</h3>
+        <ul class="content">
+            <li>文章总数：{$all_article}</li>
+            <li>已删文章数：{$delete_article}</li>
+            <li>不显示的文章数：{$hide_article}</li>
+        </ul>
+    </div>
+    <div class="block">
+        <h3 class="title">随言碎语统计</h3>
+        <ul class="content">
+            <li>随言总数：{$all_chat}</li>
+            <li>已删随言数：{$delete_chat}</li>
+            <li>不显示的随言数：{$hide_chat}</li>
+        </ul>
+    </div>
+    <div class="block">
+        <h3 class="title">评论统计</h3>
+        <ul class="content">
+            <li>评论总数：{$all_comment}</li>
+        </ul>
+    </div>
+    <div class="block">
+        <h3 class="title">其他数据</h3>
+        <table>
+            <tr>
+                <th>P H P 版 本：</th>
+                <td>{:PHP_VERSION}</td>
+            </tr>
+            <tr>
+                <th width="100px">服务器 信息：</th>
+                <td>{:PHP_OS}</td>
+            </tr>
+            <tr>
+                <th>Apache版本：</th>
+                <td>{:apache_get_version()}</td>
+            </tr>
+            <tr>
+                <th>bjyblog版本：</th>
+                <td>{$Think.config.THINK_INFORMATION}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<bootstrapjs />
+</body>
+</html>

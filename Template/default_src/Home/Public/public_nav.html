@@ -1,0 +1,56 @@
+<!-- 顶部导航开始 -->
+<header id="b-public-nav" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" onclick="recordId('/',0)">
+                <div class="hidden-xs b-nav-background"></div>
+                <ul class="b-logo-code">
+                    <li class="b-lc-start">&lt;?php</li>
+                    <li class="b-lc-echo">echo</li>
+                </ul>
+                <p class="b-logo-word">'白俊遥博客'</p>
+                <p class="b-logo-end">;</p>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav b-nav-parent">
+                <li class="hidden-xs b-nav-mobile"></li>
+                <li class="b-nav-cname <eq name="cid" value="index">b-nav-active</eq> " >
+                    <a href="/" onclick="recordId('/',0)">首页</a>
+                </li>
+                <foreach name="categorys" item="v">
+                    <li class="b-nav-cname <eq name="cid" value="$v['cid']">b-nav-active</eq> ">
+                        <a href="{:U('Home/Index/category',array('cid'=>$v['cid']))}" onclick="return recordId('cid',{$v['cid']})">{$v['cname']}</a>
+                    </li>
+                </foreach>
+                <li class="b-nav-cname <eq name="cid" value="chat">b-nav-active</eq> ">
+                    <a href="{:U('Home/Index/chat')}">随言碎语</a>
+                </li>
+                <li class="b-nav-cname hidden-sm  <eq name="cid" value="git">b-nav-active</eq> ">
+                    <a href="{:U('Home/Index/git')}">开源项目</a>
+                </li>
+            </ul>
+            <ul id="b-login-word" class="nav navbar-nav navbar-right">
+                <empty name="Think.session.user.head_img" >
+                    <li class="b-nav-cname b-nav-login">
+                        <div class="hidden-xs b-login-mobile"></div>
+                        <a href="javascript:;" onclick="login()">登陆</a>
+                    </li>
+                <else />
+                    <li class="b-user-info">
+                        <span><img class="b-head_img" src="{$Think.session.user.head_img}" alt="{$Think.session.user.nickname}" title="{$Think.session.user.nickname}"  /></span>
+                        <span class="b-nickname">{$Think.session.user.nickname}</span>
+                        <span><a href="javascript:;" onclick="logout()">退出</a></span>
+                    </li>
+                </empty>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- 顶部导航结束 -->

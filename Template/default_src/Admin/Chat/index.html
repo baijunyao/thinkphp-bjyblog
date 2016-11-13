@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>碎言列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="5%">chid</th>
+            <th width="20%">发表时间</th>
+            <th width="60%">内容</th>
+            <th width="5%">显示</th>
+            <th width="10%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['chid']}</td>
+            <td>{$v['date']|date='Y-m-d H:i:s',###}</td>
+            <td>{$v['content']}</td>
+            <th>
+                <if condition="$v['is_show'] eq 1">
+                    ✔
+                <else />
+                    ✘
+                </if>
+            </th>
+            <td>
+                <a href="{:U('Admin/Chat/edit',array('chid'=>$v['chid']))}">修改</a> |
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Chat','id_name'=>'chid','id_number'=>$v['chid']))}'">删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<bootstrapjs />
+</body>
+</html>

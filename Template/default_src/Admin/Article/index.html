@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+    <bootstrapcss />
+</head>
+<body>
+<table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+        <tr>
+            <th width="3%">aid</th>
+            <th width="9%">所属栏目</th>
+            <th width="20%">标题</th>
+            <th width="8%">作者</th>
+            <th width="22%">标签</th>
+            <th width="4%">原创</th>
+            <th width="4%">显示</th>
+            <th width="4%">置顶</th>
+            <th width="5%">点击数</th>
+            <th width="13%">发布时间</th>
+            <th width="8%">操作</th>
+        </tr>
+    </thead>
+    <foreach name="data" item="v">
+        <tr>
+            <td>{$v['aid']}</td>
+            <td>{$v['category']['cname']}</td>
+            <td><a href="/article/{$v['aid']}" target="_blank">{$v['title']}</a></td>
+            <td>{$v['author']}</td>
+            <td>
+                <foreach name="v['tag']" item="n">
+                    {$n['tname']}&nbsp;
+                </foreach>
+            </td>
+            <td>
+                <if condition="$v['is_original'] eq 1">
+                    ✔
+                <else />
+                    ✘
+                </if>
+            </td>
+            <td>
+                <if condition="$v['is_show'] eq 1">
+                    ✔
+                <else />
+                    ✘
+                </if>
+            </td>
+            <td>
+                <if condition="$v['is_top'] eq 1">
+                    ✔
+                <else />
+                    ✘
+                </if>
+            </td>
+            <td>{$v['click']}</td>
+            <td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
+            <td>
+                <a href="{:U('Admin/Article/edit',array('aid'=>$v['aid']))}">修改</a> |
+                <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Article','id_name'=>'aid','id_number'=>$v['aid']))}'">删除</a>
+            </td>
+        </tr>
+    </foreach>
+</table>
+<div style="text-align: center;">
+    {$page}
+</div>
+<bootstrapjs />
+</body>
+</html>

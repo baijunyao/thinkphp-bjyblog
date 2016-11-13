@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改分类</title>
+    <bootstrapcss />
+</head>
+<body>
+<form class="form-gropu" action="{:U('Admin/Category/edit')}" method="post">
+    <table class="table table-bordered table-hover">
+        <input type="hidden" name="cid" value="{$onedata['cid']}">
+        <tr>
+            <th>分类名</th>
+            <td><input class="form-control modal-sm" type="text" name="cname" value="{$onedata['cname']}"></td>
+        </tr>
+        <tr>
+            <th>所属栏目</th>
+            <td>
+                <select class="form-control modal-sm" name="pid">
+                    <option value="0">顶级栏目</option>
+                    <foreach name="data" key="k" item="v">
+                        <option value="{$v['cid']}" <if condition="$onedata['pid'] eq $v['cid']">selected="selected"</if> {$v['_html']}>{$v['_name']}</option>
+                    </foreach>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>排序</th>
+            <td><input class="form-control modal-sm" type="text" name="sort" value="{$onedata['sort']}"></td>
+        </tr>
+        <tr>
+            <th>关键词</th>
+            <td><input class="form-control modal-sm" type="text" name="keywords" value="{$onedata['keywords']}"></td>
+        </tr>
+        <tr>
+            <th>描述</th>
+            <td>
+                <textarea class="form-control modal-sm" name="description">{$onedata['description']}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input class="btn btn-success" type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+<bootstrapjs />
+</body>
+</html>
