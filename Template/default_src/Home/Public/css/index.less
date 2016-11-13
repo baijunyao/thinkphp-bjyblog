@@ -841,13 +841,13 @@ a{
 
 /*最新评论开始*/
 .b-new-comment{
-    padding: 3px 0px 3px 23px;
+    padding: 3px 0px 3px 35px;
     width: 100%;
     position: relative;
     border-top: 1px solid #dcdcdc;
     .b-head-img{
-        width: 20px;
-        height: 20px;
+        width: 32px;
+        height: 32px;
         position: absolute;
         left: 0;
         top: 5px;
@@ -855,6 +855,7 @@ a{
     .b-nickname{
         font-size: 13px;
         overflow: hidden;
+        color: #555;
         span{
             color: #999;
             float: right;
@@ -863,8 +864,16 @@ a{
     .b-nc-article{
         font-size: 13px;
         color: #999;
+        a{
+            color: #555;
+            &:hover{
+                color: #0B7DF2;
+            }
+        }
     }
     .b-content{
+        color: #999;
+        font-size: 12px;
         img{
             width: 20px;
             height: 20px;            
