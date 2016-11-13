@@ -197,6 +197,8 @@ html;
             ->select();
         foreach ($data as $k => $v) {
             $data[$k]['date']=date('Y-m-d H:i:s',$v['date']);
+            // 截取文章标题
+            $data[$k]['title']=re_substr($v['title'],0,20);
             // 处理有表情时直接截取会把img表情截断的问题
             $content=strip_tags(htmlspecialchars_decode($v['content']));
             if (mb_strlen($content)>10) {
