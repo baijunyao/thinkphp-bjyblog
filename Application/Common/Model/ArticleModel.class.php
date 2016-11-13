@@ -153,6 +153,7 @@ class ArticleModel extends BaseModel{
      * 获得文章分页数据
      * @param strind $cid 分类id 'all'为全部分类
      * @param strind $tid 标签id 'all'为全部标签
+     * @param strind $is_show   是否显示 1为显示 0为显示
      * @param strind $is_delete 状态 1为删除 0为正常
      * @param strind $limit 分页条数
      * @return array $data 分页样式 和 分页数据
@@ -244,6 +245,7 @@ class ArticleModel extends BaseModel{
         }
         $show=$page->show();
         foreach ($list as $k => $v) {
+            $list[$k]['addtime']=word_time($v['addtime']);
             $list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
             $list[$k]['pic_path']=D('ArticlePic')->getDataByAid($v['aid']);
             $list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname'));
