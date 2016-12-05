@@ -55,7 +55,7 @@
                 </if>
             </td>
             <td>{$v['click']}</td>
-            <td>{$v['addtime']|date='Y-m-d H:i:s',###}</td>
+            <td>{$v['addtime']}</td>
             <td>
                 <a href="{:U('Admin/Article/edit',array('aid'=>$v['aid']))}">修改</a> |
                 <a href="javascript:if(confirm('确定要删除吗?')) location='{:U('Admin/Recycle/recycle',array('table_name'=>'Article','id_name'=>'aid','id_number'=>$v['aid']))}'">删除</a>
