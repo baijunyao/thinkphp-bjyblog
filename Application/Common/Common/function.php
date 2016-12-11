@@ -74,12 +74,21 @@ function re_substr($str, $start=0, $length, $suffix=true, $charset="utf-8") {
  * @param string $path 图片路径
  */
 function add_water($path){
+    // 获取文件后缀
+    $type=strtolower(pathinfo($path,PATHINFO_EXTENSION));
+    // 不对gif加水印
+    if ($type==='gif') {
+        return true;
+    }
     $image=new \Think\Image();
     if(C('WATER_TYPE')==1){
+        // 添加文字水印
         $image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
     }elseif(C('WATER_TYPE')==2){
+        // 添加图片水印
         $image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
     }elseif(C('WATER_TYPE')==3){
+        // 添加图片和文字水印
         $image->open($path)->text(C('TEXT_WATER_WORD'),C('TEXT_WATER_TTF_PTH'),C('TEXT_WATER_FONT_SIZE'),C('TEXT_WATER_COLOR'),C('TEXT_WATER_LOCATE'),0,C('TEXT_WATER_ANGLE'))->save($path);
         $image->open($path)->water(C('IMAGE_WATER_PIC_PTAH'),C('IMAGE_WATER_LOCATE'),C('IMAGE_WATER_ALPHA'))->save($path);
     }
