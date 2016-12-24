@@ -179,11 +179,14 @@ html;
             ->getField('id',true);
         // 如果没有设置管理员；显示全部评论
         if (empty($uids)) {
-            $map=array();
+            $map=array(
+                'c.is_delete'=>0
+                );
         }else{
             // 设置了管理员；则不显示管理员的评论
             $map=array(
-                'ou.id'=>array('notin',$uids)
+                'ou.id'=>array('notin',$uids),
+                'c.is_delete'=>0
                 );
         }
         $data=$this
