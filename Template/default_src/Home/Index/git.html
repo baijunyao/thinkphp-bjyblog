@@ -62,6 +62,10 @@
             .osc_git_main a{color: #4183c4;}
             </style>
             <!-- 资源结束 -->
+            
+            <!-- github 上的项目 -->
+            <div class="github-widget" data-repo="baijunyao/thinkphp-bjyadmin"></div>
+            <div class="github-widget" data-repo="baijunyao/thinkphp-bjyblog"></div>
         </div>
         <!-- 左侧开源项目结束 -->
 
@@ -80,11 +84,15 @@
 <!-- 登陆框开始 -->
 <include file="Public/public_login" />
 <!-- 登陆框结束 -->
+
+<script src="__PUBLIC__/static/js/jquery.githubRepoWidget.min.js"></script>
+
+<!-- 让osc的链接新窗口打开 -->
 <script type="text/javascript">
 $(function(){
-    $('.osc_git_box a').attr('target','_blank');
-    console.log($('.osc_git_box'));
+    $('.osc_git_box a,.github-widget a').attr('target','_blank');
 })
 </script>
+
 </body>
 </html>
