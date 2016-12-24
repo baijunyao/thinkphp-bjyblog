@@ -51,6 +51,12 @@ $(function(){
     $('.b-arrows-right1,.b-arrows-right2').each(function(index, el) {
         $(el).css('top', $(el).parent('.b-chat-one').height()/2.5);
     });
+
+    $.each($('.js-head-img'), function(index, val) {
+        var img=$(val).attr('_src');
+        $(val).attr('src', img);
+    });
+
 })
 
 /**

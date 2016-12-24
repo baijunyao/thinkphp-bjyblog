@@ -26,7 +26,7 @@
         <div>
             <foreach name="new_comment" item="v">
                 <ul class="b-new-comment <eq name="key" value="0">b-new-commit-first</eq>">
-                    <img class="b-head-img" src="{$v['head_img']}" alt="{$v['nickname']}">
+                    <img class="b-head-img js-head-img" src="__HOME_IMAGE__/qq_default.jpg" _src="{$v['head_img']}" alt="{$v['nickname']}">
                     <li class="b-nickname">
                         {$v['nickname']}<span>{$v['date']}</span>
                     </li>
