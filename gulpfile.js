@@ -4,8 +4,9 @@ var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     babel       = require('gulp-babel'),
     uglify      = require('gulp-uglify'),
-    clearnHtml  = require("gulp-cleanhtml");
-    imagemin    = require('gulp-imagemin');
+    clearnHtml  = require("gulp-cleanhtml"),
+    imagemin    = require('gulp-imagemin'),
+    copy        = require('gulp-contrib-copy'),
     browserSync = require('browser-sync').create(),
     reload      = browserSync.reload;
     
@@ -34,7 +35,7 @@ gulp.task('js', function() {
 
 // 压缩全部html
 gulp.task('html', function () {
-    gulp.src(src+'/**/*.html')
+    gulp.src(src+'/**/*.+(html|tpl)')
     .pipe(clearnHtml())
     .pipe(gulp.dest(dist));
 });
@@ -46,6 +47,13 @@ gulp.task('image', function () {
     .pipe(gulp.dest(dist));
 });
 
+// 其他不编译的文件直接copy
+gulp.task('copy', function () {
+    gulp.src(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html|tpl)')
+    .pipe(copy())
+    .pipe(gulp.dest(dist));
+});
+
 // 自动刷新
 gulp.task('server', function() {
     browserSync.init({
@@ -53,17 +61,20 @@ gulp.task('server', function() {
         notify: false, // 刷新不弹出提示
     });
     // 监听scss文件编译
-    gulp.watch(src+'/**/*.scss', ['css']);   
+    gulp.watch(src+'/**/*.scss', ['css']);
+
+    // 监听其他不编译的文件 有变化直接copy
+    gulp.watch(src+'/**/*.!(jpg|jpeg|png|gif|bmp|scss|js|html)', ['copy']);   
 
     // 监听html文件变化后刷新页面
     gulp.watch(src+"/**/*.js", ['js']).on("change", reload);
 
     // 监听html文件变化后刷新页面
-    gulp.watch(src+"/**/*.html", ['html']).on("change", reload);
+    gulp.watch(src+"/**/*.+(html|tpl)", ['html']).on("change", reload);
 
     // 监听css文件变化后刷新页面
     gulp.watch(dist+"/**/*.css").on("change", reload);
 });
 
 // 监听事件
-gulp.task('default', ['css', 'js', 'image', 'html', 'server'])
+gulp.task('default', ['css', 'js', 'image', 'html', 'copy', 'server'])
