@@ -67,4 +67,4 @@ gulp.task('server', function() {
 });
 
 // 监听事件
-gulp.task('default', ['server'])
+gulp.task('default', ['css', 'js', 'image', 'html', 'server'])
