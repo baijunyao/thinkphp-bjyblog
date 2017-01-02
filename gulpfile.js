@@ -51,7 +51,6 @@ gulp.task('server', function() {
     browserSync.init({
         proxy: "tbjyblog.com", // 指定代理url
         notify: false, // 刷新不弹出提示
-        open: false, // 不自动打开浏览器
     });
     // 监听scss文件编译
     gulp.watch(src+'/**/*.scss', ['css']);   
