@@ -1,5 +1,5 @@
 var gulp        = require('gulp'),
-    less        = require('gulp-less'),
+    sass        = require('gulp-sass'),
     minifyCss   = require('gulp-minify-css'),
     plumber     = require('gulp-plumber'),
     babel       = require('gulp-babel'),
@@ -11,12 +11,12 @@ var gulp        = require('gulp'),
     
 // 定义源代码的目录和编译压缩后的目录
 var src='Template/default_src',
-    dist='Template/default'
+    dist='Template/default';
 
-// 编译全部less 并压缩
+// 编译全部scss 并压缩
 gulp.task('css', function(){
-    gulp.src(src+'/**/*.less')
-        .pipe(less())
+    gulp.src(src+'/**/*.scss')
+        .pipe(sass())
         .pipe(minifyCss())
         .pipe(gulp.dest(dist))
 })
@@ -39,9 +39,9 @@ gulp.task('html', function () {
     .pipe(gulp.dest(dist));
 });
 
-// 压缩全部html
+// 压缩全部image
 gulp.task('image', function () {
-    gulp.src([src+'/**/image/*'])
+    gulp.src([src+'/**/*.+(jpg|jpeg|png|gif|bmp)'])
     .pipe(imagemin())
     .pipe(gulp.dest(dist));
 });
@@ -53,14 +53,17 @@ gulp.task('server', function() {
         notify: false, // 刷新不弹出提示
         open: false, // 不自动打开浏览器
     });
-    // 监听less文件编译
-    gulp.watch(src+'/**/*.less', ['css']);   
+    // 监听scss文件编译
+    gulp.watch(src+'/**/*.scss', ['css']);   
+
     // 监听html文件变化后刷新页面
     gulp.watch(src+"/**/*.js", ['js']).on("change", reload);
+
     // 监听html文件变化后刷新页面
     gulp.watch(src+"/**/*.html", ['html']).on("change", reload);
+
     // 监听css文件变化后刷新页面
-    gulp.watch(src+"/**/*.css").on("change", reload);
+    gulp.watch(dist+"/**/*.css").on("change", reload);
 });
 
 // 监听事件
