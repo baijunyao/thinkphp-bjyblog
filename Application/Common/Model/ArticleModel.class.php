@@ -337,6 +337,7 @@ class ArticleModel extends BaseModel{
             $list[$k]['tids']=D('ArticleTag')->getDataByAid($v['aid']);
             $list[$k]['tag']=D('ArticleTag')->getDataByAid($v['aid'],'all');
             $list[$k]['category']=current(D('Category')->getDataByCid($v['cid'],'cid,cid,cname,keywords'));
+            $list[$k]['addtime']=word_time($v['addtime']);
         }
         $show=$page->show();
         $data=array(
