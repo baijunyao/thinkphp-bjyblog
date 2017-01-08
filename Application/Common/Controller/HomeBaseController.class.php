@@ -1,6 +1,6 @@
 <?php
 namespace Common\Controller;
-use Common\Controller\BaseController;
+
 /**
  * 前台基类Controller
  */
