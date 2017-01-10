@@ -28,20 +28,20 @@ return array(
     'IMAGE_WATER_ALPHA'         =>  '80',    //图片水印 水印透明度：0-100
 
 //*************************************第三方登录****************************************
-    'QQ_APP_ID'                 =>  '',            // QQ登陆APP D
-    'QQ_APP_KEY'                =>  '',           // QQ登陆APP KEY
-    'SINA_API_KEY'              =>  '',         // 新浪登陆API KEY
-    'SINA_SECRET'               =>  '',          // 新浪登陆SECRET
-    'DOUBAN_API_KEY'            =>  '',       // 豆瓣登陆API KEY
-    'DOUBAN_SECRET'             =>  '',        // 豆瓣登陆SECRET
-    'RENREN_API_KEY'            =>  '',       // 人人登陆API KEY
-    'RENREN_SECRET'             =>  '',        // 人人登陆SECRET
-    'KAIXIN_API_KEY'            =>  '',       // 开心网登陆API KEY
-    'KAIXIN_SECRET'             =>  '',        // 开心网登陆SECRET
-    'GITHUB_CLIENT_ID'          =>  '',     // github登陆API KEY
-    'GITHUB_CLIENT_SECRET'      =>  '', // github登陆SECRET
-    'SOHU_API_KEY'              =>  '',         // 搜狐网登陆API KEY
-    'SOHU_SECRET'               =>  '',          // 搜狐网登陆SECRT
+    'QQ_APP_ID'                 =>  '',            // QQ登录APP D
+    'QQ_APP_KEY'                =>  '',           // QQ登录APP KEY
+    'SINA_API_KEY'              =>  '',         // 新浪登录API KEY
+    'SINA_SECRET'               =>  '',          // 新浪登录SECRET
+    'DOUBAN_API_KEY'            =>  '',       // 豆瓣登录API KEY
+    'DOUBAN_SECRET'             =>  '',        // 豆瓣登录SECRET
+    'RENREN_API_KEY'            =>  '',       // 人人登录API KEY
+    'RENREN_SECRET'             =>  '',        // 人人登录SECRET
+    'KAIXIN_API_KEY'            =>  '',       // 开心网登录API KEY
+    'KAIXIN_SECRET'             =>  '',        // 开心网登录SECRET
+    'GITHUB_CLIENT_ID'          =>  '',     // github登录API KEY
+    'GITHUB_CLIENT_SECRET'      =>  '', // github登录SECRET
+    'SOHU_API_KEY'              =>  '',         // 搜狐网登录API KEY
+    'SOHU_SECRET'               =>  '',          // 搜狐网登录SECRT
 //***********************************其他第三方接口****************************************
     'WEB_STATISTICS'            =>  '',       // 第三方统计代码
     'BAIDU_SITE_URL'            =>  '',       // 百度推送site提交接

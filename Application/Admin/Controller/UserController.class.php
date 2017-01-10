@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Common\Controller\AdminBaseController;
 /**
- * 后台登陆
+ * 后台登录
  */
 class UserController extends AdminBaseController{
 

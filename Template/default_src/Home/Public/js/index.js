@@ -78,7 +78,7 @@ function getWidthLeft(obj,change){
     $('.b-nav-mobile').stop().animate({'left':mobileLeft,'width':mobileWidth}, 300);
 }
 
-// 登陆
+// 登录
 function login(){
     $('#b-modal-login').modal('show');
     setCookie('this_url',window.location.href);

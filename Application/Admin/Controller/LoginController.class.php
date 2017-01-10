@@ -2,16 +2,16 @@
 namespace Admin\Controller;
 use Common\Controller\PublicBaseController;
 /**
- * 后台登陆
+ * 后台登录
  */
 class LoginController extends PublicBaseController{
-    // 登陆页面
+    // 登录页面
     public function login(){
-        // 判断第三方登陆账号中是否有admin
+        // 判断第三方登录账号中是否有admin
         $oauth_has_admin=M('Oauth_user')->where(array('is_admin'=>1))->count();
-        // 如果有第三方账号有admin  则要求用第三方登陆 否则用常规登陆
+        // 如果有第三方账号有admin  则要求用第三方登录 否则用常规登录
         if ($oauth_has_admin) {
-            die('请在前台页面通过第三方账号登陆');
+            die('请在前台页面通过第三方账号登录');
         }
         if(IS_POST){
             $data=I('post.');
@@ -20,7 +20,7 @@ class LoginController extends PublicBaseController{
                 if(md5($data['ADMIN_PASSWORD'])==$password){
                     session('admin','is_login');
                     session('ADMIN_PASSWORD',null);
-                    $this->success('登陆成功',U('Admin/Index/index'));
+                    $this->success('登录成功',U('Admin/Index/index'));
                 }else{
                     $this->success('密码输入错误',U('Admin/Login/login'));
                 }

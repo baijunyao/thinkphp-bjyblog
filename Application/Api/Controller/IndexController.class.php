@@ -30,7 +30,7 @@ class IndexController extends HomeBaseController{
                 );
             // 获取本地数据库的用户数据
             $user_data=D('OauthUser')->getDataByOpenid($data['openid']);
-            // 如果登陆过 则覆盖；没有登陆这添加数据
+            // 如果登录过 则覆盖；没有登录这添加数据
             if(empty($user_data)){
                 $id=D('OauthUser')->addData($data);
             }else{
@@ -43,11 +43,11 @@ class IndexController extends HomeBaseController{
                 'nickname'=>$data['nickname'],
                 );
             session('user',$login_info);
-            // 如果此账号是admin 则设置后台登陆状态
+            // 如果此账号是admin 则设置后台登录状态
             if ($user_data['is_admin']==1) {
                 session('admin','is_login');
             }
-            // 跳转到登陆前的页面
+            // 跳转到登录前的页面
             $_COOKIE['this_url']=empty($_COOKIE['this_url']) ? '/' : cookie('this_url');
             redirect(cookie('this_url'));
         }

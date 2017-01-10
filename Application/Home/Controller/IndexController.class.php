@@ -161,7 +161,7 @@ class IndexController extends HomeBaseController {
     public function ajax_comment(){
         $data=I('post.');
         if(empty($data['content']) || !isset($_SESSION['user']['id'])){
-            die('未登陆,或内容为空');
+            die('未登录,或内容为空');
         }else{
             $cmtid=D('Comment')->addData(1);
             echo $cmtid;

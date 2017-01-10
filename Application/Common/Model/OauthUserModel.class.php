@@ -2,7 +2,7 @@
 namespace Common\Model;
 use Common\Model\BaseModel;
 /**
-* 第三方登陆model
+* 第三方登录model
 */
 class OauthUserModel extends BaseModel{
     // 自动验证
@@ -23,7 +23,7 @@ class OauthUserModel extends BaseModel{
         array('status',1),
         );
 
-    // 获得登陆ip
+    // 获得登录ip
     function getLoginIp(){
         $ip=get_client_ip();
         return $ip;

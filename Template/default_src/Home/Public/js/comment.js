@@ -76,7 +76,7 @@ function comment(obj){
     $.post(check_login, function(data) {
         if(data==1){
             var content=$(obj).parents('.b-box-textarea').eq(0).find('.b-box-content').html();
-            if(content!='' && content!='请先登陆后发表评论'){
+            if(content!='' && content!='请先登录后发表评论'){
                 var aid=$(obj).attr('aid'),
                     pid=$(obj).attr('pid'),
                     email=$(obj).parents('.b-box-textarea').eq(0).find("input[name='email']").val(),
@@ -127,14 +127,14 @@ function reply(obj){
     var aid=$(obj).attr('aid');
     var pid=$(obj).attr('pid');
     var username=$(obj).attr('username');
-    var str='<div class="b-box-textarea"><div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">请先登陆后回复评论</div><ul class="b-emote-submit"><li class="b-emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><input class="form-control b-email" type="text" name="email" placeholder="接收回复的email地址" value="'+userEmail+'"><div class="b-tuzki"></div></li><li class="b-submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
+    var str='<div class="b-box-textarea"><div class="b-box-content" contenteditable="true" onfocus="delete_hint(this)">请先登录后回复评论</div><ul class="b-emote-submit"><li class="b-emote"><i class="fa fa-smile-o" onclick="getTuzki(this)"></i><input class="form-control b-email" type="text" name="email" placeholder="接收回复的email地址" value="'+userEmail+'"><div class="b-tuzki"></div></li><li class="b-submit-button"><input type="button" value="评 论" aid="'+aid+'" pid="'+pid+'" username="'+username+'" onclick="comment(this)"></li><li class="b-clear-float"></li></ul></div>';
     var parentObj=$(obj).parents('.b-cc-first').eq(0).append(str);
 }
 
 // 删除提示和样式
 function delete_hint(obj){
     var word=$(obj).text();
-    if(word=='请先登陆后发表评论' || word=='请先登陆后回复评论'){
+    if(word=='请先登录后发表评论' || word=='请先登录后回复评论'){
         $(obj).text('');
         $(obj).css('color', '#333');
     }

@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Common\Controller\HomeBaseController;
 class UserController extends HomeBaseController {
 
-    // 第三方平台登陆
+    // 第三方平台登录
     public function oauth_login(){
         $type=I('get.type');
         import("Org.ThinkSDK.ThinkOauth");
@@ -17,7 +17,7 @@ class UserController extends HomeBaseController {
         session('admin',null);
     }
 
-    // 判断是否登陆
+    // 判断是否登录
     public function check_login(){
         if(isset($_SESSION['user']['id'])){
             echo 1;
