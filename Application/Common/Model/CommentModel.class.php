@@ -17,6 +17,7 @@ class CommentModel extends BaseModel{
         $nickname=$_SESSION['user']['nickname'];
         $is_admin=M('Oauth_user')->getFieldById($ouid,'is_admin');
         $data['content']=htmlspecialchars_decode($data['content']);
+        $data['content']=preg_replace('/on.+\".+\"/i', '', $data['content']);
         // 删除除img外的其他标签
         $comment_content=trim(strip_tags($data['content'],'<img>'));
         $content=htmlspecialchars($comment_content);
