@@ -5,6 +5,9 @@
 - github：https://github.com/baijunyao/thinkphp-bjyblog   
 - oschina：http://git.oschina.net/shuaibai123/thinkbjy   
 
+## 使用说明
+[开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
+
 ## 简介
 闲暇之时使用thinkphp开发了一个个人博客用来整理技能知识；  
 
