@@ -93,7 +93,7 @@ class CategoryController extends AdminBaseController{
                 $this->db->where(array('cid'=>$k))->save(array('sort'=>$v));
             }
         }
-        $this->success('修改成功',U('Admin/Link/index'));
+        $this->success('修改成功',U('Admin/Category/index'));
     }
 
 
