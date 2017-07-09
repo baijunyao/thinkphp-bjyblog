@@ -3,7 +3,7 @@
 ## 链接
 - 博客：http://baijunyao.com   
 - github：https://github.com/baijunyao/thinkphp-bjyblog   
-- oschina：http://git.oschina.net/shuaibai123/thinkbjy   
+- 码云：http://git.oschina.net/shuaibai123/thinkbjy   
 
 ## 使用说明
 [开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
