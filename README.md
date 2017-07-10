@@ -5,7 +5,7 @@
 - github：https://github.com/baijunyao/thinkphp-bjyblog   
 - 码云：http://git.oschina.net/shuaibai123/thinkbjy   
 
-## 使用说明
+## 相关链接
 [开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
 
 ## 简介
