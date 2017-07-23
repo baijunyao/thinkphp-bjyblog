@@ -11,6 +11,6 @@ return array(
         'article/sw/:search_word\S/:aid\d'=>'Index/article',    // 搜索词-文章路由
         'article/:aid\d'=>'Index/article',                      // 文章路由
         'chat'=>'Index/chat',                                   // 随言碎语路由
-        'git'=>'Index/git',                                   // 开源项目路由
+        'git'=>'Index/git',                                     // 开源项目路由
         ),
 );
