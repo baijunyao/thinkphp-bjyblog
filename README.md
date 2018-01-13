@@ -23,6 +23,8 @@
 
 ![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)  
 
+这还有个使用 laravel 开发的博客 [https://github.com/baijunyao/laravel-bjyblog](https://github.com/baijunyao/laravel-bjyblog)   
+
 ## 使用说明
 1. 请将项目内的所有文件直接放在根目录下；不要多层目录；  
 例如正确：www/;错误：www/thinkbjy/；
