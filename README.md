@@ -1,9 +1,9 @@
 [创建 QQ 群及捐赠渠道](https://baijunyao.com/article/124)  
 
 ## 链接
-- 博客：http://baijunyao.com   
-- github：https://github.com/baijunyao/thinkphp-bjyblog   
-- 码云：http://git.oschina.net/shuaibai123/thinkbjy   
+- 博客：http://baijunyao.com  
+- github：https://github.com/baijunyao/thinkphp-bjyblog  
+- 码云：https://gitee.com/baijunyao/thinkbjy  
 
 ## 相关链接
 [开源项目系列之thinkphp-bjyblog博客](http://baijunyao.com/article/104)  
