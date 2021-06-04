@@ -19,10 +19,6 @@
 
 想研究支付宝、微信支付、邮件发送、短信通知验证码发送、oss云存储、融云即时通讯、友盟推送、Memcached缓存、权限管理、等更多功能的可以参考进阶版的bjyadmin https://github.com/baijunyao/thinkphp-bjyadmin  
 
-下图即是使用bjyblog开发的个人博客[白俊遥博客](http://statics.baijunyao.com/images/other/thinkbjy.jpg) http://baijunyao.com  
-
-![Thinkbjy](http://statics.baijunyao.com/images/other/thinkbjy.jpg)  
-
 这还有个使用 laravel 开发的博客 [https://github.com/baijunyao/laravel-bjyblog](https://github.com/baijunyao/laravel-bjyblog)   
 
 ## 使用说明
